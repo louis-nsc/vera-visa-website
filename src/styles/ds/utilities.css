@@ -1,0 +1,60 @@
+/* Vera Visa — Shared utility classes
+   Drop these into any surface via <link rel="stylesheet" href="styles.css">.
+   Inline declarations in templates can override them; these are the defaults. */
+
+/* Primary CTA button hover — darkens to --signal-deep */
+.vv-cta {
+  transition: background var(--dur-fast) var(--ease-standard);
+}
+.vv-cta:hover {
+  background: var(--signal-deep) !important;
+}
+
+/* Inline text link — signals on hover, used inside body copy and callouts */
+.vv-link {
+  transition: color var(--dur-fast) ease;
+}
+.vv-link:hover {
+  color: var(--signal) !important;
+}
+
+/* Numbered benefit grid
+   Usage: <div class="vv-benefit-grid"> … <div class="vv-benefit-cell"> … </div> … </div>
+   Uses background: var(--line) on the parent with var(--paper) cells to produce 1px
+   hairline dividers between cells — no explicit borders needed. */
+.vv-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+.vv-benefit-cell {
+  background: var(--paper);
+  padding: 28px 24px;
+}
+.vv-benefit-number {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: var(--ls-label-wide);
+  color: var(--ink-45);
+  margin-bottom: 14px;
+}
+.vv-benefit-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.25rem; /* 20px — one step below --text-display-s */
+  line-height: var(--lh-snug);
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+.vv-benefit-body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-s); /* 14px */
+  line-height: var(--lh-body);
+  color: var(--text-body);
+  margin: 0;
+}

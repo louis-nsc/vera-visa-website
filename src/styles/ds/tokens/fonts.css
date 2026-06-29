@@ -1,0 +1,7 @@
+/* Vera Visa — Webfonts
+   Fraunces (display), Inter (body/UI), IBM Plex Mono (utility/data).
+   All three are Google Fonts; loaded here via @import so the @font-face
+   rules ship to consumers. If you self-host, replace this with local
+   @font-face blocks pointing at binaries in assets/fonts/. */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');

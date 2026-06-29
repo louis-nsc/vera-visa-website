@@ -2,7 +2,7 @@
    The design system is the single source of truth for tokens.
    This file imports the DS entry point and adds site-level resets only. */
 
-@import '@ds/styles.css';
+@import './ds/styles.css';
 
 /* ---- Reset ---- */
 *, *::before, *::after {

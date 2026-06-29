@@ -1,0 +1,44 @@
+/* Vera Visa — Spacing, radius, border & layout tokens
+   Flat, printed-document feel: 1px warm borders, NO drop shadows,
+   sharp 4px card corners, full pills only on buttons + status dots. */
+
+:root {
+  /* ---- Spacing scale (4px base) ---- */
+  --space-1: 0.25rem;   /* 4 */
+  --space-2: 0.5rem;    /* 8 */
+  --space-3: 0.75rem;   /* 12 */
+  --space-4: 1rem;      /* 16 */
+  --space-5: 1.5rem;    /* 24 */
+  --space-6: 2rem;      /* 32 — desktop gutter */
+  --space-7: 3rem;      /* 48 */
+  --space-8: 4rem;      /* 64 */
+  --space-9: 6rem;      /* 96 — section vertical rhythm */
+
+  /* ---- Radius ---- */
+  --radius-card: 4px;        /* official, not playful */
+  --radius-pill: 999px;      /* buttons + status dots only */
+  --radius-sm: 2px;          /* tiny chips, perforation gaps */
+
+  /* ---- Borders ---- */
+  --border-width: 1px;
+  --border: var(--border-width) solid var(--line);
+  --border-ink: var(--border-width) solid var(--ink);
+
+  /* ---- Layout ---- */
+  --container-max: 1080px;
+  --container-pad: var(--space-6);
+  --grid-cols: 12;        /* @kind other */
+  --grid-gutter: var(--space-6);
+
+  /* ---- Perforation (status-card tear-off edge) ---- */
+  --perf-dot: 4px;       /* dot diameter */
+  --perf-gap: 8px;       /* gap between dots */
+
+  /* ---- NO shadows. This token exists to say so explicitly. ---- */
+  --shadow-none: none;
+
+  /* ---- Motion (restrained: short fades + tints, no bounce) ---- */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);  /* @kind other */
+  --dur-fast: 120ms;   /* @kind other */
+  --dur-base: 200ms;   /* @kind other */
+}

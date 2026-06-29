@@ -1,0 +1,42 @@
+/* Vera Visa — Color tokens
+   Orange marks the important thing; it never washes large areas.
+   Think "visa stamp on a passport page," not a brand gradient. */
+
+:root {
+  /* ---- Base palette ---- */
+  --ink: #15130F;          /* Warm near-black. Text, headlines, dark surfaces. */
+  --paper: #FFFFFF;        /* Primary background + card surface. */
+  --signal: #FF630F;       /* The one accent. CTAs, status dots, active states, key numbers. */
+  --signal-deep: #C8470A;  /* Hover/pressed + accent text on light bg (passes contrast at body size). */
+  --sand: #F7F1E8;         /* Section backgrounds, alternating with paper for rhythm. */
+  --line: #E4DCCB;         /* Hairline borders, dividers, perforated-edge dots. */
+
+  /* ---- Single permitted extra color: approval green ---- */
+  --approved: #1E7A4D;     /* "Approved" status dot only. The one color besides ink/paper/sand/signal. */
+
+  /* ---- Ink tints (derived, for secondary text on paper) ---- */
+  --ink-70: rgba(21, 19, 15, 0.70);  /* Secondary text */
+  --ink-45: rgba(21, 19, 15, 0.45);  /* Tertiary / placeholder */
+  --ink-12: rgba(21, 19, 15, 0.12);  /* Subtle borders on dark-leaning surfaces */
+
+  /* ---- Semantic aliases ---- */
+  --text-strong: var(--ink);
+  --text-body: var(--ink-70);
+  --text-muted: var(--ink-45);
+  --text-accent: var(--signal-deep);     /* orange text at body size */
+  --text-on-dark: var(--paper);
+  --text-body-on-dark: rgba(255, 255, 255, 0.70); /* body text on --ink surfaces */
+
+  --surface-page: var(--paper);
+  --surface-alt: var(--sand);            /* alternating section bg */
+  --surface-card: var(--paper);
+  --surface-dark: var(--ink);            /* footer, dark sections */
+
+  --border-hairline: var(--line);
+  --border-strong: var(--ink);
+
+  --accent: var(--signal);
+  --accent-hover: var(--signal-deep);
+  --status-progress: var(--signal);
+  --status-approved: var(--approved);
+}

@@ -1,0 +1,246 @@
+---
+import ServicePageLayout from '../layouts/ServicePageLayout.astro';
+import QuickFactsStrip from '../components/sections/QuickFactsStrip.astro';
+import BenefitGrid from '../components/sections/BenefitGrid.astro';
+import ExpertInsightCallout from '../components/sections/ExpertInsightCallout.astro';
+import CtaCallout from '../components/sections/CtaCallout.astro';
+import RelatedGuides from '../components/sections/RelatedGuides.astro';
+import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+import TabBar from '../components/interactive/TabBar';
+import AccordionSection from '../components/interactive/AccordionSection';
+
+const TABS = [
+  { id: 'eligibility',  label: 'Eligibility'  },
+  { id: 'requirements', label: 'Requirements'  },
+  { id: 'process',      label: 'Process'       },
+  { id: 'benefits',     label: 'Benefits'      },
+  { id: 'restrictions', label: 'Restrictions'  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Volunteer Visa Chiang Mai',
+  description: 'Thai volunteer visa (Non-Immigrant O) for long-term volunteers working with registered non-profit organisations in Chiang Mai. Handled end to end by Vera Visa.',
+  provider: { '@type': 'LocalBusiness', name: 'Vera Visa Agency', url: 'https://vera-visa.com' },
+  areaServed: { '@type': 'Country', name: 'Thailand' },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What is the volunteer visa in Thailand?', acceptedAnswer: { '@type': 'Answer', text: 'The volunteer visa is a Non-Immigrant O visa issued to foreigners volunteering with a registered non-profit, NGO, or charity organisation in Thailand. It provides legal long-term stay tied to your volunteer placement.' } },
+    { '@type': 'Question', name: 'What organisations qualify for the volunteer visa?', acceptedAnswer: { '@type': 'Answer', text: 'The organisation must be a registered non-profit or NGO in Thailand — registered with the Thai Ministry of Interior or equivalent authority. Commercial companies, even those with social missions, do not qualify. We can help you verify whether your organisation qualifies.' } },
+    { '@type': 'Question', name: 'Can I receive a salary on a volunteer visa?', acceptedAnswer: { '@type': 'Answer', text: 'No. The volunteer visa is for unpaid voluntary service. Receiving a salary or wage from your Thai organisation requires a work permit. A stipend or expense reimbursement may be acceptable — we advise on this case by case.' } },
+    { '@type': 'Question', name: 'How long is the volunteer visa?', acceptedAnswer: { '@type': 'Answer', text: 'The volunteer visa is typically extended in 90-day increments, up to one year. Extensions require continued active volunteer placement. Annual re-application may be needed depending on your organisation and the immigration office.' } },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vera-visa.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Volunteer Visa Chiang Mai', item: 'https://vera-visa.com/volunteer-visa-chiang-mai/' },
+  ],
+};
+---
+
+<ServicePageLayout
+  title="Volunteer Visa Chiang Mai (Non-O) — Requirements & Guide 2026 | Vera Visa"
+  description="Volunteering long-term in Chiang Mai? The Non-Immigrant O volunteer visa gives you legal stay tied to your placement. Vera Visa handles your application and extensions end to end."
+  canonicalUrl="https://vera-visa.com/volunteer-visa-chiang-mai/"
+  ogTitle="Volunteer Visa Chiang Mai 2026 — Non-O Requirements & Guide | Vera Visa"
+  ogDescription="Long-term volunteer in Chiang Mai? The Non-Immigrant O visa covers your stay. Vera Visa handles the application, 90-day extensions, and reports."
+  schema={[serviceSchema, faqSchema, breadcrumbSchema]}
+  eyebrow="Non-Imm O · Volunteer"
+  intro="Volunteering with a registered NGO or non-profit in Chiang Mai? The Non-Immigrant O volunteer visa gives you legal long-term stay — handled end to end by our team."
+  ctaText="Check your eligibility on WhatsApp →"
+  statusRows={[
+    { label: 'Visa Type',    value: 'Non-Imm O'   },
+    { label: 'Basis',        value: 'Volunteering' },
+    { label: 'Stay',         value: '90 days+'     },
+  ]}
+  statusState="approved"
+  statusLabel="Approved"
+>
+  <Fragment slot="headline">
+    Do meaningful work. Stay <span style="color: var(--signal);">legally</span>.
+  </Fragment>
+
+  <QuickFactsStrip facts={[
+    { label: 'Visa Type',      value: 'Non-Imm O'        },
+    { label: 'Initial Stay',   value: '90 days'          },
+    { label: 'Extensions',     value: '90 days each'     },
+    { label: 'Organisation',   value: 'Registered NGO'   },
+    { label: 'Salary',         value: 'Not permitted'    },
+    { label: 'Work Permit',    value: 'Not required'     },
+    { label: '90-Day Report',  value: 'Required'         },
+  ]} />
+
+  <BenefitGrid
+    eyebrow="Volunteer Visa Benefits"
+    heading="Legal long-term stay for volunteers in Chiang Mai"
+    intro="Chiang Mai has a large and active NGO community. The Non-Immigrant O volunteer visa is the correct legal pathway for long-term volunteer placements."
+    items={[
+      { title: 'Legal long-term stay',    body: 'Volunteer in Chiang Mai for months or years without tourist visa restrictions or border runs.' },
+      { title: 'No work permit required', body: 'Unpaid volunteering under the Non-Immigrant O does not require a Thai work permit — unlike paid employment.' },
+      { title: 'No financial threshold',  body: 'No minimum bank balance or income requirement — your volunteer placement letter is the key document.' },
+      { title: 'Renewable placement',     body: 'Extensions tied to your volunteer organisation — as long as your placement continues, so does your visa eligibility.' },
+      { title: 'Active NGO community',    body: 'Chiang Mai has one of the largest concentrations of NGOs and non-profits in Southeast Asia — elephant welfare, education, hill tribe support, and more.' },
+      { title: 'Personal fulfilment',     body: 'A legal, structured way to contribute long-term — without the constant visa stress that comes with repeated tourist entries.' },
+    ]}
+  />
+
+  <section class="section" style="background: var(--paper); padding-bottom: var(--space-5);">
+    <div class="container">
+      <h2 class="panel-h2">Learn More About the Volunteer Visa</h2>
+      <p class="panel-intro">Everything you need to know about qualifying organisations, documents, and what the Non-O volunteer visa does and doesn't cover.</p>
+    </div>
+  </section>
+
+  <TabBar client:load tabs={TABS} defaultTab="eligibility" />
+
+  <div style="background: var(--paper); padding: var(--space-7) 0 var(--space-9);">
+    <div class="container">
+
+      <section data-tab-panel="eligibility">
+        <h2 class="panel-h2">Who qualifies for the volunteer visa</h2>
+        <p class="panel-intro">The primary requirement is a confirmed volunteer placement with a registered Thai non-profit or NGO.</p>
+
+        <AccordionSection client:load title="Qualifying Organisations" defaultOpen={true}>
+          <p>Your host organisation must be:</p>
+          <ul>
+            <li>Registered as a non-profit, foundation, or NGO under Thai law</li>
+            <li>Registered with the Thai Ministry of Interior or an equivalent regulatory body</li>
+            <li>Able to provide official documentation of your placement and the organisation's registration status</li>
+          </ul>
+          <p>Commercial companies, social enterprises, and unregistered community groups do not qualify. We verify organisation eligibility before starting any application.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Your Volunteer Role">
+          <p>You must be performing genuine unpaid voluntary work for the organisation. The work should align with the organisation's registered charitable purpose.</p>
+          <p>Roles that involve business development, revenue generation, or activities outside the NGO's stated mission may not qualify. We'll review your specific situation.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Salary & Compensation">
+          <p>You cannot receive a salary or wage from your Thai organisation on a volunteer visa. Genuine unpaid volunteerism is the requirement.</p>
+          <p>Reasonable expense reimbursement (accommodation, food, transport) may be acceptable in some cases — we advise on this based on your specific arrangement.</p>
+        </AccordionSection>
+
+        <ExpertInsightCallout body="The most common issue is organisations that are not properly registered with Thai authorities. Many well-meaning groups operate informally. We check registration status before starting any application — an unregistered organisation means a rejected visa." />
+      </section>
+
+      <section data-tab-panel="requirements" hidden>
+        <h2 class="panel-h2">Documents you'll need</h2>
+        <p class="panel-intro">The key documents come from your organisation. We prepare and check everything before submission.</p>
+
+        <AccordionSection client:load title="Your Documents" defaultOpen={true}>
+          <ul>
+            <li>Passport valid for at least 12 months with blank visa pages</li>
+            <li>Recent passport-style photographs</li>
+            <li>Completed Non-Immigrant O application form</li>
+            <li>Proof of current visa status</li>
+          </ul>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Organisation Documents">
+          <ul>
+            <li>Official volunteer placement letter on organisation letterhead, confirming your role, start date, and unpaid status</li>
+            <li>Copy of the organisation's Thai registration certificate</li>
+            <li>Organisation's registration number and official address</li>
+            <li>In some cases: a letter of support from the Ministry of Interior or relevant government body</li>
+          </ul>
+        </AccordionSection>
+
+        <ExpertInsightCallout body="The placement letter needs to say the right things — specific language around the unpaid nature of the role and the organisation's registration status. We review every letter before it goes to immigration." />
+      </section>
+
+      <section data-tab-panel="process" hidden>
+        <h2 class="panel-h2">How to apply</h2>
+        <p class="panel-intro">Most volunteer visa applications are handled in-country at Chiang Mai immigration once your placement is confirmed.</p>
+
+        <div style="background: var(--paper); border: var(--border); border-radius: var(--radius-card); padding: var(--space-6); margin-bottom: var(--space-5);">
+          <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal-deep); margin-bottom: 12px;">Typical Process</p>
+          <ol style="margin: 0; padding-left: var(--space-5); font-family: var(--font-body); font-size: var(--text-body-m); line-height: 1.7; color: var(--text-body);">
+            <li>Confirm your volunteer placement and obtain your placement letter</li>
+            <li>Verify the organisation's registration status (we handle this)</li>
+            <li>Gather documents and submit at Chiang Mai immigration</li>
+            <li>Extend every 90 days for the duration of your placement</li>
+          </ol>
+        </div>
+
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <div style="background: var(--sand); border: var(--border); border-radius: var(--radius-card); padding: var(--space-4) var(--space-5);">
+            <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-45); margin-bottom: var(--space-2);">Processing Time</p>
+            <p style="font-family: var(--font-body); font-size: 1.375rem; font-weight: 600; color: var(--ink); margin: 0;">1–3 days <span style="font-size: var(--text-body-s); font-weight: 400; color: var(--ink-45);">in-country</span></p>
+          </div>
+          <div style="background: var(--sand); border: var(--border); border-radius: var(--radius-card); padding: var(--space-4) var(--space-5);">
+            <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-45); margin-bottom: var(--space-2);">Extension Fee</p>
+            <p style="font-family: var(--font-body); font-size: 1.375rem; font-weight: 600; color: var(--ink); margin: 0;">1,900 THB</p>
+          </div>
+        </div>
+      </section>
+
+      <section data-tab-panel="benefits" hidden>
+        <h2 class="panel-h2">Why the Non-O volunteer visa</h2>
+        <div style="margin-top: var(--space-6);">
+          <ul style="margin: 0; padding-left: var(--space-5); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.8; color: var(--text-body); max-width: 60ch;">
+            <li>Legal long-term stay with no tourist visa runs</li>
+            <li>No minimum bank balance or income requirement</li>
+            <li>No work permit required for unpaid voluntary work</li>
+            <li>Chiang Mai's NGO sector is large, active, and welcoming to skilled foreign volunteers</li>
+            <li>Renewable for as long as your placement continues</li>
+            <li>Structured legal status that lets you fully commit to your work</li>
+          </ul>
+        </div>
+      </section>
+
+      <section data-tab-panel="restrictions" hidden>
+        <h2 class="panel-h2">What you can &amp; can't do</h2>
+
+        <AccordionSection client:load title="Can you receive a salary?" defaultOpen={true}>
+          <p>No. The volunteer visa is for unpaid work only. Receiving a salary or wage from a Thai organisation without a work permit is a visa violation. If your role transitions to paid employment, you need a Non-Immigrant B visa and a work permit.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Do you need 90-day reports?">
+          <p>Yes. If you stay in Thailand for more than 90 consecutive days without exiting, you must file a 90-day report. Most long-term volunteers need to do this regularly.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Can you leave Thailand?">
+          <p>Yes, with a re-entry permit obtained before departure. Without one, your visa is cancelled on exit. Single re-entry permits cost 1,000 THB; multiple re-entry permits cost 3,800 THB.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="What if your placement ends?">
+          <p>If your volunteer placement ends, your visa basis no longer applies. You must transition to another visa category or depart Thailand. Contact us as soon as you know so we can plan your next steps.</p>
+        </AccordionSection>
+
+        <CtaCallout
+          kicker="Ready to commit to your volunteer work?"
+          body="We'll verify your organisation's eligibility and handle the full Non-O application so you can focus on the work."
+          linkText="Chat with us on WhatsApp"
+          linkHref="https://wa.me/66XXXXXXXXX"
+        />
+      </section>
+
+    </div>
+  </div>
+
+  <RelatedGuides guides={[
+    { label: 'How the Non-O Visa Works for Long-Term Volunteers', href: '/volunteer-visa-thailand/'   },
+    { label: 'Education Visa (ED)',                               href: '/ed-visa-chiang-mai/'        },
+    { label: 'DTV Visa (for remote workers)',                     href: '/dtv-visa-chiang-mai/'       },
+    { label: 'Retirement Visa (O-A)',                             href: '/retirement-visa-chiang-mai/' },
+  ]} />
+
+  <FinalCtaBand
+    heading="Ready to volunteer in Chiang Mai legally?"
+    subtext="A free consultation confirms your organisation qualifies and gets your Non-O application started."
+  />
+
+  <style>
+    .panel-h2 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-display-m); line-height: var(--lh-snug); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-2); }
+    .panel-intro { font-family: var(--font-body); font-size: 1.0625rem; line-height: var(--lh-body); color: var(--text-body); margin: 0 0 var(--space-6); max-width: 64ch; }
+  </style>
+</ServicePageLayout>

@@ -1,0 +1,262 @@
+---
+import ServicePageLayout from '../layouts/ServicePageLayout.astro';
+import QuickFactsStrip from '../components/sections/QuickFactsStrip.astro';
+import BenefitGrid from '../components/sections/BenefitGrid.astro';
+import ExpertInsightCallout from '../components/sections/ExpertInsightCallout.astro';
+import CtaCallout from '../components/sections/CtaCallout.astro';
+import ProcessComparisonCards from '../components/sections/ProcessComparisonCards.astro';
+import RelatedGuides from '../components/sections/RelatedGuides.astro';
+import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+import TabBar from '../components/interactive/TabBar';
+import AccordionSection from '../components/interactive/AccordionSection';
+
+const TABS = [
+  { id: 'eligibility',  label: 'Eligibility'  },
+  { id: 'requirements', label: 'Requirements'  },
+  { id: 'process',      label: 'Process'       },
+  { id: 'benefits',     label: 'Benefits'      },
+  { id: 'restrictions', label: 'Restrictions'  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Education Visa Chiang Mai',
+  description: 'Thai Education Visa (Non-Immigrant ED) for students enrolled in Thai language schools, universities, and training programs in Chiang Mai. Handled end to end by Vera Visa.',
+  provider: { '@type': 'LocalBusiness', name: 'Vera Visa Agency', url: 'https://vera-visa.com' },
+  areaServed: { '@type': 'Country', name: 'Thailand' },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What schools qualify for the ED visa in Chiang Mai?', acceptedAnswer: { '@type': 'Answer', text: 'Thai language schools, accredited universities, Muay Thai academies, cooking schools, and certain other training programs are eligible. The school must be registered with the Ministry of Education. We work with a number of approved schools in Chiang Mai and can refer you to the right one for your situation.' } },
+    { '@type': 'Question', name: 'How long is the ED visa?', acceptedAnswer: { '@type': 'Answer', text: 'The initial ED visa is typically granted for 90 days. It is then extended in 90-day increments at Chiang Mai immigration for the duration of your enrolment, up to a maximum of one year per school year.' } },
+    { '@type': 'Question', name: 'Do I need to attend classes on an ED visa?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Immigration can and does conduct attendance checks. Consistent attendance is required to maintain your visa status. Your school will typically track attendance and provide reports to immigration.' } },
+    { '@type': 'Question', name: 'Can I work on an ED visa?', acceptedAnswer: { '@type': 'Answer', text: 'No. The ED visa does not permit any form of employment in Thailand. Working requires a separate work permit.' } },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vera-visa.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Education Visa Chiang Mai', item: 'https://vera-visa.com/ed-visa-chiang-mai/' },
+  ],
+};
+---
+
+<ServicePageLayout
+  title="Education Visa Chiang Mai (ED Visa) — Requirements & Guide 2026 | Vera Visa"
+  description="Study Thai, train in Muay Thai, or enrol at a Chiang Mai university on an Education Visa. Vera Visa handles your ED visa application and 90-day extensions end to end."
+  canonicalUrl="https://vera-visa.com/ed-visa-chiang-mai/"
+  ogTitle="Education Visa Chiang Mai 2026 — ED Visa Requirements & Guide | Vera Visa"
+  ogDescription="Long-term legal stay in Chiang Mai through study. Thai language, Muay Thai, university — Vera Visa handles your ED visa and every 90-day extension."
+  schema={[serviceSchema, faqSchema, breadcrumbSchema]}
+  eyebrow="Non-Imm ED · Study Visa"
+  intro="Study Thai language, train in Muay Thai, or enrol at a university — the Education Visa gives you long-term legal stay in Chiang Mai tied to your course enrolment."
+  ctaText="Check your eligibility on WhatsApp →"
+  statusRows={[
+    { label: 'Visa Type',    value: 'Non-Imm ED'  },
+    { label: 'Location',     value: 'Chiang Mai'   },
+    { label: 'Stay / Entry', value: '90 days'      },
+  ]}
+  statusState="approved"
+  statusLabel="Approved"
+>
+  <Fragment slot="headline">
+    Stay in Chiang Mai. <span style="color: var(--signal);">Study</span> your way in.
+  </Fragment>
+
+  <QuickFactsStrip facts={[
+    { label: 'Visa Type',     value: 'Non-Imm ED'           },
+    { label: 'Initial Stay',  value: '90 days'              },
+    { label: 'Extensions',    value: '90 days each'         },
+    { label: 'Max per Year',  value: '1 year'               },
+    { label: 'School Req.',   value: 'MOE-registered'       },
+    { label: 'Work Allowed',  value: 'No'                   },
+    { label: '90-Day Report', value: 'Required'             },
+  ]} />
+
+  <BenefitGrid
+    eyebrow="ED Visa Benefits"
+    heading="Why the Education Visa works for long-term stays"
+    intro="The ED visa is one of the most accessible long-stay options — particularly popular for Thai language study and Muay Thai training in Chiang Mai."
+    items={[
+      { title: 'Accessible entry point',   body: 'No income or savings thresholds — enrolment in an approved program is the primary requirement, making it easier to qualify than financial-based visas.' },
+      { title: 'Renewable term by term',   body: 'Each 90-day extension matches your school term. As long as you stay enrolled and attend, the visa continues.' },
+      { title: 'Wide range of programs',   body: 'Thai language schools, universities, Muay Thai academies, cooking schools, and other MOE-registered programs all qualify.' },
+      { title: 'Family-friendly',          body: 'Dependants can apply for a Non-Immigrant O visa based on your ED enrolment, keeping the whole family in one place.' },
+      { title: 'Local immersion',          body: 'Living in Chiang Mai while studying Thai or training provides full cultural immersion — far more effective than short tourist visits.' },
+      { title: 'Pathway to other visas',   body: 'An ED stay gives you time to establish a Thai bank account and build the financial history that supports a future DTV or retirement visa application.' },
+    ]}
+  />
+
+  <section class="section" style="background: var(--paper); padding-bottom: var(--space-5);">
+    <div class="container">
+      <h2 class="panel-h2">Learn More About the Education Visa</h2>
+      <p class="panel-intro">Eligibility, required documents, the application process, and what the ED visa does and doesn't allow.</p>
+    </div>
+  </section>
+
+  <TabBar client:load tabs={TABS} defaultTab="eligibility" />
+
+  <div style="background: var(--paper); padding: var(--space-7) 0 var(--space-9);">
+    <div class="container">
+
+      <section data-tab-panel="eligibility">
+        <h2 class="panel-h2">Who qualifies for the ED visa</h2>
+        <p class="panel-intro">The core requirement is enrolment in an MOE-registered school or program in Thailand. There are no age or financial minimums.</p>
+
+        <AccordionSection client:load title="Approved Schools & Programs" defaultOpen={true}>
+          <p>Your school must be registered with the Thai Ministry of Education. In Chiang Mai, the most common approved program types are:</p>
+          <ul>
+            <li>Thai language schools (most popular for long-term expats)</li>
+            <li>Chiang Mai University and other accredited universities</li>
+            <li>Muay Thai academies registered with the MOE</li>
+            <li>Thai cooking schools with approved status</li>
+            <li>Certain yoga, meditation, and wellness programs</li>
+          </ul>
+          <p>We work with a selection of approved schools in Chiang Mai and can refer you based on your goals and schedule.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Attendance Requirements">
+          <p>Immigration takes ED visa attendance seriously. You are expected to attend classes regularly — schools track attendance and immigration can conduct spot checks.</p>
+          <p>Consistent non-attendance is grounds for visa cancellation. We advise all ED clients to treat their school schedule seriously, not as a formality.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Applying From Inside Thailand">
+          <p>If you are already in Thailand on a tourist visa or visa exemption, you can apply for the ED visa at Chiang Mai immigration once you have enrolment confirmation from an approved school. This is the most common path for our clients.</p>
+        </AccordionSection>
+
+        <ExpertInsightCallout body="The most common ED visa mistake is choosing a school that isn't properly registered with the MOE. We only refer schools we've verified — don't assume any school offering 'visa support' is officially approved." />
+      </section>
+
+      <section data-tab-panel="requirements" hidden>
+        <h2 class="panel-h2">Documents you'll need</h2>
+        <p class="panel-intro">Straightforward for most applicants. The school letter is the key document — everything else is standard.</p>
+
+        <AccordionSection client:load title="Core Documents" defaultOpen={true}>
+          <ul>
+            <li>Passport valid for at least 12 months with blank visa pages</li>
+            <li>Recent passport-style photographs</li>
+            <li>Completed Non-Immigrant ED application form</li>
+            <li>Enrolment letter from your approved school on official letterhead</li>
+            <li>School's MOE registration certificate (provided by the school)</li>
+            <li>Proof of current visa status (tourist visa or exemption stamp)</li>
+          </ul>
+        </AccordionSection>
+
+        <AccordionSection client:load title="For University Enrolment">
+          <ul>
+            <li>Official university acceptance letter</li>
+            <li>Academic transcripts from previous institutions</li>
+            <li>Proof of tuition fee payment</li>
+          </ul>
+        </AccordionSection>
+
+        <ExpertInsightCallout body="The school enrolment letter needs specific language to satisfy immigration. We check every letter before submission — a poorly worded letter from the school is one of the most common reasons for ED visa delays." />
+      </section>
+
+      <section data-tab-panel="process" hidden>
+        <ProcessComparisonCards
+          heading="How to apply"
+          intro="Most clients apply from inside Thailand. Embassy applications are also possible."
+          routeA={{
+            label: 'Route A',
+            title: 'In-Country at Chiang Mai Immigration',
+            steps: [
+              'Enrol in an approved school and obtain your enrolment letter',
+              'Gather your passport, photos, and supporting documents',
+              'Apply at Chiang Mai immigration office for a Non-Immigrant ED',
+              'Extend every 90 days at immigration for the duration of your course',
+            ],
+          }}
+          routeB={{
+            label: 'Route B',
+            title: 'At a Thai Embassy Abroad',
+            steps: [
+              'Secure enrolment and your school letter before leaving home',
+              'Apply for the Non-Immigrant ED at a Thai embassy in your country',
+              'Enter Thailand and report to immigration to register your address',
+              'Extend at Chiang Mai immigration every 90 days',
+            ],
+          }}
+          stats={[
+            { label: 'Processing Time', value: '1–3 days', note: 'in-country' },
+            { label: 'Extension Fee',   value: '1,900 THB', note: 'per 90 days' },
+          ]}
+        />
+        <ExpertInsightCallout body="In-country applications at Chiang Mai immigration are typically processed the same day. We accompany all first-time clients to ensure nothing is missing on the day." />
+      </section>
+
+      <section data-tab-panel="benefits" hidden>
+        <h2 class="panel-h2">Why the ED visa for Chiang Mai</h2>
+        <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-8); align-items: start; margin-top: var(--space-6);">
+          <ul style="margin: 0; padding-left: var(--space-5); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.8; color: var(--text-body); max-width: 60ch;">
+            <li>No income or savings requirements — enrolment is the key</li>
+            <li>Open to all ages and nationalities</li>
+            <li>Renewable term by term for as long as you stay enrolled</li>
+            <li>Chiang Mai has the best Thai language school options in the country</li>
+            <li>Lower cost of living than Bangkok while studying</li>
+            <li>Builds Thai-language skills and cultural fluency for long-term residents</li>
+          </ul>
+          <div style="background: var(--ink); color: var(--paper); border-radius: var(--radius-card); padding: var(--space-6);">
+            <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal); margin: 0 0 12px;">Extension Fee</p>
+            <p style="font-family: var(--font-body); font-size: var(--text-display-m); font-weight: 600; line-height: 1; margin: 0;">1,900 THB</p>
+            <p style="font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body-on-dark); margin: 12px 0 0;">Per 90-day extension at immigration. Chat with us for a full cost breakdown including school fees and our service fee.</p>
+          </div>
+        </div>
+      </section>
+
+      <section data-tab-panel="restrictions" hidden>
+        <h2 class="panel-h2">What you can &amp; can't do</h2>
+
+        <AccordionSection client:load title="Can you work on an ED visa?" defaultOpen={true}>
+          <p>No. The Education Visa does not permit employment of any kind in Thailand. If you want to work while in Thailand, you need a Non-Immigrant B visa and a work permit.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Can you leave Thailand?">
+          <p>Yes, but you need a <strong>re-entry permit</strong> before leaving to preserve your visa status. Without one, your visa is cancelled when you exit and you must apply again from scratch.</p>
+          <p>Single and multiple re-entry permits are available at Chiang Mai immigration before your departure.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Do you need 90-day reports?">
+          <p>Yes. If you remain in Thailand for more than 90 consecutive days, you must file a 90-day report. Most ED students need to do this at least once per school term.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="What happens if you stop attending school?">
+          <p>Your school is required to notify immigration if you stop attending. Immigration can then revoke your visa status. Consistent attendance is a legal requirement, not optional.</p>
+          <p>If your circumstances change — course cancelled, personal issues — contact us immediately so we can advise on the right path forward.</p>
+        </AccordionSection>
+
+        <CtaCallout
+          kicker="Ready to enrol?"
+          body="We'll match you with the right school in Chiang Mai and handle your visa from enrolment letter to immigration stamp."
+          linkText="Chat with us on WhatsApp"
+          linkHref="https://wa.me/66XXXXXXXXX"
+        />
+      </section>
+
+    </div>
+  </div>
+
+  <RelatedGuides guides={[
+    { label: 'DTV Visa (for remote workers)',  href: '/dtv-visa-chiang-mai/'      },
+    { label: 'Retirement Visa (O-A)',          href: '/retirement-visa-chiang-mai/' },
+    { label: 'Volunteer Visa (Non-O)',         href: '/volunteer-visa-chiang-mai/'  },
+    { label: 'Guardian Visa (O)',              href: '/guardian-visa-chiang-mai/'   },
+  ]} />
+
+  <FinalCtaBand
+    heading="Ready to study in Chiang Mai?"
+    subtext="Tell us your goals — Thai language, Muay Thai, university — and we'll get you enrolled and visa-approved."
+  />
+
+  <style>
+    .panel-h2 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-display-m); line-height: var(--lh-snug); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-2); }
+    .panel-intro { font-family: var(--font-body); font-size: 1.0625rem; line-height: var(--lh-body); color: var(--text-body); margin: 0 0 var(--space-6); max-width: 64ch; }
+  </style>
+</ServicePageLayout>

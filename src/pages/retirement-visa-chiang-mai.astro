@@ -1,0 +1,351 @@
+---
+import ServicePageLayout from '../layouts/ServicePageLayout.astro';
+import QuickFactsStrip from '../components/sections/QuickFactsStrip.astro';
+import BenefitGrid from '../components/sections/BenefitGrid.astro';
+import ExpertInsightCallout from '../components/sections/ExpertInsightCallout.astro';
+import CtaCallout from '../components/sections/CtaCallout.astro';
+import ProcessComparisonCards from '../components/sections/ProcessComparisonCards.astro';
+import RelatedGuides from '../components/sections/RelatedGuides.astro';
+import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+import TabBar from '../components/interactive/TabBar';
+import AccordionSection from '../components/interactive/AccordionSection';
+
+const TABS = [
+  { id: 'eligibility',  label: 'Eligibility'  },
+  { id: 'requirements', label: 'Requirements'  },
+  { id: 'process',      label: 'Process'       },
+  { id: 'benefits',     label: 'Benefits'      },
+  { id: 'restrictions', label: 'Restrictions'  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Retirement Visa Chiang Mai',
+  description: 'Thai retirement visa (Non-Immigrant O-A) application service for applicants over 50. Annual extensions, financial evidence, health insurance — handled end to end by Vera Visa in Chiang Mai.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Vera Visa Agency',
+    url: 'https://vera-visa.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Icon Park Hotel, 310 2F, Room 215',
+      addressLocality: 'Chiang Mai',
+      addressCountry: 'TH',
+    },
+  },
+  areaServed: { '@type': 'Country', name: 'Thailand' },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What are the financial requirements for the Thai retirement visa?',
+      acceptedAnswer: { '@type': 'Answer', text: 'You need either 800,000 THB deposited in a Thai bank account, a monthly income of at least 65,000 THB transferred from abroad, or a combination of income and savings that totals 800,000 THB. The bank deposit must be held for a set period before and after your application — we advise on the exact timing.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What age do you need to be for a retirement visa in Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'You must be 50 years of age or older to apply for the Thai retirement visa (Non-Immigrant O-A).' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you need health insurance for the Thai retirement visa?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Health insurance is required for the O-A retirement visa. Your policy must have minimum coverage of 40,000 THB for outpatient and 400,000 THB for inpatient treatment, from a Thai-approved insurer.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does the retirement visa last?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The Non-Immigrant O-A visa is valid for one year from the date of entry. It can be renewed annually at your local immigration office indefinitely, as long as you continue to meet the financial and health insurance requirements.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I work in Thailand on a retirement visa?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. The retirement visa does not permit any form of employment in Thailand. Working requires a separate work permit and a Non-Immigrant B visa.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need to do 90-day reports on a retirement visa?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. If you stay in Thailand continuously for more than 90 days, you must file a 90-day report with immigration. This can be done online, by post, or in person at your local immigration office. We handle this for all of our ongoing clients.' },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vera-visa.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Retirement Visa Chiang Mai', item: 'https://vera-visa.com/retirement-visa-chiang-mai/' },
+  ],
+};
+---
+
+<ServicePageLayout
+  title="Retirement Visa Chiang Mai — Requirements, Cost & Guide 2026 | Vera Visa"
+  description="At Vera Visa, we understand all Thai retirement visa requirements for 2026, ensuring you spend your time enjoying the mountains and cafes rather than stuck in paperwork."
+  canonicalUrl="https://vera-visa.com/retirement-visa-chiang-mai/"
+  ogTitle="Retirement Visa Chiang Mai 2026 — Requirements, Cost & Full Guide | Vera Visa"
+  ogDescription="Retire in Thailand legally. 800,000 THB in a Thai bank or 65,000 THB/month income. Annual renewals handled end to end by Vera Visa in Chiang Mai."
+  schema={[serviceSchema, faqSchema, breadcrumbSchema]}
+  eyebrow="O-A · Annual Renewable"
+  intro="The Thai retirement visa lets you live in Chiang Mai year-round — renewed annually by our team, so you spend your time at the cafes and mountains, not immigration offices."
+  ctaText="Check your eligibility on WhatsApp →"
+  statusRows={[
+    { label: 'Visa Type',    value: 'Non-Imm O-A' },
+    { label: 'Location',     value: 'Chiang Mai'   },
+    { label: 'Stay / Entry', value: '1 year'       },
+  ]}
+  statusState="approved"
+  statusLabel="Approved"
+>
+  <Fragment slot="headline">
+    Retire in Thailand. <span style="color: var(--signal);">Legally</span>, and without the paperwork.
+  </Fragment>
+
+  <QuickFactsStrip facts={[
+    { label: 'Visa Type',       value: 'Non-Imm O-A'        },
+    { label: 'Duration',        value: '1 year (renewable)'  },
+    { label: 'Minimum Age',     value: '50+'                 },
+    { label: 'Bank Deposit',    value: '800,000 THB'         },
+    { label: 'Monthly Income',  value: '65,000 THB'          },
+    { label: 'Health Insurance',value: 'Required'            },
+    { label: '90-Day Report',   value: 'Required'            },
+  ]} />
+
+  <BenefitGrid
+    eyebrow="Retirement Visa Benefits"
+    heading="Why retire in Chiang Mai on an O-A"
+    intro="Low cost of living, excellent healthcare, and a warm expat community — the O-A gets you here legally and keeps you here comfortably."
+    items={[
+      { title: 'Year-round legal stay',     body: 'One annual renewal keeps you in Thailand for the full year — no border runs, no tourist visa scrambles.' },
+      { title: 'Renewable indefinitely',    body: 'As long as you meet the financial and insurance requirements, you can renew year after year with no upper age limit.' },
+      { title: 'No income tax complexity',  body: 'Foreign pension and investment income remitted to Thailand in the year it is earned may be subject to Thai tax — we can refer you to a tax adviser for your specific situation.' },
+      { title: 'Access to Thai healthcare', body: 'Your mandatory health insurance covers both private hospitals and the public system. Chiang Mai has excellent private hospital options used by expats.' },
+      { title: 'Multiple-entry option',     body: 'A re-entry permit lets you leave Thailand and return without losing your visa status — essential if you travel during the year.' },
+      { title: 'Simple annual process',     body: 'We handle the full renewal each year — financial evidence, insurance documentation, and the immigration office visit — so you don\'t have to.' },
+    ]}
+  />
+
+  <section class="section" style="background: var(--paper); padding-bottom: var(--space-5);">
+    <div class="container">
+      <h2 class="panel-h2">Learn More About the Thai Retirement Visa</h2>
+      <p class="panel-intro">Everything you need to know about eligibility, documents, the application process, and what you can do once you're here.</p>
+    </div>
+  </section>
+
+  <TabBar client:load tabs={TABS} defaultTab="eligibility" />
+
+  <div style="background: var(--paper); padding: var(--space-7) 0 var(--space-9);">
+    <div class="container">
+
+      <!-- ELIGIBILITY -->
+      <section data-tab-panel="eligibility">
+        <h2 class="panel-h2">Who qualifies for the retirement visa</h2>
+        <p class="panel-intro">The O-A has clear financial and age requirements. Most applicants qualify straightforwardly — the complexity is in presenting the evidence correctly.</p>
+
+        <AccordionSection client:load title="Age Requirement" defaultOpen={true}>
+          <p>You must be <strong>50 years of age or older</strong> at the time of application. There is no upper age limit.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Financial Requirements">
+          <p>You must meet one of the following three financial thresholds:</p>
+          <ul>
+            <li><strong>Bank deposit:</strong> 800,000 THB held in a Thai bank account for the required period before and after your application</li>
+            <li><strong>Monthly income:</strong> 65,000 THB per month transferred to Thailand from abroad (pension, Social Security, investment income, etc.)</li>
+            <li><strong>Combination:</strong> Monthly income plus Thai bank savings totalling 800,000 THB</li>
+          </ul>
+          <p>The timing of the bank deposit matters — immigration requires it to be in place for a set period before you apply and to remain after. We advise on the exact schedule for your situation.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Health Insurance Requirement">
+          <p>Health insurance is <strong>mandatory</strong> for the O-A visa. Your policy must meet Thai immigration minimums:</p>
+          <ul>
+            <li>Outpatient coverage: minimum 40,000 THB</li>
+            <li>Inpatient coverage: minimum 400,000 THB</li>
+            <li>Must be issued by a Thai-approved insurer or an overseas insurer on the approved list</li>
+          </ul>
+          <p>We can refer you to insurers used by our other clients if you don't already have a suitable policy.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Criminal Record">
+          <p>You must have no criminal record in Thailand or your home country. A criminal background check certificate from your home country is required as part of the application.</p>
+        </AccordionSection>
+
+        <ExpertInsightCallout body="The most common issue we see is the bank deposit timing — depositing 800,000 THB too close to the application date, or withdrawing below the threshold shortly after. We walk every client through the exact deposit schedule before they open the account." />
+      </section>
+
+      <!-- REQUIREMENTS -->
+      <section data-tab-panel="requirements" hidden>
+        <h2 class="panel-h2">Documents you'll need</h2>
+        <p class="panel-intro">We prepare, organise, and check every document before submission. Here's what goes into a typical O-A application.</p>
+
+        <AccordionSection client:load title="Identity & Travel Documents" defaultOpen={true}>
+          <ul>
+            <li>Passport valid for at least 18 months, with sufficient blank pages</li>
+            <li>Recent passport-style photographs (white background, taken within 6 months)</li>
+            <li>Completed Non-Immigrant O-A application form</li>
+            <li>Copy of your current visa or entry stamp</li>
+          </ul>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Financial Evidence">
+          <ul>
+            <li>Thai bank book and bank letter confirming the 800,000 THB deposit (or equivalent income evidence)</li>
+            <li>For income method: pension statements, Social Security letters, or investment income documentation translated into English</li>
+            <li>For combination method: both the bank letter and income documentation</li>
+          </ul>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Health Insurance Certificate">
+          <ul>
+            <li>Certificate of insurance from a Thai-approved insurer confirming coverage meets the O-A minimums</li>
+            <li>Policy must cover the full period of your visa — we check this before submission</li>
+          </ul>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Criminal Background Check">
+          <ul>
+            <li>Police clearance certificate from your home country (or country of residence for the past 3 years)</li>
+            <li>Must be recently issued — immigration typically requires it within 3–6 months</li>
+            <li>May require notarisation and/or apostille depending on your country — we advise on this</li>
+          </ul>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Medical Certificate">
+          <ul>
+            <li>Certificate from a licensed physician stating you are free from prohibited diseases</li>
+            <li>Must be issued within 3 months of application</li>
+            <li>Can be obtained from most private hospitals in Chiang Mai</li>
+          </ul>
+        </AccordionSection>
+
+        <ExpertInsightCallout body="Overseas documents — police checks, pension letters, apostilles — take the longest to gather. We give every client a timeline at the start so nothing holds up the final submission." />
+      </section>
+
+      <!-- PROCESS -->
+      <section data-tab-panel="process" hidden>
+        <ProcessComparisonCards
+          heading="How to apply"
+          intro="Two routes depending on where you're starting from. We manage both."
+          routeA={{
+            label: 'Route A',
+            title: 'Apply at a Thai Embassy',
+            steps: [
+              'Open a Thai bank account and deposit 800,000 THB (or prepare income evidence)',
+              'Gather all documents including health insurance and police clearance',
+              'Apply for the O-A visa at a Thai embassy in your home country',
+              'Enter Thailand and begin your one-year stay',
+            ],
+          }}
+          routeB={{
+            label: 'Route B',
+            title: 'Convert In-Country',
+            steps: [
+              'Enter Thailand on a tourist visa or exemption with all documents prepared',
+              'Open a Thai bank account and deposit funds',
+              'Convert to a Non-Immigrant O at Chiang Mai immigration',
+              'Extend to a full year O-A at the next immigration visit',
+            ],
+          }}
+          stats={[
+            { label: 'Processing Time', value: '1–4 weeks', note: 'at embassy' },
+            { label: 'Annual Renewal',  value: '30 days before expiry' },
+          ]}
+        />
+        <ExpertInsightCallout body="Most of our Chiang Mai retirement clients use Route B — they arrive on a tourist entry, set up the bank account, and we handle the in-country conversion. It avoids a trip back home and gets you settled faster." />
+      </section>
+
+      <!-- BENEFITS -->
+      <section data-tab-panel="benefits" hidden>
+        <h2 class="panel-h2">Why the O-A for Chiang Mai</h2>
+        <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-8); align-items: start; margin-top: var(--space-6);">
+          <ul style="margin: 0; padding-left: var(--space-5); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.8; color: var(--text-body); max-width: 60ch;">
+            <li>Year-round legal residence — no tourist visa runs</li>
+            <li>Renewable annually with no upper age limit</li>
+            <li>Re-entry permits let you travel freely without losing your status</li>
+            <li>Access to excellent private hospitals in Chiang Mai</li>
+            <li>Cost of living significantly lower than Western countries</li>
+            <li>Large, established expat community in Chiang Mai</li>
+          </ul>
+          <div style="background: var(--ink); color: var(--paper); border-radius: var(--radius-card); padding: var(--space-6);">
+            <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal); margin: 0 0 12px;">Annual Renewal Fee</p>
+            <p style="font-family: var(--font-body); font-size: var(--text-display-m); font-weight: 600; line-height: 1; margin: 0;">1,900 THB</p>
+            <p style="font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body-on-dark); margin: 12px 0 0;">Official immigration fee per renewal. Chat with us on WhatsApp for a full breakdown including our service fee.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESTRICTIONS -->
+      <section data-tab-panel="restrictions" hidden>
+        <h2 class="panel-h2">What you can &amp; can't do</h2>
+
+        <AccordionSection client:load title="Can you work in Thailand?" defaultOpen={true}>
+          <p>No. The retirement visa does not permit employment of any kind in Thailand — paid or voluntary, part-time or casual. Working requires a separate Non-Immigrant B visa and a work permit issued by the Department of Employment.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Do you need to do 90-day reports?">
+          <p>Yes. If you stay in Thailand for more than 90 consecutive days without leaving, you must file a 90-day report with your local immigration office. This can be done online, by post, or in person.</p>
+          <p>We handle 90-day reports for all of our ongoing clients as part of our annual service.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Can you leave and re-enter Thailand?">
+          <p>Yes, but you need a <strong>re-entry permit</strong> before you leave — either a single or multiple re-entry permit. If you leave without one, your visa status is cancelled and you must reapply from scratch.</p>
+          <p>Re-entry permits are obtained at Chiang Mai immigration before departure. We remind all clients and can accompany you if needed.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Can you drive in Thailand?">
+          <p>Yes. You can obtain a Thai driving licence on a retirement visa. You'll need your home country licence, a medical certificate, and proof of address. Chiang Mai's Land Transport Office handles this straightforwardly for most nationalities.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Can you own property?">
+          <p>Foreigners cannot own land in Thailand freehold, but you can own a condominium unit outright (in a building where foreign ownership does not exceed 49%). Long-term land leases of up to 30 years are another common option.</p>
+        </AccordionSection>
+
+        <CtaCallout
+          kicker="Ready to retire in Chiang Mai?"
+          body="A free WhatsApp consultation confirms which financial route suits your situation and how soon you can apply."
+          linkText="Chat with us now"
+          linkHref="https://wa.me/66XXXXXXXXX"
+        />
+      </section>
+
+    </div>
+  </div>
+
+  <RelatedGuides guides={[
+    { label: 'Retirement Visa for Americans',    href: '/retirement-visa-americans/'    },
+    { label: 'Retirement Visa for Australians',  href: '/retirement-visa-australians/'  },
+    { label: 'DTV Visa (for remote workers)',     href: '/dtv-visa-chiang-mai/'          },
+    { label: 'Marriage Visa (O)',                 href: '/marriage-visa-chiang-mai/'     },
+    { label: 'Guardian Visa (O)',                 href: '/guardian-visa-chiang-mai/'     },
+  ]} />
+
+  <FinalCtaBand
+    heading="Ready to retire in Chiang Mai?"
+    subtext="A free consultation confirms your financial route and gets the process started — usually resolved in one WhatsApp chat."
+  />
+
+  <style>
+    .panel-h2 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: var(--text-display-m);
+      line-height: var(--lh-snug);
+      letter-spacing: var(--ls-display);
+      color: var(--ink);
+      margin: 0 0 var(--space-2);
+    }
+    .panel-intro {
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      line-height: var(--lh-body);
+      color: var(--text-body);
+      margin: 0 0 var(--space-6);
+      max-width: 64ch;
+    }
+  </style>
+</ServicePageLayout>

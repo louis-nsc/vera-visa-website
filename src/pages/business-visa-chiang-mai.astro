@@ -1,0 +1,259 @@
+---
+import ServicePageLayout from '../layouts/ServicePageLayout.astro';
+import QuickFactsStrip from '../components/sections/QuickFactsStrip.astro';
+import BenefitGrid from '../components/sections/BenefitGrid.astro';
+import ExpertInsightCallout from '../components/sections/ExpertInsightCallout.astro';
+import CtaCallout from '../components/sections/CtaCallout.astro';
+import ProcessComparisonCards from '../components/sections/ProcessComparisonCards.astro';
+import RelatedGuides from '../components/sections/RelatedGuides.astro';
+import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+import TabBar from '../components/interactive/TabBar';
+import AccordionSection from '../components/interactive/AccordionSection';
+
+const TABS = [
+  { id: 'eligibility',  label: 'Eligibility'  },
+  { id: 'requirements', label: 'Requirements'  },
+  { id: 'process',      label: 'Process'       },
+  { id: 'benefits',     label: 'Benefits'      },
+  { id: 'restrictions', label: 'Restrictions'  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Business Visa & Work Permit Chiang Mai',
+  description: 'Thai Business Visa (Non-Immigrant B) and work permit applications for professionals and business owners in Chiang Mai. Handled end to end by Vera Visa.',
+  provider: { '@type': 'LocalBusiness', name: 'Vera Visa Agency', url: 'https://vera-visa.com' },
+  areaServed: { '@type': 'Country', name: 'Thailand' },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Do I need a work permit in Thailand?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Any foreigner working in Thailand — employed by a Thai company, self-employed, or running a business — must hold a valid work permit issued by the Department of Employment. Working without one is a criminal offence in Thailand.' } },
+    { '@type': 'Question', name: 'What is the Non-Immigrant B visa?', acceptedAnswer: { '@type': 'Answer', text: 'The Non-Immigrant B visa is Thailand\'s business visa, required for foreigners who intend to work, conduct business meetings, or establish a business in Thailand. It is the prerequisite for obtaining a Thai work permit.' } },
+    { '@type': 'Question', name: 'How long does a Thai work permit take?', acceptedAnswer: { '@type': 'Answer', text: 'Work permits are typically issued within 7–30 working days once all documents are in order. The timeline depends on the Ministry of Labour office and the completeness of your application. We track every step and follow up proactively.' } },
+    { '@type': 'Question', name: 'Can I own a business in Thailand as a foreigner?', acceptedAnswer: { '@type': 'Answer', text: 'Foreigners can own shares in a Thai company but face restrictions on majority ownership in many sectors under the Foreign Business Act. A Thai Limited Company with the correct structure is the most common vehicle. We can refer you to a qualified Thai business lawyer for company formation.' } },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vera-visa.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Business Visa & Work Permit Chiang Mai', item: 'https://vera-visa.com/business-visa-chiang-mai/' },
+  ],
+};
+---
+
+<ServicePageLayout
+  title="Business Visa & Work Permit Chiang Mai — Requirements 2026 | Vera Visa"
+  description="Working or running a business in Chiang Mai? The Non-Immigrant B visa and Thai work permit are both required. Vera Visa handles applications and renewals end to end."
+  canonicalUrl="https://vera-visa.com/business-visa-chiang-mai/"
+  ogTitle="Business Visa & Work Permit Chiang Mai 2026 — Requirements | Vera Visa"
+  ogDescription="Work legally in Chiang Mai. Non-Immigrant B visa and Thai work permit handled end to end by Vera Visa — applications, renewals, and compliance."
+  schema={[serviceSchema, faqSchema, breadcrumbSchema]}
+  eyebrow="Non-Imm B · Work Permit"
+  intro="Working or running a business in Chiang Mai requires both a Non-Immigrant B visa and a Thai work permit. We handle both — application, approval, and annual renewal."
+  ctaText="Discuss your situation on WhatsApp →"
+  statusRows={[
+    { label: 'Visa Type',   value: 'Non-Imm B'   },
+    { label: 'Location',    value: 'Chiang Mai'   },
+    { label: 'Work Permit', value: 'Required'     },
+  ]}
+  statusState="approved"
+  statusLabel="Approved"
+>
+  <Fragment slot="headline">
+    Work in Thailand. <span style="color: var(--signal);">Legally</span>, from day one.
+  </Fragment>
+
+  <QuickFactsStrip facts={[
+    { label: 'Visa Type',       value: 'Non-Imm B'           },
+    { label: 'Duration',        value: '1 year (renewable)'  },
+    { label: 'Work Permit',     value: 'Mandatory'           },
+    { label: 'Processing',      value: '7–30 working days'   },
+    { label: 'Employer Req.',   value: 'Sponsorship needed'  },
+    { label: '90-Day Report',   value: 'Required'            },
+    { label: 'Annual Renewal',  value: 'Yes'                 },
+  ]} />
+
+  <BenefitGrid
+    eyebrow="Business Visa Benefits"
+    heading="Legal work authorisation in Chiang Mai"
+    intro="The Non-Immigrant B and work permit combination is the correct legal foundation for any foreigner working or running a business in Thailand."
+    items={[
+      { title: 'Full legal work rights',    body: 'The work permit specifies your role and employer — giving you full legal authorisation to work in Thailand without risk of deportation.' },
+      { title: 'Annual renewable status',   body: 'Both the visa and work permit renew annually. Our team handles the paperwork so renewals don\'t disrupt your business.' },
+      { title: 'Business credibility',      body: 'Legal work status lets you open corporate bank accounts, sign contracts, and engage with Thai government bodies as an authorised representative.' },
+      { title: 'Correct compliance base',   body: 'The Non-B is the correct visa for obtaining a work permit — other visa types (tourist, retirement, DTV) do not support local employment.' },
+      { title: 'Family coverage',           body: 'Dependants of Non-B holders can apply for Non-Immigrant O visas, allowing the whole family to live legally in Thailand.' },
+      { title: 'Path to long-term status',  body: 'Years of legal work history in Thailand, backed by correct tax filings, is the strongest basis for a long-term residence application in future.' },
+    ]}
+  />
+
+  <section class="section" style="background: var(--paper); padding-bottom: var(--space-5);">
+    <div class="container">
+      <h2 class="panel-h2">Learn More About the Business Visa & Work Permit</h2>
+      <p class="panel-intro">Eligibility, required documents, the application process, and what your legal obligations are once you're working in Thailand.</p>
+    </div>
+  </section>
+
+  <TabBar client:load tabs={TABS} defaultTab="eligibility" />
+
+  <div style="background: var(--paper); padding: var(--space-7) 0 var(--space-9);">
+    <div class="container">
+
+      <section data-tab-panel="eligibility">
+        <h2 class="panel-h2">Who needs the Non-Immigrant B and work permit</h2>
+        <p class="panel-intro">Any foreigner working in Thailand — in any capacity — requires a work permit. No exceptions.</p>
+
+        <AccordionSection client:load title="Employed by a Thai Company" defaultOpen={true}>
+          <p>If you are employed by a registered Thai company, your employer sponsors both your Non-Immigrant B visa and your work permit application. The company must meet Thai Labour Department requirements — including a minimum ratio of Thai employees per foreign worker (currently 4:1 in most sectors).</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Running Your Own Business">
+          <p>Business owners who actively manage or work in their Thai company need a work permit even if they are a shareholder. The work permit covers your specific role — director, manager, or technical specialist — as registered in the company documents.</p>
+          <p>We can refer you to a qualified Thai business lawyer for company formation if you haven't set up your Thai entity yet.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Attending Business Meetings">
+          <p>Short-term business visits — meetings, negotiations, conferences — can often be conducted on a Non-Immigrant B visa without a work permit, as long as no actual work or employment activities occur in Thailand. We advise on the distinction based on your activities.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Exemptions">
+          <p>Some activities are exempt from the work permit requirement — government representatives, certain diplomatic staff, and specific BOI-approved positions. If you think you may qualify for an exemption, we'll review your situation and confirm.</p>
+        </AccordionSection>
+
+        <ExpertInsightCallout body="Working without a work permit in Thailand is a criminal offence — not just a visa violation. The fine is relatively modest, but the real risk is deportation and a re-entry ban. We have never had a client face this, because we get the paperwork right before they start working." />
+      </section>
+
+      <section data-tab-panel="requirements" hidden>
+        <h2 class="panel-h2">Documents you'll need</h2>
+        <p class="panel-intro">Two parallel applications — visa and work permit — each with their own document set. We manage both simultaneously.</p>
+
+        <AccordionSection client:load title="Non-Immigrant B Visa Documents" defaultOpen={true}>
+          <ul>
+            <li>Passport valid for at least 18 months with blank visa pages</li>
+            <li>Recent passport-style photographs</li>
+            <li>Completed Non-Immigrant B application form</li>
+            <li>Employment contract or letter of appointment from your Thai employer</li>
+            <li>Company registration documents (DBD certificate, VAT registration)</li>
+            <li>Company shareholder list and latest annual filing</li>
+          </ul>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Work Permit Documents">
+          <ul>
+            <li>All Non-Immigrant B documents above</li>
+            <li>Educational certificates and professional qualifications</li>
+            <li>CV / résumé detailing relevant work experience</li>
+            <li>Map and photograph of the workplace</li>
+            <li>Company affirmation letter detailing the foreigner's specific role</li>
+            <li>List of Thai employees with copies of their IDs and social security cards</li>
+          </ul>
+        </AccordionSection>
+
+        <ExpertInsightCallout body="The Thai employee ratio requirement (4 Thai employees per 1 foreigner) catches many small business owners off guard. We check compliance before submitting — a non-compliant company means a rejected work permit." />
+      </section>
+
+      <section data-tab-panel="process" hidden>
+        <ProcessComparisonCards
+          heading="How the process works"
+          intro="The visa and work permit are separate applications that run in sequence. We manage both."
+          routeA={{
+            label: 'Step 1',
+            title: 'Non-Immigrant B Visa',
+            steps: [
+              'Obtain a job offer or company appointment letter',
+              'Apply at a Thai embassy in your country (or convert in-country)',
+              'Enter Thailand on the Non-Immigrant B',
+              'Valid for 90 days initially — enough time to complete the work permit',
+            ],
+          }}
+          routeB={{
+            label: 'Step 2',
+            title: 'Work Permit Application',
+            steps: [
+              'Submit work permit application to the Ministry of Labour',
+              'Ministry reviews company compliance (employee ratio, tax status)',
+              'Work permit issued within 7–30 working days',
+              'Visa then extended annually in line with the work permit',
+            ],
+          }}
+          stats={[
+            { label: 'Work Permit Processing', value: '7–30 days' },
+            { label: 'Work Permit Fee', value: '3,000 THB', note: 'per year' },
+          ]}
+        />
+        <ExpertInsightCallout body="The most critical window is the first 90 days on your Non-B. The work permit must be in hand before you start any work activities. We prioritise the work permit submission on day one of your arrival so there's no grey period." />
+      </section>
+
+      <section data-tab-panel="benefits" hidden>
+        <h2 class="panel-h2">Why getting this right matters</h2>
+        <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-8); align-items: start; margin-top: var(--space-6);">
+          <ul style="margin: 0; padding-left: var(--space-5); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.8; color: var(--text-body); max-width: 60ch;">
+            <li>Full legal work authorisation — no grey-area risk</li>
+            <li>Annual renewal handled by our team with no gaps in status</li>
+            <li>Correct tax and social security compliance alongside visa</li>
+            <li>Covers your specific role — easy to update if your responsibilities change</li>
+            <li>Foundation for future long-term residence applications</li>
+          </ul>
+          <div style="background: var(--ink); color: var(--paper); border-radius: var(--radius-card); padding: var(--space-6);">
+            <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal); margin: 0 0 12px;">Work Permit Fee</p>
+            <p style="font-family: var(--font-body); font-size: var(--text-display-m); font-weight: 600; line-height: 1; margin: 0;">3,000 THB</p>
+            <p style="font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body-on-dark); margin: 12px 0 0;">Official government fee per year. Chat with us for a full breakdown including our service fee.</p>
+          </div>
+        </div>
+      </section>
+
+      <section data-tab-panel="restrictions" hidden>
+        <h2 class="panel-h2">Compliance obligations</h2>
+
+        <AccordionSection client:load title="Can you change jobs?" defaultOpen={true}>
+          <p>Your work permit is tied to a specific employer and role. If you change employers or your role changes significantly, you must update your work permit before starting the new role. Working outside your permitted role is a violation.</p>
+          <p>We handle work permit amendments — contact us as soon as a job or role change is confirmed.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Do you need to do 90-day reports?">
+          <p>Yes. If you remain in Thailand for more than 90 consecutive days without exiting, you must file a 90-day report. We handle this for all ongoing clients.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Can you leave Thailand?">
+          <p>Yes, with a re-entry permit. Leaving without one cancels your visa and work permit, requiring you to reapply from scratch. Always obtain a re-entry permit before any international trip.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Tax obligations">
+          <p>Work permit holders are tax residents of Thailand for years in which they are present for 180+ days. Thai-sourced income is subject to Thai personal income tax. We can refer you to a qualified Thai accountant for tax filing.</p>
+        </AccordionSection>
+
+        <CtaCallout
+          kicker="Ready to work legally in Thailand?"
+          body="Every situation is different — tell us your employer, role, and company structure and we'll map out the exact process."
+          linkText="Chat with us on WhatsApp"
+          linkHref="https://wa.me/66XXXXXXXXX"
+        />
+      </section>
+
+    </div>
+  </div>
+
+  <RelatedGuides guides={[
+    { label: 'DTV Visa (for remote workers)',  href: '/dtv-visa-chiang-mai/'        },
+    { label: 'Retirement Visa (O-A)',          href: '/retirement-visa-chiang-mai/' },
+    { label: 'Marriage Visa (O)',              href: '/marriage-visa-chiang-mai/'   },
+    { label: 'Visa Agent Chiang Mai',          href: '/visa-agent-chiang-mai/'      },
+  ]} />
+
+  <FinalCtaBand
+    heading="Ready to work legally in Chiang Mai?"
+    subtext="A free consultation covers your visa type, work permit eligibility, and what your company needs to be compliant."
+  />
+
+  <style>
+    .panel-h2 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-display-m); line-height: var(--lh-snug); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-2); }
+    .panel-intro { font-family: var(--font-body); font-size: 1.0625rem; line-height: var(--lh-body); color: var(--text-body); margin: 0 0 var(--space-6); max-width: 64ch; }
+  </style>
+</ServicePageLayout>

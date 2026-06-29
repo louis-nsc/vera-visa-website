@@ -1,0 +1,270 @@
+---
+import ServicePageLayout from '../layouts/ServicePageLayout.astro';
+import QuickFactsStrip from '../components/sections/QuickFactsStrip.astro';
+import BenefitGrid from '../components/sections/BenefitGrid.astro';
+import ExpertInsightCallout from '../components/sections/ExpertInsightCallout.astro';
+import CtaCallout from '../components/sections/CtaCallout.astro';
+import ProcessComparisonCards from '../components/sections/ProcessComparisonCards.astro';
+import RelatedGuides from '../components/sections/RelatedGuides.astro';
+import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+import TabBar from '../components/interactive/TabBar';
+import AccordionSection from '../components/interactive/AccordionSection';
+
+const TABS = [
+  { id: 'eligibility',  label: 'Eligibility'  },
+  { id: 'requirements', label: 'Requirements'  },
+  { id: 'process',      label: 'Process'       },
+  { id: 'benefits',     label: 'Benefits'      },
+  { id: 'restrictions', label: 'Restrictions'  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Marriage Visa Chiang Mai',
+  description: 'Thai marriage visa (Non-Immigrant O) for spouses of Thai nationals. Annual extensions, financial evidence, 90-day reports — handled end to end by Vera Visa in Chiang Mai.',
+  provider: { '@type': 'LocalBusiness', name: 'Vera Visa Agency', url: 'https://vera-visa.com' },
+  areaServed: { '@type': 'Country', name: 'Thailand' },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What are the financial requirements for the marriage visa in Thailand?', acceptedAnswer: { '@type': 'Answer', text: 'You need either 400,000 THB in a Thai bank account, a monthly income of 40,000 THB transferred from abroad, or a combination of savings and income totalling 400,000 THB. The bank deposit must be held for a set period before your application.' } },
+    { '@type': 'Question', name: 'Do you need to be legally married for the Thai marriage visa?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. You must be legally married to a Thai national — registered under Thai law. The marriage must be recorded at a district office (amphoe) in Thailand or your marriage certificate must be legalised and translated if married abroad.' } },
+    { '@type': 'Question', name: 'Can I work in Thailand on a marriage visa?', acceptedAnswer: { '@type': 'Answer', text: 'Not automatically. The marriage visa (Non-Immigrant O) does not include work authorisation. To work legally in Thailand you need a separate work permit, which requires employer sponsorship.' } },
+    { '@type': 'Question', name: 'How long is the marriage visa in Thailand?', acceptedAnswer: { '@type': 'Answer', text: 'The marriage visa is extended annually at your local immigration office. There is no fixed end date — as long as your marriage is valid and you meet the financial requirements, you can renew indefinitely.' } },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vera-visa.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Marriage Visa Chiang Mai', item: 'https://vera-visa.com/marriage-visa-chiang-mai/' },
+  ],
+};
+---
+
+<ServicePageLayout
+  title="Marriage Visa Chiang Mai — Requirements, Cost & Guide 2026 | Vera Visa"
+  description="Married to a Thai national? The marriage visa lets you live in Chiang Mai year-round. Vera Visa handles the application, annual renewals, and 90-day reports end to end."
+  canonicalUrl="https://vera-visa.com/marriage-visa-chiang-mai/"
+  ogTitle="Marriage Visa Chiang Mai 2026 — Requirements & Full Guide | Vera Visa"
+  ogDescription="Spouse of a Thai national? Live in Chiang Mai year-round on the Non-Immigrant O marriage visa. Annual renewals handled by Vera Visa."
+  schema={[serviceSchema, faqSchema, breadcrumbSchema]}
+  eyebrow="Non-Imm O · Marriage"
+  intro="The marriage visa lets spouses of Thai nationals live in Chiang Mai year-round — renewed each year by our team, with 90-day reports handled as standard."
+  ctaText="Check your eligibility on WhatsApp →"
+  statusRows={[
+    { label: 'Visa Type',    value: 'Non-Imm O'   },
+    { label: 'Basis',        value: 'Marriage'     },
+    { label: 'Stay',         value: '1 year'       },
+  ]}
+  statusState="approved"
+  statusLabel="Approved"
+>
+  <Fragment slot="headline">
+    Live where your <span style="color: var(--signal);">family</span> is. Legally, long-term.
+  </Fragment>
+
+  <QuickFactsStrip facts={[
+    { label: 'Visa Type',      value: 'Non-Imm O'           },
+    { label: 'Duration',       value: '1 year (renewable)'  },
+    { label: 'Bank Deposit',   value: '400,000 THB'         },
+    { label: 'Monthly Income', value: '40,000 THB'          },
+    { label: 'Basis',          value: 'Legal marriage'      },
+    { label: 'Work Allowed',   value: 'Permit required'     },
+    { label: '90-Day Report',  value: 'Required'            },
+  ]} />
+
+  <BenefitGrid
+    eyebrow="Marriage Visa Benefits"
+    heading="Legal long-term stay with your Thai spouse"
+    intro="The Non-Immigrant O marriage visa is the most straightforward long-stay option for spouses of Thai nationals."
+    items={[
+      { title: 'Year-round legal residence', body: 'Live with your spouse in Chiang Mai without tourist visa limitations or border runs.' },
+      { title: 'Lower financial threshold',  body: '400,000 THB in a Thai bank or 40,000 THB/month income — lower requirements than the retirement visa.' },
+      { title: 'Renewable indefinitely',     body: 'Annual renewals with no end date, as long as your marriage is intact and you meet the financial threshold.' },
+      { title: 'Work permit eligible',       body: 'The O visa is the correct visa type to then obtain a Thai work permit if you find local employment.' },
+      { title: 'Travel flexibility',         body: 'A re-entry permit lets you leave and return to Thailand without losing your visa status.' },
+      { title: 'Family stability',           body: 'Settling your long-term legal status removes uncertainty from the relationship and enables proper life planning in Thailand.' },
+    ]}
+  />
+
+  <section class="section" style="background: var(--paper); padding-bottom: var(--space-5);">
+    <div class="container">
+      <h2 class="panel-h2">Learn More About the Marriage Visa</h2>
+      <p class="panel-intro">Eligibility, documents, the application process, and what you can and can't do on the Non-Immigrant O.</p>
+    </div>
+  </section>
+
+  <TabBar client:load tabs={TABS} defaultTab="eligibility" />
+
+  <div style="background: var(--paper); padding: var(--space-7) 0 var(--space-9);">
+    <div class="container">
+
+      <section data-tab-panel="eligibility">
+        <h2 class="panel-h2">Who qualifies for the marriage visa</h2>
+        <p class="panel-intro">Two requirements: a legal marriage to a Thai national, and meeting the financial threshold.</p>
+
+        <AccordionSection client:load title="Legal Marriage to a Thai National" defaultOpen={true}>
+          <p>You must be legally married to a Thai national — the marriage must be registered at a district office (amphoe) in Thailand, or if married abroad, your marriage certificate must be legalised and translated into Thai.</p>
+          <p>Common law relationships and long-term partnerships without legal registration do not qualify for this visa category.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Financial Requirements">
+          <p>One of the following three methods:</p>
+          <ul>
+            <li><strong>Bank deposit:</strong> 400,000 THB in a Thai bank, held for the required period before and after your application</li>
+            <li><strong>Monthly income:</strong> 40,000 THB per month transferred to a Thai account from abroad</li>
+            <li><strong>Combination:</strong> Monthly income plus Thai bank savings totalling 400,000 THB</li>
+          </ul>
+          <p>The deposit timing is strictly enforced — we advise every client on the correct schedule before they fund the account.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Applying From Inside Thailand">
+          <p>If you are already in Thailand on a tourist visa or exemption, you can apply for the Non-Immigrant O at Chiang Mai immigration. This is the most common route for our clients who are already living with their spouse here.</p>
+        </AccordionSection>
+
+        <ExpertInsightCallout body="Bank deposit timing is the most common reason marriage visa applications are delayed or rejected. The 400,000 THB must be in the account for a set number of days before you apply — we advise every client on the exact schedule." />
+      </section>
+
+      <section data-tab-panel="requirements" hidden>
+        <h2 class="panel-h2">Documents you'll need</h2>
+        <p class="panel-intro">Both you and your Thai spouse provide documentation. We prepare and check everything before submission.</p>
+
+        <AccordionSection client:load title="Your Documents" defaultOpen={true}>
+          <ul>
+            <li>Passport valid for at least 18 months with blank visa pages</li>
+            <li>Recent passport-style photographs</li>
+            <li>Completed Non-Immigrant O application form</li>
+            <li>Proof of current visa or entry stamp</li>
+            <li>Thai bank book and bank letter confirming the 400,000 THB deposit (or income evidence)</li>
+          </ul>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Marriage Documentation">
+          <ul>
+            <li>Official Thai marriage certificate (Kor Ror 3) from the district office</li>
+            <li>If married abroad: original marriage certificate, legalised with apostille and translated into Thai by a certified translator</li>
+          </ul>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Thai Spouse Documents">
+          <ul>
+            <li>Thai national ID card (front and back)</li>
+            <li>Thai household registration book (tabien baan) — ideally showing the shared address</li>
+            <li>Spouse's house registration certificate</li>
+          </ul>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Address Documentation">
+          <ul>
+            <li>Proof of your address in Chiang Mai — lease agreement or TM30 house registration</li>
+            <li>Your landlord must file a TM30 with immigration when you move in (we handle this reminder)</li>
+          </ul>
+        </AccordionSection>
+
+        <ExpertInsightCallout body="Foreign marriage certificates need legalisation and certified Thai translation — a process that takes 2–4 weeks. We flag this at the start so it doesn't delay your application at the end." />
+      </section>
+
+      <section data-tab-panel="process" hidden>
+        <ProcessComparisonCards
+          heading="How to apply"
+          intro="Most clients apply in-country at Chiang Mai immigration. Embassy applications are also available."
+          routeA={{
+            label: 'Route A',
+            title: 'In-Country at Chiang Mai Immigration',
+            steps: [
+              'Open a Thai bank account and deposit 400,000 THB (or prepare income evidence)',
+              'Gather all documents including marriage certificate and spouse ID',
+              'Submit at Chiang Mai immigration for Non-Immigrant O',
+              'Renew annually — we handle the full process each year',
+            ],
+          }}
+          routeB={{
+            label: 'Route B',
+            title: 'At a Thai Embassy Abroad',
+            steps: [
+              'Prepare all documents including legalised marriage certificate',
+              'Apply for the Non-Immigrant O at a Thai embassy in your country',
+              'Enter Thailand and register your address with immigration',
+              'Extend annually at Chiang Mai immigration',
+            ],
+          }}
+          stats={[
+            { label: 'Processing Time', value: '1–3 days', note: 'in-country' },
+            { label: 'Annual Renewal Fee', value: '1,900 THB' },
+          ]}
+        />
+      </section>
+
+      <section data-tab-panel="benefits" hidden>
+        <h2 class="panel-h2">Why the Non-Immigrant O for married couples</h2>
+        <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-8); align-items: start; margin-top: var(--space-6);">
+          <ul style="margin: 0; padding-left: var(--space-5); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.8; color: var(--text-body); max-width: 60ch;">
+            <li>Lower financial threshold than the retirement visa (400k vs 800k THB)</li>
+            <li>Renewable indefinitely — no time limit on how long you can stay</li>
+            <li>Correct visa type for obtaining a Thai work permit</li>
+            <li>Travel freely with a re-entry permit</li>
+            <li>90-day reports handled by our team as standard</li>
+          </ul>
+          <div style="background: var(--ink); color: var(--paper); border-radius: var(--radius-card); padding: var(--space-6);">
+            <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal); margin: 0 0 12px;">Annual Renewal Fee</p>
+            <p style="font-family: var(--font-body); font-size: var(--text-display-m); font-weight: 600; line-height: 1; margin: 0;">1,900 THB</p>
+            <p style="font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body-on-dark); margin: 12px 0 0;">Official immigration fee. Chat with us for a full breakdown including our service fee.</p>
+          </div>
+        </div>
+      </section>
+
+      <section data-tab-panel="restrictions" hidden>
+        <h2 class="panel-h2">What you can &amp; can't do</h2>
+
+        <AccordionSection client:load title="Can you work in Thailand?" defaultOpen={true}>
+          <p>Not without a work permit. The Non-Immigrant O marriage visa gives you the right to live in Thailand, but not to work. To work legally you need a work permit issued by the Department of Employment — which typically requires employer sponsorship. We can refer you to the right contacts if you need a work permit.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Do you need 90-day reports?">
+          <p>Yes. If you stay in Thailand for more than 90 consecutive days without exiting, you must file a 90-day report. We handle this for all ongoing clients.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Can you leave Thailand?">
+          <p>Yes, but you need a re-entry permit before you exit — either a single (1,000 THB) or multiple (3,800 THB) re-entry permit. Leaving without one cancels your visa and you must apply again from scratch.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="What if the marriage ends?">
+          <p>If your marriage to a Thai national ends — through divorce or the death of your spouse — you are no longer eligible for the marriage visa. You must switch to another visa category. Contact us as early as possible so we can plan the transition.</p>
+        </AccordionSection>
+
+        <CtaCallout
+          kicker="Ready to get started?"
+          body="A free WhatsApp consultation confirms your financial route and what documents you need to prepare."
+          linkText="Chat with us now"
+          linkHref="https://wa.me/66XXXXXXXXX"
+        />
+      </section>
+
+    </div>
+  </div>
+
+  <RelatedGuides guides={[
+    { label: 'Guardian Visa (O)',              href: '/guardian-visa-chiang-mai/'   },
+    { label: 'Retirement Visa (O-A)',          href: '/retirement-visa-chiang-mai/' },
+    { label: 'DTV Visa (for remote workers)',  href: '/dtv-visa-chiang-mai/'        },
+    { label: 'Business Visa & Work Permits',   href: '/business-visa-chiang-mai/'   },
+    { label: 'Marriage Visa Thailand Cost',    href: '/marriage-visa-thailand-cost/' },
+  ]} />
+
+  <FinalCtaBand
+    heading="Ready to settle in Chiang Mai with your family?"
+    subtext="A free consultation confirms your eligibility and gets your marriage visa process started."
+  />
+
+  <style>
+    .panel-h2 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-display-m); line-height: var(--lh-snug); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-2); }
+    .panel-intro { font-family: var(--font-body); font-size: 1.0625rem; line-height: var(--lh-body); color: var(--text-body); margin: 0 0 var(--space-6); max-width: 64ch; }
+  </style>
+</ServicePageLayout>

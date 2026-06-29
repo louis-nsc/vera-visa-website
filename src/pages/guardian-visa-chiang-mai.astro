@@ -1,0 +1,257 @@
+---
+import ServicePageLayout from '../layouts/ServicePageLayout.astro';
+import QuickFactsStrip from '../components/sections/QuickFactsStrip.astro';
+import BenefitGrid from '../components/sections/BenefitGrid.astro';
+import ExpertInsightCallout from '../components/sections/ExpertInsightCallout.astro';
+import CtaCallout from '../components/sections/CtaCallout.astro';
+import RelatedGuides from '../components/sections/RelatedGuides.astro';
+import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+import TabBar from '../components/interactive/TabBar';
+import AccordionSection from '../components/interactive/AccordionSection';
+
+const TABS = [
+  { id: 'eligibility',  label: 'Eligibility'  },
+  { id: 'requirements', label: 'Requirements'  },
+  { id: 'process',      label: 'Process'       },
+  { id: 'benefits',     label: 'Benefits'      },
+  { id: 'restrictions', label: 'Restrictions'  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Guardian Visa Chiang Mai',
+  description: 'Thai Guardian Visa (Non-Immigrant O) for parents and guardians of children enrolled in school in Chiang Mai. Annual extensions handled end to end by Vera Visa.',
+  provider: { '@type': 'LocalBusiness', name: 'Vera Visa Agency', url: 'https://vera-visa.com' },
+  areaServed: { '@type': 'Country', name: 'Thailand' },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What is the guardian visa in Thailand?', acceptedAnswer: { '@type': 'Answer', text: 'The guardian visa is a Non-Immigrant O visa issued to parents or legal guardians of a child who is enrolled at and attending an accredited school in Thailand. It allows the guardian to live in Thailand to care for and support the child during their studies.' } },
+    { '@type': 'Question', name: 'What are the financial requirements for the guardian visa?', acceptedAnswer: { '@type': 'Answer', text: 'You need 400,000 THB in a Thai bank account or 40,000 THB per month in income. The financial threshold is the same as the marriage visa.' } },
+    { '@type': 'Question', name: 'Can I work in Thailand on a guardian visa?', acceptedAnswer: { '@type': 'Answer', text: 'No. The Non-Immigrant O guardian visa does not include work authorisation. A separate work permit is required for any employment.' } },
+    { '@type': 'Question', name: 'What schools qualify for the guardian visa?', acceptedAnswer: { '@type': 'Answer', text: 'The child must be enrolled at an accredited school in Thailand — international schools, Thai government schools, and other MOE-registered schools all qualify. Chiang Mai has a number of excellent international schools popular with expat families.' } },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vera-visa.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Guardian Visa Chiang Mai', item: 'https://vera-visa.com/guardian-visa-chiang-mai/' },
+  ],
+};
+---
+
+<ServicePageLayout
+  title="Guardian Visa Chiang Mai — Requirements & Guide 2026 | Vera Visa"
+  description="Parent or guardian of a child in school in Chiang Mai? The guardian visa lets you stay legally for the school year. Vera Visa handles your Non-Immigrant O application end to end."
+  canonicalUrl="https://vera-visa.com/guardian-visa-chiang-mai/"
+  ogTitle="Guardian Visa Chiang Mai 2026 — Requirements & Full Guide | Vera Visa"
+  ogDescription="Live in Chiang Mai to support your child in school. Guardian visa (Non-Immigrant O) handled end to end by Vera Visa — application, renewals, and 90-day reports."
+  schema={[serviceSchema, faqSchema, breadcrumbSchema]}
+  eyebrow="Non-Imm O · Guardian"
+  intro="If your child is enrolled in school in Chiang Mai, the guardian visa lets you live here legally to support them — renewed each school year by our team."
+  ctaText="Check your eligibility on WhatsApp →"
+  statusRows={[
+    { label: 'Visa Type',    value: 'Non-Imm O'   },
+    { label: 'Basis',        value: 'Guardianship' },
+    { label: 'Stay',         value: '1 year'       },
+  ]}
+  statusState="approved"
+  statusLabel="Approved"
+>
+  <Fragment slot="headline">
+    Stay close to your <span style="color: var(--signal);">family</span>. Legally, for the school year.
+  </Fragment>
+
+  <QuickFactsStrip facts={[
+    { label: 'Visa Type',      value: 'Non-Imm O'          },
+    { label: 'Duration',       value: '1 year (renewable)' },
+    { label: 'Bank Deposit',   value: '400,000 THB'        },
+    { label: 'Monthly Income', value: '40,000 THB'         },
+    { label: 'Child Req.',     value: 'Enrolled in school' },
+    { label: 'Work Allowed',   value: 'Permit required'    },
+    { label: '90-Day Report',  value: 'Required'           },
+  ]} />
+
+  <BenefitGrid
+    eyebrow="Guardian Visa Benefits"
+    heading="Legal long-term stay for parents in Chiang Mai"
+    intro="The Non-Immigrant O guardian visa is designed for families — allowing parents to live legally in Chiang Mai while their child attends school."
+    items={[
+      { title: 'Year-round legal stay',      body: 'Live in Chiang Mai for the full school year without tourist visa restrictions or border runs.' },
+      { title: 'Renewable each school year', body: 'As long as your child remains enrolled and attending, the guardian visa renews annually.' },
+      { title: 'Family in one place',        body: 'Avoid the disruption of one parent living abroad — the whole family can be in Chiang Mai together.' },
+      { title: 'International school access',body: 'Chiang Mai has a strong range of international schools. The guardian visa supports families choosing long-term education here.' },
+      { title: 'Lower financial threshold',  body: 'At 400,000 THB, the same threshold as the marriage visa — accessible for most families supporting a child in school.' },
+      { title: 'Work permit eligible',       body: 'The Non-Immigrant O is the correct base visa for applying for a Thai work permit if local employment is needed.' },
+    ]}
+  />
+
+  <section class="section" style="background: var(--paper); padding-bottom: var(--space-5);">
+    <div class="container">
+      <h2 class="panel-h2">Learn More About the Guardian Visa</h2>
+      <p class="panel-intro">Eligibility, documents, the application process, and what the guardian visa does and doesn't allow.</p>
+    </div>
+  </section>
+
+  <TabBar client:load tabs={TABS} defaultTab="eligibility" />
+
+  <div style="background: var(--paper); padding: var(--space-7) 0 var(--space-9);">
+    <div class="container">
+
+      <section data-tab-panel="eligibility">
+        <h2 class="panel-h2">Who qualifies for the guardian visa</h2>
+        <p class="panel-intro">Two requirements: a child enrolled in an accredited Chiang Mai school, and meeting the financial threshold.</p>
+
+        <AccordionSection client:load title="Child's School Enrolment" defaultOpen={true}>
+          <p>Your child must be actively enrolled in and attending an accredited school in Thailand. Qualifying schools include:</p>
+          <ul>
+            <li>International schools (IGCSE, IB, American curriculum)</li>
+            <li>Thai government schools</li>
+            <li>MOE-registered private schools</li>
+          </ul>
+          <p>Chiang Mai has several excellent international schools that many of our client families use. We can discuss the options during your consultation.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Financial Requirements">
+          <p>One of the following:</p>
+          <ul>
+            <li><strong>Bank deposit:</strong> 400,000 THB in a Thai bank account for the required period</li>
+            <li><strong>Monthly income:</strong> 40,000 THB per month transferred from abroad</li>
+            <li><strong>Combination:</strong> Savings and income totalling 400,000 THB</li>
+          </ul>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Legal Guardianship">
+          <p>You must be the child's parent or legal guardian. Proof of the relationship — birth certificate, adoption papers, or legal guardianship documents — is required as part of the application.</p>
+        </AccordionSection>
+
+        <ExpertInsightCallout body="The guardian visa is renewed based on the child's continued enrolment. If your child changes schools, takes a gap term, or graduates, your visa status needs to be reviewed immediately — contact us and we'll advise on the right transition." />
+      </section>
+
+      <section data-tab-panel="requirements" hidden>
+        <h2 class="panel-h2">Documents you'll need</h2>
+        <p class="panel-intro">Documentation from both the parent and the child's school. We prepare and check everything before submission.</p>
+
+        <AccordionSection client:load title="Your Documents" defaultOpen={true}>
+          <ul>
+            <li>Passport valid for at least 18 months with blank visa pages</li>
+            <li>Recent passport-style photographs</li>
+            <li>Completed Non-Immigrant O application form</li>
+            <li>Thai bank book and bank letter confirming the 400,000 THB deposit (or income evidence)</li>
+            <li>Proof of address in Chiang Mai (lease agreement / TM30)</li>
+          </ul>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Child & School Documents">
+          <ul>
+            <li>Child's passport and any current visa</li>
+            <li>Enrolment letter from the school on official letterhead</li>
+            <li>School's MOE registration certificate (provided by the school)</li>
+            <li>Child's birth certificate (and certified translation if not in Thai or English)</li>
+          </ul>
+        </AccordionSection>
+
+        <ExpertInsightCallout body="Some international schools in Chiang Mai have handled guardian visa applications many times and know exactly what the enrolment letter needs to say. We can refer you to the right school contacts to make this straightforward." />
+      </section>
+
+      <section data-tab-panel="process" hidden>
+        <h2 class="panel-h2">How to apply</h2>
+        <p class="panel-intro">Most guardian visa applications are handled in-country at Chiang Mai immigration once the child is enrolled.</p>
+
+        <div style="background: var(--paper); border: var(--border); border-radius: var(--radius-card); padding: var(--space-6); margin-bottom: var(--space-5);">
+          <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal-deep); margin-bottom: 12px;">Typical Process</p>
+          <ol style="margin: 0; padding-left: var(--space-5); font-family: var(--font-body); font-size: var(--text-body-m); line-height: 1.7; color: var(--text-body);">
+            <li>Enrol your child in an accredited Chiang Mai school and obtain the enrolment letter</li>
+            <li>Open a Thai bank account and deposit 400,000 THB (or prepare income evidence)</li>
+            <li>Gather parent and child documents — we provide a full checklist</li>
+            <li>Submit at Chiang Mai immigration for the Non-Immigrant O</li>
+            <li>Renew annually at the start of each school year — we handle the full process</li>
+          </ol>
+        </div>
+
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <div style="background: var(--sand); border: var(--border); border-radius: var(--radius-card); padding: var(--space-4) var(--space-5);">
+            <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-45); margin-bottom: var(--space-2);">Processing Time</p>
+            <p style="font-family: var(--font-body); font-size: 1.375rem; font-weight: 600; color: var(--ink); margin: 0;">1–3 days <span style="font-size: var(--text-body-s); font-weight: 400; color: var(--ink-45);">in-country</span></p>
+          </div>
+          <div style="background: var(--sand); border: var(--border); border-radius: var(--radius-card); padding: var(--space-4) var(--space-5);">
+            <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-45); margin-bottom: var(--space-2);">Annual Renewal Fee</p>
+            <p style="font-family: var(--font-body); font-size: 1.375rem; font-weight: 600; color: var(--ink); margin: 0;">1,900 THB</p>
+          </div>
+        </div>
+
+        <ExpertInsightCallout body="Timing the guardian visa renewal to align with the school year start saves a lot of administrative back-and-forth. We schedule every client's renewal 6–8 weeks before their visa expires." />
+      </section>
+
+      <section data-tab-panel="benefits" hidden>
+        <h2 class="panel-h2">Why the guardian visa for Chiang Mai families</h2>
+        <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-8); align-items: start; margin-top: var(--space-6);">
+          <ul style="margin: 0; padding-left: var(--space-5); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.8; color: var(--text-body); max-width: 60ch;">
+            <li>Legal year-round residence — no tourist visa runs mid-school-year</li>
+            <li>Lower financial threshold than the retirement visa</li>
+            <li>Chiang Mai has excellent international schools at a fraction of Bangkok or Western costs</li>
+            <li>Safe, family-friendly city with a strong expat community</li>
+            <li>Renewable each school year as long as your child remains enrolled</li>
+          </ul>
+          <div style="background: var(--ink); color: var(--paper); border-radius: var(--radius-card); padding: var(--space-6);">
+            <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal); margin: 0 0 12px;">Annual Renewal Fee</p>
+            <p style="font-family: var(--font-body); font-size: var(--text-display-m); font-weight: 600; line-height: 1; margin: 0;">1,900 THB</p>
+            <p style="font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body-on-dark); margin: 12px 0 0;">Official immigration fee. Chat with us for our full service fee breakdown.</p>
+          </div>
+        </div>
+      </section>
+
+      <section data-tab-panel="restrictions" hidden>
+        <h2 class="panel-h2">What you can &amp; can't do</h2>
+
+        <AccordionSection client:load title="Can you work in Thailand?" defaultOpen={true}>
+          <p>Not without a work permit. The guardian visa gives you the right to live in Thailand, not to work. A work permit requires employer sponsorship and a separate application process.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Do you need 90-day reports?">
+          <p>Yes. If you remain in Thailand for more than 90 consecutive days without leaving, you must file a 90-day report with immigration. We handle this for all ongoing clients.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Can you leave Thailand?">
+          <p>Yes, with a re-entry permit obtained before departure. Without one, your visa status is cancelled when you exit. Single re-entry permits cost 1,000 THB; multiple re-entry permits cost 3,800 THB.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="What if your child finishes school or leaves Thailand?">
+          <p>If your child graduates, leaves Thailand, or changes to a non-qualifying program, your guardian visa basis no longer applies. You must transition to another visa category — contact us as soon as you know so we can plan the right move.</p>
+        </AccordionSection>
+
+        <CtaCallout
+          kicker="Moving to Chiang Mai with your family?"
+          body="We'll walk you through school options, financial requirements, and exactly what documents to prepare."
+          linkText="Chat with us on WhatsApp"
+          linkHref="https://wa.me/66XXXXXXXXX"
+        />
+      </section>
+
+    </div>
+  </div>
+
+  <RelatedGuides guides={[
+    { label: 'Marriage Visa (O)',             href: '/marriage-visa-chiang-mai/'   },
+    { label: 'Education Visa (ED)',           href: '/ed-visa-chiang-mai/'         },
+    { label: 'Retirement Visa (O-A)',         href: '/retirement-visa-chiang-mai/' },
+    { label: 'DTV Visa (for remote workers)', href: '/dtv-visa-chiang-mai/'        },
+  ]} />
+
+  <FinalCtaBand
+    heading="Bringing your family to Chiang Mai?"
+    subtext="A free consultation gets you clarity on school options, financial requirements, and the full guardian visa process."
+  />
+
+  <style>
+    .panel-h2 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-display-m); line-height: var(--lh-snug); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-2); }
+    .panel-intro { font-family: var(--font-body); font-size: 1.0625rem; line-height: var(--lh-body); color: var(--text-body); margin: 0 0 var(--space-6); max-width: 64ch; }
+  </style>
+</ServicePageLayout>

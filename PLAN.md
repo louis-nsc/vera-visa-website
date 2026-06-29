@@ -40,14 +40,14 @@
 
 ---
 
-## Phase 3 — DTV visa page (first service page)
+## Phase 3 — DTV visa page (first service page) ✅
 > Template is already built in the design system. Validates Phase 2 machinery.
 
-- [ ] `dtv-visa-chiang-mai.astro`: port `DTV Visa Chiang Mai/DtvVisa.dc.html` to Astro
-- [ ] Wire all Phase 2 components
-- [ ] SEO head: title, description, canonical, OG, Service schema, FAQPage schema (from accordion content), BreadcrumbList
+- [x] `dtv-visa-chiang-mai.astro`: port `DTV Visa Chiang Mai/DtvVisa.dc.html` to Astro
+- [x] Wire all Phase 2 components
+- [x] SEO head: title, description, canonical, OG, Service schema, FAQPage schema (from accordion content), BreadcrumbList
 - [ ] Verify at preview URL, check all tabs + accordions work
-- [ ] Commit: `feat: dtv visa page`
+- [x] Commit: `feat: dtv visa page`
 
 ---
 

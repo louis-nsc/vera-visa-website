@@ -1,0 +1,354 @@
+---
+import ServicePageLayout from '../layouts/ServicePageLayout.astro';
+import QuickFactsStrip from '../components/sections/QuickFactsStrip.astro';
+import BenefitGrid from '../components/sections/BenefitGrid.astro';
+import ExpertInsightCallout from '../components/sections/ExpertInsightCallout.astro';
+import CtaCallout from '../components/sections/CtaCallout.astro';
+import ProcessComparisonCards from '../components/sections/ProcessComparisonCards.astro';
+import RelatedGuides from '../components/sections/RelatedGuides.astro';
+import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+import TabBar from '../components/interactive/TabBar';
+import AccordionSection from '../components/interactive/AccordionSection';
+
+const TABS = [
+  { id: 'eligibility',  label: 'Eligibility'  },
+  { id: 'requirements', label: 'Requirements'  },
+  { id: 'process',      label: 'Process'       },
+  { id: 'benefits',     label: 'Benefits'      },
+  { id: 'restrictions', label: 'Restrictions'  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'DTV Visa Chiang Mai',
+  description: 'Destination Thailand Visa (DTV) application service for remote workers and freelancers. Five-year multiple-entry visa, 180 days per stay. Handled end to end by Vera Visa in Chiang Mai.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Vera Visa Agency',
+    url: 'https://vera-visa.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Icon Park Hotel, 310 2F, Room 215',
+      addressLocality: 'Chiang Mai',
+      addressCountry: 'TH',
+    },
+  },
+  areaServed: { '@type': 'Country', name: 'Thailand' },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What income do I need for the DTV visa?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The DTV targets remote workers and freelancers with stable foreign income. You need proof of income from a foreign employer or clients, plus bank statements showing sufficient funds. Our team reviews all financial evidence before filing to prevent mismatches.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which countries can apply for the DTV?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The DTV is open to most nationalities that can apply at a Thai embassy or via the official e-visa portal. A small number of nationalities face additional checks. Contact us to confirm eligibility for your passport.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I apply for the DTV from inside Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The DTV is generally applied for from outside Thailand. In-country conversion options are limited. We will confirm what applies to your specific situation during your free consultation.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I leave Thailand on the DTV?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. The DTV is multiple-entry — you can travel in and out freely. Each entry grants a fresh stay period of up to 180 days.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can DTV holders work in Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Remote work for foreign clients or employers is permitted under the DTV. Working for a Thai company or employer requires a separate work permit.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I get a Thai bank account on a DTV?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Often yes, though it varies by bank branch and documentation. We can advise on banks that work with DTV holders based on your situation.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can DTV holders buy a car in Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes — foreigners can own and register vehicles in Thailand with valid proof of address.' },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vera-visa.com/' },
+    { '@type': 'ListItem', position: 2, name: 'DTV Visa Chiang Mai', item: 'https://vera-visa.com/dtv-visa-chiang-mai/' },
+  ],
+};
+---
+
+<ServicePageLayout
+  title="DTV Visa Chiang Mai — Requirements, Cost & Guide 2026 | Vera Visa"
+  description="Apply for the Destination Thailand Visa (DTV) in Chiang Mai. Five-year multiple-entry visa for remote workers and freelancers. Vera Visa handles the paperwork end to end."
+  canonicalUrl="https://vera-visa.com/dtv-visa-chiang-mai/"
+  ogTitle="DTV Visa Chiang Mai 2026 — Requirements, Cost & Full Guide | Vera Visa"
+  ogDescription="Five-year multiple-entry visa for remote workers. 180 days per stay, extendable. Vera Visa in Chiang Mai handles your DTV application from start to approval."
+  schema={[serviceSchema, faqSchema, breadcrumbSchema]}
+  eyebrow="DTV · 5-Year Multiple Entry"
+  intro="The Destination Thailand Visa gives remote workers and freelancers five years of legal stay — handled end to end by a local team in Chiang Mai."
+  ctaText="Check your eligibility on WhatsApp →"
+  statusRows={[
+    { label: 'Visa Type',   value: 'DTV'        },
+    { label: 'Location',    value: 'Chiang Mai'  },
+    { label: 'Stay / Entry',value: '180 days'   },
+  ]}
+  statusState="approved"
+  statusLabel="Approved"
+>
+  <Fragment slot="headline">
+    Work remotely. Stay in <span style="color: var(--signal);">Thailand</span>.
+  </Fragment>
+</ServicePageLayout>
+
+<!-- Quick facts -->
+<QuickFactsStrip facts={[
+  { label: 'Visa Duration',  value: '5 years'           },
+  { label: 'Visa Type',      value: 'Multiple entry'     },
+  { label: 'Stay / Entry',   value: '180 days'          },
+  { label: 'Extendable',     value: 'Yes · +180 days'   },
+  { label: 'Obtain At',      value: 'Embassy / E-Visa'  },
+  { label: 'Minimum Age',    value: '20+'               },
+  { label: 'Family',         value: 'Spouse & children' },
+]} />
+
+<!-- Benefits overview -->
+<BenefitGrid
+  eyebrow="DTV Benefits"
+  heading="Destination Thailand Visa (DTV) Benefits"
+  intro="Live and work remotely in Thailand with the DTV Visa."
+  items={[
+    { title: 'Longer stays',             body: 'Each entry gives you 180 consecutive days — enough for a full year in Thailand on a single round trip.' },
+    { title: 'Remote work-friendly',     body: 'Work for foreign clients or employers without needing a Thai work permit. Designed for the location-independent professional.' },
+    { title: 'Multiple-entry flexibility', body: 'Come and go as often as you like over five years. Each return resets your 180-day stay period.' },
+    { title: 'Easier compliance',        body: 'No 90-day TM30 reports required mid-stay. One extension at your local immigration office extends a further 180 days.' },
+    { title: 'Lifestyle flexibility',    body: 'Bring your spouse and children under 20 on dependent DTV visas — the whole family covered under one application process.' },
+    { title: 'Less immigration friction', body: 'Fewer visa runs than the tourist visa track. Five years of coverage means you plan around your life, not a visa deadline.' },
+  ]}
+/>
+
+<!-- Learn more intro -->
+<section class="section" style="background: var(--paper); padding-bottom: var(--space-5);">
+  <div class="container">
+    <h2 style="font-family: var(--font-display); font-weight: 600; font-size: var(--text-display-m); line-height: var(--lh-snug); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-4); max-width: 24ch; text-wrap: balance;">
+      Learn More About the Destination Thailand Visa (DTV)
+    </h2>
+    <p style="font-family: var(--font-body); font-size: var(--text-body-l); line-height: var(--lh-body); color: var(--text-body); margin: 0; max-width: 64ch;">
+      We've broken down eligibility, requirements, process, benefits, and restrictions below.
+    </p>
+  </div>
+</section>
+
+<!-- Sticky tab bar -->
+<TabBar client:load tabs={TABS} defaultTab="eligibility" />
+
+<!-- ===== TAB PANELS ===== -->
+<div style="background: var(--paper); padding: var(--space-7) 0 var(--space-9);">
+  <div class="container">
+
+    <!-- ELIGIBILITY -->
+    <section data-tab-panel="eligibility">
+      <h2 class="panel-h2">Who qualifies for the DTV</h2>
+      <p class="panel-intro">The DTV has two tracks — remote work for a foreign employer or clients, and approved "soft power" activities. Most applicants qualify under one of the categories below.</p>
+
+      <AccordionSection client:load title="Income Requirements" defaultOpen={true}>
+        <p>The DTV targets remote workers and freelancers with stable foreign income. You need proof of active income — employment contracts, client invoices, or a portfolio of freelance work — plus bank statements showing sufficient personal savings.</p>
+        <p>Most rejections come from mismatched income evidence. The name on your contracts, bank account, and application must all line up. We review everything before filing.</p>
+      </AccordionSection>
+
+      <AccordionSection client:load title="Eligible Countries">
+        <p>The DTV is open to most nationalities that can apply at a Thai embassy or via the official e-visa portal. A small number of nationalities face additional scrutiny or documentary requirements.</p>
+        <p>Contact us before you start — we'll confirm eligibility for your specific passport in your first consultation.</p>
+      </AccordionSection>
+
+      <AccordionSection client:load title="Applying From Inside Thailand">
+        <p>The DTV is designed to be applied for from outside Thailand — at a Thai embassy or consulate in your home country, or a neighbouring country.</p>
+        <p>In-country conversion is not a standard route. If you are already in Thailand on another visa type, we can advise on the best path forward for your situation.</p>
+      </AccordionSection>
+
+      <AccordionSection client:load title="Soft Power Activities">
+        <p>The DTV's second eligibility track covers approved "soft power" activities: Muay Thai training, Thai cooking courses, medical treatment, wellness retreats, and similar recognised programs.</p>
+        <p>You do not need remote-work income for this track — enrolment documentation for an approved activity is the core requirement. We'll confirm which activities qualify before you apply.</p>
+      </AccordionSection>
+
+      <ExpertInsightCallout body="Most rejections we see come from mismatched income evidence — the name on your contracts, bank account, and application must line up. We review all of it before filing." />
+    </section>
+
+    <!-- REQUIREMENTS -->
+    <section data-tab-panel="requirements" hidden>
+      <h2 class="panel-h2">Documents you'll need</h2>
+      <p class="panel-intro">Grouped by category. We assemble, translate, and check every document before submission.</p>
+
+      <AccordionSection client:load title="Core Identity & Travel Documents">
+        <ul>
+          <li>Passport valid for at least 6 months, with blank visa pages</li>
+          <li>Recent passport-style photograph (white background, taken within 6 months)</li>
+          <li>Completed DTV application form</li>
+          <li>Proof of current residential address</li>
+        </ul>
+      </AccordionSection>
+
+      <AccordionSection client:load title="Financial Solvency Evidence">
+        <ul>
+          <li>Bank statements covering the required period (typically 6 months)</li>
+          <li>Proof of remote income — employment contract, client invoices, or freelance portfolio</li>
+          <li>Evidence of minimum account balance (confirmed against current DTV requirements at the time of your application)</li>
+        </ul>
+      </AccordionSection>
+
+      <AccordionSection client:load title="Purpose-of-Stay Documents">
+        <ul>
+          <li>Employment contract with a foreign company, or client contracts / invoices for freelancers</li>
+          <li>Company registration documents if self-employed</li>
+          <li>Or enrolment confirmation for an approved soft-power activity (Muay Thai, cooking course, etc.)</li>
+        </ul>
+      </AccordionSection>
+
+      <AccordionSection client:load title="Family Dependents">
+        <ul>
+          <li>Marriage certificate for a spouse (may require legalisation or apostille)</li>
+          <li>Birth certificates for children under 20</li>
+          <li>Evidence that the primary applicant's income covers the full family</li>
+        </ul>
+      </AccordionSection>
+
+      <ExpertInsightCallout body="Document preparation is where most delays happen. We check every file for formatting, naming consistency, and translation before anything reaches the embassy — so your application goes in right the first time." />
+    </section>
+
+    <!-- PROCESS -->
+    <section data-tab-panel="process" hidden>
+      <ProcessComparisonCards
+        heading="How to apply"
+        intro="Two routes are available. We handle either on your behalf."
+        routeA={{
+          label: 'Route A',
+          title: 'In-Person Embassy',
+          steps: [
+            'Book an appointment at a Thai embassy in your country',
+            'Submit your documents and pay the 10,000 THB government fee',
+            'Attend the appointment (typically 30–60 minutes)',
+            'Collect the visa stamp once approved',
+          ],
+        }}
+        routeB={{
+          label: 'Route B',
+          title: 'Official Online E-Visa Portal',
+          steps: [
+            'Create an account on the Thai government e-visa portal',
+            'Upload your documents and pay the fee online',
+            'Receive your e-visa confirmation by email',
+            'Present the e-visa QR code at the airport on arrival',
+          ],
+        }}
+        stats={[
+          { label: 'Processing Time', value: '2–6 weeks', note: 'typical' },
+          { label: 'Government Fee',  value: '10,000 THB' },
+        ]}
+      />
+      <ExpertInsightCallout body="For applicants already in Southeast Asia, the e-visa portal is usually faster and avoids a long-haul flight. We'll tell you which route fits your timeline and nationality before you start." />
+    </section>
+
+    <!-- BENEFITS -->
+    <section data-tab-panel="benefits" hidden>
+      <h2 class="panel-h2">Why the DTV</h2>
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-8); align-items: start; margin-top: var(--space-6);">
+        <ul style="margin: 0; padding-left: var(--space-5); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.8; color: var(--text-body); max-width: 60ch;">
+          <li>Five years of coverage from a single application</li>
+          <li>Multiple entry — travel in and out freely throughout the visa term</li>
+          <li>180-day stays, extendable once by a further 180 days at local immigration</li>
+          <li>Bring your spouse and children under 20 on dependent visas</li>
+          <li>No Thai work permit required for foreign clients or employers</li>
+          <li>No 90-day reports required during an uninterrupted stay</li>
+        </ul>
+        <div style="background: var(--ink); color: var(--paper); border-radius: var(--radius-card); padding: var(--space-6);">
+          <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal); margin: 0 0 12px;">Government Fee</p>
+          <p style="font-family: var(--font-body); font-size: var(--text-display-m); font-weight: 600; line-height: 1; margin: 0;">10,000 THB</p>
+          <p style="font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body-on-dark); margin: 12px 0 0;">Official fee per application. Chat with us on WhatsApp for a full breakdown including our agency service fee.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESTRICTIONS -->
+    <section data-tab-panel="restrictions" hidden>
+      <h2 class="panel-h2">What you can &amp; can't do</h2>
+
+      <AccordionSection client:load title="Can you leave Thailand?" defaultOpen={true}>
+        <p>Yes. The DTV is multiple-entry — you can travel in and out of Thailand as many times as you like within the five-year term. Each re-entry resets your 180-day stay counter.</p>
+      </AccordionSection>
+
+      <AccordionSection client:load title="Can you get a Thai bank account?">
+        <p>Often yes, though it varies significantly by bank branch and the documentation you can present. Bangkok Bank and Kasikorn Bank have been accessible for many DTV holders.</p>
+        <p>We can advise on the right branch and the exact documents to bring based on what other clients have used successfully.</p>
+      </AccordionSection>
+
+      <AccordionSection client:load title="Can you buy a car?">
+        <p>Yes — foreigners on a valid visa can own and register a vehicle in Thailand. You'll need proof of address (a lease agreement typically works) and your DTV documentation.</p>
+      </AccordionSection>
+
+      <AccordionSection client:load title="Can you work?">
+        <p>Remote work for foreign clients or a foreign employer is permitted under the DTV — that is explicitly what the visa is designed for.</p>
+        <p>Working locally for a Thai company or employer, operating a business in Thailand, or receiving Thai-sourced income requires a separate work permit. The DTV does not cover local employment.</p>
+      </AccordionSection>
+
+      <AccordionSection client:load title="Do you need to do 90-day reports?">
+        <p>If you stay in Thailand for more than 90 consecutive days without leaving, you are required to file a 90-day report with immigration. This is straightforward and can be done online, by post, or in person.</p>
+        <p>If you travel out and re-enter before 90 days, the counter resets and no report is due for that stay.</p>
+      </AccordionSection>
+
+      <CtaCallout
+        kicker="Ready to get started?"
+        body="A free WhatsApp consultation confirms whether the DTV is right for your situation — usually resolved in one chat."
+        linkText="Chat with us now"
+        linkHref="https://wa.me/66XXXXXXXXX"
+      />
+    </section>
+
+  </div>
+</div>
+
+<!-- Related guides -->
+<RelatedGuides guides={[
+  { label: 'Retirement Visa (O-A)',           href: '/retirement-visa-chiang-mai/' },
+  { label: 'Education Visa (ED)',              href: '/ed-visa-chiang-mai/' },
+  { label: 'Marriage Visa (O)',                href: '/marriage-visa-chiang-mai/' },
+  { label: 'Guardian Visa (O)',                href: '/guardian-visa-chiang-mai/' },
+  { label: 'Business Visa & Work Permits (B)', href: '/business-visa-chiang-mai/' },
+  { label: 'DTV Visa for Americans',           href: '/dtv-visa-americans/' },
+]} />
+
+<FinalCtaBand
+  heading="Not sure if the DTV is right for you?"
+  subtext="A free consultation confirms the right visa for your situation — usually in one WhatsApp chat."
+/>
+
+<style>
+  .panel-h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--text-display-m);
+    line-height: var(--lh-snug);
+    letter-spacing: var(--ls-display);
+    color: var(--ink);
+    margin: 0 0 var(--space-2);
+  }
+
+  .panel-intro {
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    margin: 0 0 var(--space-6);
+    max-width: 64ch;
+  }
+</style>

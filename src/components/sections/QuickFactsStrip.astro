@@ -1,0 +1,65 @@
+---
+interface Fact {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  facts: Fact[];
+  class?: string;
+}
+
+const { facts, class: className } = Astro.props;
+---
+
+<section class:list={['qf-strip', className]}>
+  <div class="container">
+    <div class="qf-grid">
+      {facts.map((f) => (
+        <div class="qf-card">
+          <span class="qf-label">{f.label}</span>
+          <span class="qf-value">{f.value}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .qf-strip {
+    background: var(--paper);
+    padding: 0 0 var(--space-7);
+  }
+
+  .qf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+    gap: 12px;
+  }
+
+  .qf-card {
+    background: var(--sand);
+    border: var(--border);
+    border-radius: var(--radius-card);
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .qf-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--fw-medium);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-45);
+  }
+
+  .qf-value {
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    font-weight: var(--fw-semibold);
+    color: var(--ink);
+  }
+</style>

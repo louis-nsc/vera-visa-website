@@ -1,0 +1,61 @@
+---
+interface Guide {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  guides: Guide[];
+  eyebrow?: string;
+}
+
+const { guides, eyebrow = 'Related Guides' } = Astro.props;
+---
+
+<section class="rg-section section--alt">
+  <div class="container">
+    <p class="rg-eyebrow">{eyebrow}</p>
+    <div class="rg-grid">
+      {guides.map((g) => (
+        <a href={g.href} class="rg-link">{g.label} →</a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .rg-section {
+    padding: 56px 0;
+  }
+
+  .rg-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--signal-deep);
+    margin-bottom: var(--space-5);
+  }
+
+  .rg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 4px var(--space-8);
+  }
+
+  .rg-link {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    color: var(--ink);
+    text-decoration: none;
+    transition: color var(--dur-fast) ease;
+  }
+
+  .rg-link:hover {
+    color: var(--signal);
+  }
+</style>

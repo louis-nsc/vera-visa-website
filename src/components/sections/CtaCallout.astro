@@ -1,0 +1,60 @@
+---
+interface Props {
+  kicker: string;
+  body: string;
+  linkText: string;
+  linkHref: string;
+}
+
+const { kicker, body, linkText, linkHref } = Astro.props;
+---
+
+<div class="cc-callout">
+  <p class="cc-kicker">{kicker}</p>
+  <p class="cc-body">
+    {body}{' '}
+    <a href={linkHref} class="vv-link cc-link">{linkText} →</a>
+  </p>
+</div>
+
+<style>
+  .cc-callout {
+    background: var(--sand);
+    border-left: 2px solid var(--signal);
+    border-radius: 0 var(--radius-card) var(--radius-card) 0;
+    padding: 20px var(--space-6);
+    margin-top: 28px;
+  }
+
+  .cc-kicker {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--fw-medium);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--signal-deep);
+    margin-bottom: var(--space-2);
+  }
+
+  .cc-body {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 1.0625rem;
+    line-height: var(--lh-body);
+    color: var(--ink);
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  .cc-link {
+    font-style: normal;
+    font-weight: var(--fw-medium);
+    color: var(--signal-deep);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+
+  .cc-link:hover {
+    color: var(--signal);
+  }
+</style>

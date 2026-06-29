@@ -1,0 +1,172 @@
+---
+interface Route {
+  label: string;         // "Route A"
+  title: string;         // "In-Person Embassy"
+  steps: string[];
+}
+
+interface StatCard {
+  label: string;
+  value: string;
+  note?: string;
+}
+
+interface Props {
+  heading: string;
+  intro?: string;
+  routeA: Route;
+  routeB: Route;
+  stats?: StatCard[];
+}
+
+const { heading, intro, routeA, routeB, stats = [] } = Astro.props;
+---
+
+<section class="pc-section">
+  <div class="container">
+    <h2 class="pc-heading">{heading}</h2>
+    {intro && <p class="pc-intro">{intro}</p>}
+
+    <div class="pc-cards">
+      {[routeA, routeB].map((route) => (
+        <div class="pc-card">
+          <p class="pc-route-label">{route.label}</p>
+          <h3 class="pc-route-title">{route.title}</h3>
+          <ol class="pc-steps">
+            {route.steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </div>
+      ))}
+    </div>
+
+    {stats.length > 0 && (
+      <div class="pc-stats">
+        {stats.map((s) => (
+          <div class="pc-stat">
+            <p class="pc-stat-label">{s.label}</p>
+            <p class="pc-stat-value">
+              {s.value}
+              {s.note && <span class="pc-stat-note">{s.note}</span>}
+            </p>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .pc-section {
+    padding: var(--space-7) 0;
+  }
+
+  .pc-heading {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-display-m);
+    line-height: var(--lh-snug);
+    letter-spacing: var(--ls-display);
+    color: var(--ink);
+    margin: 0 0 var(--space-2);
+  }
+
+  .pc-intro {
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    margin: 0 0 var(--space-6);
+    max-width: 64ch;
+  }
+
+  .pc-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+  }
+
+  .pc-card {
+    background: var(--paper);
+    border: var(--border);
+    border-radius: var(--radius-card);
+    padding: var(--space-6);
+  }
+
+  .pc-route-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--fw-medium);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--signal-deep);
+    margin-bottom: 12px;
+  }
+
+  .pc-route-title {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: 1.375rem;
+    line-height: var(--lh-snug);
+    color: var(--ink);
+    margin: 0 0 12px;
+  }
+
+  .pc-steps {
+    margin: 0;
+    padding-left: var(--space-5);
+    font-family: var(--font-body);
+    font-size: var(--text-body-s);
+    line-height: 1.7;
+    color: var(--text-body);
+  }
+
+  .pc-steps li + li {
+    margin-top: var(--space-2);
+  }
+
+  /* Stat cards */
+  .pc-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: var(--space-5);
+  }
+
+  .pc-stat {
+    background: var(--sand);
+    border: var(--border);
+    border-radius: var(--radius-card);
+    padding: var(--space-4) var(--space-5);
+  }
+
+  .pc-stat-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--fw-medium);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-45);
+    margin-bottom: var(--space-2);
+  }
+
+  .pc-stat-value {
+    font-family: var(--font-body);
+    font-size: 1.375rem;
+    font-weight: var(--fw-semibold);
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .pc-stat-note {
+    font-size: var(--text-body-s);
+    font-weight: var(--fw-regular);
+    color: var(--ink-45);
+    margin-left: var(--space-2);
+  }
+
+  @media (max-width: 600px) {
+    .pc-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

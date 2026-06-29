@@ -1,0 +1,43 @@
+---
+interface Props {
+  body: string;
+  kicker?: string;
+}
+
+const { body, kicker = 'Expert Insight' } = Astro.props;
+---
+
+<div class="ei-callout">
+  <p class="ei-kicker">{kicker}</p>
+  <p class="ei-body">{body}</p>
+</div>
+
+<style>
+  .ei-callout {
+    background: var(--sand);
+    border-left: 2px solid var(--signal);
+    border-radius: 0 var(--radius-card) var(--radius-card) 0;
+    padding: 20px var(--space-6);
+    margin-top: 28px;
+  }
+
+  .ei-kicker {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--fw-medium);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--signal-deep);
+    margin-bottom: var(--space-2);
+  }
+
+  .ei-body {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 1.0625rem;
+    line-height: var(--lh-body);
+    color: var(--ink);
+    margin: 0;
+    max-width: 60ch;
+  }
+</style>

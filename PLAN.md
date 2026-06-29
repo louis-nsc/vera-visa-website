@@ -23,20 +23,20 @@
 
 ---
 
-## Phase 2 — Service page engine
+## Phase 2 — Service page engine ✅
 > Build the shared machinery once. All 7 visa service pages use the same components.
 
-- [ ] `ServicePageLayout.astro`: wraps `BaseLayout`, accepts all SEO props + page-specific hero data
-- [ ] `QuickFactsStrip.astro`: `repeat(auto-fit, minmax(132px,1fr))` sand stat cards, accepts `facts: {label, value}[]`
-- [ ] `BenefitGrid.astro`: numbered 01–N grid, `.vv-benefit-grid` pattern, accepts `items: {title, body}[]`
-- [ ] `ExpertInsightCallout.astro`: sand bg, 2px signal left border, mono kicker, italic body
-- [ ] `CtaCallout.astro`: same visual as ExpertInsight but for conversion prompts; accepts kicker + body + link text
-- [ ] `ProcessComparisonCards.astro`: Route A / Route B two-column cards + stat cards below
-- [ ] `RelatedGuides.astro`: mono eyebrow + link list with `→` and `border-bottom: 1px solid var(--line)`
-- [ ] `FinalCtaBand.astro`: `--ink` section, centred H2 + subtext + WhatsApp button
-- [ ] `TabBar.tsx` (React island): sticky, Plex Mono tabs, `--signal` underline, NO border-color transition, horizontal scroll on mobile, tab order: Eligibility → Requirements → Process → Benefits → Restrictions
-- [ ] `AccordionSection.tsx` (React island): chevron, `defaultOpen` prop, `--signal` on open
-- [ ] Commit: `feat: service page shared components`
+- [x] `ServicePageLayout.astro`: wraps `BaseLayout`, accepts all SEO props + page-specific hero data
+- [x] `QuickFactsStrip.astro`: `repeat(auto-fit, minmax(132px,1fr))` sand stat cards, accepts `facts: {label, value}[]`
+- [x] `BenefitGrid.astro`: numbered 01–N grid, `.vv-benefit-grid` pattern, accepts `items: {title, body}[]`
+- [x] `ExpertInsightCallout.astro`: sand bg, 2px signal left border, mono kicker, italic body
+- [x] `CtaCallout.astro`: same visual as ExpertInsight but for conversion prompts; accepts kicker + body + link text
+- [x] `ProcessComparisonCards.astro`: Route A / Route B two-column cards + stat cards below
+- [x] `RelatedGuides.astro`: mono eyebrow + link list with `→` and `border-bottom: 1px solid var(--line)`
+- [x] `FinalCtaBand.astro`: `--ink` section, centred H2 + subtext + WhatsApp button
+- [x] `TabBar.tsx` (React island): sticky, Plex Mono tabs, `--signal` underline, NO border-color transition, horizontal scroll on mobile, tab order: Eligibility → Requirements → Process → Benefits → Restrictions
+- [x] `AccordionSection.tsx` (React island): chevron, `defaultOpen` prop, `--signal` on open
+- [x] Commit: `feat: service page shared components`
 
 ---
 

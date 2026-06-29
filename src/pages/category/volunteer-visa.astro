@@ -1,0 +1,218 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FinalCtaBand from '../../components/sections/FinalCtaBand.astro';
+
+const articles = [
+  {
+    title: 'How the Non-O Visa Works for Long-Term Volunteers in Thailand',
+    description: 'Volunteering long-term in Thailand? The Non-Immigrant O volunteer visa is the correct legal pathway. Here is how it works, what qualifies, and what it does not cover.',
+    href: '/volunteer-visa-thailand/',
+    date: '10 February 2026',
+  },
+  {
+    title: 'Volunteer Visa Chiang Mai — Requirements & Guide 2026',
+    description: 'Volunteering with a registered NGO in Chiang Mai? The Non-Immigrant O volunteer visa gives you legal long-term stay. Full requirements and application guide.',
+    href: '/volunteer-visa-chiang-mai/',
+    date: 'Updated June 2026',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Volunteer Visa Thailand — Guides & Resources',
+  description: 'All Vera Visa guides on the Thai volunteer visa (Non-Immigrant O) — eligibility, qualifying organisations, costs, and the application process in Chiang Mai.',
+  url: 'https://vera-visa.com/category/volunteer-visa/',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vera-visa.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Volunteer Visa', item: 'https://vera-visa.com/category/volunteer-visa/' },
+  ],
+};
+---
+
+<BaseLayout
+  title="Volunteer Visa Thailand — Guides & Resources | Vera Visa"
+  description="All Vera Visa guides on the Thai Non-Immigrant O volunteer visa — qualifying organisations, eligibility, costs, and the application process in Chiang Mai."
+  canonicalUrl="https://vera-visa.com/category/volunteer-visa/"
+  ogTitle="Volunteer Visa Thailand Guides — Vera Visa Chiang Mai"
+  ogDescription="Complete guides to the Thai Non-Immigrant O volunteer visa — what qualifies, how to apply in Chiang Mai, and what the visa does and doesn't cover."
+  schema={[schema, breadcrumbSchema]}
+>
+
+  <section class="cat-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/" class="bc-link">Home</a>
+        <span class="bc-sep" aria-hidden="true">›</span>
+        <span>Volunteer Visa</span>
+      </nav>
+      <p class="eyebrow">Category</p>
+      <h1 class="cat-h1">Volunteer Visa Thailand</h1>
+      <p class="cat-intro">Guides on the Thai Non-Immigrant O volunteer visa — who qualifies, how to apply in Chiang Mai, and what the visa does and doesn't allow.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="article-list">
+        {articles.map((a) => (
+          <a href={a.href} class="article-card">
+            <p class="article-date">{a.date}</p>
+            <h2 class="article-title">{a.title}</h2>
+            <p class="article-desc">{a.description}</p>
+            <span class="article-cta">Read guide →</span>
+          </a>
+        ))}
+      </div>
+
+      <div class="cat-also">
+        <p class="eyebrow" style="margin-bottom: var(--space-4);">Related visa types</p>
+        <div class="also-links">
+          <a href="/ed-visa-chiang-mai/" class="also-link">Education Visa (ED) →</a>
+          <a href="/dtv-visa-chiang-mai/" class="also-link">DTV Visa →</a>
+          <a href="/retirement-visa-chiang-mai/" class="also-link">Retirement Visa (O-A) →</a>
+          <a href="/guardian-visa-chiang-mai/" class="also-link">Guardian Visa (O) →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCtaBand
+    heading="Volunteering in Chiang Mai?"
+    subtext="A free consultation confirms your organisation qualifies and gets your Non-O application started."
+  />
+
+</BaseLayout>
+
+<style>
+  .cat-header {
+    background: var(--sand);
+    padding: var(--space-7) 0 var(--space-8);
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--ink-45);
+    margin-bottom: var(--space-5);
+  }
+
+  .bc-link { color: var(--ink-45); text-decoration: none; }
+  .bc-link:hover { color: var(--signal); }
+  .bc-sep { color: var(--line); }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--signal-deep);
+    margin-bottom: var(--space-3);
+  }
+
+  .cat-h1 {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-display-l);
+    line-height: var(--lh-snug);
+    letter-spacing: var(--ls-display);
+    color: var(--ink);
+    margin: 0 0 var(--space-4);
+  }
+
+  .cat-intro {
+    font-family: var(--font-body);
+    font-size: var(--text-body-l);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    max-width: 56ch;
+    margin: 0;
+  }
+
+  .article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: var(--space-9);
+  }
+
+  .article-card {
+    display: block;
+    padding: var(--space-6) 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    color: inherit;
+    transition: padding-left var(--dur-fast) var(--ease-standard);
+  }
+
+  .article-card:first-child { border-top: 1px solid var(--line); }
+
+  .article-card:hover { padding-left: var(--space-3); }
+
+  .article-date {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--ink-45);
+    margin-bottom: var(--space-3);
+  }
+
+  .article-title {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-display-s);
+    line-height: var(--lh-snug);
+    color: var(--ink);
+    margin: 0 0 var(--space-3);
+    max-width: 56ch;
+  }
+
+  .article-desc {
+    font-family: var(--font-body);
+    font-size: var(--text-body-m);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    margin: 0 0 var(--space-4);
+    max-width: 60ch;
+  }
+
+  .article-cta {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    color: var(--signal-deep);
+  }
+
+  .also-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 4px var(--space-8);
+  }
+
+  .also-link {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--font-body);
+    font-size: var(--text-body-m);
+    color: var(--ink);
+    text-decoration: none;
+    transition: color var(--dur-fast) ease;
+  }
+
+  .also-link:hover { color: var(--signal); }
+</style>

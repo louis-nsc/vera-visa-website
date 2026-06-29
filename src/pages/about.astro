@@ -1,0 +1,449 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+
+const WA_HREF = 'https://wa.me/66XXXXXXXXX';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Vera Visa Agency',
+    url: 'https://vera-visa.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Icon Park Hotel, 310 2F, Room 215',
+      addressLocality: 'Chiang Mai',
+      addressCountry: 'TH',
+    },
+    description: 'Local visa agency in Chiang Mai. Pupae, Tofu & Big help expats, retirees, students, and remote workers get legal visa status in Thailand.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vera-visa.com/' },
+      { '@type': 'ListItem', position: 2, name: 'About', item: 'https://vera-visa.com/about/' },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="About Vera Visa Agency Chiang Mai"
+  description="Learn more about Vera Visa Agency Chiang Mai. Stress-free visa solutions for long stays in The Land of Smiles with a team that cares."
+  canonicalUrl="https://vera-visa.com/about/"
+  ogTitle="About Vera Visa — Local Visa Agents in Chiang Mai"
+  ogDescription="Meet Pupae, Tofu & Big — the team behind Vera Visa Agency. Local experts helping expats get legal status in Chiang Mai without the paperwork stress."
+  schema={schema}
+>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <section class="about-header">
+    <div class="container">
+      <p class="eyebrow">About Vera Visa</p>
+      <h1 class="about-h1">A local team that has done this a thousand times.</h1>
+      <p class="about-intro">
+        We are Pupae, Tofu, and Big — co-founders of Vera Visa Agency in Chiang Mai. We help expats, retirees, students, remote workers, and families get legal visa status in Thailand, handled completely end to end.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== OUR STORY ===== -->
+  <section class="section section--alt">
+    <div class="container story-layout">
+      <div>
+        <p class="eyebrow">Our story</p>
+        <h2 class="section-h2">Built in Chiang Mai, for people moving to Chiang Mai.</h2>
+        <p class="body-text">
+          We started Vera Visa because we saw how much stress the visa process creates for people who just want to live here — retirees navigating bank deposit requirements, remote workers unsure which visa covers their situation, families trying to stay together legally while a child is in school.
+        </p>
+        <p class="body-text">
+          Thai immigration rules are specific, and the consequences of getting them wrong — visa cancellation, fines, re-entry bans — are serious. We handle the paperwork, the immigration office visits, the 90-day reports, and the follow-ups, so our clients can focus on actually living in Thailand.
+        </p>
+        <p class="body-text">
+          We are based in Chiang Mai and work exclusively in Chiang Mai. We know the immigration officers, the timelines, the local bank requirements, and the approved schools. That local knowledge is why our clients rarely hit surprises.
+        </p>
+      </div>
+      <div class="story-card">
+        <span class="story-perf" aria-hidden="true"></span>
+        <div class="story-card-body">
+          <p class="story-card-eyebrow">Office Location</p>
+          <div class="story-rows">
+            <span class="story-label">Building</span>
+            <span class="story-value">Icon Park Hotel</span>
+            <span class="story-label">Floor / Room</span>
+            <span class="story-value">310 2F, Room 215</span>
+            <span class="story-label">City</span>
+            <span class="story-value">Chiang Mai, Thailand</span>
+          </div>
+          <div class="story-footer">
+            <span class="story-label">Status</span>
+            <span class="story-badge">
+              <span class="story-dot"></span>
+              <span class="story-badge-label">Open</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEAM ===== -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">The team</p>
+      <h2 class="section-h2">Pupae, Tofu &amp; Big.</h2>
+      <p class="body-text" style="max-width: 60ch; margin-bottom: var(--space-7);">
+        Co-founders of Vera Visa. Between the three of us we have handled hundreds of visa applications across every visa type we offer. We reply personally — not through a call centre.
+      </p>
+
+      <div class="team-grid">
+        {['Pupae', 'Tofu', 'Big'].map((name) => (
+          <div class="team-card">
+            <div class="team-avatar" aria-hidden="true">
+              <span class="team-initial">{name[0]}</span>
+            </div>
+            <p class="team-name">{name}</p>
+            <p class="team-role">Co-Founder, Vera Visa</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VALUES ===== -->
+  <section class="section section--alt">
+    <div class="container">
+      <p class="eyebrow">How we work</p>
+      <h2 class="section-h2">Specific, honest, and follow-through.</h2>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <p class="value-n">01</p>
+          <h3 class="value-title">Specificity over vagueness</h3>
+          <p class="value-body">We tell you the exact financial threshold, the exact documents, and the exact timeline for your situation. "Requirements vary" is not an answer we give.</p>
+        </div>
+        <div class="value-card">
+          <p class="value-n">02</p>
+          <h3 class="value-title">We handle the immigration office</h3>
+          <p class="value-body">We attend immigration appointments with you or on your behalf. You don't need to navigate the queue, the forms, or the officers — we do.</p>
+        </div>
+        <div class="value-card">
+          <p class="value-n">03</p>
+          <h3 class="value-title">We stay after approval</h3>
+          <p class="value-body">90-day reports, re-entry permits, annual renewals — we handle all of it as part of our ongoing service. Approval is not where we stop.</p>
+        </div>
+        <div class="value-card">
+          <p class="value-n">04</p>
+          <h3 class="value-title">Free consultation, always</h3>
+          <p class="value-body">We assess your situation for free before you commit to anything. If we can't help you, we'll tell you — and point you in the right direction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section" id="contact">
+    <div class="container contact-layout">
+      <div>
+        <p class="eyebrow">Get in touch</p>
+        <h2 class="section-h2">Start with a free consultation.</h2>
+        <p class="body-text" style="max-width: 52ch; margin-bottom: var(--space-6);">
+          Message us on WhatsApp and describe your situation. We'll tell you exactly which visa applies, what you need to prepare, and what the process looks like for you specifically.
+        </p>
+        <a href={WA_HREF} class="btn-primary vv-cta" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <div class="address-card">
+        <p class="eyebrow" style="color: var(--signal);">Our office</p>
+        <p class="body-text" style="margin: 0;">
+          Icon Park Hotel<br />
+          310 2F, Room 215<br />
+          Chiang Mai, Thailand
+        </p>
+        <p class="body-text" style="margin-top: var(--space-4); color: var(--ink-45); font-size: var(--text-body-s);">
+          We also reply on WhatsApp — often faster than coming in person.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .about-header {
+    background: var(--paper);
+    padding: 64px 0 var(--space-8);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--signal-deep);
+    margin-bottom: var(--space-4);
+  }
+
+  .about-h1 {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: clamp(2.5rem, 5vw, var(--text-display-xl));
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-display);
+    color: var(--ink);
+    margin: 0 0 var(--space-5);
+    max-width: 20ch;
+    text-wrap: balance;
+  }
+
+  .about-intro {
+    font-family: var(--font-body);
+    font-size: var(--text-body-l);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    max-width: 60ch;
+    margin: 0;
+  }
+
+  .section-h2 {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-display-l);
+    line-height: var(--lh-snug);
+    letter-spacing: var(--ls-display);
+    color: var(--ink);
+    margin: 0 0 var(--space-5);
+    text-wrap: balance;
+  }
+
+  .body-text {
+    font-family: var(--font-body);
+    font-size: var(--text-body-m);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    margin: 0 0 var(--space-4);
+  }
+
+  /* Story layout */
+  .story-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  .story-card {
+    position: relative;
+    background: var(--paper);
+    border: var(--border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+  }
+
+  .story-perf {
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 16px;
+    background-image: radial-gradient(circle, var(--line) 1.6px, transparent 2px);
+    background-repeat: repeat-y;
+    background-size: 16px 12px;
+    background-position: center;
+  }
+
+  .story-card-body { padding: var(--space-5); padding-left: 40px; }
+
+  .story-card-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--signal-deep);
+    margin-bottom: var(--space-4);
+  }
+
+  .story-rows {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px var(--space-6);
+    align-items: baseline;
+    border-top: var(--border);
+    padding-top: var(--space-4);
+  }
+
+  .story-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label-wide);
+    text-transform: uppercase;
+    color: var(--ink-45);
+  }
+
+  .story-value {
+    font-family: var(--font-body);
+    font-size: var(--text-body-m);
+    font-weight: var(--fw-medium);
+    color: var(--ink);
+    text-align: right;
+  }
+
+  .story-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: var(--border);
+    padding-top: var(--space-4);
+    margin-top: var(--space-4);
+  }
+
+  .story-badge { display: inline-flex; align-items: center; gap: var(--space-2); }
+
+  .story-dot {
+    width: 9px; height: 9px;
+    border-radius: var(--radius-pill);
+    background: var(--approved);
+  }
+
+  .story-badge-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  /* Team */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+  }
+
+  .team-card {
+    background: var(--sand);
+    border: var(--border);
+    border-radius: var(--radius-card);
+    padding: var(--space-6);
+    text-align: center;
+  }
+
+  .team-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-pill);
+    background: var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-4);
+  }
+
+  .team-initial {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-display-s);
+    color: var(--ink);
+  }
+
+  .team-name {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-display-s);
+    color: var(--ink);
+    margin: 0 0 var(--space-2);
+  }
+
+  .team-role {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--ink-45);
+    margin: 0;
+  }
+
+  /* Values */
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-7) var(--space-8);
+  }
+
+  .value-card { border-top: 2px solid var(--line); padding-top: var(--space-5); }
+
+  .value-n {
+    font-family: var(--font-mono);
+    font-size: var(--text-display-m);
+    font-weight: var(--fw-semibold);
+    color: var(--signal);
+    margin: 0 0 var(--space-4);
+  }
+
+  .value-title {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-display-s);
+    line-height: var(--lh-snug);
+    color: var(--ink);
+    margin: 0 0 var(--space-3);
+  }
+
+  .value-body {
+    font-family: var(--font-body);
+    font-size: var(--text-body-m);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    margin: 0;
+    max-width: 44ch;
+  }
+
+  /* Contact */
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 14px var(--space-6);
+    background: var(--signal);
+    color: var(--paper);
+    font-family: var(--font-body);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-body-m);
+    text-decoration: none;
+    border-radius: var(--radius-pill);
+    border: 1px solid transparent;
+    transition: background var(--dur-fast) var(--ease-standard);
+  }
+
+  .btn-primary:hover { background: var(--signal-deep); }
+
+  .address-card {
+    background: var(--sand);
+    border: var(--border);
+    border-radius: var(--radius-card);
+    padding: var(--space-6);
+  }
+
+  /* Responsive */
+  @media (max-width: 760px) {
+    .story-layout, .contact-layout { grid-template-columns: 1fr; }
+    .story-card { display: none; }
+    .team-grid { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: 1fr; }
+  }
+</style>

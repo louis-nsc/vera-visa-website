@@ -1,0 +1,383 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCard from '../components/patterns/ServiceCard.astro';
+import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+
+const services = [
+  { code: 'DTV',  name: 'Destination Thailand Visa',   description: 'Five-year multiple-entry visa for remote workers, freelancers, and soft-power activities.',      href: '/dtv-visa-chiang-mai/'        },
+  { code: 'ED',   name: 'Education Visa',               description: 'For students in Thai language schools, universities, Muay Thai academies, and training programs.', href: '/ed-visa-chiang-mai/'         },
+  { code: 'O',    name: 'Marriage Visa',                description: 'For spouses of Thai nationals. Annual extensions with bank deposit or income evidence.',           href: '/marriage-visa-chiang-mai/'   },
+  { code: 'O-A',  name: 'Retirement Visa',              description: 'For applicants over 50. 800,000 THB in a Thai bank or 65,000 THB/month income required.',         href: '/retirement-visa-chiang-mai/' },
+  { code: 'O',    name: 'Guardian Visa',                description: 'For parents and guardians of children enrolled in a Chiang Mai school.',                           href: '/guardian-visa-chiang-mai/'   },
+  { code: 'B',    name: 'Business Visa & Work Permits', description: 'Non-B visas and work permits for business owners and professionals working in Thailand.',           href: '/business-visa-chiang-mai/'   },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Visa Agent Chiang Mai',
+    description: 'Full visa agent service in Chiang Mai, Thailand. DTV, retirement, education, marriage, guardian, volunteer, and business visas handled end to end by Vera Visa Agency.',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Vera Visa Agency',
+      url: 'https://vera-visa.com',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Icon Park Hotel, 310 2F, Room 215',
+        addressLocality: 'Chiang Mai',
+        addressCountry: 'TH',
+      },
+    },
+    areaServed: { '@type': 'City', name: 'Chiang Mai' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vera-visa.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Visa Agent Chiang Mai', item: 'https://vera-visa.com/visa-agent-chiang-mai/' },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Visa Agent Chiang Mai — Thailand Visa Services You Can Trust | Vera Visa"
+  description="Vera Visa is Chiang Mai's specialist visa agency. We handle the paperwork, the appointments, and the follow-ups — so you can focus on enjoying Thailand."
+  canonicalUrl="https://vera-visa.com/visa-agent-chiang-mai/"
+  ogTitle="Visa Agent Chiang Mai — Vera Visa Agency"
+  ogDescription="Chiang Mai's specialist visa agency. DTV, retirement, education, marriage, guardian, and business visas — handled end to end by a local team you can trust."
+  schema={schema}
+>
+
+  <!-- ===== HEADER ===== -->
+  <section class="va-header">
+    <div class="container">
+      <p class="eyebrow">Vera Visa Agency · Chiang Mai</p>
+      <h1 class="va-h1">Chiang Mai's specialist <span class="va-accent">visa agent</span>.</h1>
+      <p class="va-intro">
+        We handle the paperwork, the immigration appointments, and the follow-ups — so you can focus on living in Thailand, not managing bureaucracy.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== WHY USE AN AGENT ===== -->
+  <section class="section section--alt">
+    <div class="container">
+      <p class="eyebrow">Why use a visa agent</p>
+      <h2 class="section-h2">Thai immigration is specific. The cost of errors is high.</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <p class="why-n">01</p>
+          <h3 class="why-title">Rules change without notice</h3>
+          <p class="why-body">Thai immigration requirements — bank deposit timing, insurance minimums, approved document formats — change regularly. We track every update so your application reflects current requirements, not last year's.</p>
+        </div>
+        <div class="why-card">
+          <p class="why-n">02</p>
+          <h3 class="why-title">Document errors cause rejections</h3>
+          <p class="why-body">A mismatched name on a bank letter, an insurance certificate with insufficient coverage, a police check issued too long ago — these cause rejections. We review every document before submission.</p>
+        </div>
+        <div class="why-card">
+          <p class="why-n">03</p>
+          <h3 class="why-title">We know Chiang Mai immigration</h3>
+          <p class="why-body">We work with Chiang Mai immigration officers directly. We know the office, the process, and the timeline — which means fewer surprises and faster resolutions when questions arise.</p>
+        </div>
+        <div class="why-card">
+          <p class="why-n">04</p>
+          <h3 class="why-title">We handle everything after approval too</h3>
+          <p class="why-body">90-day reports, re-entry permits, annual renewals — the obligations don't stop when the visa is approved. We stay with every client through the full cycle, not just the initial application.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="section" id="services">
+    <div class="container">
+      <p class="eyebrow">Visa Services</p>
+      <h2 class="section-h2">Six visa types. One local team.</h2>
+      <p class="section-intro" style="margin-bottom: var(--space-7);">We assess your situation first, then handle the right visa end to end. Each pathway has its own requirements — we'll tell you exactly which one applies to you.</p>
+      <div class="services-grid">
+        {services.map((s) => <ServiceCard {...s} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW WE WORK ===== -->
+  <section class="section section--alt">
+    <div class="container">
+      <p class="eyebrow">How we work</p>
+      <h2 class="section-h2">What working with us looks like.</h2>
+
+      <div class="steps">
+        {[
+          { n: '01', title: 'Free WhatsApp consultation',    body: 'Tell us your situation — nationality, current visa status, goals, timeline. We confirm which visa applies and what you need to prepare. No charge, no commitment.' },
+          { n: '02', title: 'Document checklist & guidance', body: 'We give you an exact list of what to gather, with guidance on each item — bank timing, insurance selection, certificate format. No guessing.' },
+          { n: '03', title: 'We prepare and review everything', body: 'We review every document for accuracy and completeness before it touches immigration. We handle translations, form completion, and collation.' },
+          { n: '04', title: 'Immigration submission & follow-up', body: 'We submit the application and attend appointments on your behalf. We follow up on every query and keep you updated throughout.' },
+          { n: '05', title: 'Approval and ongoing support',  body: 'Once approved, we handle your 90-day reports, re-entry permits, and annual renewals. We remind you of every deadline before it becomes urgent.' },
+        ].map((s) => (
+          <div class="step">
+            <span class="step-n">{s.n}</span>
+            <div>
+              <h3 class="step-title">{s.title}</h3>
+              <p class="step-body">{s.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIAL ===== -->
+  <section class="section">
+    <div class="container testimonial-layout">
+      <div>
+        <p class="eyebrow">What clients say</p>
+        <h2 class="section-h2">Specificity and follow-through are what people remember.</h2>
+        <p class="body-text" style="max-width: 52ch;">We work with hundreds of expats every year across every visa type. The feedback is consistent — they appreciated knowing exactly what was happening at every step.</p>
+      </div>
+      <div class="testimonial-card">
+        <span class="testimonial-perf" aria-hidden="true"></span>
+        <div class="testimonial-body">
+          <p class="testimonial-eyebrow">DTV · Chiang Mai</p>
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">
+            {'★★★★★'.split('').map((s) => <span class="star">{s}</span>)}
+          </div>
+          <blockquote class="testimonial-quote">
+            "Efficient, professional, and completely stress-free from start to finish. They knew exactly what immigration needed."
+          </blockquote>
+          <p class="testimonial-author">Yi Mon Thant</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCtaBand
+    heading="Ready to sort your visa in Chiang Mai?"
+    subtext="Start with a free WhatsApp consultation. Tell us your situation and we'll tell you exactly what to do next."
+  />
+
+</BaseLayout>
+
+<style>
+  .va-header {
+    background: var(--paper);
+    padding: 64px 0 var(--space-8);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--signal-deep);
+    margin-bottom: var(--space-4);
+  }
+
+  .va-h1 {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: clamp(2.5rem, 5vw, var(--text-display-xl));
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-display);
+    color: var(--ink);
+    margin: 0 0 var(--space-5);
+    max-width: 18ch;
+    text-wrap: balance;
+  }
+
+  .va-accent { color: var(--signal); }
+
+  .va-intro {
+    font-family: var(--font-body);
+    font-size: var(--text-body-l);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    max-width: 52ch;
+    margin: 0;
+  }
+
+  .section-h2 {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-display-l);
+    line-height: var(--lh-snug);
+    letter-spacing: var(--ls-display);
+    color: var(--ink);
+    margin: 0 0 var(--space-5);
+    text-wrap: balance;
+  }
+
+  .section-intro {
+    font-family: var(--font-body);
+    font-size: var(--text-body-l);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+  }
+
+  .body-text {
+    font-family: var(--font-body);
+    font-size: var(--text-body-m);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    margin: 0 0 var(--space-4);
+  }
+
+  /* Why grid */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-7) var(--space-8);
+  }
+
+  .why-card { border-top: 2px solid var(--line); padding-top: var(--space-5); }
+
+  .why-n {
+    font-family: var(--font-mono);
+    font-size: var(--text-display-m);
+    font-weight: var(--fw-semibold);
+    color: var(--signal);
+    margin: 0 0 var(--space-4);
+  }
+
+  .why-title {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-display-s);
+    line-height: var(--lh-snug);
+    color: var(--ink);
+    margin: 0 0 var(--space-3);
+  }
+
+  .why-body {
+    font-family: var(--font-body);
+    font-size: var(--text-body-m);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    margin: 0;
+    max-width: 44ch;
+  }
+
+  /* Services grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+  }
+
+  /* Steps */
+  .steps { display: flex; flex-direction: column; gap: 0; }
+
+  .step {
+    display: flex;
+    gap: var(--space-6);
+    align-items: baseline;
+    padding: var(--space-5) 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .step:last-child { border-bottom: 1px solid var(--line); }
+
+  .step-n {
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-label);
+    color: var(--signal);
+    width: 28px;
+  }
+
+  .step-title {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-display-s);
+    line-height: var(--lh-snug);
+    color: var(--ink);
+    margin: 0 0 var(--space-2);
+  }
+
+  .step-body {
+    font-family: var(--font-body);
+    font-size: var(--text-body-m);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  /* Testimonial */
+  .testimonial-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: center;
+  }
+
+  .testimonial-card {
+    position: relative;
+    background: var(--paper);
+    border: var(--border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+  }
+
+  .testimonial-perf {
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 16px;
+    background-image: radial-gradient(circle, var(--line) 1.6px, transparent 2px);
+    background-repeat: repeat-y;
+    background-size: 16px 12px;
+    background-position: center;
+  }
+
+  .testimonial-body { padding: var(--space-6); padding-left: 40px; }
+
+  .testimonial-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--signal-deep);
+    margin-bottom: var(--space-3);
+  }
+
+  .testimonial-stars { margin-bottom: var(--space-4); }
+  .star { color: var(--signal); font-size: 1.125rem; }
+
+  .testimonial-quote {
+    font-family: var(--font-display);
+    font-weight: var(--fw-medium);
+    font-size: var(--text-display-s);
+    line-height: var(--lh-snug);
+    color: var(--ink);
+    margin: 0 0 var(--space-4);
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--ink-45);
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .why-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonial-layout { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 560px) {
+    .services-grid { grid-template-columns: 1fr; }
+  }
+</style>

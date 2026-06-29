@@ -1,0 +1,90 @@
+---
+interface Props {
+  code: string;
+  name: string;
+  description: string;
+  href: string;
+}
+
+const { code, name, description, href } = Astro.props;
+---
+
+<a href={href} class="sc-card">
+  <div class="sc-top">
+    <span class="sc-code">{code}</span>
+  </div>
+  <h3 class="sc-name">{name}</h3>
+  <p class="sc-desc">{description}</p>
+  <span class="sc-arrow" aria-hidden="true">→</span>
+</a>
+
+<style>
+  .sc-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--paper);
+    border: var(--border);
+    border-radius: var(--radius-card);
+    padding: var(--space-6);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color var(--dur-fast) var(--ease-standard);
+    position: relative;
+  }
+
+  .sc-card:hover {
+    border-color: var(--ink);
+  }
+
+  .sc-top {
+    margin-bottom: var(--space-4);
+  }
+
+  .sc-code {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--ink-45);
+  }
+
+  .sc-name {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-display-s);
+    line-height: var(--lh-snug);
+    color: var(--ink);
+    margin: 0 0 var(--space-3);
+  }
+
+  .sc-desc {
+    font-family: var(--font-body);
+    font-size: var(--text-body-s);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    margin: 0;
+    flex: 1;
+  }
+
+  .sc-arrow {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: var(--text-body-m);
+    color: var(--signal);
+    margin-top: var(--space-5);
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity var(--dur-fast) var(--ease-standard),
+                transform var(--dur-fast) var(--ease-standard);
+  }
+
+  .sc-card:hover .sc-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .sc-card:hover .sc-code {
+    color: var(--signal);
+  }
+</style>

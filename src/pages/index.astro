@@ -1,40 +1,592 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCard from '../components/patterns/ServiceCard.astro';
+import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
 
-const schema = {
+const WA_HREF = 'https://wa.me/66XXXXXXXXX';
+
+const services = [
+  { code: 'DTV',  name: 'Destination Thailand Visa',    description: 'Five-year multiple-entry visa for remote workers and freelancers. 180 days per stay.',           href: '/dtv-visa-chiang-mai/'        },
+  { code: 'ED',   name: 'Education Visa',                description: 'For students enrolled in Thai language schools, universities, or training programs.',             href: '/ed-visa-chiang-mai/'         },
+  { code: 'O',    name: 'Marriage Visa',                 description: 'For spouses of Thai nationals — annual extensions with 400,000 THB or 40,000 THB/month income.', href: '/marriage-visa-chiang-mai/'   },
+  { code: 'O-A',  name: 'Retirement Visa',               description: 'For applicants over 50 with 800,000 THB in a Thai bank or 65,000 THB/month income.',             href: '/retirement-visa-chiang-mai/' },
+  { code: 'O',    name: 'Guardian Visa',                 description: 'For parents and guardians supporting a child enrolled in school in Thailand.',                    href: '/guardian-visa-chiang-mai/'   },
+  { code: 'B',    name: 'Business Visa & Work Permits',  description: 'Non-B visas and work permits for professionals and business owners working in Thailand.',          href: '/business-visa-chiang-mai/'   },
+];
+
+const steps = [
+  { n: '01', title: 'Free eligibility assessment', body: 'A free WhatsApp consultation to confirm the right visa for your situation and timeline.' },
+  { n: '02', title: 'Document preparation',        body: 'We assemble, translate, and review every form and supporting document before filing.' },
+  { n: '03', title: 'Immigration submission',       body: 'We submit to immigration and handle every follow-up and query on your behalf.' },
+  { n: '04', title: 'Approval & ongoing support',  body: 'Extensions, 90-day reports, re-entry permits — we stay with you after approval too.' },
+];
+
+const segments = [
+  'Digital nomads & remote workers',
+  'Students on ED visas',
+  'Retirees over 50',
+  'Families, spouses & guardians',
+  'Business owners & professionals',
+  'People moving to Thailand',
+];
+
+const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Vera Visa Agency',
   url: 'https://vera-visa.com',
+  telephone: '+66XXXXXXXXX',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Icon Park Hotel, 310 2F, Room 215',
     addressLocality: 'Chiang Mai',
     addressCountry: 'TH',
   },
+  openingHours: 'Mo-Fr 09:00-18:00',
+  priceRange: '$$',
+  description: 'Local visa agency in Chiang Mai specialising in DTV, retirement, education, marriage, guardian, volunteer, and business visas for expats and remote workers.',
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Vera Visa',
+  url: 'https://vera-visa.com',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: { '@type': 'EntryPoint', urlTemplate: 'https://vera-visa.com/?q={search_term_string}' },
+    'query-input': 'required name=search_term_string',
+  },
 };
 ---
 
 <BaseLayout
-  title="Visa Agent Chiang Mai — DTV, Retirement, ED & Marriage Visas | Vera Visa"
+  title="Visa Agent Chiang Mai — DTV, Retirement & ED Visas | Vera Visa"
   description="Vera Visa Agency helps expats, retirees, and remote workers get legal visa status in Chiang Mai. Free consultation — handled end to end."
   canonicalUrl="https://vera-visa.com/"
-  schema={schema}
+  ogTitle="Vera Visa Agency — Visa Agent Chiang Mai"
+  ogDescription="Local visa agents for expats, retirees, students, and remote workers in Chiang Mai. DTV, retirement, education, marriage, and more — handled end to end."
+  schema={[localBusinessSchema, websiteSchema]}
 >
-  <!-- Homepage content — Phase 5 -->
-  <section class="section">
-    <div class="container">
-      <h1 style="font-family: var(--font-display); font-size: var(--text-display-xl); font-weight: 600; line-height: var(--lh-tight); letter-spacing: var(--ls-display); color: var(--ink);">
-        Stay in Thailand, <span style="color: var(--signal);">legally</span> — without the guesswork.
-      </h1>
-      <p style="font-family: var(--font-body); font-size: var(--text-body-l); color: var(--text-body); margin-top: var(--space-5); max-width: 46ch; line-height: var(--lh-body);">
-        Local visa agents for expats, retirees, students, and remote workers. We handle the paperwork, the immigration office, and the follow-ups.
-      </p>
-      <a href="https://wa.me/66XXXXXXXXX"
-         style="display:inline-flex; align-items:center; gap:var(--space-2); margin-top:var(--space-6); padding:12px var(--space-6); background:var(--signal); color:var(--paper); font-family:var(--font-body); font-weight:var(--fw-medium); font-size:var(--text-body-m); text-decoration:none; border-radius:var(--radius-pill);"
-         target="_blank" rel="noopener noreferrer">
-        Chat on WhatsApp →
-      </a>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container hero__inner">
+
+      <div class="hero__text">
+        <p class="hero__eyebrow">Vera Visa Agency · Chiang Mai</p>
+        <h1 class="hero__h1">
+          Stay in Thailand, <span class="hero__accent">legally</span> — without the guesswork.
+        </h1>
+        <p class="hero__intro">
+          Local visa agents for expats, retirees, students, and remote workers. We handle the paperwork, the immigration office, and the follow-ups.
+        </p>
+        <div class="hero__ctas">
+          <a href={WA_HREF} class="btn-primary vv-cta" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+            Chat on WhatsApp
+          </a>
+          <a href="#services" class="btn-secondary">See visa types</a>
+        </div>
+      </div>
+
+      <!-- Status card -->
+      <div class="hero__card" aria-hidden="true">
+        <span class="hero__perf"></span>
+        <span class="hero__stamp">Verified</span>
+        <div class="hero__card-body">
+          <p class="hero__card-eyebrow">Applicant Status</p>
+          <div class="hero__card-rows">
+            <span class="hero__card-label">Visa Type</span>
+            <span class="hero__card-value">DTV</span>
+            <span class="hero__card-label">Location</span>
+            <span class="hero__card-value">Chiang Mai</span>
+            <span class="hero__card-label">Processing</span>
+            <span class="hero__card-value">4–6 weeks</span>
+          </div>
+          <div class="hero__card-footer">
+            <span class="hero__card-label">Status</span>
+            <span class="hero__card-badge">
+              <span class="hero__dot hero__dot--approved"></span>
+              <span class="hero__badge-label">Approved</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="section section--alt" id="services">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Visa Services</p>
+        <h2 class="section-h2">Six visa types, one local team.</h2>
+        <p class="section-intro">Each pathway has its own requirements and timelines. We assess your situation first, then handle the right one end to end.</p>
+      </div>
+      <div class="services-grid">
+        {services.map((s) => <ServiceCard {...s} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2 class="section-h2">Four steps, fully managed.</h2>
+      </div>
+      <div class="process-grid">
+        {steps.map((s) => (
+          <div class="process-step">
+            <span class="process-n">{s.n}</span>
+            <h3 class="process-title">{s.title}</h3>
+            <p class="process-body">{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIAL ===== -->
+  <section class="section section--alt">
+    <div class="container testimonial-layout">
+      <div class="section-head">
+        <p class="eyebrow">Clients</p>
+        <h2 class="section-h2">Stress-free, start to finish.</h2>
+        <p class="section-intro">We work with hundreds of expats every year. Specificity and follow-through are what they remember.</p>
+      </div>
+
+      <div class="testimonial-card">
+        <span class="testimonial-perf" aria-hidden="true"></span>
+        <div class="testimonial-body">
+          <p class="testimonial-eyebrow">DTV · Chiang Mai</p>
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">
+            {'★★★★★'.split('').map((s) => <span class="star">{s}</span>)}
+          </div>
+          <blockquote class="testimonial-quote">
+            "Efficient, professional, and completely stress-free from start to finish. They knew exactly what immigration needed."
+          </blockquote>
+          <p class="testimonial-author">Yi Mon Thant</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHO WE SERVE ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Who we serve</p>
+        <h2 class="section-h2">Built for people mid-move.</h2>
+      </div>
+      <div class="serve-grid">
+        {segments.map((seg) => (
+          <div class="serve-card">
+            <span class="serve-dot" aria-hidden="true"></span>
+            <span class="serve-label">{seg}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <FinalCtaBand
+    heading="Not sure which visa is right for you?"
+    subtext="A free consultation confirms the right visa for your situation — usually in one WhatsApp chat."
+  />
+
 </BaseLayout>
+
+<style>
+  /* ---- Hero ---- */
+  .hero {
+    background: var(--paper);
+    padding: var(--space-9) 0;
+  }
+
+  .hero__inner {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: var(--space-8);
+    align-items: center;
+  }
+
+  .hero__eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--signal-deep);
+    margin-bottom: var(--space-4);
+  }
+
+  .hero__h1 {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-display-xl);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-display);
+    color: var(--ink);
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .hero__accent {
+    color: var(--signal);
+  }
+
+  .hero__intro {
+    font-family: var(--font-body);
+    font-size: var(--text-body-l);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    margin-top: var(--space-5);
+    max-width: 46ch;
+  }
+
+  .hero__ctas {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 14px var(--space-6);
+    background: var(--signal);
+    color: var(--paper);
+    font-family: var(--font-body);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-body-m);
+    text-decoration: none;
+    border-radius: var(--radius-pill);
+    border: 1px solid transparent;
+    transition: background var(--dur-fast) var(--ease-standard);
+  }
+
+  .btn-primary:hover { background: var(--signal-deep); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px var(--space-6);
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-weight: var(--fw-medium);
+    font-size: var(--text-body-m);
+    text-decoration: none;
+    border-radius: var(--radius-pill);
+    border: var(--border-ink);
+    transition: background var(--dur-fast) var(--ease-standard);
+  }
+
+  .btn-secondary:hover { background: var(--sand); }
+
+  /* Status card */
+  .hero__card {
+    position: relative;
+    background: var(--paper);
+    border: var(--border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+  }
+
+  .hero__perf {
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 16px;
+    background-image: radial-gradient(circle, var(--line) 1.6px, transparent 2px);
+    background-repeat: repeat-y;
+    background-size: 16px 12px;
+    background-position: center;
+  }
+
+  .hero__stamp {
+    position: absolute;
+    top: 18px; right: 16px;
+    transform: rotate(-11deg);
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+    border-radius: 3px;
+    padding: 4px 8px;
+    box-shadow: inset 0 0 0 1.5px var(--paper), inset 0 0 0 3px var(--ink);
+    opacity: 0.55;
+  }
+
+  .hero__card-body { padding: var(--space-5); padding-left: 40px; }
+
+  .hero__card-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--signal-deep);
+    margin-bottom: var(--space-4);
+  }
+
+  .hero__card-rows {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px var(--space-6);
+    align-items: baseline;
+    border-top: var(--border);
+    padding-top: var(--space-4);
+  }
+
+  .hero__card-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label-wide);
+    text-transform: uppercase;
+    color: var(--ink-45);
+  }
+
+  .hero__card-value {
+    font-family: var(--font-body);
+    font-size: var(--text-body-m);
+    font-weight: var(--fw-medium);
+    color: var(--ink);
+    text-align: right;
+  }
+
+  .hero__card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: var(--border);
+    padding-top: var(--space-4);
+    margin-top: var(--space-4);
+  }
+
+  .hero__card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .hero__dot {
+    width: 9px;
+    height: 9px;
+    border-radius: var(--radius-pill);
+  }
+
+  .hero__dot--approved { background: var(--approved); }
+
+  .hero__badge-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  /* ---- Shared section helpers ---- */
+  .section-head { max-width: 720px; margin-bottom: var(--space-7); }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--signal-deep);
+    margin-bottom: var(--space-3);
+  }
+
+  .section-h2 {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-display-l);
+    line-height: var(--lh-snug);
+    letter-spacing: var(--ls-display);
+    color: var(--ink);
+    margin: 0 0 var(--space-4);
+    text-wrap: balance;
+  }
+
+  .section-intro {
+    font-family: var(--font-body);
+    font-size: var(--text-body-l);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  /* ---- Services grid ---- */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+  }
+
+  /* ---- Process ---- */
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-5);
+  }
+
+  .process-step {
+    padding: var(--space-5) 0;
+    border-top: 2px solid var(--line);
+  }
+
+  .process-n {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: var(--text-display-m);
+    font-weight: var(--fw-semibold);
+    color: var(--signal);
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.02em;
+  }
+
+  .process-title {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-display-s);
+    line-height: var(--lh-snug);
+    color: var(--ink);
+    margin: 0 0 var(--space-3);
+  }
+
+  .process-body {
+    font-family: var(--font-body);
+    font-size: var(--text-body-s);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    margin: 0;
+  }
+
+  /* ---- Testimonial ---- */
+  .testimonial-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: center;
+  }
+
+  .testimonial-card {
+    position: relative;
+    background: var(--paper);
+    border: var(--border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+  }
+
+  .testimonial-perf {
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 16px;
+    background-image: radial-gradient(circle, var(--line) 1.6px, transparent 2px);
+    background-repeat: repeat-y;
+    background-size: 16px 12px;
+    background-position: center;
+  }
+
+  .testimonial-body { padding: var(--space-6); padding-left: 40px; }
+
+  .testimonial-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--signal-deep);
+    margin-bottom: var(--space-3);
+  }
+
+  .testimonial-stars { margin-bottom: var(--space-4); }
+
+  .star {
+    color: var(--signal);
+    font-size: 1.125rem;
+  }
+
+  .testimonial-quote {
+    font-family: var(--font-display);
+    font-weight: var(--fw-medium);
+    font-size: var(--text-display-s);
+    line-height: var(--lh-snug);
+    color: var(--ink);
+    margin: 0 0 var(--space-4);
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--ink-45);
+    margin: 0;
+  }
+
+  /* ---- Who We Serve ---- */
+  .serve-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+  }
+
+  .serve-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-5);
+    background: var(--sand);
+    border: var(--border);
+    border-radius: var(--radius-card);
+  }
+
+  .serve-dot {
+    flex-shrink: 0;
+    width: 9px;
+    height: 9px;
+    border-radius: var(--radius-pill);
+    background: var(--approved);
+  }
+
+  .serve-label {
+    font-family: var(--font-body);
+    font-size: var(--text-body-m);
+    font-weight: var(--fw-medium);
+    color: var(--ink);
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 900px) {
+    .hero__inner { grid-template-columns: 1fr; }
+    .hero__card { display: none; }
+    .hero__h1 { font-size: var(--text-display-l); }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonial-layout { grid-template-columns: 1fr; }
+    .serve-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 560px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr; }
+    .serve-grid { grid-template-columns: 1fr; }
+  }
+</style>

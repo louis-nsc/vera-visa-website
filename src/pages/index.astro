@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Vera Visa Agency',
+  url: 'https://vera-visa.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Icon Park Hotel, 310 2F, Room 215',
+    addressLocality: 'Chiang Mai',
+    addressCountry: 'TH',
+  },
+};
+---
+
+<BaseLayout
+  title="Visa Agent Chiang Mai — DTV, Retirement, ED & Marriage Visas | Vera Visa"
+  description="Vera Visa Agency helps expats, retirees, and remote workers get legal visa status in Chiang Mai. Free consultation — handled end to end."
+  canonicalUrl="https://vera-visa.com/"
+  schema={schema}
+>
+  <!-- Homepage content — Phase 5 -->
+  <section class="section">
+    <div class="container">
+      <h1 style="font-family: var(--font-display); font-size: var(--text-display-xl); font-weight: 600; line-height: var(--lh-tight); letter-spacing: var(--ls-display); color: var(--ink);">
+        Stay in Thailand, <span style="color: var(--signal);">legally</span> — without the guesswork.
+      </h1>
+      <p style="font-family: var(--font-body); font-size: var(--text-body-l); color: var(--text-body); margin-top: var(--space-5); max-width: 46ch; line-height: var(--lh-body);">
+        Local visa agents for expats, retirees, students, and remote workers. We handle the paperwork, the immigration office, and the follow-ups.
+      </p>
+      <a href="https://wa.me/66XXXXXXXXX"
+         style="display:inline-flex; align-items:center; gap:var(--space-2); margin-top:var(--space-6); padding:12px var(--space-6); background:var(--signal); color:var(--paper); font-family:var(--font-body); font-weight:var(--fw-medium); font-size:var(--text-body-m); text-decoration:none; border-radius:var(--radius-pill);"
+         target="_blank" rel="noopener noreferrer">
+        Chat on WhatsApp →
+      </a>
+    </div>
+  </section>
+</BaseLayout>

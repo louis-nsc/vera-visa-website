@@ -1,0 +1,221 @@
+---
+const WA_HREF = 'https://wa.me/66XXXXXXXXX';
+
+const company = [
+  { label: 'Visa Agent Chiang Mai', href: '/visa-agent-chiang-mai/' },
+  { label: 'About',                 href: '/about/' },
+  { label: 'Contact',               href: '/#contact' },
+];
+
+const services = [
+  { label: 'DTV Visa',             href: '/dtv-visa-chiang-mai/' },
+  { label: 'Retirement Visa',      href: '/retirement-visa-chiang-mai/' },
+  { label: 'Education Visa',       href: '/ed-visa-chiang-mai/' },
+  { label: 'Marriage Visa',        href: '/marriage-visa-chiang-mai/' },
+  { label: 'Guardian Visa',        href: '/guardian-visa-chiang-mai/' },
+  { label: 'Business / Work Permit', href: '/business-visa-chiang-mai/' },
+  { label: 'Volunteer Visa',       href: '/volunteer-visa-chiang-mai/' },
+];
+---
+
+<footer class="footer" id="contact">
+  <div class="container footer__inner">
+    <div class="footer__grid">
+
+      <!-- Brand + blurb -->
+      <div class="footer__brand">
+        <a href="/" class="footer__logo" aria-label="Vera Visa — home">
+          <img src="/vera-logo-badge.png" alt="" width="40" height="40" class="footer__logo-img" />
+          <span class="footer__logo-name">Vera Visa</span>
+        </a>
+        <p class="footer__blurb">
+          Local visa agents in Chiang Mai. We help expats, retirees, students, and remote workers get legal status in Thailand — handled end to end.
+        </p>
+      </div>
+
+      <!-- Visa Services links -->
+      <div class="footer__col">
+        <p class="footer__col-heading">Visa Services</p>
+        <ul class="footer__nav">
+          {services.map((s) => (
+            <li><a href={s.href} class="footer__nav-link">{s.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Company links -->
+      <div class="footer__col">
+        <p class="footer__col-heading">Company</p>
+        <ul class="footer__nav">
+          {company.map((c) => (
+            <li><a href={c.href} class="footer__nav-link">{c.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Get in touch -->
+      <div class="footer__col">
+        <p class="footer__col-heading">Get in touch</p>
+        <p class="footer__address">
+          Icon Park Hotel<br />
+          310 2F, Room 215<br />
+          Chiang Mai, Thailand
+        </p>
+        <p class="footer__team">Pupae, Tofu &amp; Big — Co-Founders</p>
+        <a href={WA_HREF} class="footer__wa vv-cta" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/>
+          </svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer__bottom">
+      <span>© 2026 Vera Visa Agency · Chiang Mai</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--surface-dark);
+    color: var(--text-on-dark);
+    padding-top: var(--space-9);
+    padding-bottom: var(--space-6);
+  }
+
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: var(--space-7);
+    align-items: start;
+    padding-bottom: var(--space-7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  /* Brand column */
+  .footer__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    text-decoration: none;
+    margin-bottom: var(--space-4);
+  }
+
+  .footer__logo-img {
+    filter: invert(1) brightness(1.4);
+  }
+
+  .footer__logo-name {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: 1.25rem;
+    color: var(--text-on-dark);
+  }
+
+  .footer__blurb {
+    font-family: var(--font-body);
+    font-size: var(--text-body-m);
+    line-height: var(--lh-body);
+    color: var(--text-body-on-dark);
+    max-width: 36ch;
+  }
+
+  /* Link columns */
+  .footer__col-heading {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--signal);
+    margin-bottom: var(--space-4);
+  }
+
+  .footer__nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .footer__nav-link {
+    font-family: var(--font-body);
+    font-size: var(--text-body-m);
+    color: var(--text-body-on-dark);
+    text-decoration: none;
+    transition: color var(--dur-fast) ease;
+  }
+
+  .footer__nav-link:hover {
+    color: var(--text-on-dark);
+  }
+
+  /* Contact column */
+  .footer__address {
+    font-family: var(--font-body);
+    font-size: var(--text-body-m);
+    line-height: var(--lh-body);
+    color: var(--text-body-on-dark);
+    margin-bottom: var(--space-5);
+  }
+
+  .footer__team {
+    font-family: var(--font-body);
+    font-size: var(--text-body-s);
+    color: var(--text-body-on-dark);
+    margin-bottom: var(--space-5);
+  }
+
+  /* WhatsApp button */
+  .footer__wa {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 10px var(--space-5);
+    background: var(--signal);
+    color: var(--paper);
+    font-family: var(--font-body);
+    font-weight: var(--fw-medium);
+    font-size: var(--text-body-s);
+    text-decoration: none;
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+    transition: background var(--dur-fast) var(--ease-standard);
+  }
+
+  .footer__wa:hover {
+    background: var(--signal-deep);
+  }
+
+  /* Bottom bar */
+  .footer__bottom {
+    padding-top: var(--space-5);
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .footer__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .footer__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

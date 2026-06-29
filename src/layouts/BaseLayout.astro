@@ -1,0 +1,74 @@
+---
+import '../styles/global.css';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  schema?: object | object[];
+}
+
+const {
+  title,
+  description,
+  canonicalUrl,
+  ogTitle,
+  ogDescription,
+  ogImage = '/og-default.jpg',
+  ogType = 'website',
+  schema,
+} = Astro.props;
+
+const resolvedOgTitle = ogTitle ?? title;
+const resolvedOgDescription = ogDescription ?? description;
+const schemaArray = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Primary meta -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={resolvedOgTitle} />
+    <meta property="og:description" content={resolvedOgDescription} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site).toString()} />
+    <meta property="og:site_name" content="Vera Visa" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={resolvedOgTitle} />
+    <meta name="twitter:description" content={resolvedOgDescription} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site).toString()} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/vera-logo-badge.png" />
+
+    <!-- Structured data -->
+    {schemaArray.map((s) => (
+      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    ))}
+  </head>
+  <body>
+    <Nav />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

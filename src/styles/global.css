@@ -1,0 +1,59 @@
+/* Vera Visa Website — global styles.
+   The design system is the single source of truth for tokens.
+   This file imports the DS entry point and adds site-level resets only. */
+
+@import '@ds/styles.css';
+
+/* ---- Reset ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: var(--lh-body);
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ---- Utility: Container ---- */
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+/* ---- Utility: Section rhythm ---- */
+.section {
+  padding-block: var(--space-9);
+}
+.section--alt {
+  background: var(--surface-alt);
+}
+.section--dark {
+  background: var(--surface-dark);
+  color: var(--text-on-dark);
+}

@@ -6,20 +6,20 @@
 
 ---
 
-## Phase 1 — Foundation
+## Phase 1 — Foundation ✅
 > Everything else depends on this. Get a deployed preview URL before writing any content.
 
-- [ ] `npm create astro@latest` — TypeScript, strict, no starter template
-- [ ] Install integrations: `@astrojs/react`, `@astrojs/sitemap`, `@astrojs/vercel`
-- [ ] `astro.config.mjs`: set `trailingSlash: 'always'`, `site: 'https://vera-visa.com'`, output: `'server'` (for contact form serverless function)
-- [ ] `tsconfig.json`: path alias `@ds` → `../Vera Visa Design System`
-- [ ] `src/styles/global.css`: single `@import` of DS `styles.css` (relative path to `../Vera Visa Design System/styles.css`)
-- [ ] `BaseLayout.astro`: accepts props `title`, `description`, `canonicalUrl`, `ogTitle`, `ogDescription`, `ogImage`, `ogType`, `schema`; outputs full `<head>` block with all meta + OG + Twitter + JSON-LD
-- [ ] `Nav.astro`: logo, nav links (Services dropdown, About, Contact), WhatsApp CTA button — matches current site nav
-- [ ] `Footer.astro`: Company column, Get In Touch column, WhatsApp link, office address
-- [ ] `vercel.json`: configure trailing slash redirects
+- [x] `npm create astro@latest` — TypeScript, strict, no starter template
+- [x] Install integrations: `@astrojs/react`, `@astrojs/sitemap`, `@astrojs/vercel`
+- [x] `astro.config.mjs`: set `trailingSlash: 'always'`, `site: 'https://vera-visa.com'`, output: `'server'` (for contact form serverless function)
+- [x] `tsconfig.json`: path alias `@ds` → `../Vera Visa Design System`
+- [x] `src/styles/global.css`: single `@import` of DS `styles.css` (via `@ds` Vite alias)
+- [x] `BaseLayout.astro`: accepts props `title`, `description`, `canonicalUrl`, `ogTitle`, `ogDescription`, `ogImage`, `ogType`, `schema`; outputs full `<head>` block with all meta + OG + Twitter + JSON-LD
+- [x] `Nav.astro`: logo, nav links (Services dropdown, About, Contact), WhatsApp CTA button — matches current site nav
+- [x] `Footer.astro`: Company column, Get In Touch column, WhatsApp link, office address
+- [x] `vercel.json`: configure trailing slash redirects
 - [ ] Push to GitHub, connect Vercel, get preview URL live
-- [ ] Commit: `feat: project scaffold and layout shell`
+- [x] Commit: `feat: project scaffold and layout shell`
 
 ---
 
@@ -205,6 +205,12 @@
 ---
 
 ## Notes / decisions log
+
+**2026-06-29** — Phase 1 complete. Scaffold built manually (not via CLI) to keep non-interactive. Key deviations from plan:
+- DS CSS imported via Vite `@ds` alias + `server.fs.allow` rather than a raw relative path — Vite's root restriction blocks imports outside the project dir without this.
+- Nav dropdown implemented with CSS `:hover`/`:focus-within` rather than React state — avoids hydration cost for a purely navigational element. A React island can replace it later if mobile drawer UX is needed.
+- `src/content.config.ts` created alongside the file structure (not in Phase 6 plan) to suppress Astro deprecation warnings for the auto-generated blog collection.
+- Astro 5.18.2 installed; `@astrojs/vercel` v8 uses a unified adapter (no `/serverless` suffix).
 
 **2026-06-29** — Project initialised. Plan agreed. Key decisions:
 - Blog/guide articles stay at root-level URLs (no `/blog/` prefix) to preserve SEO equity

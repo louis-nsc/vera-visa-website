@@ -15,7 +15,10 @@ export default function ContactForm() {
     const data = new FormData(form);
 
     // Honeypot — bots fill every field, humans never see this one.
-    if (data.get('company')) {
+    // Field name is deliberately obscure: common names like "company" get
+    // silently autofilled by Chrome's saved-profile autofill even when the
+    // field is visually hidden, producing false-positive bot detections.
+    if (data.get('vv_hp_field')) {
       setStatus('success');
       return;
     }
@@ -63,7 +66,7 @@ export default function ContactForm() {
       ) : (
         <form className="cf-form" onSubmit={handleSubmit}>
           {/* Honeypot field — hidden from real users via CSS */}
-          <input type="text" name="company" tabIndex={-1} autoComplete="off" className="cf-honeypot" aria-hidden="true" />
+          <input type="text" name="vv_hp_field" tabIndex={-1} autoComplete="off" className="cf-honeypot" aria-hidden="true" />
 
           <label className="cf-field">
             <span className="cf-label">Name</span>

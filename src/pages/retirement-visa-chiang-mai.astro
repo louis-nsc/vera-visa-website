@@ -43,6 +43,11 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
+      name: 'Why do people retire in Chiang Mai instead of Bangkok or the islands?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Lower cost of living, a cooler and less humid climate than Bangkok or the southern islands, JCI-accredited private hospitals, and an established expat community built up over decades are the most common reasons clients give us for choosing Chiang Mai over other parts of Thailand to retire.' },
+    },
+    {
+      '@type': 'Question',
       name: 'What are the financial requirements for the Thai retirement visa?',
       acceptedAnswer: { '@type': 'Answer', text: 'You need either 800,000 THB deposited in a Thai bank account, a monthly income of at least 65,000 THB transferred from abroad, or a combination of income and savings that totals 800,000 THB. The bank deposit must be held for a set period before and after your application — we advise on the exact timing.' },
     },
@@ -86,13 +91,13 @@ const breadcrumbSchema = {
 
 <ServicePageLayout
   title="Retirement Visa Chiang Mai — Requirements | Vera Visa"
-  description="At Vera Visa, we understand all Thai retirement visa requirements for 2026, so you spend your time enjoying the mountains and cafes, not paperwork."
+  description="Thinking about retiring in Chiang Mai, Thailand? Vera Visa explains every O-A visa requirement for 2026, so you can focus on the move, not paperwork."
   canonicalUrl="https://vera-visa.com/retirement-visa-chiang-mai/"
-  ogTitle="Retirement Visa Chiang Mai 2026 — Requirements, Cost & Full Guide | Vera Visa"
-  ogDescription="Retire in Thailand legally. 800,000 THB in a Thai bank or 65,000 THB/month income. Annual renewals handled end to end by Vera Visa in Chiang Mai."
+  ogTitle="Retire in Chiang Mai, Thailand 2026 — Requirements, Cost & Full Guide | Vera Visa"
+  ogDescription="Retiring in Chiang Mai, Thailand? 800,000 THB in a Thai bank or 65,000 THB/month income. Annual renewals handled end to end by Vera Visa."
   schema={[serviceSchema, faqSchema, breadcrumbSchema]}
   eyebrow="O-A · Annual Renewable"
-  intro="The Thai retirement visa lets you live in Chiang Mai year-round — renewed annually by our team, so you spend your time at the cafes and mountains, not immigration offices."
+  intro="Thinking about retiring in Chiang Mai? The Thai retirement visa lets you live here year-round, legally — renewed annually by our team, so you spend your time at the cafes and mountains, not immigration offices."
   ctaText="Check your eligibility on WhatsApp →"
   statusRows={[
     { label: 'Visa Type',    value: 'Non-Imm O-A' },
@@ -103,7 +108,7 @@ const breadcrumbSchema = {
   statusLabel="Approved"
 >
   <Fragment slot="headline">
-    Retire in Thailand. <span style="color: var(--signal);">Legally</span>, and without the paperwork.
+    Retire in Chiang Mai, Thailand. <span style="color: var(--signal);">Legally</span>, and without the paperwork.
   </Fragment>
 
   <QuickFactsStrip facts={[
@@ -115,6 +120,25 @@ const breadcrumbSchema = {
     { label: 'Health Insurance',value: 'Required'            },
     { label: '90-Day Report',   value: 'Required'            },
   ]} />
+
+  <!-- Why Chiang Mai — informational section matching research-stage search intent -->
+  <section class="section" style="background: var(--paper); padding-top: 0;">
+    <div class="container">
+      <h2 class="panel-h2">Why retire in Chiang Mai, Thailand</h2>
+      <p class="panel-intro" style="max-width: 72ch;">
+        Chiang Mai is consistently the top choice for foreigners retiring in Thailand, ahead of Bangkok and the islands. A few reasons people retiring to Chiang Mai give us most often:
+      </p>
+      <ul style="margin: 0 0 var(--space-6); padding-left: var(--space-5); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.8; color: var(--text-body); max-width: 68ch;">
+        <li><strong>Cost of living.</strong> Rent, food, and healthcare in Chiang Mai run well below Bangkok and far below most Western cities — many retirees comfortably cover living costs on a typical pension.</li>
+        <li><strong>Climate and pace.</strong> Cooler and less humid than Bangkok or the southern islands for much of the year, with a slower, walkable old-city pace many retirees prefer over a capital city.</li>
+        <li><strong>Healthcare quality.</strong> Chiang Mai has several JCI-accredited private hospitals used by expats, with English-speaking staff and costs a fraction of US or UK private care.</li>
+        <li><strong>An established expat community.</strong> Decades of foreign retirees means real infrastructure — international cafes, expat social groups, retirement-focused services — not a brand-new scene.</li>
+      </ul>
+      <p class="panel-intro" style="max-width: 72ch; margin-bottom: 0;">
+        None of that changes the legal requirements, though — retiring in Chiang Mai, Thailand still means meeting the same Non-Immigrant O-A criteria as anywhere else in the country. Here's exactly what that takes.
+      </p>
+    </div>
+  </section>
 
   <BenefitGrid
     eyebrow="Retirement Visa Benefits"

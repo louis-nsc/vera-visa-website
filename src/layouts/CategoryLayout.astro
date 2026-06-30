@@ -1,0 +1,116 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+
+interface Article {
+  title: string;
+  description: string;
+  href: string;
+}
+
+interface RelatedLink {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  breadcrumbLabel: string;
+  h1: string;
+  intro: string;
+  articles: Article[];
+  relatedLinks: RelatedLink[];
+  ctaHeading: string;
+  ctaSubtext: string;
+}
+
+const {
+  title, description, canonicalUrl, ogTitle, ogDescription,
+  breadcrumbLabel, h1, intro, articles, relatedLinks, ctaHeading, ctaSubtext,
+} = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: h1,
+  description,
+  url: canonicalUrl,
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vera-visa.com/' },
+    { '@type': 'ListItem', position: 2, name: breadcrumbLabel, item: canonicalUrl },
+  ],
+};
+---
+
+<BaseLayout
+  {title} {description} {canonicalUrl}
+  {ogTitle} {ogDescription}
+  schema={[schema, breadcrumbSchema]}
+>
+  <section class="cat-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/" class="bc-link">Home</a>
+        <span class="bc-sep" aria-hidden="true">›</span>
+        <span>{breadcrumbLabel}</span>
+      </nav>
+      <p class="eyebrow">Category</p>
+      <h1 class="cat-h1">{h1}</h1>
+      <p class="cat-intro">{intro}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="article-list">
+        {articles.map((a) => (
+          <a href={a.href} class="article-card">
+            <h2 class="article-title">{a.title}</h2>
+            <p class="article-desc">{a.description}</p>
+            <span class="article-cta">Read guide →</span>
+          </a>
+        ))}
+      </div>
+      {relatedLinks.length > 0 && (
+        <div class="cat-also">
+          <p class="eyebrow" style="margin-bottom: var(--space-4);">Related visa types</p>
+          <div class="also-links">
+            {relatedLinks.map((l) => <a href={l.href} class="also-link">{l.label} →</a>)}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <FinalCtaBand heading={ctaHeading} subtext={ctaSubtext} />
+</BaseLayout>
+
+<style>
+  .cat-header { background: var(--sand); padding: var(--space-7) 0 var(--space-8); }
+  .breadcrumb { display: flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono); font-size: var(--text-label-s); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--ink-45); margin-bottom: var(--space-5); }
+  .bc-link { color: var(--ink-45); text-decoration: none; }
+  .bc-link:hover { color: var(--signal-deeper); }
+  .bc-sep { color: var(--line); }
+  .eyebrow { font-family: var(--font-mono); font-size: var(--text-label); font-weight: var(--fw-medium); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--signal-deeper); margin-bottom: var(--space-3); }
+  .cat-h1 { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: var(--text-display-l); line-height: var(--lh-snug); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-4); }
+  .cat-intro { font-family: var(--font-body); font-size: var(--text-body-l); line-height: var(--lh-body); color: var(--text-body); max-width: 56ch; margin: 0; }
+  .article-list { display: flex; flex-direction: column; gap: 0; margin-bottom: var(--space-9); }
+  .article-card { display: block; padding: var(--space-6) 0; border-bottom: 1px solid var(--line); text-decoration: none; color: inherit; transition: padding-left var(--dur-fast) var(--ease-standard); }
+  .article-card:first-child { border-top: 1px solid var(--line); }
+  .article-card:hover { padding-left: var(--space-3); }
+  .article-title { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: var(--text-display-s); line-height: var(--lh-snug); color: var(--ink); margin: 0 0 var(--space-3); max-width: 56ch; }
+  .article-desc { font-family: var(--font-body); font-size: var(--text-body-m); line-height: var(--lh-body); color: var(--text-body); margin: 0 0 var(--space-4); max-width: 60ch; }
+  .article-cta { font-family: var(--font-mono); font-size: var(--text-label); font-weight: var(--fw-medium); letter-spacing: var(--ls-label); color: var(--signal-deeper); }
+  .also-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4px var(--space-8); }
+  .also-link { display: block; padding: 12px 0; border-bottom: 1px solid var(--line); font-family: var(--font-body); font-size: var(--text-body-m); color: var(--ink); text-decoration: none; transition: color var(--dur-fast) ease; }
+  .also-link:hover { color: var(--signal-deeper); }
+</style>

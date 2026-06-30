@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/interactive/ContactForm';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Vera Visa Agency',
+    url: 'https://vera-visa.com',
+    telephone: '+66919192823',
+    email: 'pupae@vera-visa.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Icon Park Hotel, 310 2F, Room 215',
+      addressLocality: 'Chiang Mai',
+      addressCountry: 'TH',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vera-visa.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://vera-visa.com/contact/' },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Contact Vera Visa Agency Chiang Mai"
+  description="Get in touch with Vera Visa Agency Chiang Mai. Free visa consultation by WhatsApp, email, or phone. Icon Park Hotel, Chiang Mai."
+  canonicalUrl="https://vera-visa.com/contact/"
+  ogTitle="Contact Vera Visa Agency Chiang Mai"
+  ogDescription="Reach Vera Visa Agency for visa support in Chiang Mai — WhatsApp, email, phone, or visit our office at Icon Park Hotel."
+  schema={schema}
+>
+
+  <section class="contact-header">
+    <div class="container">
+      <p class="eyebrow">Contact</p>
+      <h1 class="contact-h1">Contact now for visa support in Chiang Mai.</h1>
+      <p class="contact-intro">Request a free consultation — we typically reply the same day.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-layout">
+      <div>
+        <p class="eyebrow">Request a free consultation</p>
+        <h2 class="section-h2">Get in touch</h2>
+        <ContactForm client:idle />
+      </div>
+
+      <div class="reach-card">
+        <p class="eyebrow" style="color: var(--signal-deeper);">Reach us</p>
+        <dl class="reach-list">
+          <dt>Email</dt>
+          <dd><a href="mailto:pupae@vera-visa.com" class="vv-link">pupae@vera-visa.com</a></dd>
+
+          <dt>Phone</dt>
+          <dd><a href="tel:+66919192823" class="vv-link">091 919 2823</a></dd>
+
+          <dt>WhatsApp</dt>
+          <dd><a href="https://wa.me/66908917582" class="vv-link" target="_blank" rel="noopener noreferrer">+66 90 891 7582</a></dd>
+
+          <dt>Office</dt>
+          <dd>Icon Park Hotel<br />310 2F, Room 215<br />Chiang Mai, Thailand</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .contact-header { background: var(--paper); padding: 64px 0 var(--space-7); }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--signal-deeper);
+    margin-bottom: var(--space-4);
+  }
+
+  .contact-h1 {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: clamp(2.25rem, 4.5vw, var(--text-display-l));
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-display);
+    color: var(--ink);
+    margin: 0 0 var(--space-4);
+    max-width: 22ch;
+    text-wrap: balance;
+  }
+
+  .contact-intro {
+    font-family: var(--font-body);
+    font-size: var(--text-body-l);
+    color: var(--text-body);
+    margin: 0;
+  }
+
+  .section-h2 {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-display-m);
+    line-height: var(--lh-snug);
+    letter-spacing: var(--ls-display);
+    color: var(--ink);
+    margin: 0 0 var(--space-5);
+  }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  .reach-card {
+    background: var(--sand);
+    border: var(--border);
+    border-radius: var(--radius-card);
+    padding: var(--space-6);
+  }
+
+  .reach-list {
+    margin: 0;
+    display: grid;
+    gap: var(--space-2) 0;
+  }
+
+  .reach-list dt {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label-wide);
+    text-transform: uppercase;
+    color: var(--ink-45);
+    margin-top: var(--space-4);
+  }
+
+  .reach-list dt:first-child { margin-top: 0; }
+
+  .reach-list dd {
+    margin: 4px 0 0;
+    font-family: var(--font-body);
+    font-size: var(--text-body-m);
+    line-height: var(--lh-body);
+    color: var(--ink);
+  }
+
+  @media (max-width: 760px) {
+    .contact-layout { grid-template-columns: 1fr; }
+  }
+</style>

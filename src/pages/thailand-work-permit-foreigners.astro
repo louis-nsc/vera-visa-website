@@ -1,8 +1,15 @@
 ---
+// Consolidated into thailand-work-permit-requirements per GSC data: this page
+// had zero impressions/clicks in 90 days (no independent ranking signal) while
+// thailand-work-permit-requirements is the strongest of the three overlapping
+// work-permit articles. Renders that page's content but canonicalizes to it,
+// preserving this URL (no 404, no lost backlink equity) while consolidating
+// ranking signal onto the stronger page — same pattern as the
+// thailand-e-work-permit-2025/2026 consolidation.
 import { getEntry, render } from 'astro:content';
 import BlogLayout from '../layouts/BlogLayout.astro';
 
-const entry = await getEntry('blog', 'thailand-work-permit-foreigners');
+const entry = await getEntry('blog', 'thailand-work-permit-requirements');
 if (!entry) return Astro.redirect('/');
 const { Content } = await render(entry);
 const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
@@ -10,13 +17,13 @@ const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime 
 
 <BlogLayout
   {title} {description}
-  canonicalUrl="https://vera-visa.com/thailand-work-permit-foreigners/"
+  canonicalUrl="https://vera-visa.com/thailand-work-permit-requirements/"
   {ogTitle} {ogDescription}
   {publishedTime} {modifiedTime}
   relatedGuides={[
-    { label: 'Thailand Work Permit — Full Guide',  href: '/thailand-work-permit-guide/'        },
-    { label: 'Work Permit Requirements Checklist', href: '/thailand-work-permit-requirements/' },
-    { label: 'E-Work Permit System 2026',          href: '/thailand-e-work-permit-2026/'       },
+    { label: 'Thailand Work Permit — Full Guide',        href: '/thailand-work-permit-guide/'             },
+    { label: 'Business Visa & Work Permits Chiang Mai',  href: '/work-permits-business-visas-chiang-mai/' },
+    { label: 'E-Work Permit System 2026',                href: '/thailand-e-work-permit-2026/'            },
   ]}
 >
   <Content />

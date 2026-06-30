@@ -211,12 +211,26 @@
 
 ## Contact form email
 > ✅ Done — Resend domain (vera-visa.com) DNS records verified, RESEND_API_KEY set in Vercel
-> (Production + Preview). End-to-end test confirmed 2026-06-30: form submission succeeded and
-> email was delivered.
+> (Production + Preview). First end-to-end test on 2026-06-30 showed a false "success" — a
+> honeypot bug (see decisions log) was silently swallowing real submissions before they ever
+> reached /api/contact. Fixed same day; retest confirmed POST /api/contact/ → 200 from Resend
+> and email actually delivered to both inboxes.
 
 ---
 
 ## Notes / decisions log
+
+**2026-06-30** — Contact form honeypot bug found and fixed. The honeypot field was named
+`company` — Chrome's autofill engine recognizes that name from saved-profile data and will
+silently fill it even when the field is positioned off-screen and not in the tab order.
+This false-triggered the bot-detection short-circuit in `ContactForm.tsx`, which sets
+`status: 'success'` *before* the `fetch('/api/contact')` call — so the user saw a real-looking
+success message while no request was ever sent and no email arrived. Caught by an actual user
+test, not by code review, because the bug requires a browser autofill profile with a saved
+company/org value to reproduce — it wouldn't show up in any local testing without one. Fixed
+by renaming the field to an obscure name (`vv_hp_field`) that autofill heuristics won't match.
+**Lesson:** honeypot field names should never overlap common autofill-targeted field names
+(company, organization, phone, address, etc.) — pick deliberately meaningless names.
 
 **2026-06-29** — Phase 1 complete. Scaffold built manually (not via CLI) to keep non-interactive. Key deviations from plan:
 - DS CSS imported via Vite `@ds` alias + `server.fs.allow` rather than a raw relative path — Vite's root restriction blocks imports outside the project dir without this.

@@ -1,0 +1,23 @@
+---
+import { getEntry, render } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const entry = await getEntry('blog', 'guardian-visa-thailand-cost');
+if (!entry) return Astro.redirect('/');
+const { Content } = await render(entry);
+const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
+---
+
+<BlogLayout
+  {title} {description}
+  canonicalUrl="https://vera-visa.com/guardian-visa-thailand-cost/"
+  {ogTitle} {ogDescription}
+  {publishedTime} {modifiedTime}
+  relatedGuides={[
+    { label: 'Guardian Visa Chiang Mai — Full Guide', href: '/guardian-visa-chiang-mai/'   },
+    { label: 'Guardian Visa Thailand Requirements',   href: '/guardian-visa-thailand-requirements/' },
+    { label: 'Guardian Visa Renewal Thailand',        href: '/guardian-visa-renewal-thailand/' },
+  ]}
+>
+  <Content />
+</BlogLayout>

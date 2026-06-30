@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-// TODO: replace with the real Google Business Profile review link before launch
-const GOOGLE_REVIEW_HREF = 'https://g.page/r/REPLACE_WITH_REAL_GOOGLE_REVIEW_LINK/review';
+const GOOGLE_REVIEW_HREF = 'https://g.page/r/Cd4hOP-Cer1JEBM/review';
 
 type Step = 'rate' | 'positive' | 'negative' | 'thanks';
 

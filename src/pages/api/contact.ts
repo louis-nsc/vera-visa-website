@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
-const CONTACT_DESTINATION_EMAIL = 'hello@vera-visa.com'; // TODO: replace with real inbox before launch
+const CONTACT_DESTINATION_EMAILS = ['ornipaornipa@gmail.com', 'louis@nostringscontent.com'];
 
 interface ContactPayload {
   name?: string;
@@ -47,7 +47,7 @@ export const POST: APIRoute = async ({ request }) => {
     },
     body: JSON.stringify({
       from: 'Vera Visa Website <noreply@vera-visa.com>',
-      to: [CONTACT_DESTINATION_EMAIL],
+      to: CONTACT_DESTINATION_EMAILS,
       reply_to: email,
       subject: `New website enquiry from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,

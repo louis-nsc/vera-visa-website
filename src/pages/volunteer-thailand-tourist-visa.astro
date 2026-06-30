@@ -1,0 +1,23 @@
+---
+import { getEntry, render } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const entry = await getEntry('blog', 'volunteer-thailand-tourist-visa');
+if (!entry) return Astro.redirect('/');
+const { Content } = await render(entry);
+const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
+---
+
+<BlogLayout
+  {title} {description}
+  canonicalUrl="https://vera-visa.com/volunteer-thailand-tourist-visa/"
+  {ogTitle} {ogDescription}
+  {publishedTime} {modifiedTime}
+  relatedGuides={[
+    { label: 'Volunteer Visa Chiang Mai — Full Guide', href: '/volunteer-visa-chiang-mai/' },
+    { label: 'How the Non-O Visa Works for Volunteers', href: '/volunteer-visa-thailand/'   },
+    { label: 'Education Visa Chiang Mai',               href: '/education-visa-chiang-mai/' },
+  ]}
+>
+  <Content />
+</BlogLayout>

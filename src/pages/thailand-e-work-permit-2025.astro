@@ -1,0 +1,27 @@
+---
+// The live site's 2025 and 2026 versions of this article are near-duplicate
+// content. Rather than publish two competing pages, this URL is preserved
+// (no 404, no lost backlink equity) but canonicalizes to the 2026 version,
+// which carries the full content and consolidates ranking signal there.
+import { getEntry, render } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const entry = await getEntry('blog', 'thailand-e-work-permit-2026');
+if (!entry) return Astro.redirect('/');
+const { Content } = await render(entry);
+const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
+---
+
+<BlogLayout
+  {title} {description}
+  canonicalUrl="https://vera-visa.com/thailand-e-work-permit-2026/"
+  {ogTitle} {ogDescription}
+  {publishedTime} {modifiedTime}
+  relatedGuides={[
+    { label: 'Thailand Work Permit — Full Guide',      href: '/thailand-work-permit-guide/'        },
+    { label: 'Work Permit Requirements Checklist',     href: '/thailand-work-permit-requirements/' },
+    { label: 'Business Visa & Work Permits Chiang Mai',href: '/work-permits-business-visas-chiang-mai/' },
+  ]}
+>
+  <Content />
+</BlogLayout>

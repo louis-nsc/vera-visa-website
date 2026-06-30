@@ -1,0 +1,23 @@
+---
+import { getEntry, render } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const entry = await getEntry('blog', 'retirement-visa-thailand-requirements');
+if (!entry) return Astro.redirect('/');
+const { Content } = await render(entry);
+const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
+---
+
+<BlogLayout
+  {title} {description}
+  canonicalUrl="https://vera-visa.com/retirement-visa-thailand-requirements/"
+  {ogTitle} {ogDescription}
+  {publishedTime} {modifiedTime}
+  relatedGuides={[
+    { label: 'Retirement Visa Chiang Mai — Full Guide', href: '/retirement-visa-chiang-mai/'     },
+    { label: 'Retirement Visa Thailand Cost',           href: '/retirement-visa-thailand-cost/'  },
+    { label: 'Retirement Visa for Americans',           href: '/retirement-visa-americans/'      },
+  ]}
+>
+  <Content />
+</BlogLayout>

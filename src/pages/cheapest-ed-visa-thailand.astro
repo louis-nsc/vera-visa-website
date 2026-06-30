@@ -1,0 +1,23 @@
+---
+import { getEntry, render } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const entry = await getEntry('blog', 'cheapest-ed-visa-thailand');
+if (!entry) return Astro.redirect('/');
+const { Content } = await render(entry);
+const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
+---
+
+<BlogLayout
+  {title} {description}
+  canonicalUrl="https://vera-visa.com/cheapest-ed-visa-thailand/"
+  {ogTitle} {ogDescription}
+  {publishedTime} {modifiedTime}
+  relatedGuides={[
+    { label: 'Thai Language School ED Visa', href: '/thai-language-school-ed-visa-chiang-mai/' },
+    { label: 'Muay Thai ED Visa',             href: '/muay-thai-ed-visa-thailand/'              },
+    { label: 'Education Visa Chiang Mai',     href: '/education-visa-chiang-mai/'               },
+  ]}
+>
+  <Content />
+</BlogLayout>

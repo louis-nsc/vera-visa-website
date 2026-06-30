@@ -1,0 +1,23 @@
+---
+import { getEntry, render } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const entry = await getEntry('blog', 'dtv-visa-vs-retirement-visa-thailand');
+if (!entry) return Astro.redirect('/');
+const { Content } = await render(entry);
+const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
+---
+
+<BlogLayout
+  {title} {description}
+  canonicalUrl="https://vera-visa.com/dtv-visa-vs-retirement-visa-thailand/"
+  {ogTitle} {ogDescription}
+  {publishedTime} {modifiedTime}
+  relatedGuides={[
+    { label: 'DTV Visa Chiang Mai — Full Guide',        href: '/dtv-visa-chiang-mai/'         },
+    { label: 'Retirement Visa Chiang Mai — Full Guide', href: '/retirement-visa-chiang-mai/'  },
+    { label: 'DTV vs Tourist Visa',                     href: '/dtv-visa-vs-tourist-visa-thailand/' },
+  ]}
+>
+  <Content />
+</BlogLayout>

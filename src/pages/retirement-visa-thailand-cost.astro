@@ -1,0 +1,24 @@
+---
+import { getEntry, render } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const entry = await getEntry('blog', 'retirement-visa-thailand-cost');
+if (!entry) return Astro.redirect('/');
+const { Content } = await render(entry);
+const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
+---
+
+<BlogLayout
+  {title} {description}
+  canonicalUrl="https://vera-visa.com/retirement-visa-thailand-cost/"
+  {ogTitle} {ogDescription}
+  {publishedTime} {modifiedTime}
+  relatedGuides={[
+    { label: 'Retirement Visa Chiang Mai — Full Guide',  href: '/retirement-visa-chiang-mai/'    },
+    { label: 'Retirement Visa for Americans',            href: '/retirement-visa-americans/'     },
+    { label: 'Retirement Visa for Australians',          href: '/retirement-visa-australians/'   },
+    { label: 'Marriage Visa Thailand Cost',              href: '/marriage-visa-thailand-cost/'   },
+  ]}
+>
+  <Content />
+</BlogLayout>

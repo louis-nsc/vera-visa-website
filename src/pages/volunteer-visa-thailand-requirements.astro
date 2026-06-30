@@ -1,0 +1,23 @@
+---
+import { getEntry, render } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const entry = await getEntry('blog', 'volunteer-visa-thailand-requirements');
+if (!entry) return Astro.redirect('/');
+const { Content } = await render(entry);
+const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
+---
+
+<BlogLayout
+  {title} {description}
+  canonicalUrl="https://vera-visa.com/volunteer-visa-thailand-requirements/"
+  {ogTitle} {ogDescription}
+  {publishedTime} {modifiedTime}
+  relatedGuides={[
+    { label: 'Volunteer Visa Chiang Mai — Full Guide', href: '/volunteer-visa-chiang-mai/'      },
+    { label: 'Long-Term Volunteer Visa Options',       href: '/volunteer-chiang-mai-long-term/' },
+    { label: 'Can You Volunteer on a Tourist Visa?',   href: '/volunteer-thailand-tourist-visa/' },
+  ]}
+>
+  <Content />
+</BlogLayout>

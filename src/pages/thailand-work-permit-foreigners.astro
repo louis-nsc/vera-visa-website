@@ -1,0 +1,23 @@
+---
+import { getEntry, render } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const entry = await getEntry('blog', 'thailand-work-permit-foreigners');
+if (!entry) return Astro.redirect('/');
+const { Content } = await render(entry);
+const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
+---
+
+<BlogLayout
+  {title} {description}
+  canonicalUrl="https://vera-visa.com/thailand-work-permit-foreigners/"
+  {ogTitle} {ogDescription}
+  {publishedTime} {modifiedTime}
+  relatedGuides={[
+    { label: 'Thailand Work Permit — Full Guide',  href: '/thailand-work-permit-guide/'        },
+    { label: 'Work Permit Requirements Checklist', href: '/thailand-work-permit-requirements/' },
+    { label: 'E-Work Permit System 2026',          href: '/thailand-e-work-permit-2026/'       },
+  ]}
+>
+  <Content />
+</BlogLayout>

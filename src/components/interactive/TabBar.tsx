@@ -13,12 +13,17 @@ interface Props {
 export default function TabBar({ tabs, defaultTab }: Props) {
   const [active, setActive] = useState(defaultTab ?? tabs[0]?.id ?? '');
 
-  // Show/hide panels in the DOM via data-tab-panel attribute.
+  // Show/hide panels in the DOM via data-tab-panel attribute, and assign the
+  // id each button's aria-controls points to (panels are static Astro markup,
+  // so they don't carry the id themselves).
   // Runs once on mount to set initial visibility, then on every tab change.
   useEffect(() => {
     tabs.forEach(({ id }) => {
       const el = document.querySelector<HTMLElement>(`[data-tab-panel="${id}"]`);
-      if (el) el.hidden = id !== active;
+      if (el) {
+        el.hidden = id !== active;
+        el.id = `panel-${id}`;
+      }
     });
   }, [active, tabs]);
 

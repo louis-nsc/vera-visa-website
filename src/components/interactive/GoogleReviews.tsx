@@ -47,7 +47,7 @@ export default function GoogleReviews() {
         .gr-wrap { display: flex; flex-direction: column; gap: var(--space-6); }
         .gr-summary { display: flex; align-items: center; gap: var(--space-3); }
         .gr-stars { display: inline-flex; }
-        .gr-star { color: var(--signal); font-size: 1.125rem; line-height: 1; }
+        .gr-star { color: var(--signal-deeper); font-size: 1.125rem; line-height: 1; }
         .gr-summary-text {
           font-family: var(--font-body); font-size: var(--text-body-m); color: var(--text-body);
         }
@@ -62,7 +62,7 @@ export default function GoogleReviews() {
         }
         .gr-card-eyebrow {
           font-family: var(--font-mono); font-size: 11px; font-weight: 500;
-          letter-spacing: 0.1em; text-transform: uppercase; color: var(--signal-deep);
+          letter-spacing: 0.1em; text-transform: uppercase; color: var(--signal-deeper);
           margin: 0;
         }
         .gr-quote {
@@ -77,10 +77,10 @@ export default function GoogleReviews() {
         .gr-toggle {
           align-self: flex-start; background: none; border: none; cursor: pointer;
           font-family: var(--font-body); font-weight: 500; font-size: var(--text-body-s);
-          color: var(--signal-deep); padding: 0; text-decoration: underline;
+          color: var(--signal-deeper); padding: 0; text-decoration: underline;
           text-underline-offset: 2px;
         }
-        .gr-toggle:hover { color: var(--signal); }
+        .gr-toggle:hover { color: var(--signal-deeper); }
         @media (max-width: 900px) {
           .gr-grid { grid-template-columns: 1fr 1fr; }
         }

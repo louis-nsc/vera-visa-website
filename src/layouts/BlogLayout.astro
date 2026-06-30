@@ -139,7 +139,7 @@ const modDate = modifiedTime
     text-decoration: none;
     transition: color var(--dur-fast) ease;
   }
-  .bc-link:hover { color: var(--signal); }
+  .bc-link:hover { color: var(--signal-deeper); }
   .bc-sep { color: var(--line); }
   .bc-current { color: var(--ink-45); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 40ch; }
 
@@ -260,12 +260,12 @@ const modDate = modifiedTime
   .blog-prose :global(strong) { color: var(--ink); font-weight: var(--fw-semibold); }
 
   .blog-prose :global(a) {
-    color: var(--signal-deep);
+    color: var(--signal-deeper);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
 
-  .blog-prose :global(a:hover) { color: var(--signal); }
+  .blog-prose :global(a:hover) { color: var(--signal-deeper); }
 
   .blog-prose :global(blockquote) {
     background: var(--sand);
@@ -321,7 +321,7 @@ const modDate = modifiedTime
     font-weight: var(--fw-medium);
     letter-spacing: var(--ls-label);
     text-transform: uppercase;
-    color: var(--signal-deep);
+    color: var(--signal-deeper);
     margin-bottom: var(--space-3);
   }
 
@@ -336,7 +336,7 @@ const modDate = modifiedTime
   .blog-cta-btn {
     display: inline-block;
     padding: 10px var(--space-5);
-    background: var(--signal);
+    background: var(--signal-deep);
     color: var(--paper);
     font-family: var(--font-body);
     font-weight: var(--fw-medium);
@@ -346,7 +346,7 @@ const modDate = modifiedTime
     transition: background var(--dur-fast) var(--ease-standard);
   }
 
-  .blog-cta-btn:hover { background: var(--signal-deep); }
+  .blog-cta-btn:hover { background: var(--signal-deeper); }
 
   /* Responsive */
   @media (max-width: 900px) {

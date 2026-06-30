@@ -92,12 +92,12 @@ export default function ContactForm() {
         .cf-wrap { display: flex; flex-direction: column; gap: var(--space-5); }
         .cf-wa {
           display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
-          padding: 14px var(--space-6); background: var(--signal); color: var(--paper);
+          padding: 14px var(--space-6); background: var(--signal-deep); color: var(--paper);
           font-family: var(--font-body); font-weight: 600; font-size: var(--text-body-m);
           text-decoration: none; border-radius: var(--radius-pill); border: 1px solid transparent;
           transition: background 120ms cubic-bezier(0.2,0,0,1);
         }
-        .cf-wa:hover { background: var(--signal-deep); }
+        .cf-wa:hover { background: var(--signal-deeper); }
         .cf-divider {
           display: flex; align-items: center; gap: var(--space-3);
           font-family: var(--font-mono); font-size: 11px; font-weight: 500;
@@ -131,7 +131,7 @@ export default function ContactForm() {
           background: var(--sand); border-radius: 4px; padding: var(--space-4);
         }
         .cf-error {
-          font-family: var(--font-body); font-size: var(--text-body-s); color: var(--signal-deep);
+          font-family: var(--font-body); font-size: var(--text-body-s); color: var(--signal-deeper);
           margin: 0;
         }
       `}</style>

@@ -24,7 +24,7 @@ const { eyebrow, heading, intro, items } = Astro.props;
       {items.map((item, i) => (
         <div class="vv-benefit-cell">
           <div class="vv-benefit-number">{String(i + 1).padStart(2, '0')}</div>
-          <h4 class="vv-benefit-title">{item.title}</h4>
+          <h3 class="vv-benefit-title">{item.title}</h3>
           <p class="vv-benefit-body">{item.body}</p>
         </div>
       ))}
@@ -43,7 +43,7 @@ const { eyebrow, heading, intro, items } = Astro.props;
     font-weight: var(--fw-medium);
     letter-spacing: var(--ls-label);
     text-transform: uppercase;
-    color: var(--signal-deep);
+    color: var(--signal-deeper);
     margin-bottom: var(--space-4);
   }
 

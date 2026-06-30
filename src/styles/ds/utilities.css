@@ -2,12 +2,14 @@
    Drop these into any surface via <link rel="stylesheet" href="styles.css">.
    Inline declarations in templates can override them; these are the defaults. */
 
-/* Primary CTA button hover — darkens to --signal-deep */
+/* Primary CTA button hover — darkens to --signal-deeper.
+   Default button background is --signal-deep (not --signal): white text on
+   raw --signal is 2.98:1 contrast, failing WCAG AA. --signal-deep passes at 4.81:1. */
 .vv-cta {
   transition: background var(--dur-fast) var(--ease-standard);
 }
 .vv-cta:hover {
-  background: var(--signal-deep) !important;
+  background: var(--signal-deeper) !important;
 }
 
 /* Inline text link — signals on hover, used inside body copy and callouts */
@@ -15,7 +17,7 @@
   transition: color var(--dur-fast) ease;
 }
 .vv-link:hover {
-  color: var(--signal) !important;
+  color: var(--signal-deeper) !important;
 }
 
 /* Numbered benefit grid

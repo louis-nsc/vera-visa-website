@@ -1,0 +1,23 @@
+---
+import { getEntry, render } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const entry = await getEntry('blog', 'dtv-visa-thailand-cost');
+if (!entry) return Astro.redirect('/');
+const { Content } = await render(entry);
+const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
+---
+
+<BlogLayout
+  {title} {description}
+  canonicalUrl="https://vera-visa.com/dtv-visa-thailand-cost/"
+  {ogTitle} {ogDescription}
+  {publishedTime} {modifiedTime}
+  relatedGuides={[
+    { label: 'DTV Visa Chiang Mai — Full Guide', href: '/dtv-visa-chiang-mai/'   },
+    { label: 'DTV Visa for Americans',           href: '/dtv-visa-americans/'    },
+    { label: 'Retirement Visa Thailand Cost',    href: '/retirement-visa-thailand-cost/' },
+  ]}
+>
+  <Content />
+</BlogLayout>

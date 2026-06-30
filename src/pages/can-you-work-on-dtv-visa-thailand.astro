@@ -1,0 +1,23 @@
+---
+import { getEntry, render } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const entry = await getEntry('blog', 'can-you-work-on-dtv-visa-thailand');
+if (!entry) return Astro.redirect('/');
+const { Content } = await render(entry);
+const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
+---
+
+<BlogLayout
+  {title} {description}
+  canonicalUrl="https://vera-visa.com/can-you-work-on-dtv-visa-thailand/"
+  {ogTitle} {ogDescription}
+  {publishedTime} {modifiedTime}
+  relatedGuides={[
+    { label: 'DTV Visa Chiang Mai — Full Guide',         href: '/dtv-visa-chiang-mai/'                    },
+    { label: 'Business Visa & Work Permits Chiang Mai',  href: '/work-permits-business-visas-chiang-mai/' },
+    { label: 'DTV Visa Thailand Requirements',           href: '/dtv-visa-thailand-requirements/'         },
+  ]}
+>
+  <Content />
+</BlogLayout>

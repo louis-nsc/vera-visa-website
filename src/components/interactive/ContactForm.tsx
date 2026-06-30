@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 
-const WA_HREF = 'https://wa.me/66XXXXXXXXX';
+const WA_HREF = 'https://wa.me/66908917582';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 

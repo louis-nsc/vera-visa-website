@@ -205,8 +205,14 @@
 ---
 
 ## WhatsApp number
-> Replace `66XXXXXXXXX` with the real number before launch.  
-> Current placeholder used across all CTA buttons.
+> ✅ Done — replaced with the real number (66908917582) across all CTA buttons sitewide, 2026-06-30.
+
+---
+
+## Contact form email
+> ✅ Done — Resend domain (vera-visa.com) DNS records verified, RESEND_API_KEY set in Vercel
+> (Production + Preview). End-to-end test confirmed 2026-06-30: form submission succeeded and
+> email was delivered.
 
 ---
 

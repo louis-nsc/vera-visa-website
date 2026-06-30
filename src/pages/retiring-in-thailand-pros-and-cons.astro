@@ -1,0 +1,23 @@
+---
+import { getEntry, render } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const entry = await getEntry('blog', 'retiring-in-thailand-pros-and-cons');
+if (!entry) return Astro.redirect('/');
+const { Content } = await render(entry);
+const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
+---
+
+<BlogLayout
+  {title} {description}
+  canonicalUrl="https://vera-visa.com/retiring-in-thailand-pros-and-cons/"
+  {ogTitle} {ogDescription}
+  {publishedTime} {modifiedTime}
+  relatedGuides={[
+    { label: 'Why Chiang Mai for Retirement',           href: '/retire-in-chiang-mai/'              },
+    { label: 'Retirement Visa Chiang Mai — Full Guide', href: '/retirement-visa-chiang-mai/'        },
+    { label: 'Retirement Visa Renewal',                 href: '/retirement-visa-thailand-renewal/'  },
+  ]}
+>
+  <Content />
+</BlogLayout>

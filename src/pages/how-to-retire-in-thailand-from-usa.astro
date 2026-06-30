@@ -1,0 +1,23 @@
+---
+import { getEntry, render } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const entry = await getEntry('blog', 'how-to-retire-in-thailand-from-usa');
+if (!entry) return Astro.redirect('/');
+const { Content } = await render(entry);
+const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
+---
+
+<BlogLayout
+  {title} {description}
+  canonicalUrl="https://vera-visa.com/how-to-retire-in-thailand-from-usa/"
+  {ogTitle} {ogDescription}
+  {publishedTime} {modifiedTime}
+  relatedGuides={[
+    { label: 'Retirement Visa for Americans',           href: '/retirement-visa-americans/'    },
+    { label: 'Retirement Visa Chiang Mai — Full Guide', href: '/retirement-visa-chiang-mai/'    },
+    { label: 'Retirement Visa Thailand Cost',           href: '/retirement-visa-thailand-cost/' },
+  ]}
+>
+  <Content />
+</BlogLayout>

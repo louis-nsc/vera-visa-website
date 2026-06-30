@@ -110,19 +110,21 @@
 
 ---
 
-## Phase 7 — Features
+## Phase 7 — Features ✅
 
-- [ ] `ContactForm.tsx` (React island, `client:idle`)
+- [x] `ContactForm.tsx` (React island, `client:idle`)
   - Primary: WhatsApp CTA button with pre-filled message
   - Secondary: name + email + message form → Vercel serverless function (`src/pages/api/contact.ts`) → email
-- [ ] `GoogleReviews.tsx` (React island, `client:visible`)
+- [x] `GoogleReviews.tsx` (React island, `client:visible`)
   - Static seed data from current site reviews (Yi Mon Thant + others)
   - Overall rating: 5 stars on Google, display as star row + review cards in Testimonial style
   - Upgrade path: Google Places API (add later, no component interface change needed)
-- [ ] Structured data pass: audit every page for missing schemas, add FAQPage to all accordion pages
-- [ ] `sitemap.xml.ts`: programmatic sitemap, `changefreq: 'monthly'` for service pages, `'weekly'` for homepage
-- [ ] `robots.txt.ts`: allow all, disallow `/api/`, point to sitemap
-- [ ] Commit: `feat: contact form, reviews widget, sitemap, robots`
+- [x] Structured data pass: audit every page for missing schemas, add FAQPage to all accordion pages
+- [x] Sitemap: implemented via `@astrojs/sitemap` `serialize()` callback in `astro.config.mjs` rather than a standalone `sitemap.xml.ts` — `changefreq: 'monthly'` for service/blog pages, `'weekly'` priority 1.0 for homepage
+- [x] `robots.txt.ts`: allow all, disallow `/api/`, point to sitemap
+- [x] Commit: `feat: contact form, reviews widget, sitemap, robots`
+
+> **Before launch:** set `RESEND_API_KEY` in Vercel env vars (contact form silently fails without it — shows a friendly error directing to WhatsApp). Replace the placeholder reviews in `src/data/testimonials.ts` (4 of 5 are marked `[Draft]`) with real Google Business Profile reviews, or wire up the Google Places API per the upgrade path noted in the file.
 
 ---
 

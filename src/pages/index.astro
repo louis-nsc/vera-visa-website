@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ServiceCard from '../components/patterns/ServiceCard.astro';
 import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+import GoogleReviews from '../components/interactive/GoogleReviews';
+import ContactForm from '../components/interactive/ContactForm';
 
 const WA_HREF = 'https://wa.me/66XXXXXXXXX';
 
@@ -150,28 +152,15 @@ const websiteSchema = {
     </div>
   </section>
 
-  <!-- ===== TESTIMONIAL ===== -->
+  <!-- ===== TESTIMONIAL / GOOGLE REVIEWS ===== -->
   <section class="section section--alt">
-    <div class="container testimonial-layout">
+    <div class="container">
       <div class="section-head">
         <p class="eyebrow">Clients</p>
         <h2 class="section-h2">Stress-free, start to finish.</h2>
         <p class="section-intro">We work with hundreds of expats every year. Specificity and follow-through are what they remember.</p>
       </div>
-
-      <div class="testimonial-card">
-        <span class="testimonial-perf" aria-hidden="true"></span>
-        <div class="testimonial-body">
-          <p class="testimonial-eyebrow">DTV · Chiang Mai</p>
-          <div class="testimonial-stars" aria-label="5 out of 5 stars">
-            {'★★★★★'.split('').map((s) => <span class="star">{s}</span>)}
-          </div>
-          <blockquote class="testimonial-quote">
-            "Efficient, professional, and completely stress-free from start to finish. They knew exactly what immigration needed."
-          </blockquote>
-          <p class="testimonial-author">Yi Mon Thant</p>
-        </div>
-      </div>
+      <GoogleReviews client:visible />
     </div>
   </section>
 
@@ -190,6 +179,18 @@ const websiteSchema = {
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section" id="contact">
+    <div class="container contact-layout">
+      <div class="section-head" style="margin-bottom: 0;">
+        <p class="eyebrow">Get in touch</p>
+        <h2 class="section-h2">Start with a free consultation.</h2>
+        <p class="section-intro">Message us on WhatsApp for the fastest reply, or send a message below and we'll get back to you by email.</p>
+      </div>
+      <ContactForm client:idle />
     </div>
   </section>
 
@@ -476,69 +477,12 @@ const websiteSchema = {
     margin: 0;
   }
 
-  /* ---- Testimonial ---- */
-  .testimonial-layout {
+  /* ---- Contact ---- */
+  .contact-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-8);
-    align-items: center;
-  }
-
-  .testimonial-card {
-    position: relative;
-    background: var(--paper);
-    border: var(--border);
-    border-radius: var(--radius-card);
-    overflow: hidden;
-  }
-
-  .testimonial-perf {
-    position: absolute;
-    top: 0; bottom: 0; left: 0;
-    width: 16px;
-    background-image: radial-gradient(circle, var(--line) 1.6px, transparent 2px);
-    background-repeat: repeat-y;
-    background-size: 16px 12px;
-    background-position: center;
-  }
-
-  .testimonial-body { padding: var(--space-6); padding-left: 40px; }
-
-  .testimonial-eyebrow {
-    font-family: var(--font-mono);
-    font-size: var(--text-label);
-    font-weight: var(--fw-medium);
-    letter-spacing: var(--ls-label);
-    text-transform: uppercase;
-    color: var(--signal-deep);
-    margin-bottom: var(--space-3);
-  }
-
-  .testimonial-stars { margin-bottom: var(--space-4); }
-
-  .star {
-    color: var(--signal);
-    font-size: 1.125rem;
-  }
-
-  .testimonial-quote {
-    font-family: var(--font-display);
-    font-weight: var(--fw-medium);
-    font-size: var(--text-display-s);
-    line-height: var(--lh-snug);
-    color: var(--ink);
-    margin: 0 0 var(--space-4);
-    font-style: italic;
-  }
-
-  .testimonial-author {
-    font-family: var(--font-mono);
-    font-size: var(--text-label);
-    font-weight: var(--fw-medium);
-    letter-spacing: var(--ls-label);
-    text-transform: uppercase;
-    color: var(--ink-45);
-    margin: 0;
+    align-items: start;
   }
 
   /* ---- Who We Serve ---- */
@@ -580,8 +524,8 @@ const websiteSchema = {
     .hero__h1 { font-size: var(--text-display-l); }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
     .process-grid { grid-template-columns: repeat(2, 1fr); }
-    .testimonial-layout { grid-template-columns: 1fr; }
     .serve-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-layout { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 560px) {

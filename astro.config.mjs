@@ -12,6 +12,26 @@ export default defineConfig({
   integrations: [
     react(),
     mdx(),
-    sitemap(),
+    sitemap({
+      changefreq: 'monthly',
+      serialize(item) {
+        const url = new URL(item.url);
+        if (url.pathname === '/') {
+          item.changefreq = 'weekly';
+          item.priority = 1.0;
+        } else if (url.pathname.includes('-chiang-mai/') || url.pathname === '/visa-agent-chiang-mai/') {
+          item.changefreq = 'monthly';
+          item.priority = 0.8;
+        } else if (url.pathname.startsWith('/category/')) {
+          item.changefreq = 'monthly';
+          item.priority = 0.5;
+        } else {
+          // Blog/guide articles
+          item.changefreq = 'monthly';
+          item.priority = 0.6;
+        }
+        return item;
+      },
+    }),
   ],
 });

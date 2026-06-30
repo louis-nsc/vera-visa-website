@@ -1,0 +1,23 @@
+---
+import { getEntry, render } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const entry = await getEntry('blog', 'retire-in-chiang-mai');
+if (!entry) return Astro.redirect('/');
+const { Content } = await render(entry);
+const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
+---
+
+<BlogLayout
+  {title} {description}
+  canonicalUrl="https://vera-visa.com/retire-in-chiang-mai/"
+  {ogTitle} {ogDescription}
+  {publishedTime} {modifiedTime}
+  relatedGuides={[
+    { label: 'Retirement Visa Chiang Mai — Full Guide', href: '/retirement-visa-chiang-mai/'        },
+    { label: 'Retirement Visa Chiang Mai Guide',        href: '/retirement-visa-chiang-mai-guide/'  },
+    { label: 'Retirement Visa Thailand Cost',           href: '/retirement-visa-thailand-cost/'     },
+  ]}
+>
+  <Content />
+</BlogLayout>

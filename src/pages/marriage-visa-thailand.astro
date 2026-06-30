@@ -1,0 +1,23 @@
+---
+import { getEntry, render } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const entry = await getEntry('blog', 'marriage-visa-thailand');
+if (!entry) return Astro.redirect('/');
+const { Content } = await render(entry);
+const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
+---
+
+<BlogLayout
+  {title} {description}
+  canonicalUrl="https://vera-visa.com/marriage-visa-thailand/"
+  {ogTitle} {ogDescription}
+  {publishedTime} {modifiedTime}
+  relatedGuides={[
+    { label: 'Marriage Visa Chiang Mai — Full Guide', href: '/marriage-visa-chiang-mai/'    },
+    { label: 'Marriage Visa Thailand Guide',          href: '/marriage-visa-thailand-guide/' },
+    { label: 'Marriage Visa Thailand Cost',           href: '/marriage-visa-thailand-cost/'  },
+  ]}
+>
+  <Content />
+</BlogLayout>

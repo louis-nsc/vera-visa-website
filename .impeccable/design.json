@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-01T00:00:00.000Z",
+  "title": "Design System: Vera Visa",
+  "extensions": {
+    "colorMeta": {
+      "signal": {
+        "role": "primary",
+        "displayName": "Visa Stamp Orange",
+        "canonical": "#ED5C0D",
+        "tonalRamp": ["#2E0F00", "#4D1D00", "#6E2D00", "#A03808", "#C8470A", "#ED5C0D", "#F5936B", "#FCE0D3"]
+      },
+      "signal-deep": {
+        "role": "primary",
+        "displayName": "Stamp Orange Deep",
+        "canonical": "#C8470A",
+        "tonalRamp": ["#2E0F00", "#4D1D00", "#6E2D00", "#A03808", "#C8470A", "#ED5C0D", "#F5936B", "#FCE0D3"]
+      },
+      "signal-deeper": {
+        "role": "primary",
+        "displayName": "Stamp Orange Deepest",
+        "canonical": "#A03808",
+        "tonalRamp": ["#2E0F00", "#4D1D00", "#6E2D00", "#A03808", "#C8470A", "#ED5C0D", "#F5936B", "#FCE0D3"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Warm Document Ink",
+        "canonical": "#15130F",
+        "tonalRamp": ["#0A0907", "#15130F", "#2B2822", "#454136", "#625D4D", "#918A73", "#C2BBA5", "#EDE8DC"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Passport Paper",
+        "canonical": "#FFFFFF",
+        "tonalRamp": ["#0A0907", "#15130F", "#2B2822", "#454136", "#625D4D", "#918A73", "#C2BBA5", "#FFFFFF"]
+      },
+      "sand": {
+        "role": "neutral",
+        "displayName": "Manila Folder Sand",
+        "canonical": "#F7F1E8",
+        "tonalRamp": ["#6B5F45", "#8B7D5C", "#ABA07C", "#C9BE9E", "#DED5BE", "#ECE4D4", "#F7F1E8", "#FDFBF7"]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Ledger Line",
+        "canonical": "#E4DCCB",
+        "tonalRamp": ["#4A4231", "#6B6148", "#8C8060", "#ABA07E", "#C7BC9E", "#DBD2BC", "#E4DCCB", "#F5F1E9"]
+      },
+      "approved": {
+        "role": "tertiary",
+        "displayName": "Approved Stamp Green",
+        "canonical": "#1E7A4D",
+        "tonalRamp": ["#0A2E1C", "#123F28", "#1A5636", "#1E7A4D", "#2B9862", "#4CB483", "#86D3AA", "#C7ECD9"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only, one per page." },
+      "headline": { "displayName": "Headline", "purpose": "Section headers." },
+      "title": { "displayName": "Title", "purpose": "Card group titles, hero sub-headline, service card names." },
+      "body": { "displayName": "Body", "purpose": "Standard copy, 65-75ch max line length." },
+      "label": { "displayName": "Label", "purpose": "Eyebrows and mono data fields, uppercase, tracked." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.2, 0, 0, 1)", "purpose": "Default easing for all state transitions (border, background, opacity)." },
+      { "name": "dur-fast", "value": "120ms", "purpose": "Hover/focus state transitions." },
+      { "name": "dur-base", "value": "200ms", "purpose": "Larger UI transitions (accordion open/close, tab switch)." }
+    ],
+    "breakpoints": []
+  },
+  "components": [
+    {
+      "name": "Primary Button (WhatsApp CTA)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Pill-shaped filled CTA, the one orange-filled element in any given view. Used site-wide as the WhatsApp conversion action.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\"><svg class=\"ds-btn-icon\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z\"/></svg>Chat on WhatsApp</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 999px; background: #C8470A; color: #FFFFFF; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; text-decoration: none; border: 1px solid transparent; transition: background 120ms cubic-bezier(0.2,0,0,1); } .ds-btn-primary:hover { background: #A03808; } .ds-btn-icon { flex-shrink: 0; }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": "service-card",
+      "description": "The signature stamped-document card. Mono visa-code eyebrow, Fraunces title, Inter description, orange arrow reveal on hover.",
+      "html": "<a class=\"ds-service-card\" href=\"#\"><span class=\"ds-service-code\">DTV</span><h3 class=\"ds-service-name\">Destination Thailand Visa</h3><p class=\"ds-service-desc\">A 5-year multiple-entry visa for remote workers and digital nomads.</p><span class=\"ds-service-arrow\">&rarr;</span></a>",
+      "css": ".ds-service-card { display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E4DCCB; border-radius: 4px; padding: 32px; text-decoration: none; color: inherit; position: relative; transition: border-color 120ms cubic-bezier(0.2,0,0,1); } .ds-service-card:hover { border-color: #15130F; } .ds-service-code { font-family: 'IBM Plex Mono', monospace; font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(21,19,15,0.6); margin-bottom: 16px; } .ds-service-name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.4375rem; line-height: 1.25; color: #15130F; margin: 0 0 12px; } .ds-service-desc { font-family: 'Inter', sans-serif; font-size: 0.875rem; line-height: 1.6; color: rgba(21,19,15,0.7); margin: 0; flex: 1; } .ds-service-arrow { font-family: 'IBM Plex Mono', monospace; font-size: 1rem; color: #A03808; margin-top: 24px; opacity: 0; transform: translateX(-4px); transition: opacity 120ms cubic-bezier(0.2,0,0,1), transform 120ms cubic-bezier(0.2,0,0,1); } .ds-service-card:hover .ds-service-arrow { opacity: 1; transform: translateX(0); } .ds-service-card:hover .ds-service-code { color: #A03808; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Contact-form field: mono uppercase label, hairline border, orange focus border. No glow, no shadow.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label\">Your name</label><input class=\"ds-input\" type=\"text\" placeholder=\"Jane Smith\" /></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 6px; } .ds-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(21,19,15,0.6); } .ds-input { font-family: 'Inter', sans-serif; font-size: 1rem; color: #15130F; background: #FFFFFF; border: 1px solid #E4DCCB; border-radius: 4px; padding: 10px 12px; transition: border-color 120ms ease; } .ds-input:focus { outline: none; border-color: #ED5C0D; }"
+    },
+    {
+      "name": "Nav Bar",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Sticky top nav: paper background, hairline bottom border (not a shadow), plain Inter links, one orange-filled WhatsApp pill CTA.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-logo\" href=\"#\">Vera Visa</a><div class=\"ds-nav-links\"><a class=\"ds-nav-link\" href=\"#\">About</a><a class=\"ds-nav-link\" href=\"#\">Contact</a><a class=\"ds-btn-primary\" href=\"#\">Free Consultation</a></div></nav>",
+      "css": ".ds-nav { position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; height: 72px; padding-inline: 32px; background: #FFFFFF; border-bottom: 1px solid #E4DCCB; } .ds-nav-logo { font-family: 'Fraunces', serif; font-weight: 600; color: #15130F; text-decoration: none; } .ds-nav-links { display: flex; align-items: center; gap: 24px; } .ds-nav-link { font-family: 'Inter', sans-serif; font-size: 1rem; color: #15130F; text-decoration: none; } .ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 999px; background: #C8470A; color: #FFFFFF; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.875rem; text-decoration: none; transition: background 120ms cubic-bezier(0.2,0,0,1); } .ds-btn-primary:hover { background: #A03808; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Stamped Passport",
+    "overview": "Vera Visa's interface reads as a physical document being processed by a trusted local expert, not a SaaS dashboard wearing a travel theme. Every recurring surface takes the shape of a stamped visa page or boarding-pass stub: a flat paper or sand rectangle, a hairline warm border, monospace data fields, and exactly one orange mark standing in for the stamp itself. The system explicitly rejects the cold blue corporate-agency template and the delicate boutique law-firm look. Specificity is part of the visual system, not just the copy: real THB figures, week counts, and visa codes sit in the same monospace voice as the eyebrows, so precision reads as a design property.",
+    "keyCharacteristics": [
+      "Flat, printed-document surfaces — no shadows, no gradients, no glass",
+      "One accent color (Visa Stamp Orange) marking exactly one thing per view",
+      "Monospace data fields and eyebrows carrying the official-document precision",
+      "Fraunces display type for warmth and confidence; Inter for dense, readable body copy under stress",
+      "A perforated tear-off edge as the system's one signature ornamental detail"
+    ],
+    "rules": [
+      { "name": "The One Stamp Rule", "body": "Orange marks exactly one thing per view — a button, a status dot, one highlighted headline word. Never a background wash, never more than ~10% of any surface.", "section": "colors" },
+      { "name": "The Alternating Ledger Rule", "body": "Sections alternate Passport Paper and Manila Folder Sand for rhythm instead of gray dividers or shadows.", "section": "colors" },
+      { "name": "The No-Gray Rule", "body": "There is no gray in this system. Every neutral is a warm tint of ink or a sand/line value.", "section": "colors" },
+      { "name": "The Engraved Headline Rule", "body": "Fraunces appears only at Title size and above; it never sets body copy, labels, or button text.", "section": "typography" },
+      { "name": "The Flat Ledger Rule", "body": "No box-shadow appears anywhere, in any state. Separation is a border or background change only.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep orange to one mark per view: one button, one status dot, or one highlighted headline word.",
+      "Do alternate Passport Paper and Manila Folder Sand section backgrounds for rhythm.",
+      "Do use a 1px Ledger Line border as the only separation mechanic — never a shadow.",
+      "Do keep real numbers (THB amounts, week counts, visa codes) in the mono label voice.",
+      "Do firm a card's border from Ledger Line to Warm Document Ink on hover as the primary interactive affordance."
+    ],
+    "donts": [
+      "Don't build a cold blue corporate-agency template.",
+      "Don't build a delicate boutique law-firm look.",
+      "Don't use an icon-grid services section with generic line icons.",
+      "Don't add any box-shadow anywhere, in any state.",
+      "Don't let orange spread into a background wash or cover more than ~10% of a view.",
+      "Don't use gray anywhere.",
+      "Don't set body copy, labels, or button text in Fraunces.",
+      "Don't use full-bleed generic stock photography."
+    ]
+  }
+}

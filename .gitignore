@@ -21,3 +21,7 @@ Thumbs.db
 *.swp
 .vercel
 .env*
+
+# Impeccable design skill (machine-local)
+.claude/settings.local.json
+.impeccable/config.local.json

@@ -18,6 +18,13 @@ const services = [
   { label: 'Business / Work Permit', href: '/work-permits-business-visas-chiang-mai/' },
   { label: 'Volunteer Visa',       href: '/volunteer-visa-chiang-mai/' },
 ];
+
+const nationalities = [
+  { label: 'Thailand Visa for Australians', href: '/thailand-visa-for-australians/' },
+  { label: 'Thailand Visa for UK Citizens', href: '/thailand-visa-for-uk-citizens/' },
+  { label: 'Thailand Visa for Americans',   href: '/thailand-visa-for-americans/'   },
+  { label: 'Thailand Visa for Canadians',   href: '/thailand-visa-for-canadians/'   },
+];
 ---
 
 <footer class="footer">
@@ -51,6 +58,16 @@ const services = [
         <ul class="footer__nav">
           {company.map((c) => (
             <li><a href={c.href} class="footer__nav-link">{c.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- By Nationality -->
+      <div class="footer__col">
+        <p class="footer__col-heading">By Nationality</p>
+        <ul class="footer__nav">
+          {nationalities.map((n) => (
+            <li><a href={n.href} class="footer__nav-link">{n.label}</a></li>
           ))}
         </ul>
       </div>
@@ -100,7 +117,7 @@ const services = [
 
   .footer__grid {
     display: grid;
-    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
     gap: var(--space-7);
     align-items: start;
     padding-bottom: var(--space-7);

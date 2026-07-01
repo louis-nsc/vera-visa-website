@@ -1,0 +1,361 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Do British citizens need a visa for Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'British passport holders receive a 30-day visa-exemption stamp on arrival in Thailand. For stays longer than 30 days, or for long-term residence, you need the appropriate long-stay visa.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the best visa for UK citizens living in Thailand long term?',
+      acceptedAnswer: { '@type': 'Answer', text: 'It depends on your situation. Under 50 with remote income → DTV. Aged 50 or older → retirement visa. Married to a Thai national → marriage visa. Studying Thai language or Muay Thai → education visa. Vera Visa assesses your situation and recommends the correct route.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can British citizens retire in Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes, without any nationality-specific restrictions. The standard Non-Immigrant O-A applies: age 50+, 800,000 THB in a Thai bank (approximately £18,500) or 65,000 THB per month in income, qualifying health insurance (40,000 THB outpatient / 400,000 THB inpatient), and an ACRO Certificate of Good Conduct.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is the UK State Pension frozen if I move to Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Thailand does not have a social security uprating agreement with the UK. Your State Pension is paid at the rate when you first claim it, with no annual cost-of-living increases thereafter. This is a significant long-term financial planning consideration.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What police check do UK citizens need for the Thailand retirement visa?',
+      acceptedAnswer: { '@type': 'Answer', text: 'An ACRO Certificate of Good Conduct from the ACRO Criminal Records Office — not a standard DBS check. The two are different documents, and Thai immigration specifically requires the ACRO certificate.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where do UK citizens apply for a Thailand long-stay visa?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Through the Royal Thai Embassy in London or the Royal Thai Consulate-General in Edinburgh. Processing typically takes 3–5 working days.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does the NHS cover me in Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. NHS coverage applies only within the UK. Private health insurance is required in Thailand — for the retirement visa, minimum coverage of 40,000 THB outpatient and 400,000 THB inpatient is mandatory.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the O-X visa and how does it differ from the standard retirement visa?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The O-X is Thailand\'s extended-stay retirement option: 5-year validity, renewable for a further 5 years (10 years total). It requires 3,000,000 THB in a Thai bank or 1,800,000 THB deposit plus 1,200,000 THB annual income. It eliminates the need for annual renewals and suits UK retirees with significant capital, such as those who have sold a property.' },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vera-visa.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Thailand Visa for UK Citizens', item: 'https://vera-visa.com/thailand-visa-for-uk-citizens/' },
+  ],
+};
+---
+
+<BaseLayout
+  title="Thailand Visa for UK Citizens 2026 | Vera Visa"
+  description="Every long-stay Thailand visa option for British nationals: DTV for remote workers, retirement visa (O-A), marriage visa, education visa. Vera Visa, Chiang Mai."
+  canonicalUrl="https://vera-visa.com/thailand-visa-for-uk-citizens/"
+  ogTitle="Thailand Visa for UK Citizens 2026 — Complete Guide | Vera Visa"
+  ogDescription="DTV, retirement visa, marriage visa and more — every long-stay Thailand visa for British nationals, with UK-specific requirements, frozen pension facts, and application channels."
+  schema={[faqSchema, breadcrumbSchema]}
+>
+
+  <!-- HERO -->
+  <section class="hub-hero">
+    <div class="container">
+      <p class="hub-eyebrow">United Kingdom · Thailand Visa Guide 2026</p>
+      <h1 class="hub-h1">Thailand visa options<br>for <span class="hub-accent">UK citizens</span>.</h1>
+      <p class="hub-intro">The UK is one of Thailand's largest expat communities. Whether you're retiring, working remotely, moving for a Thai partner, or studying Thai culture — the right long-stay visa depends on your specific situation. Here's a complete breakdown.</p>
+      <a href="https://wa.me/66908917582" class="hub-cta">Find your visa on WhatsApp →</a>
+    </div>
+  </section>
+
+  <!-- TABLE -->
+  <section class="section" style="background: var(--sand);">
+    <div class="container">
+      <p class="section-eyebrow">At a glance</p>
+      <h2 class="section-h2">Every long-stay Thailand visa for UK nationals</h2>
+      <div class="table-wrap">
+        <table class="visa-table">
+          <thead>
+            <tr>
+              <th>Visa</th>
+              <th>Best for</th>
+              <th>Length of stay</th>
+              <th>Financial requirement</th>
+              <th>Key condition</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="/dtv-visa-chiang-mai/">DTV</a></td>
+              <td>Remote workers, freelancers, soft-power activities</td>
+              <td>180 days/entry, 5-year validity, extendable to 360 days</td>
+              <td>500,000 THB (~£11,500)</td>
+              <td>Foreign income or soft-power enrolment</td>
+            </tr>
+            <tr>
+              <td><a href="/retirement-visa-chiang-mai/">O-A Retirement</a></td>
+              <td>Retirees aged 50+</td>
+              <td>1 year, renewable indefinitely</td>
+              <td>800,000 THB (~£18,500) or 65,000 THB/month</td>
+              <td>Age 50+, health insurance, ACRO certificate</td>
+            </tr>
+            <tr>
+              <td><a href="/retirement-visa-chiang-mai/">O-X Retirement</a></td>
+              <td>Retirees 50+ with higher capital</td>
+              <td>5 years, renewable to 10 years total</td>
+              <td>3,000,000 THB (~£70,000) or 1,800,000 THB + income</td>
+              <td>Age 50+, health insurance, no annual renewals</td>
+            </tr>
+            <tr>
+              <td><a href="/marriage-visa-chiang-mai/">O Marriage</a></td>
+              <td>Spouses of Thai nationals</td>
+              <td>1 year, renewable indefinitely</td>
+              <td>400,000 THB (~£9,300) or 40,000 THB/month</td>
+              <td>Legal marriage to Thai national</td>
+            </tr>
+            <tr>
+              <td><a href="/education-visa-chiang-mai/">ED Education</a></td>
+              <td>Students at MOE-registered schools</td>
+              <td>90 days, renewable per term</td>
+              <td>~20,000 THB (standard entry funds)</td>
+              <td>Enrolment at approved school</td>
+            </tr>
+            <tr>
+              <td><a href="/guardian-visa-chiang-mai/">O Guardian</a></td>
+              <td>Parents of children in Thai schools</td>
+              <td>1 year, renewable</td>
+              <td>400,000 THB (~£9,300) or 40,000 THB/month</td>
+              <td>Child (under 20) at recognised Thai school</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- DTV -->
+  <section class="section" style="background: var(--paper);">
+    <div class="container visa-content">
+      <p class="visa-label">For remote workers & freelancers</p>
+      <h2 class="visa-h2">Destination Thailand Visa (DTV)</h2>
+      <p class="visa-body">The DTV is the right visa for British nationals under 50 who work remotely for UK or other foreign clients. Five-year validity with 180-day entries, extendable to 360 days at Chiang Mai immigration — no annual visa renewals, no border runs.</p>
+      <p class="visa-body">The financial requirement is 500,000 THB (approximately £11,500) held in an accessible account for at least three months before application. Soft-power activities — Muay Thai training, Thai language study, Thai cooking at an approved school — also qualify in place of remote income evidence.</p>
+      <div class="visa-facts">
+        <div class="fact"><p class="fact-label">Visa fee</p><p class="fact-value">10,000 THB (~£230)</p></div>
+        <div class="fact"><p class="fact-label">Proof of funds</p><p class="fact-value">500,000 THB (~£11,500)</p></div>
+        <div class="fact"><p class="fact-label">Stay per entry</p><p class="fact-value">180 days (extendable to 360)</p></div>
+        <div class="fact"><p class="fact-label">Visa validity</p><p class="fact-value">5 years, multiple entry</p></div>
+      </div>
+      <p class="visa-body">See our <a href="/dtv-visa-uk-citizens/" class="vv-link">DTV guide for UK citizens</a> or the <a href="/dtv-visa-chiang-mai/" class="vv-link">full DTV service page</a> for the complete requirements.</p>
+    </div>
+  </section>
+
+  <!-- RETIREMENT -->
+  <section class="section" style="background: var(--sand);">
+    <div class="container visa-content">
+      <p class="visa-label">For retirees aged 50 and over</p>
+      <h2 class="visa-h2">Retirement Visa (Non-Immigrant O-A)</h2>
+      <p class="visa-body">The Non-Immigrant O-A is the standard long-term route for British nationals aged 50 and over. Annual renewable, no upper age limit, no nationality-specific restrictions.</p>
+      <p class="visa-body">The financial requirement is 800,000 THB (approximately £18,500) in a Thai bank, or 65,000 THB per month in income. The full UK State Pension runs approximately £958/month — below the income threshold on its own, so most British retirees combine it with a private or workplace pension, or use the bank deposit method instead.</p>
+      <div class="visa-facts">
+        <div class="fact"><p class="fact-label">Age requirement</p><p class="fact-value">50+</p></div>
+        <div class="fact"><p class="fact-label">Bank deposit</p><p class="fact-value">800,000 THB (~£18,500)</p></div>
+        <div class="fact"><p class="fact-label">Income method</p><p class="fact-value">65,000 THB/month (~£1,500)</p></div>
+        <div class="fact"><p class="fact-label">Annual renewal fee</p><p class="fact-value">1,900 THB</p></div>
+      </div>
+      <p class="visa-body">An <strong>ACRO Certificate of Good Conduct</strong> from the ACRO Criminal Records Office is required — not a DBS check. Health insurance covering at least 40,000 THB outpatient and 400,000 THB inpatient is mandatory. NHS coverage does not apply in Thailand. See our <a href="/retirement-visa-uk-citizens/" class="vv-link">retirement visa guide for UK citizens</a> or the <a href="/retirement-visa-chiang-mai/" class="vv-link">full service page</a>.</p>
+      <p class="visa-body">British retirees with significant capital can also consider the <strong>O-X visa</strong> — 5-year validity renewable to 10 years, requiring 3,000,000 THB (~£70,000) in a Thai bank or 1,800,000 THB plus 1,200,000 THB annual income. It eliminates annual renewals and suits those who have sold UK property to fund retirement.</p>
+    </div>
+  </section>
+
+  <!-- MARRIAGE -->
+  <section class="section" style="background: var(--paper);">
+    <div class="container visa-content">
+      <p class="visa-label">For spouses of Thai nationals</p>
+      <h2 class="visa-h2">Marriage Visa (Non-Immigrant O)</h2>
+      <p class="visa-body">If you are legally married to a Thai national, the Non-Immigrant O marriage visa provides annual renewable residency with a lower financial threshold: 400,000 THB (approximately £9,300) in a Thai bank, or 40,000 THB per month in income. The marriage must be officially registered in Thailand, or your UK marriage certificate legalised and translated into Thai. Since the Marriage Equality Act came into force on 22 January 2025, same-sex couples where one partner is Thai qualify on identical terms.</p>
+      <p class="visa-body"><a href="/marriage-visa-chiang-mai/" class="vv-link">Full marriage visa guide →</a></p>
+    </div>
+  </section>
+
+  <!-- OTHER VISAS -->
+  <section class="section" style="background: var(--sand);">
+    <div class="container">
+      <h2 class="visa-h2">Other long-stay options</h2>
+      <div class="other-grid">
+        <div class="other-card">
+          <p class="other-label">Education Visa (ED)</p>
+          <p class="other-body">For British nationals enrolled in Thai language schools, Muay Thai academies, or accredited university programs. No significant financial threshold — enrolment at an MOE-registered school is the key requirement. Extensions in 90-day increments.</p>
+          <a href="/education-visa-chiang-mai/" class="vv-link">Education visa guide →</a>
+        </div>
+        <div class="other-card">
+          <p class="other-label">Guardian Visa (O)</p>
+          <p class="other-body">For UK parents or legal guardians of a child (under 20) enrolled at a recognised Thai school. Same 400,000 THB financial threshold as the marriage visa. One visa per child, per guardian.</p>
+          <a href="/guardian-visa-chiang-mai/" class="vv-link">Guardian visa guide →</a>
+        </div>
+        <div class="other-card">
+          <p class="other-label">Volunteer Visa (O)</p>
+          <p class="other-body">For British nationals volunteering long-term with a registered Thai NGO or non-profit. No salary permitted. Extended in 90-day increments for the duration of your placement.</p>
+          <a href="/volunteer-visa-chiang-mai/" class="vv-link">Volunteer visa guide →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHICH VISA -->
+  <section class="section" style="background: var(--paper);">
+    <div class="container">
+      <p class="section-eyebrow">Choosing the right visa</p>
+      <h2 class="section-h2">Which Thailand visa fits your situation?</h2>
+      <div class="situation-grid">
+        <div class="situation-card">
+          <p class="situation-if">If you're</p>
+          <p class="situation-then">Under 50, working remotely for UK or foreign clients</p>
+          <p class="situation-body">→ <strong>DTV.</strong> Five years of flexible long-stay without annual renewals.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you're</p>
+          <p class="situation-then">50+, retired or semi-retired with standard capital</p>
+          <p class="situation-body">→ <strong>Retirement O-A.</strong> Annual renewable, 800,000 THB or 65,000 THB/month.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you're</p>
+          <p class="situation-then">50+, retiring after a UK property sale with significant capital</p>
+          <p class="situation-body">→ <strong>O-X.</strong> 3,000,000 THB deposit, 10-year total stay, no annual renewals.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you're</p>
+          <p class="situation-then">Married to a Thai national</p>
+          <p class="situation-body">→ <strong>Marriage O.</strong> Lower threshold than retirement. Renewable indefinitely.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you're</p>
+          <p class="situation-then">Studying Thai or training in Muay Thai</p>
+          <p class="situation-body">→ <strong>Education ED.</strong> No income threshold. Renewable per school term.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you're</p>
+          <p class="situation-then">Moving with children at a Thai school</p>
+          <p class="situation-body">→ <strong>Guardian O.</strong> For parents of children under 20 at a recognised Thai school.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UK-SPECIFIC -->
+  <section class="section" style="background: var(--sand);">
+    <div class="container">
+      <p class="section-eyebrow">British nationals</p>
+      <h2 class="section-h2">What UK citizens specifically need to know</h2>
+      <ul class="considerations-list">
+        <li><strong>Application channels:</strong> Apply through the Royal Thai Embassy in London or the Royal Thai Consulate-General in Edinburgh. Processing typically takes 3–5 working days. DTV applications can also be submitted via the official online e-Visa system.</li>
+        <li><strong>Police check:</strong> The retirement visa requires an <strong>ACRO Certificate of Good Conduct</strong> from the ACRO Criminal Records Office — not a DBS check. These are different documents; a DBS check will not be accepted.</li>
+        <li><strong>State Pension is frozen in Thailand:</strong> The UK does not have a social security uprating agreement with Thailand. Your State Pension is paid at the rate when you first claim it, with no annual cost-of-living increases. This is a meaningful long-term financial planning consideration and not a minor footnote.</li>
+        <li><strong>NHS gap:</strong> NHS coverage does not apply outside the UK. Private health insurance is mandatory for the retirement visa, with specific Thai immigration minimums (40,000 THB outpatient / 400,000 THB inpatient). Many standard UK travel policies do not explicitly meet these thresholds.</li>
+        <li><strong>UK tax residency:</strong> Leaving the UK for Thailand may affect your UK tax residency status under the Statutory Residence Test. This has implications for UK-source income, ISA eligibility, and CGT. A UK tax adviser familiar with expat situations is worth consulting before you move.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: var(--paper);">
+    <div class="container">
+      <p class="section-eyebrow">Common questions</p>
+      <h2 class="section-h2">Frequently asked questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3 class="faq-q">Do British citizens need a visa for Thailand?</h3>
+          <p class="faq-a">British passport holders receive a 30-day visa-exemption stamp on arrival. For stays longer than 30 days, or for long-term residence, you need the appropriate long-stay visa.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What is the best visa for UK citizens living in Thailand long term?</h3>
+          <p class="faq-a">It depends on your situation. Under 50 with remote income → DTV. Aged 50+ → retirement visa. Married to a Thai national → marriage visa. Studying → education visa. We assess your situation and recommend the right one.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Can British citizens retire in Thailand?</h3>
+          <p class="faq-a">Yes, without any nationality-specific restrictions. Age 50+, 800,000 THB (~£18,500) in a Thai bank or 65,000 THB/month income, qualifying health insurance, and an ACRO Certificate of Good Conduct are required.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Is the UK State Pension frozen if I move to Thailand?</h3>
+          <p class="faq-a">Yes. Thailand does not have a social security uprating agreement with the UK. Your State Pension is paid at the rate when you first claim it, with no annual cost-of-living increases. This is a significant long-term financial consideration.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What police check do UK citizens need for the Thailand retirement visa?</h3>
+          <p class="faq-a">An ACRO Certificate of Good Conduct from the ACRO Criminal Records Office — not a DBS check. Thai immigration specifically requires the ACRO certificate; a DBS check is not the same document and is generally not accepted.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Where do UK citizens apply for a Thailand long-stay visa?</h3>
+          <p class="faq-a">Through the Royal Thai Embassy in London or the Royal Thai Consulate-General in Edinburgh. Processing typically takes 3–5 working days.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Does the NHS cover me in Thailand?</h3>
+          <p class="faq-a">No. NHS coverage applies only within the UK. For the retirement visa, private health insurance covering at least 40,000 THB outpatient and 400,000 THB inpatient is mandatory.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What is the O-X visa and how does it differ from the standard retirement visa?</h3>
+          <p class="faq-a">The O-X is Thailand's extended-stay retirement option: 5-year validity, renewable for a further 5 years (10 years total). It requires 3,000,000 THB in a Thai bank or 1,800,000 THB deposit plus 1,200,000 THB annual income. It eliminates annual renewals and suits UK retirees with significant capital, such as those who have sold a property.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCtaBand
+    heading="Ready to move to Thailand from the UK?"
+    subtext="A free WhatsApp consultation confirms which visa fits your situation and exactly what you need to prepare."
+  />
+
+</BaseLayout>
+
+<style>
+  .hub-hero { background: var(--paper); padding: var(--space-9) 0 var(--space-8); }
+  .hub-eyebrow { font-family: var(--font-mono); font-size: var(--text-label); font-weight: var(--fw-medium); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--signal-deeper); margin-bottom: var(--space-4); }
+  .hub-h1 { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: clamp(2rem, 4vw, var(--text-display-xl)); line-height: var(--lh-tight); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-5); max-width: 22ch; text-wrap: balance; }
+  .hub-accent { color: var(--signal); }
+  .hub-intro { font-family: var(--font-body); font-size: var(--text-body-l); line-height: var(--lh-body); color: var(--text-body); max-width: 58ch; margin: 0 0 var(--space-6); }
+  .hub-cta { display: inline-flex; align-items: center; background: var(--signal); color: var(--paper); font-family: var(--font-body); font-size: var(--text-body-m); font-weight: var(--fw-semibold); text-decoration: none; padding: 14px 24px; border-radius: 4px; }
+  .hub-cta:hover { background: var(--signal-deeper); }
+  .section-eyebrow { font-family: var(--font-mono); font-size: var(--text-label); font-weight: var(--fw-medium); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--signal-deeper); margin-bottom: var(--space-3); }
+  .section-h2 { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: var(--text-display-l); line-height: var(--lh-snug); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-6); text-wrap: balance; }
+  .table-wrap { overflow-x: auto; }
+  .visa-table { width: 100%; border-collapse: collapse; font-family: var(--font-body); font-size: var(--text-body-s); background: var(--paper); border-radius: var(--radius-card); }
+  .visa-table th { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-45); padding: 12px 16px; text-align: left; border-bottom: 2px solid var(--sand); white-space: nowrap; }
+  .visa-table td { padding: 14px 16px; border-bottom: 1px solid var(--sand); color: var(--text-body); vertical-align: top; line-height: 1.55; }
+  .visa-table tr:last-child td { border-bottom: none; }
+  .visa-table td:first-child { font-weight: 600; color: var(--ink); white-space: nowrap; }
+  .visa-table a { color: var(--signal-deeper); text-decoration: none; font-weight: 600; }
+  .visa-content { max-width: 72ch; }
+  .visa-label { font-family: var(--font-mono); font-size: var(--text-label); font-weight: var(--fw-medium); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--signal-deeper); margin-bottom: var(--space-3); }
+  .visa-h2 { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: var(--text-display-m); line-height: var(--lh-snug); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-5); }
+  .visa-body { font-family: var(--font-body); font-size: var(--text-body-m); line-height: var(--lh-body); color: var(--text-body); margin-bottom: var(--space-5); }
+  .visa-facts { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: var(--space-5); }
+  .fact { background: var(--sand); border: var(--border); border-radius: var(--radius-card); padding: var(--space-3) var(--space-4); }
+  .fact-label { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-45); margin-bottom: 4px; }
+  .fact-value { font-family: var(--font-body); font-size: var(--text-body-m); font-weight: 600; color: var(--ink); margin: 0; }
+  .other-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-5); margin-top: var(--space-6); }
+  .other-card { background: var(--paper); border: var(--border); border-radius: var(--radius-card); padding: var(--space-5); }
+  .other-label { font-family: var(--font-body); font-size: var(--text-body-m); font-weight: 600; color: var(--ink); margin: 0 0 var(--space-3); }
+  .other-body { font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body); margin: 0 0 var(--space-3); }
+  .situation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); margin-top: var(--space-6); }
+  .situation-card { background: var(--sand); border: var(--border); border-left: 3px solid var(--signal); border-radius: var(--radius-card); padding: var(--space-5); }
+  .situation-if { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-45); margin-bottom: var(--space-2); }
+  .situation-then { font-family: var(--font-body); font-size: var(--text-body-m); font-weight: 600; color: var(--ink); margin-bottom: var(--space-2); }
+  .situation-body { font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body); margin: 0; }
+  .considerations-list { list-style: none; padding: 0; margin: var(--space-6) 0 0; display: flex; flex-direction: column; gap: var(--space-4); max-width: 68ch; }
+  .considerations-list li { padding-left: 1.5rem; position: relative; font-family: var(--font-body); font-size: var(--text-body-m); line-height: var(--lh-body); color: var(--text-body); }
+  .considerations-list li::before { content: '→'; position: absolute; left: 0; color: var(--signal); font-weight: 600; }
+  .faq-grid { display: flex; flex-direction: column; gap: 0; max-width: 68ch; margin-top: var(--space-6); }
+  .faq-item { border-bottom: 1px solid var(--sand); padding-bottom: var(--space-5); margin-bottom: var(--space-5); }
+  .faq-item:last-child { border-bottom: none; margin-bottom: 0; }
+  .faq-q { font-family: var(--font-body); font-size: var(--text-body-m); font-weight: 600; color: var(--ink); margin: 0 0 var(--space-3); }
+  .faq-a { font-family: var(--font-body); font-size: var(--text-body-m); line-height: var(--lh-body); color: var(--text-body); margin: 0; }
+</style>

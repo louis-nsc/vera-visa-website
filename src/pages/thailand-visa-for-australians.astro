@@ -1,0 +1,368 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Do Australians need a visa for Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Australian passport holders receive a 30-day visa-exemption stamp on arrival in Thailand. For stays longer than 30 days, or for long-term residence, you need the appropriate long-stay visa.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the best visa for Australians living in Thailand long term?',
+      acceptedAnswer: { '@type': 'Answer', text: 'It depends on your situation. Under 50 with remote income or freelance clients → DTV. Aged 50 or older → retirement visa. Married to a Thai national → marriage visa. Studying Thai language or Muay Thai → education visa. Vera Visa assesses your situation and recommends the correct route.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can Australians retire in Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. The Non-Immigrant O-A retirement visa is open to all nationalities aged 50 and over. Requirements include 800,000 THB in a Thai bank (approximately AUD 35,000) or 65,000 THB per month in income, qualifying health insurance covering at least 40,000 THB outpatient and 400,000 THB inpatient, and an Australian Federal Police National Police Check.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I use my superannuation as proof of funds for a Thailand visa?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Only if you have already withdrawn and deposited the funds into an accessible account. Locked superannuation balances cannot be used as proof of funds regardless of their total value. The preservation age in Australia is typically 60, so if you are under 60, plan your financial evidence from savings or other accessible assets.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Medicare cover me in Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. Medicare provides no coverage outside Australia. Private health insurance is required in Thailand — for the retirement visa, minimum coverage of 40,000 THB outpatient and 400,000 THB inpatient is mandatory.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where do Australians apply for a Thailand long-stay visa?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Through the Royal Thai Consulate-General in Sydney, the Royal Thai Embassy in Canberra, or the official online e-Visa system for DTV applications.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What background check do Australians need for the Thailand retirement visa?',
+      acceptedAnswer: { '@type': 'Answer', text: 'An Australian Federal Police (AFP) National Police Check — not a state police check. The AFP check covers your full national criminal history and is what Thai immigration specifically requires.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does my Australian Age Pension continue if I move to Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The Age Pension is generally portable for Australians living overseas, but certain supplements and allowances may only be paid for a limited period abroad. Confirm your specific entitlements with Services Australia before leaving.' },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vera-visa.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Thailand Visa for Australians', item: 'https://vera-visa.com/thailand-visa-for-australians/' },
+  ],
+};
+---
+
+<BaseLayout
+  title="Thailand Visa for Australians 2026 | Vera Visa"
+  description="Every long-stay Thailand visa option for Australians: DTV for remote workers, retirement visa (O-A), marriage visa, education visa. Vera Visa, Chiang Mai."
+  canonicalUrl="https://vera-visa.com/thailand-visa-for-australians/"
+  ogTitle="Thailand Visa for Australians 2026 — Complete Guide | Vera Visa"
+  ogDescription="DTV, retirement visa, marriage visa and more — every long-stay Thailand visa for Australians explained, with Australian-specific requirements, costs, and application channels."
+  schema={[faqSchema, breadcrumbSchema]}
+>
+
+  <!-- HERO -->
+  <section class="hub-hero">
+    <div class="container">
+      <p class="hub-eyebrow">Australia · Thailand Visa Guide 2026</p>
+      <h1 class="hub-h1">Thailand visa options<br>for <span class="hub-accent">Australians</span>.</h1>
+      <p class="hub-intro">Australia has one of the largest expat communities in Thailand. Whether you're retiring, working remotely, studying, or moving for a Thai partner — there's a long-stay visa that fits your situation. Here's what each one requires and how to choose.</p>
+      <a href="https://wa.me/66908917582" class="hub-cta">Find your visa on WhatsApp →</a>
+    </div>
+  </section>
+
+  <!-- TABLE -->
+  <section class="section" style="background: var(--sand);">
+    <div class="container">
+      <p class="section-eyebrow">At a glance</p>
+      <h2 class="section-h2">Every long-stay Thailand visa for Australians</h2>
+      <div class="table-wrap">
+        <table class="visa-table">
+          <thead>
+            <tr>
+              <th>Visa</th>
+              <th>Best for</th>
+              <th>Length of stay</th>
+              <th>Financial requirement</th>
+              <th>Key condition</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="/dtv-visa-chiang-mai/">DTV</a></td>
+              <td>Remote workers, freelancers, soft-power activities</td>
+              <td>180 days/entry, 5-year validity, extendable to 360 days</td>
+              <td>500,000 THB (~AUD 22,000)</td>
+              <td>Foreign income or soft-power enrolment</td>
+            </tr>
+            <tr>
+              <td><a href="/retirement-visa-chiang-mai/">O-A Retirement</a></td>
+              <td>Retirees aged 50+</td>
+              <td>1 year, renewable indefinitely</td>
+              <td>800,000 THB (~AUD 35,000) or 65,000 THB/month</td>
+              <td>Age 50+, health insurance, AFP police check</td>
+            </tr>
+            <tr>
+              <td><a href="/marriage-visa-chiang-mai/">O Marriage</a></td>
+              <td>Spouses of Thai nationals</td>
+              <td>1 year, renewable indefinitely</td>
+              <td>400,000 THB (~AUD 18,000) or 40,000 THB/month</td>
+              <td>Legal marriage to Thai national</td>
+            </tr>
+            <tr>
+              <td><a href="/education-visa-chiang-mai/">ED Education</a></td>
+              <td>Students at MOE-registered schools</td>
+              <td>90 days, renewable per term</td>
+              <td>~20,000 THB (standard entry funds)</td>
+              <td>Enrolment at approved school</td>
+            </tr>
+            <tr>
+              <td><a href="/guardian-visa-chiang-mai/">O Guardian</a></td>
+              <td>Parents of children in Thai schools</td>
+              <td>1 year, renewable</td>
+              <td>400,000 THB (~AUD 18,000) or 40,000 THB/month</td>
+              <td>Child (under 20) at recognised Thai school</td>
+            </tr>
+            <tr>
+              <td><a href="/volunteer-visa-chiang-mai/">O Volunteer</a></td>
+              <td>Long-term volunteers with registered NGOs</td>
+              <td>90 days, renewable</td>
+              <td>~20,000 THB (standard entry funds)</td>
+              <td>Placement with registered non-profit</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- DTV -->
+  <section class="section" style="background: var(--paper);">
+    <div class="container visa-content">
+      <p class="visa-label">For remote workers & freelancers</p>
+      <h2 class="visa-h2">Destination Thailand Visa (DTV)</h2>
+      <p class="visa-body">The DTV is Thailand's dedicated long-stay visa for remote workers and freelancers earning from foreign sources. For Australians under 50, it's the most flexible long-stay option available — 180 days per entry, extendable to 360 days, over a 5-year validity period with multiple re-entries.</p>
+      <p class="visa-body">The financial requirement is 500,000 THB (approximately AUD 22,000) held in an accessible account for at least three months before application. Australian superannuation cannot be used unless already withdrawn — preservation age is typically 60, so under-60s need to show funds from savings or investment accounts.</p>
+      <div class="visa-facts">
+        <div class="fact"><p class="fact-label">Visa fee</p><p class="fact-value">10,000 THB (~AUD 430–600)</p></div>
+        <div class="fact"><p class="fact-label">Proof of funds</p><p class="fact-value">500,000 THB (~AUD 22,000)</p></div>
+        <div class="fact"><p class="fact-label">Stay per entry</p><p class="fact-value">180 days (extendable to 360)</p></div>
+        <div class="fact"><p class="fact-label">Visa validity</p><p class="fact-value">5 years, multiple entry</p></div>
+      </div>
+      <p class="visa-body">Soft-power activities — Muay Thai training, Thai language study, Thai cooking courses at approved schools — also qualify, in place of remote income evidence. See our <a href="/dtv-visa-australians/" class="vv-link">detailed DTV guide for Australians</a> or the <a href="/dtv-visa-chiang-mai/" class="vv-link">full DTV service page</a>.</p>
+    </div>
+  </section>
+
+  <!-- RETIREMENT -->
+  <section class="section" style="background: var(--sand);">
+    <div class="container visa-content">
+      <p class="visa-label">For retirees aged 50 and over</p>
+      <h2 class="visa-h2">Retirement Visa (Non-Immigrant O-A)</h2>
+      <p class="visa-body">The Non-Immigrant O-A is the standard long-term route for Australians aged 50 and over. It gives you annual legal residence in Thailand with no limit on renewals — as long as you meet the financial threshold and health insurance requirement each year.</p>
+      <p class="visa-body">The financial requirement is 800,000 THB (approximately AUD 35,000) deposited in a Thai bank, or 65,000 THB per month in income transferred from abroad. The two can be combined. Bank deposit timing is strictly enforced — funds must be in the account for a set number of days before your application date and maintained for a period after. We advise every client on the exact schedule.</p>
+      <div class="visa-facts">
+        <div class="fact"><p class="fact-label">Age requirement</p><p class="fact-value">50+</p></div>
+        <div class="fact"><p class="fact-label">Bank deposit</p><p class="fact-value">800,000 THB (~AUD 35,000)</p></div>
+        <div class="fact"><p class="fact-label">Income method</p><p class="fact-value">65,000 THB/month</p></div>
+        <div class="fact"><p class="fact-label">Annual renewal fee</p><p class="fact-value">1,900 THB</p></div>
+      </div>
+      <p class="visa-body">Health insurance is mandatory: minimum 40,000 THB outpatient and 400,000 THB inpatient — Medicare does not apply in Thailand. An <strong>Australian Federal Police (AFP) National Police Check</strong> is required for the initial visa, not a state police check. See our <a href="/retirement-visa-australians/" class="vv-link">retirement visa guide for Australians</a> or the <a href="/retirement-visa-chiang-mai/" class="vv-link">full service page</a>.</p>
+    </div>
+  </section>
+
+  <!-- MARRIAGE VISA -->
+  <section class="section" style="background: var(--paper);">
+    <div class="container visa-content">
+      <p class="visa-label">For spouses of Thai nationals</p>
+      <h2 class="visa-h2">Marriage Visa (Non-Immigrant O)</h2>
+      <p class="visa-body">If you are legally married to a Thai national, the Non-Immigrant O marriage visa gives you annual renewable residency with a lower financial threshold than the retirement visa: 400,000 THB (approximately AUD 18,000) in a Thai bank, or 40,000 THB per month in income. Your marriage must be officially registered in Thailand, or your overseas marriage certificate legalised and translated into Thai. Since the Marriage Equality Act came into force on 22 January 2025, same-sex couples where one partner is Thai qualify on identical terms.</p>
+      <p class="visa-body"><a href="/marriage-visa-chiang-mai/" class="vv-link">Full marriage visa guide →</a></p>
+    </div>
+  </section>
+
+  <!-- OTHER VISAS -->
+  <section class="section" style="background: var(--sand);">
+    <div class="container">
+      <h2 class="visa-h2">Other long-stay options</h2>
+      <div class="other-grid">
+        <div class="other-card">
+          <p class="other-label">Education Visa (ED)</p>
+          <p class="other-body">For Australians enrolled in Thai language schools, Muay Thai academies, or accredited university programs. Enrolment at an MOE-registered school is the key requirement — no significant financial threshold. Extensions in 90-day increments match your school term.</p>
+          <a href="/education-visa-chiang-mai/" class="vv-link">Education visa guide →</a>
+        </div>
+        <div class="other-card">
+          <p class="other-label">Guardian Visa (O)</p>
+          <p class="other-body">For Australian parents or legal guardians of a child (under 20) enrolled at a recognised Thai school. Same 400,000 THB financial threshold as the marriage visa. We advise on your specific family situation during a free consultation.</p>
+          <a href="/guardian-visa-chiang-mai/" class="vv-link">Guardian visa guide →</a>
+        </div>
+        <div class="other-card">
+          <p class="other-label">Volunteer Visa (O)</p>
+          <p class="other-body">For Australians volunteering long-term with a registered Thai NGO or non-profit. No salary is permitted. Extended in 90-day increments. Chiang Mai has one of Southeast Asia's most active NGO communities.</p>
+          <a href="/volunteer-visa-chiang-mai/" class="vv-link">Volunteer visa guide →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHICH VISA -->
+  <section class="section" style="background: var(--paper);">
+    <div class="container">
+      <p class="section-eyebrow">Choosing the right visa</p>
+      <h2 class="section-h2">Which Thailand visa fits your situation?</h2>
+      <div class="situation-grid">
+        <div class="situation-card">
+          <p class="situation-if">If you're</p>
+          <p class="situation-then">Under 50, working remotely or freelancing</p>
+          <p class="situation-body">→ <strong>DTV.</strong> Most Australians under 50 use this. Five years of flexible long-stay without annual renewals.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you're</p>
+          <p class="situation-then">50 or older, retired or semi-retired</p>
+          <p class="situation-body">→ <strong>Retirement O-A.</strong> Annual renewable with 800,000 THB in a Thai bank or 65,000 THB/month income.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you're</p>
+          <p class="situation-then">Married to a Thai national</p>
+          <p class="situation-body">→ <strong>Marriage O.</strong> Lower financial threshold than retirement. Renewable indefinitely.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you're</p>
+          <p class="situation-then">Studying Thai language or training in Muay Thai</p>
+          <p class="situation-body">→ <strong>Education ED.</strong> No income threshold. Renewable per school term.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you're</p>
+          <p class="situation-then">Moving with children in a Thai school</p>
+          <p class="situation-body">→ <strong>Guardian O.</strong> For parents of children (under 20) at a recognised Thai school.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you're</p>
+          <p class="situation-then">Volunteering with an NGO long-term</p>
+          <p class="situation-body">→ <strong>Volunteer O.</strong> Placement with a registered Thai non-profit. No salary permitted.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUSTRALIAN-SPECIFIC -->
+  <section class="section" style="background: var(--sand);">
+    <div class="container">
+      <p class="section-eyebrow">Australian nationals</p>
+      <h2 class="section-h2">What Australians specifically need to know</h2>
+      <ul class="considerations-list">
+        <li><strong>Application channels:</strong> Apply through the Royal Thai Consulate-General in Sydney, the Royal Thai Embassy in Canberra, or the official online e-Visa system for DTV applications.</li>
+        <li><strong>Police check:</strong> The retirement visa requires an <strong>AFP National Police Check</strong> — not a state police check. The AFP check is processed online and typically takes 15–30 business days.</li>
+        <li><strong>Superannuation:</strong> Locked superannuation cannot be used as proof of funds for any Thai visa application. The funds must be in an accessible account. If you're under 60, plan your financial evidence from savings or investment accounts.</li>
+        <li><strong>Medicare gap:</strong> Medicare provides no coverage in Thailand. Private health insurance is required — the retirement visa mandates minimum coverage of 40,000 THB outpatient and 400,000 THB inpatient. Many standard Australian travel policies don't explicitly meet these thresholds.</li>
+        <li><strong>Australian Age Pension:</strong> The Age Pension is generally portable for Australians living overseas, but certain supplements and allowances may only be paid for a limited period abroad. Check your specific entitlements with Services Australia before leaving.</li>
+        <li><strong>Tax residency:</strong> Leaving Australia permanently may affect your Australian tax residency status. The ATO's residency rules for long-term expats can be complex — a cross-border tax adviser is worth consulting before you move.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: var(--paper);">
+    <div class="container">
+      <p class="section-eyebrow">Common questions</p>
+      <h2 class="section-h2">Frequently asked questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3 class="faq-q">Do Australians need a visa for Thailand?</h3>
+          <p class="faq-a">Australian passport holders receive a 30-day visa-exemption stamp on arrival. For stays longer than 30 days, or for long-term residence, you need the appropriate long-stay visa.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What is the best visa for Australians living in Thailand long term?</h3>
+          <p class="faq-a">It depends on your situation. Under 50 with remote income → DTV. Aged 50+ → retirement visa. Married to a Thai national → marriage visa. Studying Thai language or Muay Thai → education visa. We assess your situation and recommend the right one.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Can Australians retire in Thailand?</h3>
+          <p class="faq-a">Yes. The Non-Immigrant O-A retirement visa is open to all nationalities aged 50 and over. You need 800,000 THB (~AUD 35,000) in a Thai bank or 65,000 THB per month in income, qualifying health insurance, and an AFP National Police Check.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Can I use my superannuation as proof of funds for a Thailand visa?</h3>
+          <p class="faq-a">Only if you have already withdrawn and deposited the funds into an accessible account. Locked superannuation balances cannot be used as proof of funds regardless of their total value. If you are under 60, plan your financial evidence from savings or other accessible assets.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Does Medicare cover me in Thailand?</h3>
+          <p class="faq-a">No. Medicare provides no coverage outside Australia. For the retirement visa, private health insurance covering at least 40,000 THB outpatient and 400,000 THB inpatient is mandatory.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Where do Australians apply for a Thailand long-stay visa?</h3>
+          <p class="faq-a">Through the Royal Thai Consulate-General in Sydney, the Royal Thai Embassy in Canberra, or the official online e-Visa system for DTV applications.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What background check do Australians need for the Thailand retirement visa?</h3>
+          <p class="faq-a">An Australian Federal Police (AFP) National Police Check — not a state police check. The AFP check covers your full national criminal history and is what Thai immigration specifically requires.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Does my Australian Age Pension continue if I move to Thailand?</h3>
+          <p class="faq-a">The Age Pension is generally portable for Australians living overseas, but certain supplements and allowances may only be paid for a limited period abroad. Confirm your specific entitlements with Services Australia before leaving.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCtaBand
+    heading="Ready to move to Thailand as an Australian?"
+    subtext="A free WhatsApp consultation confirms which visa fits your situation and what you need to prepare."
+  />
+
+</BaseLayout>
+
+<style>
+  .hub-hero { background: var(--paper); padding: var(--space-9) 0 var(--space-8); }
+  .hub-eyebrow { font-family: var(--font-mono); font-size: var(--text-label); font-weight: var(--fw-medium); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--signal-deeper); margin-bottom: var(--space-4); }
+  .hub-h1 { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: clamp(2rem, 4vw, var(--text-display-xl)); line-height: var(--lh-tight); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-5); max-width: 22ch; text-wrap: balance; }
+  .hub-accent { color: var(--signal); }
+  .hub-intro { font-family: var(--font-body); font-size: var(--text-body-l); line-height: var(--lh-body); color: var(--text-body); max-width: 58ch; margin: 0 0 var(--space-6); }
+  .hub-cta { display: inline-flex; align-items: center; background: var(--signal); color: var(--paper); font-family: var(--font-body); font-size: var(--text-body-m); font-weight: var(--fw-semibold); text-decoration: none; padding: 14px 24px; border-radius: 4px; }
+  .hub-cta:hover { background: var(--signal-deeper); }
+
+  .section-eyebrow { font-family: var(--font-mono); font-size: var(--text-label); font-weight: var(--fw-medium); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--signal-deeper); margin-bottom: var(--space-3); }
+  .section-h2 { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: var(--text-display-l); line-height: var(--lh-snug); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-6); text-wrap: balance; }
+
+  .table-wrap { overflow-x: auto; }
+  .visa-table { width: 100%; border-collapse: collapse; font-family: var(--font-body); font-size: var(--text-body-s); background: var(--paper); border-radius: var(--radius-card); }
+  .visa-table th { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-45); padding: 12px 16px; text-align: left; border-bottom: 2px solid var(--sand); background: var(--paper); white-space: nowrap; }
+  .visa-table td { padding: 14px 16px; border-bottom: 1px solid var(--sand); color: var(--text-body); vertical-align: top; line-height: 1.55; }
+  .visa-table tr:last-child td { border-bottom: none; }
+  .visa-table td:first-child { font-weight: 600; color: var(--ink); white-space: nowrap; }
+  .visa-table a { color: var(--signal-deeper); text-decoration: none; font-weight: 600; }
+
+  .visa-content { max-width: 72ch; }
+  .visa-label { font-family: var(--font-mono); font-size: var(--text-label); font-weight: var(--fw-medium); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--signal-deeper); margin-bottom: var(--space-3); }
+  .visa-h2 { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: var(--text-display-m); line-height: var(--lh-snug); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-5); }
+  .visa-body { font-family: var(--font-body); font-size: var(--text-body-m); line-height: var(--lh-body); color: var(--text-body); margin-bottom: var(--space-5); }
+  .visa-facts { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: var(--space-5); }
+  .fact { background: var(--sand); border: var(--border); border-radius: var(--radius-card); padding: var(--space-3) var(--space-4); }
+  .fact-label { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-45); margin-bottom: 4px; }
+  .fact-value { font-family: var(--font-body); font-size: var(--text-body-m); font-weight: 600; color: var(--ink); margin: 0; }
+
+  .other-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-5); margin-top: var(--space-6); }
+  .other-card { background: var(--paper); border: var(--border); border-radius: var(--radius-card); padding: var(--space-5); }
+  .other-label { font-family: var(--font-body); font-size: var(--text-body-m); font-weight: 600; color: var(--ink); margin: 0 0 var(--space-3); }
+  .other-body { font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body); margin: 0 0 var(--space-3); }
+
+  .situation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); margin-top: var(--space-6); }
+  .situation-card { background: var(--sand); border: var(--border); border-left: 3px solid var(--signal); border-radius: var(--radius-card); padding: var(--space-5); }
+  .situation-if { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-45); margin-bottom: var(--space-2); }
+  .situation-then { font-family: var(--font-body); font-size: var(--text-body-m); font-weight: 600; color: var(--ink); margin-bottom: var(--space-2); }
+  .situation-body { font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body); margin: 0; }
+
+  .considerations-list { list-style: none; padding: 0; margin: var(--space-6) 0 0; display: flex; flex-direction: column; gap: var(--space-4); max-width: 68ch; }
+  .considerations-list li { padding-left: 1.5rem; position: relative; font-family: var(--font-body); font-size: var(--text-body-m); line-height: var(--lh-body); color: var(--text-body); }
+  .considerations-list li::before { content: '→'; position: absolute; left: 0; color: var(--signal); font-weight: 600; }
+
+  .faq-grid { display: flex; flex-direction: column; gap: 0; max-width: 68ch; margin-top: var(--space-6); }
+  .faq-item { border-bottom: 1px solid var(--sand); padding-bottom: var(--space-5); margin-bottom: var(--space-5); }
+  .faq-item:last-child { border-bottom: none; margin-bottom: 0; }
+  .faq-q { font-family: var(--font-body); font-size: var(--text-body-m); font-weight: 600; color: var(--ink); margin: 0 0 var(--space-3); }
+  .faq-a { font-family: var(--font-body); font-size: var(--text-body-m); line-height: var(--lh-body); color: var(--text-body); margin: 0; }
+</style>

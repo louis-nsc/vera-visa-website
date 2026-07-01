@@ -1,0 +1,361 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Do Americans need a visa for Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'US passport holders receive a 30-day visa-exemption stamp on arrival in Thailand (some entry points grant 60 days). For stays longer than 30–60 days, or for long-term residence, you need the appropriate long-stay visa.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the best visa for Americans living in Thailand long term?',
+      acceptedAnswer: { '@type': 'Answer', text: 'It depends on your situation. Under 50 with remote income → DTV. Aged 50 or older → retirement visa. Married to a Thai national → marriage visa. Studying Thai language or Muay Thai → education visa. Vera Visa assesses your situation and recommends the correct route.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can Americans retire in Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes, without any nationality-specific restrictions. The Non-Immigrant O-A applies: age 50+, 800,000 THB (~USD 22,000) in a Thai bank or 65,000 THB per month in income, qualifying health insurance (40,000 THB outpatient / 400,000 THB inpatient), and an FBI Identity History Summary.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Social Security continue if I move to Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. There is no US-Thailand bilateral social security agreement, but that does not affect Social Security payments — they continue to be paid to Americans living in Thailand without penalty. Medicare does not extend to Thailand, however.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I have to pay US taxes if I live in Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. The United States taxes its citizens on worldwide income regardless of where they live. A US-Thailand Double Taxation Agreement exists and provides some relief, but US citizens in Thailand still have annual filing obligations. A cross-border tax adviser is strongly recommended.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What background check do Americans need for the Thailand retirement visa?',
+      acceptedAnswer: { '@type': 'Answer', text: 'An FBI Identity History Summary, available through the FBI\'s Identity History Summary program online or via an approved channeler. Allow 8–12 weeks for processing.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need to report my Thai bank account to the US government?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. If your Thai bank account balance exceeds $10,000 at any point during the year, you must file an FBAR (FinCEN Form 114). Additionally, if the account value exceeds certain thresholds, FATCA reporting (Form 8938) may also apply.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Medicare cover me in Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. Medicare coverage is limited to the United States. Private health insurance meeting Thailand\'s visa requirements is necessary — for the retirement visa, minimum 40,000 THB outpatient and 400,000 THB inpatient coverage.' },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vera-visa.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Thailand Visa for Americans', item: 'https://vera-visa.com/thailand-visa-for-americans/' },
+  ],
+};
+---
+
+<BaseLayout
+  title="Thailand Visa for Americans 2026 | Vera Visa"
+  description="Every long-stay Thailand visa option for US citizens: DTV for remote workers, retirement visa (O-A), marriage visa, education visa. Social Security, taxes, FBAR explained."
+  canonicalUrl="https://vera-visa.com/thailand-visa-for-americans/"
+  ogTitle="Thailand Visa for Americans 2026 — Complete Guide | Vera Visa"
+  ogDescription="DTV, retirement visa, marriage visa and more — every long-stay Thailand visa for Americans explained, with Social Security, Medicare, FBAR, and tax facts."
+  schema={[faqSchema, breadcrumbSchema]}
+>
+
+  <!-- HERO -->
+  <section class="hub-hero">
+    <div class="container">
+      <p class="hub-eyebrow">United States · Thailand Visa Guide 2026</p>
+      <h1 class="hub-h1">Thailand visa options<br>for <span class="hub-accent">Americans</span>.</h1>
+      <p class="hub-intro">Americans are one of the largest groups moving to Thailand — for retirement, remote work, or a Thai partner. The right long-stay visa depends entirely on your situation. Here's every option, with the US-specific details that matter most.</p>
+      <a href="https://wa.me/66908917582" class="hub-cta">Find your visa on WhatsApp →</a>
+    </div>
+  </section>
+
+  <!-- TABLE -->
+  <section class="section" style="background: var(--sand);">
+    <div class="container">
+      <p class="section-eyebrow">At a glance</p>
+      <h2 class="section-h2">Every long-stay Thailand visa for US citizens</h2>
+      <div class="table-wrap">
+        <table class="visa-table">
+          <thead>
+            <tr>
+              <th>Visa</th>
+              <th>Best for</th>
+              <th>Length of stay</th>
+              <th>Financial requirement</th>
+              <th>Key condition</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="/dtv-visa-chiang-mai/">DTV</a></td>
+              <td>Remote workers, freelancers, soft-power activities</td>
+              <td>180 days/entry, 5-year validity, extendable to 360 days</td>
+              <td>500,000 THB (~USD 14,900)</td>
+              <td>Foreign income or soft-power enrolment</td>
+            </tr>
+            <tr>
+              <td><a href="/retirement-visa-chiang-mai/">O-A Retirement</a></td>
+              <td>Retirees aged 50+</td>
+              <td>1 year, renewable indefinitely</td>
+              <td>800,000 THB (~USD 22,000) or 65,000 THB/month</td>
+              <td>Age 50+, health insurance, FBI background check</td>
+            </tr>
+            <tr>
+              <td><a href="/marriage-visa-chiang-mai/">O Marriage</a></td>
+              <td>Spouses of Thai nationals</td>
+              <td>1 year, renewable indefinitely</td>
+              <td>400,000 THB (~USD 11,900) or 40,000 THB/month</td>
+              <td>Legal marriage to Thai national</td>
+            </tr>
+            <tr>
+              <td><a href="/education-visa-chiang-mai/">ED Education</a></td>
+              <td>Students at MOE-registered schools</td>
+              <td>90 days, renewable per term</td>
+              <td>~20,000 THB (standard entry funds)</td>
+              <td>Enrolment at approved school</td>
+            </tr>
+            <tr>
+              <td><a href="/guardian-visa-chiang-mai/">O Guardian</a></td>
+              <td>Parents of children in Thai schools</td>
+              <td>1 year, renewable</td>
+              <td>400,000 THB (~USD 11,900) or 40,000 THB/month</td>
+              <td>Child (under 20) at recognised Thai school</td>
+            </tr>
+            <tr>
+              <td><a href="/volunteer-visa-chiang-mai/">O Volunteer</a></td>
+              <td>Long-term volunteers with registered NGOs</td>
+              <td>90 days, renewable</td>
+              <td>~20,000 THB (standard entry funds)</td>
+              <td>Placement with registered non-profit</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- DTV -->
+  <section class="section" style="background: var(--paper);">
+    <div class="container visa-content">
+      <p class="visa-label">For remote workers & freelancers</p>
+      <h2 class="visa-h2">Destination Thailand Visa (DTV)</h2>
+      <p class="visa-body">The DTV is the right visa for Americans under 50 who work remotely for US or other foreign clients. Five-year validity with 180-day entries, extendable to 360 days at immigration — no annual renewals, no border runs every 30 days.</p>
+      <p class="visa-body">The financial requirement is 500,000 THB (approximately USD 14,900) held in an accessible account for at least three months before application. Soft-power activities — Muay Thai training, Thai language study, Thai cooking courses at approved institutions — also qualify as the primary basis in place of remote income.</p>
+      <div class="visa-facts">
+        <div class="fact"><p class="fact-label">Visa fee</p><p class="fact-value">10,000 THB (~USD 280)</p></div>
+        <div class="fact"><p class="fact-label">Proof of funds</p><p class="fact-value">500,000 THB (~USD 14,900)</p></div>
+        <div class="fact"><p class="fact-label">Stay per entry</p><p class="fact-value">180 days (extendable to 360)</p></div>
+        <div class="fact"><p class="fact-label">Visa validity</p><p class="fact-value">5 years, multiple entry</p></div>
+      </div>
+      <p class="visa-body">See our <a href="/dtv-visa-americans/" class="vv-link">detailed DTV guide for Americans</a> or the <a href="/dtv-visa-chiang-mai/" class="vv-link">full DTV service page</a>.</p>
+    </div>
+  </section>
+
+  <!-- RETIREMENT -->
+  <section class="section" style="background: var(--sand);">
+    <div class="container visa-content">
+      <p class="visa-label">For retirees aged 50 and over</p>
+      <h2 class="visa-h2">Retirement Visa (Non-Immigrant O-A)</h2>
+      <p class="visa-body">The Non-Immigrant O-A is the standard long-term route for Americans aged 50 and over. Annual renewable, no nationality-specific restrictions, no upper age limit.</p>
+      <p class="visa-body">The financial requirement is 800,000 THB (approximately USD 22,000) deposited in a Thai bank, or 65,000 THB per month in income transferred from abroad. Social Security income counts toward the monthly income method — and unlike the UK State Pension, US Social Security continues to be paid to Americans living in Thailand at the full rate.</p>
+      <div class="visa-facts">
+        <div class="fact"><p class="fact-label">Age requirement</p><p class="fact-value">50+</p></div>
+        <div class="fact"><p class="fact-label">Bank deposit</p><p class="fact-value">800,000 THB (~USD 22,000)</p></div>
+        <div class="fact"><p class="fact-label">Income method</p><p class="fact-value">65,000 THB/month (~USD 1,900)</p></div>
+        <div class="fact"><p class="fact-label">Annual renewal fee</p><p class="fact-value">1,900 THB</p></div>
+      </div>
+      <p class="visa-body">An <strong>FBI Identity History Summary</strong> is required for the initial visa application — available online through the FBI's program or via an approved channeler; allow 8–12 weeks. Health insurance covering 40,000 THB outpatient and 400,000 THB inpatient is mandatory — Medicare does not apply outside the US. See our <a href="/retirement-visa-americans/" class="vv-link">retirement visa guide for Americans</a> or the <a href="/retirement-visa-chiang-mai/" class="vv-link">full service page</a>.</p>
+    </div>
+  </section>
+
+  <!-- MARRIAGE -->
+  <section class="section" style="background: var(--paper);">
+    <div class="container visa-content">
+      <p class="visa-label">For spouses of Thai nationals</p>
+      <h2 class="visa-h2">Marriage Visa (Non-Immigrant O)</h2>
+      <p class="visa-body">If you are legally married to a Thai national, the Non-Immigrant O marriage visa gives you annual renewable residency with a lower financial threshold: 400,000 THB (approximately USD 11,900) in a Thai bank, or 40,000 THB per month in income. Your marriage must be officially registered in Thailand, or your US marriage certificate legalised and translated into Thai. Since the Marriage Equality Act came into force on 22 January 2025, same-sex couples where one partner is Thai qualify on identical terms.</p>
+      <p class="visa-body"><a href="/marriage-visa-chiang-mai/" class="vv-link">Full marriage visa guide →</a></p>
+    </div>
+  </section>
+
+  <!-- OTHER -->
+  <section class="section" style="background: var(--sand);">
+    <div class="container">
+      <h2 class="visa-h2">Other long-stay options</h2>
+      <div class="other-grid">
+        <div class="other-card">
+          <p class="other-label">Education Visa (ED)</p>
+          <p class="other-body">For Americans enrolled in Thai language schools, Muay Thai academies, or accredited universities in Thailand. No significant financial threshold — enrolment at an MOE-registered school is the key requirement. Extensions in 90-day increments.</p>
+          <a href="/education-visa-chiang-mai/" class="vv-link">Education visa guide →</a>
+        </div>
+        <div class="other-card">
+          <p class="other-label">Guardian Visa (O)</p>
+          <p class="other-body">For American parents or legal guardians of a child (under 20) enrolled at a recognised Thai school. Same 400,000 THB financial threshold as the marriage visa. One visa per child, per guardian.</p>
+          <a href="/guardian-visa-chiang-mai/" class="vv-link">Guardian visa guide →</a>
+        </div>
+        <div class="other-card">
+          <p class="other-label">Volunteer Visa (O)</p>
+          <p class="other-body">For Americans volunteering long-term with a registered Thai NGO or non-profit. No salary permitted. Extended in 90-day increments for the duration of your placement.</p>
+          <a href="/volunteer-visa-chiang-mai/" class="vv-link">Volunteer visa guide →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHICH VISA -->
+  <section class="section" style="background: var(--paper);">
+    <div class="container">
+      <p class="section-eyebrow">Choosing the right visa</p>
+      <h2 class="section-h2">Which Thailand visa fits your situation?</h2>
+      <div class="situation-grid">
+        <div class="situation-card">
+          <p class="situation-if">If you're</p>
+          <p class="situation-then">Under 50, working remotely for US or foreign clients</p>
+          <p class="situation-body">→ <strong>DTV.</strong> Five years of flexible long-stay without annual renewals.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you're</p>
+          <p class="situation-then">50 or older, retired or semi-retired</p>
+          <p class="situation-body">→ <strong>Retirement O-A.</strong> Annual renewable, 800,000 THB (~USD 22,000) in a Thai bank or 65,000 THB/month income.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you're</p>
+          <p class="situation-then">Married to a Thai national</p>
+          <p class="situation-body">→ <strong>Marriage O.</strong> Lower financial threshold than retirement. Renewable indefinitely.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you're</p>
+          <p class="situation-then">Studying Thai language, Muay Thai, or at a Thai university</p>
+          <p class="situation-body">→ <strong>Education ED.</strong> No income threshold. Renewable per school term.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you're</p>
+          <p class="situation-then">Moving with children at a Thai school</p>
+          <p class="situation-body">→ <strong>Guardian O.</strong> For parents of children under 20 at a recognised Thai school.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you're</p>
+          <p class="situation-then">Volunteering with an NGO long-term</p>
+          <p class="situation-body">→ <strong>Volunteer O.</strong> Placement with a registered Thai non-profit. No salary permitted.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- US-SPECIFIC -->
+  <section class="section" style="background: var(--sand);">
+    <div class="container">
+      <p class="section-eyebrow">American nationals</p>
+      <h2 class="section-h2">What Americans specifically need to know</h2>
+      <ul class="considerations-list">
+        <li><strong>Application channels:</strong> Apply through the Royal Thai Embassy in Washington DC, or Thai consulates in Los Angeles, New York, Chicago, or Houston. DTV applications can also be submitted via the official online e-Visa system.</li>
+        <li><strong>FBI background check:</strong> The retirement visa requires an <strong>FBI Identity History Summary</strong> — not a state-level background check. This is processed through the FBI's website or an approved channeler; allow 8–12 weeks.</li>
+        <li><strong>Social Security:</strong> US Social Security payments continue for Americans living in Thailand without any penalty or reduction. There is no US-Thailand social security agreement, but this does not affect payment — it only means the two countries do not share contribution records.</li>
+        <li><strong>Medicare gap:</strong> Medicare provides no coverage outside the United States. Private health insurance is required — the retirement visa mandates minimum coverage of 40,000 THB outpatient and 400,000 THB inpatient.</li>
+        <li><strong>FBAR and foreign bank reporting:</strong> If your Thai bank account balance exceeds $10,000 at any point during the calendar year, you must file an FBAR (FinCEN Form 114). FATCA reporting (Form 8938) may also apply. Non-compliance carries significant penalties — factor this into your banking setup from day one.</li>
+        <li><strong>US tax obligations:</strong> The US taxes citizens on worldwide income regardless of where they live. A US-Thailand Double Taxation Agreement exists, but Americans in Thailand still have annual filing obligations. A cross-border tax adviser familiar with US expat requirements is strongly recommended before you move.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: var(--paper);">
+    <div class="container">
+      <p class="section-eyebrow">Common questions</p>
+      <h2 class="section-h2">Frequently asked questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3 class="faq-q">Do Americans need a visa for Thailand?</h3>
+          <p class="faq-a">US passport holders receive a 30-day visa-exemption stamp on arrival (some entry points grant 60 days). For stays longer than 30–60 days, or for long-term residence, you need the appropriate long-stay visa.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What is the best visa for Americans living in Thailand long term?</h3>
+          <p class="faq-a">It depends on your situation. Under 50 with remote income → DTV. Aged 50+ → retirement visa. Married to a Thai national → marriage visa. Studying → education visa. We assess your situation and recommend the right one.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Can Americans retire in Thailand?</h3>
+          <p class="faq-a">Yes. The Non-Immigrant O-A retirement visa is open to all nationalities aged 50 and over. You need 800,000 THB (~USD 22,000) in a Thai bank or 65,000 THB per month in income, qualifying health insurance, and an FBI Identity History Summary.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Does Social Security continue if I move to Thailand?</h3>
+          <p class="faq-a">Yes. Social Security payments continue for Americans living in Thailand without any penalty or reduction. Medicare does not extend to Thailand, however — private health insurance is required.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Do I have to pay US taxes if I live in Thailand?</h3>
+          <p class="faq-a">Yes. The US taxes its citizens on worldwide income regardless of where they live. A US-Thailand Double Taxation Agreement exists and provides some relief, but annual filing obligations remain. A cross-border tax adviser is strongly recommended.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What background check do Americans need for the Thailand retirement visa?</h3>
+          <p class="faq-a">An FBI Identity History Summary — available online through the FBI's program or via an approved channeler. Allow 8–12 weeks for processing.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Do I need to report my Thai bank account to the US government?</h3>
+          <p class="faq-a">Yes. If your Thai bank account balance exceeds $10,000 at any point during the year, you must file an FBAR (FinCEN Form 114). FATCA reporting may also apply. Non-compliance carries significant penalties.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Does Medicare cover me in Thailand?</h3>
+          <p class="faq-a">No. Medicare coverage is limited to the United States. For the retirement visa, private health insurance covering at least 40,000 THB outpatient and 400,000 THB inpatient is mandatory.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCtaBand
+    heading="Ready to move to Thailand as an American?"
+    subtext="A free WhatsApp consultation confirms which visa fits your situation and what you need to prepare."
+  />
+
+</BaseLayout>
+
+<style>
+  .hub-hero { background: var(--paper); padding: var(--space-9) 0 var(--space-8); }
+  .hub-eyebrow { font-family: var(--font-mono); font-size: var(--text-label); font-weight: var(--fw-medium); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--signal-deeper); margin-bottom: var(--space-4); }
+  .hub-h1 { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: clamp(2rem, 4vw, var(--text-display-xl)); line-height: var(--lh-tight); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-5); max-width: 22ch; text-wrap: balance; }
+  .hub-accent { color: var(--signal); }
+  .hub-intro { font-family: var(--font-body); font-size: var(--text-body-l); line-height: var(--lh-body); color: var(--text-body); max-width: 58ch; margin: 0 0 var(--space-6); }
+  .hub-cta { display: inline-flex; align-items: center; background: var(--signal); color: var(--paper); font-family: var(--font-body); font-size: var(--text-body-m); font-weight: var(--fw-semibold); text-decoration: none; padding: 14px 24px; border-radius: 4px; }
+  .hub-cta:hover { background: var(--signal-deeper); }
+  .section-eyebrow { font-family: var(--font-mono); font-size: var(--text-label); font-weight: var(--fw-medium); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--signal-deeper); margin-bottom: var(--space-3); }
+  .section-h2 { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: var(--text-display-l); line-height: var(--lh-snug); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-6); text-wrap: balance; }
+  .table-wrap { overflow-x: auto; }
+  .visa-table { width: 100%; border-collapse: collapse; font-family: var(--font-body); font-size: var(--text-body-s); background: var(--paper); border-radius: var(--radius-card); }
+  .visa-table th { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-45); padding: 12px 16px; text-align: left; border-bottom: 2px solid var(--sand); white-space: nowrap; }
+  .visa-table td { padding: 14px 16px; border-bottom: 1px solid var(--sand); color: var(--text-body); vertical-align: top; line-height: 1.55; }
+  .visa-table tr:last-child td { border-bottom: none; }
+  .visa-table td:first-child { font-weight: 600; color: var(--ink); white-space: nowrap; }
+  .visa-table a { color: var(--signal-deeper); text-decoration: none; font-weight: 600; }
+  .visa-content { max-width: 72ch; }
+  .visa-label { font-family: var(--font-mono); font-size: var(--text-label); font-weight: var(--fw-medium); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--signal-deeper); margin-bottom: var(--space-3); }
+  .visa-h2 { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: var(--text-display-m); line-height: var(--lh-snug); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-5); }
+  .visa-body { font-family: var(--font-body); font-size: var(--text-body-m); line-height: var(--lh-body); color: var(--text-body); margin-bottom: var(--space-5); }
+  .visa-facts { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: var(--space-5); }
+  .fact { background: var(--sand); border: var(--border); border-radius: var(--radius-card); padding: var(--space-3) var(--space-4); }
+  .fact-label { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-45); margin-bottom: 4px; }
+  .fact-value { font-family: var(--font-body); font-size: var(--text-body-m); font-weight: 600; color: var(--ink); margin: 0; }
+  .other-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-5); margin-top: var(--space-6); }
+  .other-card { background: var(--paper); border: var(--border); border-radius: var(--radius-card); padding: var(--space-5); }
+  .other-label { font-family: var(--font-body); font-size: var(--text-body-m); font-weight: 600; color: var(--ink); margin: 0 0 var(--space-3); }
+  .other-body { font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body); margin: 0 0 var(--space-3); }
+  .situation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); margin-top: var(--space-6); }
+  .situation-card { background: var(--sand); border: var(--border); border-left: 3px solid var(--signal); border-radius: var(--radius-card); padding: var(--space-5); }
+  .situation-if { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-45); margin-bottom: var(--space-2); }
+  .situation-then { font-family: var(--font-body); font-size: var(--text-body-m); font-weight: 600; color: var(--ink); margin-bottom: var(--space-2); }
+  .situation-body { font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body); margin: 0; }
+  .considerations-list { list-style: none; padding: 0; margin: var(--space-6) 0 0; display: flex; flex-direction: column; gap: var(--space-4); max-width: 68ch; }
+  .considerations-list li { padding-left: 1.5rem; position: relative; font-family: var(--font-body); font-size: var(--text-body-m); line-height: var(--lh-body); color: var(--text-body); }
+  .considerations-list li::before { content: '→'; position: absolute; left: 0; color: var(--signal); font-weight: 600; }
+  .faq-grid { display: flex; flex-direction: column; gap: 0; max-width: 68ch; margin-top: var(--space-6); }
+  .faq-item { border-bottom: 1px solid var(--sand); padding-bottom: var(--space-5); margin-bottom: var(--space-5); }
+  .faq-item:last-child { border-bottom: none; margin-bottom: 0; }
+  .faq-q { font-family: var(--font-body); font-size: var(--text-body-m); font-weight: 600; color: var(--ink); margin: 0 0 var(--space-3); }
+  .faq-a { font-family: var(--font-body); font-size: var(--text-body-m); line-height: var(--lh-body); color: var(--text-body); margin: 0; }
+</style>

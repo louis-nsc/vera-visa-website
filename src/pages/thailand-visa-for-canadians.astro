@@ -1,0 +1,433 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Do Canadians need a visa for Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Canadian passport holders receive a 30-day visa-exemption stamp on arrival in Thailand. For stays longer than 30 days, or for long-term residence, you need the appropriate long-stay visa.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the best visa for Canadians living in Thailand long term?',
+      acceptedAnswer: { '@type': 'Answer', text: 'It depends on your situation. Under 50 with remote income or freelance clients → DTV. Aged 50 or older → retirement visa. Married to a Thai national → marriage visa. Studying Thai language or Muay Thai → education visa. Vera Visa assesses your situation and recommends the correct route.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can Canadians retire in Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. The Non-Immigrant O-A retirement visa is open to all nationalities aged 50 and over. Requirements include 800,000 THB in a Thai bank (approximately CAD 32,000) or 65,000 THB per month in income, qualifying health insurance, and an RCMP Criminal Record Check.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What background check do Canadians need for the Thailand retirement visa?',
+      acceptedAnswer: { '@type': 'Answer', text: 'An RCMP Criminal Record Check (Certified Criminal Record Check) issued at the federal level. Province-level police checks are not accepted. Processing times vary — allow several weeks and factor this into your timeline.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does my Canadian OAS or CPP continue if I move to Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Old Age Security (OAS) and Canada Pension Plan (CPP) payments are portable and continue when you live abroad. However, OAS may be subject to non-resident withholding tax. Confirm your specific tax situation with the CRA or a cross-border tax adviser before leaving.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does provincial health insurance cover me in Thailand?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. Most Canadian provincial health plans lapse after 6 months abroad — some provinces end coverage sooner. Private international health insurance is required, and for the retirement visa, minimum coverage of 40,000 THB outpatient and 400,000 THB inpatient is mandatory.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where do Canadians apply for a Thailand long-stay visa?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Through the Royal Thai Embassy in Ottawa, the Royal Thai Consulate-General in Vancouver, or the Royal Thai Consulate in Toronto. DTV applications can also be submitted via the official Thai e-Visa system.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I use the DTV visa as a Canadian digital nomad?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. The Destination Thailand Visa (DTV) is designed for remote workers, freelancers, and digital nomads. You need proof of 500,000 THB (approximately CAD 20,000) in accessible funds and evidence of foreign-sourced income or client contracts. It gives you 180 days per entry with a 5-year validity.' },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://vera-visa.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Thailand Visa for Canadians', item: 'https://vera-visa.com/thailand-visa-for-canadians/' },
+  ],
+};
+---
+
+<BaseLayout
+  title="Thailand Visa for Canadians 2026 | Vera Visa"
+  description="Every long-stay Thailand visa option for Canadians: DTV for remote workers, retirement visa (O-A), marriage visa, education visa. Vera Visa, Chiang Mai."
+  canonicalUrl="https://vera-visa.com/thailand-visa-for-canadians/"
+  ogTitle="Thailand Visa for Canadians 2026 — Complete Guide | Vera Visa"
+  ogDescription="DTV, retirement visa, marriage visa and more — every long-stay Thailand visa for Canadians explained, with Canadian-specific requirements, costs, and application channels."
+  schema={[faqSchema, breadcrumbSchema]}
+>
+
+  <!-- HERO -->
+  <section class="hub-hero">
+    <div class="container">
+      <p class="hub-eyebrow">Canada · Thailand Visa Guide 2026</p>
+      <h1 class="hub-h1">Thailand visa options<br>for <span class="hub-accent">Canadians</span>.</h1>
+      <p class="hub-intro">Canada has a growing presence in Thailand's expat community — retirees in Chiang Mai, digital nomads on the coast, and professionals based in Bangkok. Whatever brings you here, there's a long-stay visa that fits your situation. Here's what each one requires and how to choose.</p>
+      <a href="https://wa.me/66908917582" class="hub-cta">Find your visa on WhatsApp →</a>
+    </div>
+  </section>
+
+  <!-- TABLE -->
+  <section class="section" style="background: var(--sand);">
+    <div class="container">
+      <p class="section-eyebrow">At a glance</p>
+      <h2 class="section-h2">Every long-stay Thailand visa for Canadians</h2>
+      <div class="table-wrap">
+        <table class="visa-table">
+          <thead>
+            <tr>
+              <th>Visa</th>
+              <th>Best for</th>
+              <th>Length of stay</th>
+              <th>Financial requirement</th>
+              <th>Key condition</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="/dtv-visa-chiang-mai/">DTV</a></td>
+              <td>Remote workers, freelancers, soft-power activities</td>
+              <td>180 days/entry, 5-year validity, extendable to 360 days</td>
+              <td>500,000 THB (~CAD 20,000)</td>
+              <td>Foreign income or soft-power enrolment</td>
+            </tr>
+            <tr>
+              <td><a href="/retirement-visa-chiang-mai/">O-A Retirement</a></td>
+              <td>Retirees aged 50+</td>
+              <td>1 year, renewable indefinitely</td>
+              <td>800,000 THB (~CAD 32,000) or 65,000 THB/month</td>
+              <td>Age 50+, health insurance, RCMP police check</td>
+            </tr>
+            <tr>
+              <td><a href="/marriage-visa-chiang-mai/">O Marriage</a></td>
+              <td>Spouses of Thai nationals</td>
+              <td>1 year, renewable indefinitely</td>
+              <td>400,000 THB (~CAD 16,000) or 40,000 THB/month</td>
+              <td>Legal marriage to Thai national</td>
+            </tr>
+            <tr>
+              <td><a href="/education-visa-chiang-mai/">ED Education</a></td>
+              <td>Students at MOE-registered schools</td>
+              <td>90 days, renewable per term</td>
+              <td>~20,000 THB (standard entry funds)</td>
+              <td>Enrolment at approved school</td>
+            </tr>
+            <tr>
+              <td><a href="/guardian-visa-chiang-mai/">O Guardian</a></td>
+              <td>Parents of children in Thai schools</td>
+              <td>1 year, renewable</td>
+              <td>400,000 THB (~CAD 16,000) or 40,000 THB/month</td>
+              <td>Child (under 20) at recognised Thai school</td>
+            </tr>
+            <tr>
+              <td><a href="/volunteer-visa-chiang-mai/">O Volunteer</a></td>
+              <td>Long-term volunteers with registered NGOs</td>
+              <td>90 days, renewable</td>
+              <td>~20,000 THB (standard entry funds)</td>
+              <td>Placement with registered non-profit</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- DTV -->
+  <section class="section" style="background: var(--paper);">
+    <div class="container visa-content">
+      <p class="visa-label">For remote workers &amp; freelancers</p>
+      <h2 class="visa-h2">Destination Thailand Visa (DTV)</h2>
+      <p class="visa-body">The DTV is Thailand's answer to the digital nomad visa — a 5-year multiple-entry visa that gives you 180 days per entry (extendable to 360 days at a Chiang Mai immigration office). It's the default choice for Canadian freelancers, remote employees, and online business owners who want long-term flexibility without being tied to one category.</p>
+      <p class="visa-body">The financial requirement is 500,000 THB in accessible funds — roughly CAD 20,000. This is not a deposit you leave in Thailand; it's evidence you have the means to support yourself. Alongside the funds, you need evidence of foreign-sourced income: client contracts, bank transfers from foreign employers, or proof of a business registered outside Thailand.</p>
+      <p class="visa-body">The DTV also covers "soft power" activities — enrolment in Thai language, Muay Thai, Thai cooking, traditional Thai massage, or other approved courses. Canadians on sabbatical or career breaks often use this route even without active client income.</p>
+      <div class="visa-facts">
+        <div class="fact"><p class="fact-label">Validity</p><p class="fact-value">5 years</p></div>
+        <div class="fact"><p class="fact-label">Stay per entry</p><p class="fact-value">180 days</p></div>
+        <div class="fact"><p class="fact-label">Funds required</p><p class="fact-value">500,000 THB (~CAD 20,000)</p></div>
+        <div class="fact"><p class="fact-label">Apply from</p><p class="fact-value">Ottawa / Vancouver / Toronto / e-Visa</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RETIREMENT -->
+  <section class="section" style="background: var(--sand);">
+    <div class="container visa-content">
+      <p class="visa-label">For retirees aged 50+</p>
+      <h2 class="visa-h2">Thailand Retirement Visa (Non-Immigrant O-A)</h2>
+      <p class="visa-body">The Non-Immigrant O-A retirement visa is the standard long-stay route for Canadians aged 50 and over who are no longer working. It provides one-year extensions renewable indefinitely — meaning many Canadians stay in Thailand for decades on a series of O-A renewals.</p>
+      <p class="visa-body">The financial requirement is 800,000 THB deposited in a Thai bank account (approximately CAD 32,000), or evidence of at least 65,000 THB per month in income from abroad — Canadian pension income (OAS, CPP, or private pensions) typically qualifies. A combined method (deposit plus income) is also accepted.</p>
+      <p class="visa-body">For Canadians, the key document requirement beyond the financial evidence is an RCMP Criminal Record Check — specifically a Certified Criminal Record Check issued at the federal level. Province-level police checks are not accepted. Build processing time into your application timeline, as RCMP checks can take several weeks. Health insurance with minimum 40,000 THB outpatient and 400,000 THB inpatient coverage is also required.</p>
+      <div class="visa-facts">
+        <div class="fact"><p class="fact-label">Age requirement</p><p class="fact-value">50+</p></div>
+        <div class="fact"><p class="fact-label">Bank deposit</p><p class="fact-value">800,000 THB (~CAD 32,000)</p></div>
+        <div class="fact"><p class="fact-label">Or income</p><p class="fact-value">65,000 THB/month</p></div>
+        <div class="fact"><p class="fact-label">Police check</p><p class="fact-value">RCMP Certified Criminal Record Check</p></div>
+        <div class="fact"><p class="fact-label">Health insurance</p><p class="fact-value">40k / 400k THB minimum</p></div>
+        <div class="fact"><p class="fact-label">Stay</p><p class="fact-value">1 year, renewable</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARRIAGE -->
+  <section class="section" style="background: var(--paper);">
+    <div class="container visa-content">
+      <p class="visa-label">For spouses of Thai nationals</p>
+      <h2 class="visa-h2">Thailand Marriage Visa (Non-Immigrant O)</h2>
+      <p class="visa-body">If you're married to a Thai national, the Non-Immigrant O marriage visa gives you annual-extension residency with the same financial thresholds as the retirement visa: 400,000 THB deposited in a Thai bank (approximately CAD 16,000), or 40,000 THB per month in income. There is no age requirement.</p>
+      <p class="visa-body">Following Thailand's Marriage Equality Act (effective 22 January 2025), same-sex couples where at least one partner is a Thai national can register their marriage at a district office (amphoe) on the same basis as any couple. The resulting Kor Ror 3 marriage certificate is accepted by Thai immigration for the marriage visa on identical grounds.</p>
+    </div>
+  </section>
+
+  <!-- OTHER VISAS -->
+  <section class="section" style="background: var(--sand);">
+    <div class="container">
+      <p class="section-eyebrow">Other options</p>
+      <h2 class="section-h2">Education, Guardian &amp; Volunteer visas</h2>
+      <div class="other-grid">
+        <div class="other-card">
+          <p class="other-label">Education Visa (ED)</p>
+          <p class="other-body">Enrol in a Thai language school, Muay Thai academy, cooking school, or university programme and stay legally for the duration of your course. Renewable each term. No minimum age and no large financial threshold — the school sponsorship is the key document.</p>
+          <a href="/education-visa-chiang-mai/" class="other-link">ED Visa details →</a>
+        </div>
+        <div class="other-card">
+          <p class="other-label">Guardian Visa (O)</p>
+          <p class="other-body">Canadian parents with a child enrolled in a recognised Thai school can stay legally while their child studies. Requires the same 400,000 THB bank deposit or 40,000 THB/month income as the marriage visa, plus school enrollment documentation.</p>
+          <a href="/guardian-visa-chiang-mai/" class="other-link">Guardian Visa details →</a>
+        </div>
+        <div class="other-card">
+          <p class="other-label">Volunteer Visa (Non-O)</p>
+          <p class="other-body">Volunteering with a registered Thai NGO or non-profit? The Non-Immigrant O volunteer visa provides legal long-term stay tied to your placement. No large financial threshold, no work permit required for unpaid volunteer work.</p>
+          <a href="/volunteer-visa-chiang-mai/" class="other-link">Volunteer Visa details →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITUATION GUIDE -->
+  <section class="section" style="background: var(--paper);">
+    <div class="container">
+      <p class="section-eyebrow">Which visa fits you</p>
+      <h2 class="section-h2">Match your situation to the right visa</h2>
+      <div class="situation-grid">
+        <div class="situation-card">
+          <p class="situation-if">If you are</p>
+          <p class="situation-then">A Canadian freelancer or remote employee</p>
+          <p class="situation-body">→ DTV. 5-year visa, 180 days per entry. Proof of 500,000 THB in funds plus foreign income.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you are</p>
+          <p class="situation-then">Retired and aged 50+</p>
+          <p class="situation-body">→ O-A Retirement. 800,000 THB in a Thai bank or 65,000 THB/month. OAS and CPP typically qualify.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you are</p>
+          <p class="situation-then">Married to a Thai national</p>
+          <p class="situation-body">→ O Marriage. 400,000 THB deposit or 40,000 THB/month. No age restriction. Includes same-sex couples.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you are</p>
+          <p class="situation-then">Studying language or Muay Thai</p>
+          <p class="situation-body">→ ED Visa. Stay for the duration of your course. Renewable each term with school enrollment evidence.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you are</p>
+          <p class="situation-then">A parent with a child in school</p>
+          <p class="situation-body">→ O Guardian. Stay legally while your child studies. Same financial thresholds as the marriage visa.</p>
+        </div>
+        <div class="situation-card">
+          <p class="situation-if">If you are</p>
+          <p class="situation-then">Volunteering with an NGO</p>
+          <p class="situation-body">→ Non-O Volunteer. Organisation must be a registered Thai non-profit. No large deposit required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CANADIAN SPECIFICS -->
+  <section class="section" style="background: var(--sand);">
+    <div class="container">
+      <p class="section-eyebrow">Canada-specific considerations</p>
+      <h2 class="section-h2">What Canadians need to know</h2>
+      <ul class="considerations-list">
+        <li><strong>RCMP Criminal Record Check:</strong> Thailand requires a Certified Criminal Record Check from the RCMP — the federal police service — not a provincial or local police check. Factor in processing time, as RCMP checks are not instant.</li>
+        <li><strong>OAS and CPP are portable:</strong> Old Age Security and Canada Pension Plan payments continue when you live abroad. Both can count toward the 65,000 THB/month income method for the retirement visa. Note that OAS paid to non-residents is subject to Canadian non-resident withholding tax.</li>
+        <li><strong>Provincial health insurance lapses:</strong> Most provincial health plans terminate or suspend coverage after 6 months outside Canada — some provinces cut coverage sooner. Do not assume provincial health covers you for your first months in Thailand. Arrange private international health insurance before you leave.</li>
+        <li><strong>CRA residency and tax:</strong> Leaving Canada may or may not sever your tax residency — it depends on residential ties (property, spouse, dependants). A departure from Canada does not automatically make you a non-resident for tax purposes. Get a cross-border tax adviser's view before leaving, especially if you have significant Canadian assets.</li>
+        <li><strong>Where to apply:</strong> Royal Thai Embassy in Ottawa, Royal Thai Consulate-General in Vancouver, or Royal Thai Consulate in Toronto. DTV applications can also be submitted via the official Thai e-Visa portal.</li>
+        <li><strong>RESP and RRSP:</strong> These accounts remain in Canada under your Canadian institution. There are no Thai implications, but consider Canadian tax rules around RRSP withdrawals as a non-resident (withholding tax applies).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: var(--paper);">
+    <div class="container">
+      <p class="section-eyebrow">Common questions</p>
+      <h2 class="section-h2">Thailand visa questions from Canadians</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3 class="faq-q">Do Canadians need a visa for Thailand?</h3>
+          <p class="faq-a">Canadian passport holders receive a 30-day visa-exemption stamp on arrival in Thailand. For stays longer than 30 days, or for long-term residence, you need the appropriate long-stay visa.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What is the best visa for Canadians living in Thailand long term?</h3>
+          <p class="faq-a">It depends on your situation. Under 50 with remote income or freelance clients → DTV. Aged 50 or older → retirement visa. Married to a Thai national → marriage visa. Studying Thai language or Muay Thai → education visa. Vera Visa assesses your situation and recommends the correct route.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Can Canadians retire in Thailand?</h3>
+          <p class="faq-a">Yes. The Non-Immigrant O-A retirement visa is open to all nationalities aged 50 and over. Requirements include 800,000 THB in a Thai bank (approximately CAD 32,000) or 65,000 THB per month in income, qualifying health insurance, and an RCMP Criminal Record Check.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What background check do Canadians need for the Thailand retirement visa?</h3>
+          <p class="faq-a">An RCMP Criminal Record Check (Certified Criminal Record Check) issued at the federal level. Province-level police checks are not accepted. Processing times vary — allow several weeks and factor this into your timeline.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Does my Canadian OAS or CPP continue if I move to Thailand?</h3>
+          <p class="faq-a">Yes. Old Age Security (OAS) and Canada Pension Plan (CPP) payments are portable and continue when you live abroad. However, OAS may be subject to non-resident withholding tax. Confirm your specific tax situation with the CRA or a cross-border tax adviser before leaving.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Does provincial health insurance cover me in Thailand?</h3>
+          <p class="faq-a">No. Most Canadian provincial health plans lapse after 6 months abroad — some provinces end coverage sooner. Private international health insurance is required, and for the retirement visa, minimum coverage of 40,000 THB outpatient and 400,000 THB inpatient is mandatory.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Where do Canadians apply for a Thailand long-stay visa?</h3>
+          <p class="faq-a">Through the Royal Thai Embassy in Ottawa, the Royal Thai Consulate-General in Vancouver, or the Royal Thai Consulate in Toronto. DTV applications can also be submitted via the official Thai e-Visa system.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Can I use the DTV visa as a Canadian digital nomad?</h3>
+          <p class="faq-a">Yes. The Destination Thailand Visa (DTV) is designed for remote workers, freelancers, and digital nomads. You need proof of 500,000 THB (approximately CAD 20,000) in accessible funds and evidence of foreign-sourced income or client contracts. It gives you 180 days per entry with a 5-year validity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCtaBand
+    heading="Ready to plan your move to Thailand from Canada?"
+    subtext="Start with a free WhatsApp consultation. Tell us your situation and we'll tell you exactly which visa applies and what you need."
+  />
+
+</BaseLayout>
+
+<style>
+  .hub-hero {
+    background: var(--paper);
+    padding: 64px 0 var(--space-9);
+  }
+
+  .hub-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--signal-deeper);
+    margin-bottom: var(--space-4);
+  }
+
+  .hub-h1 {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: clamp(2.5rem, 5vw, var(--text-display-xl));
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-display);
+    color: var(--ink);
+    margin: 0 0 var(--space-5);
+    max-width: 20ch;
+    text-wrap: balance;
+  }
+
+  .hub-accent { color: var(--signal); }
+
+  .hub-intro {
+    font-family: var(--font-body);
+    font-size: var(--text-body-l);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    max-width: 60ch;
+    margin: 0 0 var(--space-6);
+  }
+
+  .hub-cta {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: var(--text-body-m);
+    font-weight: var(--fw-semibold);
+    color: var(--signal);
+    text-decoration: none;
+    border-bottom: 2px solid var(--signal);
+    padding-bottom: 2px;
+  }
+
+  .section { padding: var(--space-9) 0; }
+
+  .section-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--signal-deeper);
+    margin-bottom: var(--space-3);
+  }
+
+  .section-h2 {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-display-l);
+    line-height: var(--lh-snug);
+    letter-spacing: var(--ls-display);
+    color: var(--ink);
+    margin: 0 0 var(--space-6);
+    text-wrap: balance;
+  }
+
+  .table-wrap { overflow-x: auto; }
+  .visa-table { width: 100%; border-collapse: collapse; font-family: var(--font-body); font-size: var(--text-body-s); background: var(--paper); border-radius: var(--radius-card); }
+  .visa-table th { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-45); padding: 12px 16px; text-align: left; border-bottom: 2px solid var(--sand); background: var(--paper); white-space: nowrap; }
+  .visa-table td { padding: 14px 16px; border-bottom: 1px solid var(--sand); color: var(--text-body); vertical-align: top; line-height: 1.55; }
+  .visa-table tr:last-child td { border-bottom: none; }
+  .visa-table td:first-child { font-weight: 600; color: var(--ink); white-space: nowrap; }
+  .visa-table a { color: var(--signal-deeper); text-decoration: none; font-weight: 600; }
+
+  .visa-content { max-width: 72ch; }
+  .visa-label { font-family: var(--font-mono); font-size: var(--text-label); font-weight: var(--fw-medium); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--signal-deeper); margin-bottom: var(--space-3); }
+  .visa-h2 { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: var(--text-display-m); line-height: var(--lh-snug); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-5); }
+  .visa-body { font-family: var(--font-body); font-size: var(--text-body-m); line-height: var(--lh-body); color: var(--text-body); margin-bottom: var(--space-5); }
+  .visa-facts { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: var(--space-5); }
+  .fact { background: var(--sand); border: var(--border); border-radius: var(--radius-card); padding: var(--space-3) var(--space-4); }
+  .fact-label { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-45); margin-bottom: 4px; }
+  .fact-value { font-family: var(--font-body); font-size: var(--text-body-m); font-weight: 600; color: var(--ink); margin: 0; }
+
+  .other-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-5); margin-top: var(--space-6); }
+  .other-card { background: var(--paper); border: var(--border); border-radius: var(--radius-card); padding: var(--space-5); }
+  .other-label { font-family: var(--font-body); font-size: var(--text-body-m); font-weight: 600; color: var(--ink); margin: 0 0 var(--space-3); }
+  .other-body { font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body); margin: 0 0 var(--space-3); }
+  .other-link { font-family: var(--font-body); font-size: var(--text-body-s); font-weight: 600; color: var(--signal-deeper); text-decoration: none; }
+
+  .situation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); margin-top: var(--space-6); }
+  .situation-card { background: var(--sand); border: var(--border); border-left: 3px solid var(--signal); border-radius: var(--radius-card); padding: var(--space-5); }
+  .situation-if { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-45); margin-bottom: var(--space-2); }
+  .situation-then { font-family: var(--font-body); font-size: var(--text-body-m); font-weight: 600; color: var(--ink); margin-bottom: var(--space-2); }
+  .situation-body { font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body); margin: 0; }
+
+  .considerations-list { list-style: none; padding: 0; margin: var(--space-6) 0 0; display: flex; flex-direction: column; gap: var(--space-4); max-width: 68ch; }
+  .considerations-list li { padding-left: 1.5rem; position: relative; font-family: var(--font-body); font-size: var(--text-body-m); line-height: var(--lh-body); color: var(--text-body); }
+  .considerations-list li::before { content: '→'; position: absolute; left: 0; color: var(--signal); font-weight: 600; }
+
+  .faq-grid { display: flex; flex-direction: column; gap: 0; max-width: 68ch; margin-top: var(--space-6); }
+  .faq-item { border-bottom: 1px solid var(--sand); padding-bottom: var(--space-5); margin-bottom: var(--space-5); }
+  .faq-item:last-child { border-bottom: none; margin-bottom: 0; }
+  .faq-q { font-family: var(--font-body); font-size: var(--text-body-m); font-weight: 600; color: var(--ink); margin: 0 0 var(--space-3); }
+  .faq-a { font-family: var(--font-body); font-size: var(--text-body-m); line-height: var(--lh-body); color: var(--text-body); margin: 0; }
+</style>

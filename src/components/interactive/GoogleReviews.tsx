@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { testimonials, overallRating, reviewCount } from '../../data/testimonials';
 
-const INITIAL_COUNT = 3;
+// 6 divides evenly into both the 3-col desktop grid and the 2-col tablet
+// grid, so the default view never leaves an orphaned card in the last row.
+const INITIAL_COUNT = 6;
 
 function Stars({ rating }: { rating: number }) {
   return (

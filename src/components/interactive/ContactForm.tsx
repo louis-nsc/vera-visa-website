@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
+import './ContactForm.css';
 
 const WA_HREF = 'https://wa.me/66908917582';
 
@@ -90,54 +91,6 @@ export default function ContactForm() {
           </button>
         </form>
       )}
-
-      <style>{`
-        .cf-wrap { display: flex; flex-direction: column; gap: var(--space-5); }
-        .cf-wa {
-          display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
-          padding: 14px var(--space-6); background: var(--signal-deep); color: var(--paper);
-          font-family: var(--font-body); font-weight: 600; font-size: var(--text-body-m);
-          text-decoration: none; border-radius: var(--radius-pill); border: 1px solid transparent;
-          transition: background 120ms cubic-bezier(0.2,0,0,1);
-        }
-        .cf-wa:hover { background: var(--signal-deeper); }
-        .cf-divider {
-          display: flex; align-items: center; gap: var(--space-3);
-          font-family: var(--font-mono); font-size: 11px; font-weight: 500;
-          letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-45);
-        }
-        .cf-divider::before, .cf-divider::after { content: ''; flex: 1; height: 1px; background: var(--line); }
-        .cf-form { display: flex; flex-direction: column; gap: var(--space-4); }
-        .cf-honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
-        .cf-field { display: flex; flex-direction: column; gap: 6px; }
-        .cf-label {
-          font-family: var(--font-mono); font-size: 11px; font-weight: 500;
-          letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-45);
-        }
-        .cf-input {
-          font-family: var(--font-body); font-size: var(--text-body-m); color: var(--ink);
-          background: var(--paper); border: 1px solid var(--line); border-radius: 4px;
-          padding: 10px 12px; transition: border-color 120ms ease;
-        }
-        .cf-input:focus { outline: none; border-color: var(--signal); }
-        .cf-textarea { resize: vertical; font-family: var(--font-body); }
-        .cf-submit {
-          align-self: flex-start; padding: 12px var(--space-6); background: var(--ink); color: var(--paper);
-          font-family: var(--font-body); font-weight: 600; font-size: var(--text-body-m);
-          border: none; border-radius: var(--radius-pill); cursor: pointer;
-          transition: background 120ms ease;
-        }
-        .cf-submit:hover:not(:disabled) { background: var(--signal-deep); }
-        .cf-submit:disabled { opacity: 0.6; cursor: not-allowed; }
-        .cf-success {
-          font-family: var(--font-body); font-size: var(--text-body-m); color: var(--approved);
-          background: var(--sand); border-radius: 4px; padding: var(--space-4);
-        }
-        .cf-error {
-          font-family: var(--font-body); font-size: var(--text-body-s); color: var(--signal-deeper);
-          margin: 0;
-        }
-      `}</style>
     </div>
   );
 }

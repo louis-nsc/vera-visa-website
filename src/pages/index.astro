@@ -10,9 +10,9 @@ const WA_HREF = 'https://wa.me/66908917582';
 const services = [
   { code: 'DTV',  name: 'Destination Thailand Visa',    description: 'Five-year multiple-entry visa for remote workers and freelancers. 180 days per stay.',           href: '/dtv-visa-chiang-mai/'        },
   { code: 'ED',   name: 'Education Visa',                description: 'For students enrolled in Thai language schools, universities, or training programs.',             href: '/education-visa-chiang-mai/'         },
-  { code: 'O',    name: 'Marriage Visa',                 description: 'For spouses of Thai nationals — annual extensions with 400,000 THB or 40,000 THB/month income.', href: '/marriage-visa-chiang-mai/'   },
+  { code: 'O · Spouse',    name: 'Marriage Visa',        description: 'For spouses of Thai nationals — annual extensions with 400,000 THB or 40,000 THB/month income.', href: '/marriage-visa-chiang-mai/'   },
   { code: 'O-A',  name: 'Retirement Visa',               description: 'For applicants over 50 with 800,000 THB in a Thai bank or 65,000 THB/month income.',             href: '/retirement-visa-chiang-mai/' },
-  { code: 'O',    name: 'Guardian Visa',                 description: 'For parents and guardians supporting a child enrolled in school in Thailand.',                    href: '/guardian-visa-chiang-mai/'   },
+  { code: 'O · Guardian',  name: 'Guardian Visa',        description: 'For parents and guardians supporting a child enrolled in school in Thailand.',                    href: '/guardian-visa-chiang-mai/'   },
   { code: 'B',    name: 'Business Visa & Work Permits',  description: 'Non-B visas and work permits for professionals and business owners working in Thailand.',          href: '/work-permits-business-visas-chiang-mai/'   },
 ];
 
@@ -324,10 +324,19 @@ const websiteSchema = {
     text-transform: uppercase;
     color: var(--ink);
     border: 1.5px solid var(--ink);
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
     padding: 4px 8px;
-    box-shadow: inset 0 0 0 1.5px var(--paper), inset 0 0 0 3px var(--ink);
     opacity: 0.55;
+  }
+
+  /* Second concentric ring, replacing the old box-shadow double-ring trick
+     (DESIGN.md's Flat Ledger Rule forbids box-shadow anywhere in this system). */
+  .hero__stamp::before {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border: 1.5px solid var(--ink);
+    pointer-events: none;
   }
 
   .hero__card-body { padding: var(--space-5); padding-left: 40px; }
@@ -457,7 +466,7 @@ const websiteSchema = {
     font-family: var(--font-mono);
     font-size: var(--text-display-m);
     font-weight: var(--fw-semibold);
-    color: var(--signal);
+    color: var(--ink-45);
     margin-bottom: var(--space-4);
     letter-spacing: -0.02em;
   }

@@ -16,7 +16,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     name: 'Gabriele',
-    visaType: 'Marriage (O)',
+    visaType: 'Marriage (O · Spouse)',
     rating: 5,
     quote: "I used Vera Visa's services to convert a tourist visa into a marriage visa. They are very professional and kind, with a very competitive price. Highly recommended!",
   },

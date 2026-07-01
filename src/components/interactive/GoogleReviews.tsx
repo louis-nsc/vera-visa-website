@@ -28,7 +28,7 @@ export default function GoogleReviews() {
         </span>
       </div>
 
-      <div className="gr-grid">
+      <div className={`gr-grid${expanded ? '' : ' gr-grid--default'}`}>
         {visible.map((t) => (
           <div className="gr-card" key={t.name}>
             <p className="gr-card-eyebrow">{t.visaType} · Chiang Mai</p>
@@ -88,6 +88,11 @@ export default function GoogleReviews() {
         }
         @media (max-width: 560px) {
           .gr-grid { grid-template-columns: 1fr; }
+          /* Cap the default (unexpanded) view at 3 cards on narrow phones —
+             6 stacked cards is a long scroll-tax before reaching Contact.
+             CSS-only so the DOM node count stays identical between server
+             and client render (no viewport-based JS state, no hydration risk). */
+          .gr-grid--default .gr-card:nth-child(n + 4) { display: none; }
         }
       `}</style>
     </div>

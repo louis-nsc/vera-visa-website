@@ -1,3 +1,10 @@
 {
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/thailand-work-permit-americans/",
+      "destination": "/thailand-work-permit-requirements/",
+      "permanent": true
+    }
+  ]
 }

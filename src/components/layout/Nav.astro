@@ -25,13 +25,13 @@ const services = [
     <div class="nav__links">
       <!-- Services dropdown -->
       <div class="nav__dropdown">
-        <button class="nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+        <button class="nav__dropdown-trigger" aria-expanded="false">
           Visa Services
           <span class="nav__caret" aria-hidden="true">▾</span>
         </button>
-        <div class="nav__dropdown-menu" role="menu">
+        <div class="nav__dropdown-menu">
           {services.map((s) => (
-            <a href={s.href} class="nav__dropdown-item" role="menuitem">{s.label}</a>
+            <a href={s.href} class="nav__dropdown-item">{s.label}</a>
           ))}
         </div>
       </div>
@@ -49,7 +49,7 @@ const services = [
     </div>
 
     <!-- Mobile burger -->
-    <button class="nav__burger" aria-label="Open menu" aria-haspopup="true" aria-expanded="false" aria-controls="nav-mobile-menu">
+    <button class="nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu">
       <span class="nav__burger-bar"></span>
       <span class="nav__burger-bar"></span>
       <span class="nav__burger-bar"></span>
@@ -132,6 +132,21 @@ const services = [
   /* Dropdown */
   .nav__dropdown {
     position: relative;
+  }
+
+  /* Invisible hover bridge: without this, the 12px gap between the trigger
+     and .nav__dropdown-menu below is outside every element's hoverable box,
+     so :hover ends the instant the pointer crosses it, closing the menu
+     before the user can reach an item. This pseudo-element is a descendant
+     of .nav__dropdown, so hovering it keeps .nav__dropdown:hover true across
+     the gap. */
+  .nav__dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 260px;
+    height: 12px;
   }
 
   .nav__dropdown-trigger {
@@ -350,14 +365,20 @@ const services = [
   const burger = document.querySelector('.nav__burger');
   const mobileMenu = document.querySelector('.nav__mobile-menu');
 
+  function closeMobileMenu() {
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Open menu');
+    mobileMenu.setAttribute('hidden', '');
+  }
+
   if (burger && mobileMenu) {
     burger.addEventListener('click', () => {
       const isOpen = burger.getAttribute('aria-expanded') === 'true';
-      burger.setAttribute('aria-expanded', String(!isOpen));
-      burger.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu');
       if (isOpen) {
-        mobileMenu.setAttribute('hidden', '');
+        closeMobileMenu();
       } else {
+        burger.setAttribute('aria-expanded', 'true');
+        burger.setAttribute('aria-label', 'Close menu');
         mobileMenu.removeAttribute('hidden');
       }
     });
@@ -365,11 +386,7 @@ const services = [
     // Close the drawer if the viewport grows back to desktop width
     const desktopQuery = window.matchMedia('(min-width: 901px)');
     desktopQuery.addEventListener('change', (e) => {
-      if (e.matches) {
-        burger.setAttribute('aria-expanded', 'false');
-        burger.setAttribute('aria-label', 'Open menu');
-        mobileMenu.setAttribute('hidden', '');
-      }
+      if (e.matches) closeMobileMenu();
     });
   }
 
@@ -387,4 +404,23 @@ const services = [
       if (!dropdown.contains(e.relatedTarget)) setOpen(false);
     });
   }
+
+  // Escape closes whichever disclosure is open. For the desktop dropdown
+  // (driven purely by :hover/:focus-within, no JS open/closed state) the
+  // only way to close it is to remove focus from its descendants; this
+  // moves focus to the document rather than back to the trigger, which is
+  // an accepted tradeoff for this simple hover-disclosure pattern. For the
+  // mobile drawer, focus returns to the burger button that opened it.
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+
+    if (dropdown && dropdown.contains(document.activeElement)) {
+      document.activeElement.blur();
+    }
+
+    if (mobileMenu && !mobileMenu.hasAttribute('hidden')) {
+      closeMobileMenu();
+      burger.focus();
+    }
+  });
 </script>

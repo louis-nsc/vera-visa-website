@@ -14,7 +14,7 @@ const TABS = [
   { id: 'eligibility',  label: 'Eligibility'  },
   { id: 'requirements', label: 'Requirements'  },
   { id: 'process',      label: 'Process'       },
-  { id: 'benefits',     label: 'Benefits'      },
+  { id: 'cost',         label: 'Cost'          },
   { id: 'restrictions', label: 'Restrictions'  },
 ];
 
@@ -178,12 +178,24 @@ const breadcrumbSchema = {
         </AccordionSection>
 
         <AccordionSection client:load title="Financial Requirements">
-          <p>You must meet one of the following three financial thresholds:</p>
-          <ul>
-            <li><strong>Bank deposit:</strong> 800,000 THB held in a Thai bank account for the required period before and after your application</li>
-            <li><strong>Monthly income:</strong> 65,000 THB per month transferred to Thailand from abroad (pension, Social Security, investment income, etc.)</li>
-            <li><strong>Combination:</strong> Monthly income plus Thai bank savings totalling 800,000 THB</li>
-          </ul>
+          <p>You must meet <strong>one</strong> of these three financial routes:</p>
+          <div class="fin-routes">
+            <div class="fin-route">
+              <p class="fin-route-label">Bank Deposit Route</p>
+              <p class="fin-route-value">800,000 THB</p>
+              <p class="fin-route-desc">Held in a Thai bank account for the required period before and after your application.</p>
+            </div>
+            <div class="fin-route">
+              <p class="fin-route-label">Monthly Income Route</p>
+              <p class="fin-route-value">65,000 THB<span class="fin-route-unit">/month</span></p>
+              <p class="fin-route-desc">Transferred to Thailand from abroad — pension, Social Security, or investment income.</p>
+            </div>
+            <div class="fin-route">
+              <p class="fin-route-label">Combination Route</p>
+              <p class="fin-route-value">Income + savings = 800,000 THB</p>
+              <p class="fin-route-desc">Example: 40,000 THB/month income (480,000 THB/year) plus 320,000 THB in savings.</p>
+            </div>
+          </div>
           <p>The timing of the bank deposit matters — immigration requires it to be in place for a set period before you apply and to remain after. We advise on the exact schedule for your situation.</p>
         </AccordionSection>
 
@@ -285,22 +297,20 @@ const breadcrumbSchema = {
         <ExpertInsightCallout body="Most of our Chiang Mai retirement clients use Route B — they arrive on a tourist entry, set up the bank account, and we handle the in-country conversion. It avoids a trip back home and gets you settled faster." />
       </section>
 
-      <!-- BENEFITS -->
-      <section data-tab-panel="benefits" hidden>
-        <h2 class="panel-h2">Why the O-A for Chiang Mai</h2>
-        <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-8); align-items: start; margin-top: var(--space-6);">
-          <ul style="margin: 0; padding-left: var(--space-5); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.8; color: var(--text-body); max-width: 60ch;">
-            <li>Year-round legal residence — no tourist visa runs</li>
-            <li>Renewable annually with no upper age limit</li>
-            <li>Re-entry permits let you travel freely without losing your status</li>
-            <li>Access to excellent private hospitals in Chiang Mai</li>
-            <li>Cost of living significantly lower than Western countries</li>
-            <li>Large, established expat community in Chiang Mai</li>
-          </ul>
+      <!-- COST -->
+      <section data-tab-panel="cost" hidden>
+        <h2 class="panel-h2">What the O-A actually costs each year</h2>
+        <p class="panel-intro">Your financial-requirement deposit or income isn't a cost — it's evidence you already meet the threshold. Here's what you actually pay to hold and renew the visa.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-5); margin-top: var(--space-6);">
           <div style="background: var(--ink); color: var(--paper); border-radius: var(--radius-card); padding: var(--space-6);">
             <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal); margin: 0 0 12px;">Annual Renewal Fee</p>
             <p style="font-family: var(--font-body); font-size: var(--text-display-m); font-weight: 600; line-height: 1; margin: 0;">1,900 THB</p>
             <p style="font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body-on-dark); margin: 12px 0 0;">Official immigration fee per renewal. Chat with us on WhatsApp for a full breakdown including our service fee.</p>
+          </div>
+          <div style="background: var(--sand); border: var(--border); border-radius: var(--radius-card); padding: var(--space-6);">
+            <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-45); margin: 0 0 12px;">Full Cost Breakdown</p>
+            <p style="font-family: var(--font-body); font-size: var(--text-body-m); line-height: var(--lh-body); color: var(--ink); margin: 0 0 16px;">First-year application costs, health insurance premiums, and ongoing renewal fees, laid out line by line.</p>
+            <a href="/retirement-visa-thailand-cost/" class="vv-link" style="font-family: var(--font-body); font-weight: 600; color: var(--signal-deeper); text-decoration: none;">See the full cost guide →</a>
           </div>
         </div>
       </section>
@@ -372,6 +382,49 @@ const breadcrumbSchema = {
       color: var(--text-body);
       margin: 0 0 var(--space-6);
       max-width: 64ch;
+    }
+
+    /* Financial Requirements: 3-path chooser, replacing a dense prose block
+       for the highest-stakes decision on this page. */
+    .fin-routes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: var(--space-4);
+      margin: var(--space-4) 0 var(--space-5);
+    }
+    .fin-route {
+      background: var(--sand);
+      border: var(--border);
+      border-radius: var(--radius-card);
+      padding: var(--space-4);
+    }
+    .fin-route-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-label-s);
+      font-weight: var(--fw-medium);
+      letter-spacing: var(--ls-label-wide);
+      text-transform: uppercase;
+      color: var(--ink-45);
+      margin: 0 0 var(--space-2);
+    }
+    .fin-route-value {
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      font-weight: var(--fw-semibold);
+      color: var(--ink);
+      margin: 0 0 var(--space-2);
+      line-height: var(--lh-snug);
+    }
+    .fin-route-unit {
+      font-weight: var(--fw-regular);
+      color: var(--ink-70);
+    }
+    .fin-route-desc {
+      font-family: var(--font-body);
+      font-size: var(--text-body-s);
+      line-height: var(--lh-body);
+      color: var(--text-body);
+      margin: 0;
     }
   </style>
 </ServicePageLayout>

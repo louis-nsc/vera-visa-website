@@ -21,9 +21,8 @@ const { eyebrow, heading, intro, items } = Astro.props;
     {intro && <p class="bg-intro">{intro}</p>}
 
     <div class="vv-benefit-grid">
-      {items.map((item, i) => (
+      {items.map((item) => (
         <div class="vv-benefit-cell">
-          <div class="vv-benefit-number">{String(i + 1).padStart(2, '0')}</div>
           <h3 class="vv-benefit-title">{item.title}</h3>
           <p class="vv-benefit-body">{item.body}</p>
         </div>

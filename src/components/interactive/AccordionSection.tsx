@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
 
 interface Props {
@@ -7,14 +7,39 @@ interface Props {
   children: ReactNode;
 }
 
+// Slugify the title into a stable anchor id, e.g. "Financial Requirements" -> "financial-requirements".
+function slugify(text: string) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
 export default function AccordionSection({ title, defaultOpen = false, children }: Props) {
   const [open, setOpen] = useState(defaultOpen);
+  const slug = slugify(title);
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  // Deep-link support: if the URL hash matches this accordion, open it and
+  // scroll it into view. The short delay gives TabBar's own mount effect a
+  // chance to un-hide this accordion's parent panel first (both are
+  // independent client:load islands with no shared parent state, but
+  // `hidden` only affects rendering — the element still exists to query).
+  useEffect(() => {
+    if (window.location.hash.slice(1) !== slug) return;
+    setOpen(true);
+    const timer = setTimeout(() => {
+      rootRef.current?.scrollIntoView({ block: 'start' });
+    }, 100);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <div className="vv-acc">
+    <div className="vv-acc" id={slug} ref={rootRef}>
       <button
         className="vv-acc-btn"
-        onClick={() => setOpen((o) => !o)}
+        onClick={() => {
+          setOpen((o) => !o);
+          history.replaceState(null, '', `#${slug}`);
+        }}
         aria-expanded={open}
       >
         <span className="vv-acc-title">{title}</span>

@@ -120,7 +120,7 @@ const breadcrumbSchema = {
   { label: 'Stay / Entry',   value: '180 days'          },
   { label: 'Extendable',     value: 'Yes · +180 days'   },
   { label: 'Obtain At',      value: 'Embassy / E-Visa'  },
-  { label: 'Minimum Age',    value: '20+'               },
+  { label: 'Minimum Age',    value: 'Age 20+'           },
   { label: 'Family',         value: 'Spouse & children' },
 ]} />
 
@@ -200,12 +200,15 @@ const breadcrumbSchema = {
         </ul>
       </AccordionSection>
 
-      <AccordionSection client:load title="Financial Solvency Evidence">
+      <AccordionSection client:load title="Financial Solvency Evidence" defaultOpen={true}>
         <ul>
           <li>Bank statements covering the required period (typically 6 months)</li>
           <li>Proof of remote income — employment contract, client invoices, or freelance portfolio</li>
-          <li>Evidence of minimum account balance (confirmed against current DTV requirements at the time of your application)</li>
         </ul>
+        <div class="req-note">
+          <p class="req-note-label">Minimum Account Balance</p>
+          <p class="req-note-desc">This figure moves with current DTV requirements, so we don't print a number that could be outdated by the time you apply. We confirm the exact threshold with you before you start gathering bank statements — not after.</p>
+        </div>
       </AccordionSection>
 
       <AccordionSection client:load title="Purpose-of-Stay Documents">
@@ -359,6 +362,33 @@ const breadcrumbSchema = {
     color: var(--text-body);
     margin: 0 0 var(--space-6);
     max-width: 64ch;
+  }
+
+  /* Financial Solvency Evidence: pull the minimum-balance caveat out of the
+     bullet list into its own bordered note so it reads as deliberate
+     transparency about a moving figure, not buried fine print. */
+  .req-note {
+    background: var(--sand);
+    border: var(--border);
+    border-radius: var(--radius-card);
+    padding: var(--space-4);
+    margin-top: var(--space-3);
+  }
+  .req-note-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label-wide);
+    text-transform: uppercase;
+    color: var(--ink-45);
+    margin: 0 0 var(--space-2);
+  }
+  .req-note-desc {
+    font-family: var(--font-body);
+    font-size: var(--text-body-s);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    margin: 0;
   }
 </style>
 

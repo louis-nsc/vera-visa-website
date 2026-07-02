@@ -111,19 +111,25 @@ const breadcrumbSchema = {
         <p class="panel-intro">The core requirement is enrolment in an MOE-registered school or program in Thailand. There are no age restrictions and no meaningful financial threshold — enrolment is the qualifying factor.</p>
 
         <AccordionSection client:load title="Approved Schools & Programs" defaultOpen={true}>
-          <p>Your school must be registered with the Thai Ministry of Education. In Chiang Mai, the most common approved program types are:</p>
-          <ul>
-            <li>Thai language schools (most popular for long-term expats)</li>
-            <li>Chiang Mai University and other accredited universities</li>
-            <li>Muay Thai academies registered with the MOE</li>
-            <li>Thai cooking schools with approved status</li>
-            <li>Certain yoga, meditation, and wellness programs</li>
-          </ul>
+          <p>Your school must be registered with the Thai Ministry of Education. The two paths below cover every program type we see — they carry different paperwork and different fraud risk, so it's worth knowing which one you're on before you enrol anywhere.</p>
+          <div class="path-compare">
+            <div class="path-card">
+              <p class="path-card-label">Academic Enrolment</p>
+              <p class="path-card-examples">Thai language schools · Chiang Mai University &amp; other accredited universities</p>
+              <p class="path-card-desc">Lower fraud risk — established institutions have standard MOE registration and a track record with immigration. University enrolment additionally needs transcripts and tuition proof (see the Requirements tab).</p>
+            </div>
+            <div class="path-card">
+              <p class="path-card-label">Soft-Power Programs</p>
+              <p class="path-card-examples">Muay Thai academies · Thai cooking schools · yoga, meditation &amp; wellness programs</p>
+              <p class="path-card-desc">Verify MOE registration carefully before you pay — this is where most rejected applications come from. We only refer schools we've personally verified as properly registered.</p>
+            </div>
+          </div>
           <p>We work with a selection of approved schools in Chiang Mai and can refer you based on your goals and schedule.</p>
         </AccordionSection>
 
         <AccordionSection client:load title="Attendance Requirements">
           <p>Immigration takes ED visa attendance seriously. You are expected to attend classes regularly — schools track attendance and immigration can conduct spot checks.</p>
+          <p>Universities and language schools track attendance through standard registrar/administrative records. Muay Thai academies, cooking schools, and wellness programs report attendance directly to immigration themselves — ask your school how they handle this before you enrol.</p>
           <p>Consistent non-attendance is grounds for visa cancellation. We advise all ED clients to treat their school schedule seriously, not as a formality.</p>
         </AccordionSection>
 
@@ -144,10 +150,13 @@ const breadcrumbSchema = {
             <li>Recent passport-style photographs</li>
             <li>Completed Non-Immigrant ED application form</li>
             <li>Enrolment letter from your approved school on official letterhead</li>
-            <li>School's MOE registration certificate (provided by the school)</li>
             <li>Proof of current visa status (tourist visa or exemption stamp)</li>
             <li>Proof of funds: Thai immigration requires evidence of approximately 20,000 THB in accessible funds — a standard entry requirement for all visa types, not an ED-specific financial test</li>
           </ul>
+          <div class="req-note">
+            <p class="req-note-label">School's MOE Registration Certificate</p>
+            <p class="req-note-desc">This is the single document worth verifying before you enrol anywhere, not after — it's the most common reason ED applications get rejected. We confirm a school's registration is genuine before we ever refer you to it.</p>
+          </div>
         </AccordionSection>
 
         <AccordionSection client:load title="For University Enrolment">
@@ -197,12 +206,9 @@ const breadcrumbSchema = {
         <h2 class="panel-h2">Why the ED visa for Chiang Mai</h2>
         <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-8); align-items: start; margin-top: var(--space-6);">
           <ul style="margin: 0; padding-left: var(--space-5); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.8; color: var(--text-body); max-width: 60ch;">
-            <li>No income or savings requirements — enrolment is the key</li>
             <li>Open to all ages and nationalities</li>
-            <li>Renewable term by term for as long as you stay enrolled</li>
-            <li>Chiang Mai has the best Thai language school options in the country</li>
+            <li>Chiang Mai has some of the best Thai language school options in the country</li>
             <li>Lower cost of living than Bangkok while studying</li>
-            <li>Builds Thai-language skills and cultural fluency for long-term residents</li>
           </ul>
           <div style="background: var(--ink); color: var(--paper); border-radius: var(--radius-card); padding: var(--space-6);">
             <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal); margin: 0 0 12px;">Extension Fee</p>
@@ -259,5 +265,70 @@ const breadcrumbSchema = {
   <style>
     .panel-h2 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-display-m); line-height: var(--lh-snug); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-2); }
     .panel-intro { font-family: var(--font-body); font-size: 1.0625rem; line-height: var(--lh-body); color: var(--text-body); margin: 0 0 var(--space-6); max-width: 64ch; }
+
+    /* Soft-power vs academic path comparison — replaces a flat bullet list
+       that mixed two paperwork/risk profiles into one undifferentiated group. */
+    .path-compare {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--space-4);
+      margin: var(--space-4) 0;
+    }
+    .path-card {
+      background: var(--sand);
+      border: var(--border);
+      border-radius: var(--radius-card);
+      padding: var(--space-4);
+    }
+    .path-card-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-label-s);
+      font-weight: var(--fw-medium);
+      letter-spacing: var(--ls-label-wide);
+      text-transform: uppercase;
+      color: var(--ink-45);
+      margin: 0 0 var(--space-2);
+    }
+    .path-card-examples {
+      font-family: var(--font-body);
+      font-size: var(--text-body-m);
+      font-weight: var(--fw-semibold);
+      color: var(--ink);
+      margin: 0 0 var(--space-2);
+      line-height: var(--lh-snug);
+    }
+    .path-card-desc {
+      font-family: var(--font-body);
+      font-size: var(--text-body-s);
+      line-height: var(--lh-body);
+      color: var(--text-body);
+      margin: 0;
+    }
+
+    /* Requirements note: pulls one fraud-risk-relevant document out of a flat
+       bullet list into its own bordered flag, same pattern used on the DTV page. */
+    .req-note {
+      background: var(--sand);
+      border: var(--border);
+      border-radius: var(--radius-card);
+      padding: var(--space-4);
+      margin-top: var(--space-3);
+    }
+    .req-note-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-label-s);
+      font-weight: var(--fw-medium);
+      letter-spacing: var(--ls-label-wide);
+      text-transform: uppercase;
+      color: var(--ink-45);
+      margin: 0 0 var(--space-2);
+    }
+    .req-note-desc {
+      font-family: var(--font-body);
+      font-size: var(--text-body-s);
+      line-height: var(--lh-body);
+      color: var(--text-body);
+      margin: 0;
+    }
   </style>
 </ServicePageLayout>

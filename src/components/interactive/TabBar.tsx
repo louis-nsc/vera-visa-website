@@ -66,9 +66,19 @@ export default function TabBar({ tabs, defaultTab }: Props) {
     updateEdges();
     el.addEventListener('scroll', updateEdges, { passive: true });
     window.addEventListener('resize', updateEdges);
+
+    // A window 'resize' event only fires for window-level size changes. It
+    // misses cases where the tab strip's own box changes for another reason
+    // (devtools panel opening, zoom, a CDP viewport override in automated
+    // testing) — a ResizeObserver watches the element itself instead, so the
+    // edge-fade state can't go stale relative to actual layout.
+    const observer = new ResizeObserver(updateEdges);
+    observer.observe(el);
+
     return () => {
       el.removeEventListener('scroll', updateEdges);
       window.removeEventListener('resize', updateEdges);
+      observer.disconnect();
     };
   }, [tabs]);
 

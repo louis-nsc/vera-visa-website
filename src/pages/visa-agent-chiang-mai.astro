@@ -10,6 +10,7 @@ const services = [
   { code: 'O-A',  name: 'Retirement Visa',              description: 'For applicants over 50. 800,000 THB in a Thai bank or 65,000 THB/month income required.',         href: '/retirement-visa-chiang-mai/' },
   { code: 'O · Guardian', name: 'Guardian Visa',        description: 'For parents and guardians of children enrolled in a Chiang Mai school.',                           href: '/guardian-visa-chiang-mai/'   },
   { code: 'B',    name: 'Business Visa & Work Permits', description: 'Non-B visas and work permits for business owners and professionals working in Thailand.',           href: '/work-permits-business-visas-chiang-mai/'   },
+  { code: 'Non-O', name: 'Volunteer Visa',              description: 'For long-term volunteers placed with a registered Thai NGO or non-profit organisation.',            href: '/volunteer-visa-chiang-mai/'  },
 ];
 
 const schema = [
@@ -45,11 +46,11 @@ const schema = [
 ---
 
 <BaseLayout
-  title="Visa Agent Chiang Mai | Vera Visa"
+  title="Visa Agent Chiang Mai | DTV, Retirement & More — Vera Visa"
   description="Vera Visa is Chiang Mai's specialist visa agency. We handle the paperwork, the appointments, and the follow-ups — so you can focus on enjoying Thailand."
   canonicalUrl="https://vera-visa.com/visa-agent-chiang-mai/"
   ogTitle="Visa Agent Chiang Mai — Vera Visa Agency"
-  ogDescription="Chiang Mai's specialist visa agency. DTV, retirement, education, marriage, guardian, and business visas — handled end to end by a local team you can trust."
+  ogDescription="Chiang Mai's specialist visa agency. DTV, retirement, education, marriage, guardian, volunteer, and business visas — handled end to end by a local team you can trust."
   schema={schema}
 >
 
@@ -70,24 +71,21 @@ const schema = [
     <div class="container">
       <p class="eyebrow">Why use a visa agent</p>
       <h2 class="section-h2">Thai immigration is specific. The cost of errors is high.</h2>
+      <p class="section-intro" style="margin-bottom: var(--space-7);">Government visa fees are fixed either way — what actually varies is whether your application is right the first time.</p>
       <div class="why-grid">
         <div class="why-card">
-          <p class="why-n">01</p>
           <h3 class="why-title">Rules change without notice</h3>
           <p class="why-body">Thai immigration requirements — bank deposit timing, insurance minimums, approved document formats — change regularly. We track every update so your application reflects current requirements, not last year's.</p>
         </div>
         <div class="why-card">
-          <p class="why-n">02</p>
           <h3 class="why-title">Document errors cause rejections</h3>
-          <p class="why-body">A mismatched name on a bank letter, an insurance certificate with insufficient coverage, a police check issued too long ago — these cause rejections. We review every document before submission.</p>
+          <p class="why-body">A mismatched name on a bank letter, an insurance certificate with insufficient coverage, a police check issued too long ago — these cause rejections. A rejected application means resubmitting from scratch: the visa fee paid again, and 2–4 weeks lost while immigration reprocesses your paperwork. We review every document before submission to avoid that entirely.</p>
         </div>
         <div class="why-card">
-          <p class="why-n">03</p>
           <h3 class="why-title">We know Chiang Mai immigration</h3>
           <p class="why-body">We work with Chiang Mai immigration officers directly. We know the office, the process, and the timeline — which means fewer surprises and faster resolutions when questions arise.</p>
         </div>
         <div class="why-card">
-          <p class="why-n">04</p>
           <h3 class="why-title">We handle everything after approval too</h3>
           <p class="why-body">90-day reports, re-entry permits, annual renewals — the obligations don't stop when the visa is approved. We stay with every client through the full cycle, not just the initial application.</p>
         </div>
@@ -99,7 +97,7 @@ const schema = [
   <section class="section" id="services">
     <div class="container">
       <p class="eyebrow">Visa Services</p>
-      <h2 class="section-h2">Six visa types. One local team.</h2>
+      <h2 class="section-h2">Seven visa types. One local team.</h2>
       <p class="section-intro" style="margin-bottom: var(--space-7);">We assess your situation first, then handle the right visa end to end. Each pathway has its own requirements — we'll tell you exactly which one applies to you.</p>
       <div class="services-grid">
         {services.map((s) => <ServiceCard {...s} />)}
@@ -119,7 +117,7 @@ const schema = [
           { n: '02', title: 'Document checklist & guidance', body: 'We give you an exact list of what to gather, with guidance on each item — bank timing, insurance selection, certificate format. No guessing.' },
           { n: '03', title: 'We prepare and review everything', body: 'We review every document for accuracy and completeness before it touches immigration. We handle translations, form completion, and collation.' },
           { n: '04', title: 'Immigration submission & follow-up', body: 'We submit the application and attend appointments on your behalf. We follow up on every query and keep you updated throughout.' },
-          { n: '05', title: 'Approval and ongoing support',  body: 'Once approved, we handle your 90-day reports, re-entry permits, and annual renewals. We remind you of every deadline before it becomes urgent.' },
+          { n: '05', title: 'Approval and ongoing support',  body: 'Once approved, we track every deadline on your behalf and reach out with plenty of notice — you never scramble for a report or renewal at the last minute.' },
         ].map((s) => (
           <div class="step">
             <span class="step-n">{s.n}</span>
@@ -247,14 +245,6 @@ const schema = [
   }
 
   .why-card { border-top: 2px solid var(--line); padding-top: var(--space-5); }
-
-  .why-n {
-    font-family: var(--font-mono);
-    font-size: var(--text-display-m);
-    font-weight: var(--fw-semibold);
-    color: var(--signal);
-    margin: 0 0 var(--space-4);
-  }
 
   .why-title {
     font-family: var(--font-display);

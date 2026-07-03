@@ -7,6 +7,7 @@ import CtaCallout from '../components/sections/CtaCallout.astro';
 import ProcessComparisonCards from '../components/sections/ProcessComparisonCards.astro';
 import RelatedGuides from '../components/sections/RelatedGuides.astro';
 import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+import RequirementNote from '../components/sections/RequirementNote.astro';
 import TabBar from '../components/interactive/TabBar';
 import AccordionSection from '../components/interactive/AccordionSection';
 
@@ -205,10 +206,10 @@ const breadcrumbSchema = {
           <li>Bank statements covering the required period (typically 6 months)</li>
           <li>Proof of remote income — employment contract, client invoices, or freelance portfolio</li>
         </ul>
-        <div class="req-note">
-          <p class="req-note-label">Minimum Account Balance</p>
-          <p class="req-note-desc">This figure moves with current DTV requirements, so we don't print a number that could be outdated by the time you apply. We confirm the exact threshold with you before you start gathering bank statements — not after.</p>
-        </div>
+        <RequirementNote
+          label="Minimum Account Balance"
+          desc="This figure moves with current DTV requirements, so we don't print a number that could be outdated by the time you apply. We confirm the exact threshold with you before you start gathering bank statements — not after."
+        />
       </AccordionSection>
 
       <AccordionSection client:load title="Purpose-of-Stay Documents">
@@ -362,33 +363,6 @@ const breadcrumbSchema = {
     color: var(--text-body);
     margin: 0 0 var(--space-6);
     max-width: 64ch;
-  }
-
-  /* Financial Solvency Evidence: pull the minimum-balance caveat out of the
-     bullet list into its own bordered note so it reads as deliberate
-     transparency about a moving figure, not buried fine print. */
-  .req-note {
-    background: var(--sand);
-    border: var(--border);
-    border-radius: var(--radius-card);
-    padding: var(--space-4);
-    margin-top: var(--space-3);
-  }
-  .req-note-label {
-    font-family: var(--font-mono);
-    font-size: var(--text-label-s);
-    font-weight: var(--fw-medium);
-    letter-spacing: var(--ls-label-wide);
-    text-transform: uppercase;
-    color: var(--ink-45);
-    margin: 0 0 var(--space-2);
-  }
-  .req-note-desc {
-    font-family: var(--font-body);
-    font-size: var(--text-body-s);
-    line-height: var(--lh-body);
-    color: var(--text-body);
-    margin: 0;
   }
 </style>
 

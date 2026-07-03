@@ -1,0 +1,39 @@
+---
+interface Props {
+  label: string;
+  desc: string;
+}
+
+const { label, desc } = Astro.props;
+---
+
+<div class="req-note">
+  <p class="req-note-label">{label}</p>
+  <p class="req-note-desc">{desc}</p>
+</div>
+
+<style>
+  .req-note {
+    background: var(--sand);
+    border: var(--border);
+    border-radius: var(--radius-card);
+    padding: var(--space-4);
+    margin-top: var(--space-3);
+  }
+  .req-note-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label-wide);
+    text-transform: uppercase;
+    color: var(--ink-45);
+    margin: 0 0 var(--space-2);
+  }
+  .req-note-desc {
+    font-family: var(--font-body);
+    font-size: var(--text-body-s);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    margin: 0;
+  }
+</style>

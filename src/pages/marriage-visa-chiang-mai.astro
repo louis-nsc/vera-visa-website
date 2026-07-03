@@ -7,6 +7,7 @@ import CtaCallout from '../components/sections/CtaCallout.astro';
 import ProcessComparisonCards from '../components/sections/ProcessComparisonCards.astro';
 import RelatedGuides from '../components/sections/RelatedGuides.astro';
 import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+import FinancialRoutes from '../components/sections/FinancialRoutes.astro';
 import TabBar from '../components/interactive/TabBar';
 import AccordionSection from '../components/interactive/AccordionSection';
 
@@ -111,17 +112,17 @@ const breadcrumbSchema = {
         <p class="panel-intro">Two requirements: a legal marriage to a Thai national, and meeting the financial threshold.</p>
 
         <AccordionSection client:load title="Legal Marriage to a Thai National" defaultOpen={true}>
-          <p>You must be legally married to a Thai national — the marriage must be registered at a district office (amphoe) in Thailand, or if married abroad, your marriage certificate must be legalised and translated into Thai.</p>
-          <p>Common law relationships and long-term partnerships without legal registration do not qualify for this visa category.</p>
+          <p>Two things qualify you for this visa: your marriage is legally registered, and you meet the financial threshold below. That's it — immigration is checking paperwork, not judging your relationship.</p>
+          <p>Your marriage must be registered at a district office (amphoe) in Thailand, or if married abroad, your marriage certificate must be legalised and translated into Thai. Common law relationships and long-term partnerships without legal registration don't qualify for this specific visa category — but a legally registered marriage of any length does.</p>
         </AccordionSection>
 
         <AccordionSection client:load title="Financial Requirements">
-          <p>One of the following three methods:</p>
-          <ul>
-            <li><strong>Bank deposit:</strong> 400,000 THB in a Thai bank, held for the required period before and after your application</li>
-            <li><strong>Monthly income:</strong> 40,000 THB per month transferred to a Thai account from abroad</li>
-            <li><strong>Combination:</strong> Monthly income plus Thai bank savings totalling 400,000 THB</li>
-          </ul>
+          <p>You must meet <strong>one</strong> of these three financial routes:</p>
+          <FinancialRoutes routes={[
+            { label: 'Bank Deposit Route', value: '400,000 THB', desc: 'Held in a Thai bank for the required period before and after your application.' },
+            { label: 'Monthly Income Route', value: '40,000 THB', unit: '/month', desc: 'Transferred to a Thai account from abroad on a regular basis.' },
+            { label: 'Combination Route', value: 'Income + savings = 400,000 THB', desc: 'Example: 20,000 THB/month income (240,000 THB/year) plus 160,000 THB in savings.' },
+          ]} />
           <p>The deposit timing is strictly enforced — we advise every client on the correct schedule before they fund the account.</p>
         </AccordionSection>
 
@@ -241,7 +242,8 @@ const breadcrumbSchema = {
         </AccordionSection>
 
         <AccordionSection client:load title="What if the marriage ends?">
-          <p>If your marriage to a Thai national ends — through divorce or the death of your spouse — you are no longer eligible for the marriage visa. You must switch to another visa category. Contact us as early as possible so we can plan the transition.</p>
+          <p>This is a hard question to face, and we handle it with the same care we'd want for our own family. If your marriage to a Thai national ends — through divorce or the death of your spouse — you're no longer eligible for the marriage visa on that basis, but you do have other options.</p>
+          <p>Contact us as early as you're able to. We'll talk through what applies to your situation — often a guardian visa if you have children in school here, or another visa category — and plan the transition with you, not just at you.</p>
         </AccordionSection>
 
         <CtaCallout

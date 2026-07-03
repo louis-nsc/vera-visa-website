@@ -1,0 +1,67 @@
+---
+interface Route {
+  label: string;
+  value: string;
+  unit?: string;
+  desc: string;
+}
+
+interface Props {
+  routes: Route[];
+}
+
+const { routes } = Astro.props;
+---
+
+<div class="fin-routes">
+  {routes.map((r) => (
+    <div class="fin-route">
+      <p class="fin-route-label">{r.label}</p>
+      <p class="fin-route-value">{r.value}{r.unit && <span class="fin-route-unit">{r.unit}</span>}</p>
+      <p class="fin-route-desc">{r.desc}</p>
+    </div>
+  ))}
+</div>
+
+<style>
+  .fin-routes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-4);
+    margin: var(--space-4) 0 var(--space-5);
+  }
+  .fin-route {
+    background: var(--sand);
+    border: var(--border);
+    border-radius: var(--radius-card);
+    padding: var(--space-4);
+  }
+  .fin-route-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label-wide);
+    text-transform: uppercase;
+    color: var(--ink-45);
+    margin: 0 0 var(--space-2);
+  }
+  .fin-route-value {
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    font-weight: var(--fw-semibold);
+    color: var(--ink);
+    margin: 0 0 var(--space-2);
+    line-height: var(--lh-snug);
+  }
+  .fin-route-unit {
+    font-weight: var(--fw-regular);
+    color: var(--ink-70);
+  }
+  .fin-route-desc {
+    font-family: var(--font-body);
+    font-size: var(--text-body-s);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    margin: 0;
+  }
+</style>

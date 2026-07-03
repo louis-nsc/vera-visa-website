@@ -7,6 +7,7 @@ import CtaCallout from '../components/sections/CtaCallout.astro';
 import ProcessComparisonCards from '../components/sections/ProcessComparisonCards.astro';
 import RelatedGuides from '../components/sections/RelatedGuides.astro';
 import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+import RequirementNote from '../components/sections/RequirementNote.astro';
 import TabBar from '../components/interactive/TabBar';
 import AccordionSection from '../components/interactive/AccordionSection';
 
@@ -153,10 +154,10 @@ const breadcrumbSchema = {
             <li>Proof of current visa status (tourist visa or exemption stamp)</li>
             <li>Proof of funds: Thai immigration requires evidence of approximately 20,000 THB in accessible funds — a standard entry requirement for all visa types, not an ED-specific financial test</li>
           </ul>
-          <div class="req-note">
-            <p class="req-note-label">School's MOE Registration Certificate</p>
-            <p class="req-note-desc">This is the single document worth verifying before you enrol anywhere, not after — it's the most common reason ED applications get rejected. We confirm a school's registration is genuine before we ever refer you to it.</p>
-          </div>
+          <RequirementNote
+            label="School's MOE Registration Certificate"
+            desc="This is the single document worth verifying before you enrol anywhere, not after — it's the most common reason ED applications get rejected. We confirm a school's registration is genuine before we ever refer you to it."
+          />
         </AccordionSection>
 
         <AccordionSection client:load title="For University Enrolment">
@@ -298,32 +299,6 @@ const breadcrumbSchema = {
       line-height: var(--lh-snug);
     }
     .path-card-desc {
-      font-family: var(--font-body);
-      font-size: var(--text-body-s);
-      line-height: var(--lh-body);
-      color: var(--text-body);
-      margin: 0;
-    }
-
-    /* Requirements note: pulls one fraud-risk-relevant document out of a flat
-       bullet list into its own bordered flag, same pattern used on the DTV page. */
-    .req-note {
-      background: var(--sand);
-      border: var(--border);
-      border-radius: var(--radius-card);
-      padding: var(--space-4);
-      margin-top: var(--space-3);
-    }
-    .req-note-label {
-      font-family: var(--font-mono);
-      font-size: var(--text-label-s);
-      font-weight: var(--fw-medium);
-      letter-spacing: var(--ls-label-wide);
-      text-transform: uppercase;
-      color: var(--ink-45);
-      margin: 0 0 var(--space-2);
-    }
-    .req-note-desc {
       font-family: var(--font-body);
       font-size: var(--text-body-s);
       line-height: var(--lh-body);

@@ -7,6 +7,7 @@ import CtaCallout from '../components/sections/CtaCallout.astro';
 import ProcessComparisonCards from '../components/sections/ProcessComparisonCards.astro';
 import RelatedGuides from '../components/sections/RelatedGuides.astro';
 import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+import FinancialRoutes from '../components/sections/FinancialRoutes.astro';
 import TabBar from '../components/interactive/TabBar';
 import AccordionSection from '../components/interactive/AccordionSection';
 
@@ -179,23 +180,11 @@ const breadcrumbSchema = {
 
         <AccordionSection client:load title="Financial Requirements">
           <p>You must meet <strong>one</strong> of these three financial routes:</p>
-          <div class="fin-routes">
-            <div class="fin-route">
-              <p class="fin-route-label">Bank Deposit Route</p>
-              <p class="fin-route-value">800,000 THB</p>
-              <p class="fin-route-desc">Held in a Thai bank account for the required period before and after your application.</p>
-            </div>
-            <div class="fin-route">
-              <p class="fin-route-label">Monthly Income Route</p>
-              <p class="fin-route-value">65,000 THB<span class="fin-route-unit">/month</span></p>
-              <p class="fin-route-desc">Transferred to Thailand from abroad — pension, Social Security, or investment income.</p>
-            </div>
-            <div class="fin-route">
-              <p class="fin-route-label">Combination Route</p>
-              <p class="fin-route-value">Income + savings = 800,000 THB</p>
-              <p class="fin-route-desc">Example: 40,000 THB/month income (480,000 THB/year) plus 320,000 THB in savings.</p>
-            </div>
-          </div>
+          <FinancialRoutes routes={[
+            { label: 'Bank Deposit Route', value: '800,000 THB', desc: 'Held in a Thai bank account for the required period before and after your application.' },
+            { label: 'Monthly Income Route', value: '65,000 THB', unit: '/month', desc: 'Transferred to Thailand from abroad — pension, Social Security, or investment income.' },
+            { label: 'Combination Route', value: 'Income + savings = 800,000 THB', desc: 'Example: 40,000 THB/month income (480,000 THB/year) plus 320,000 THB in savings.' },
+          ]} />
           <p>The timing of the bank deposit matters — immigration requires it to be in place for a set period before you apply and to remain after. We advise on the exact schedule for your situation.</p>
         </AccordionSection>
 
@@ -382,49 +371,6 @@ const breadcrumbSchema = {
       color: var(--text-body);
       margin: 0 0 var(--space-6);
       max-width: 64ch;
-    }
-
-    /* Financial Requirements: 3-path chooser, replacing a dense prose block
-       for the highest-stakes decision on this page. */
-    .fin-routes {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: var(--space-4);
-      margin: var(--space-4) 0 var(--space-5);
-    }
-    .fin-route {
-      background: var(--sand);
-      border: var(--border);
-      border-radius: var(--radius-card);
-      padding: var(--space-4);
-    }
-    .fin-route-label {
-      font-family: var(--font-mono);
-      font-size: var(--text-label-s);
-      font-weight: var(--fw-medium);
-      letter-spacing: var(--ls-label-wide);
-      text-transform: uppercase;
-      color: var(--ink-45);
-      margin: 0 0 var(--space-2);
-    }
-    .fin-route-value {
-      font-family: var(--font-body);
-      font-size: 1.0625rem;
-      font-weight: var(--fw-semibold);
-      color: var(--ink);
-      margin: 0 0 var(--space-2);
-      line-height: var(--lh-snug);
-    }
-    .fin-route-unit {
-      font-weight: var(--fw-regular);
-      color: var(--ink-70);
-    }
-    .fin-route-desc {
-      font-family: var(--font-body);
-      font-size: var(--text-body-s);
-      line-height: var(--lh-body);
-      color: var(--text-body);
-      margin: 0;
     }
   </style>
 </ServicePageLayout>

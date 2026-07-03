@@ -74,9 +74,10 @@ const breadcrumbSchema = {
     { label: 'Duration',       value: '1 year (renewable)' },
     { label: 'Bank Deposit',   value: '400,000 THB'        },
     { label: 'Monthly Income', value: '40,000 THB'         },
-    { label: 'Child Req.',     value: 'Enrolled in school' },
+    { label: 'Child Req.',     value: 'Enrolled & attending' },
     { label: 'Work Allowed',   value: 'Permit required'    },
     { label: '90-Day Report',  value: 'Required'           },
+    { label: 'Visa Basis',     value: 'Tied to enrolment'  },
   ]} />
 
   <BenefitGrid
@@ -117,15 +118,31 @@ const breadcrumbSchema = {
             <li>MOE-registered private schools</li>
           </ul>
           <p>Chiang Mai has several excellent international schools that many of our client families use. We can discuss the options during your consultation.</p>
+          <div class="req-note">
+            <p class="req-note-label">This Is an Ongoing Requirement</p>
+            <p class="req-note-desc">Your visa is tied to your child staying enrolled and attending — not a one-time check at application. See "What if your child finishes school or leaves Thailand?" in the Restrictions tab for exactly what to do if that changes.</p>
+          </div>
         </AccordionSection>
 
         <AccordionSection client:load title="Financial Requirements">
-          <p>One of the following:</p>
-          <ul>
-            <li><strong>Bank deposit:</strong> 400,000 THB in a Thai bank account for the required period</li>
-            <li><strong>Monthly income:</strong> 40,000 THB per month transferred from abroad</li>
-            <li><strong>Combination:</strong> Savings and income totalling 400,000 THB</li>
-          </ul>
+          <p>You must meet <strong>one</strong> of these three financial routes:</p>
+          <div class="fin-routes">
+            <div class="fin-route">
+              <p class="fin-route-label">Bank Deposit Route</p>
+              <p class="fin-route-value">400,000 THB</p>
+              <p class="fin-route-desc">Held in a Thai bank account for the required period.</p>
+            </div>
+            <div class="fin-route">
+              <p class="fin-route-label">Monthly Income Route</p>
+              <p class="fin-route-value">40,000 THB<span class="fin-route-unit">/month</span></p>
+              <p class="fin-route-desc">Transferred from abroad on a regular basis.</p>
+            </div>
+            <div class="fin-route">
+              <p class="fin-route-label">Combination Route</p>
+              <p class="fin-route-value">Income + savings = 400,000 THB</p>
+              <p class="fin-route-desc">Example: 20,000 THB/month income (240,000 THB/year) plus 160,000 THB in savings.</p>
+            </div>
+          </div>
         </AccordionSection>
 
         <AccordionSection client:load title="Legal Guardianship">
@@ -211,7 +228,11 @@ const breadcrumbSchema = {
       <section data-tab-panel="restrictions" hidden>
         <h2 class="panel-h2">What you can &amp; can't do</h2>
 
-        <AccordionSection client:load title="Can you work in Thailand?" defaultOpen={true}>
+        <AccordionSection client:load title="What if your child finishes school or leaves Thailand?" defaultOpen={true}>
+          <p>If your child graduates, leaves Thailand, or changes to a non-qualifying program, your guardian visa basis no longer applies. You must transition to another visa category — contact us as soon as you know so we can plan the right move.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Can you work in Thailand?">
           <p>Not without a work permit. The guardian visa gives you the right to live in Thailand, not to work. A work permit requires employer sponsorship and a separate application process.</p>
         </AccordionSection>
 
@@ -221,10 +242,6 @@ const breadcrumbSchema = {
 
         <AccordionSection client:load title="Can you leave Thailand?">
           <p>Yes, with a re-entry permit obtained before departure. Without one, your visa status is cancelled when you exit. Single re-entry permits cost 1,000 THB; multiple re-entry permits cost 3,800 THB.</p>
-        </AccordionSection>
-
-        <AccordionSection client:load title="What if your child finishes school or leaves Thailand?">
-          <p>If your child graduates, leaves Thailand, or changes to a non-qualifying program, your guardian visa basis no longer applies. You must transition to another visa category — contact us as soon as you know so we can plan the right move.</p>
         </AccordionSection>
 
         <CtaCallout
@@ -253,5 +270,73 @@ const breadcrumbSchema = {
   <style>
     .panel-h2 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-display-m); line-height: var(--lh-snug); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-2); }
     .panel-intro { font-family: var(--font-body); font-size: 1.0625rem; line-height: var(--lh-body); color: var(--text-body); margin: 0 0 var(--space-6); max-width: 64ch; }
+
+    /* Financial Requirements: 3-path chooser, same pattern as the retirement page. */
+    .fin-routes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: var(--space-4);
+      margin: var(--space-4) 0 var(--space-5);
+    }
+    .fin-route {
+      background: var(--sand);
+      border: var(--border);
+      border-radius: var(--radius-card);
+      padding: var(--space-4);
+    }
+    .fin-route-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-label-s);
+      font-weight: var(--fw-medium);
+      letter-spacing: var(--ls-label-wide);
+      text-transform: uppercase;
+      color: var(--ink-45);
+      margin: 0 0 var(--space-2);
+    }
+    .fin-route-value {
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      font-weight: var(--fw-semibold);
+      color: var(--ink);
+      margin: 0 0 var(--space-2);
+      line-height: var(--lh-snug);
+    }
+    .fin-route-unit {
+      font-weight: var(--fw-regular);
+      color: var(--ink-70);
+    }
+    .fin-route-desc {
+      font-family: var(--font-body);
+      font-size: var(--text-body-s);
+      line-height: var(--lh-body);
+      color: var(--text-body);
+      margin: 0;
+    }
+
+    /* Requirements note: pulls a fact worth flagging out of a bullet list
+       into its own bordered note, same pattern used on the DTV/education pages. */
+    .req-note {
+      background: var(--sand);
+      border: var(--border);
+      border-radius: var(--radius-card);
+      padding: var(--space-4);
+      margin-top: var(--space-3);
+    }
+    .req-note-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-label-s);
+      font-weight: var(--fw-medium);
+      letter-spacing: var(--ls-label-wide);
+      text-transform: uppercase;
+      color: var(--ink-45);
+      margin: 0 0 var(--space-2);
+    }
+    .req-note-desc {
+      font-family: var(--font-body);
+      font-size: var(--text-body-s);
+      line-height: var(--lh-body);
+      color: var(--text-body);
+      margin: 0;
+    }
   </style>
 </ServicePageLayout>

@@ -8,6 +8,7 @@ import ProcessComparisonCards from '../components/sections/ProcessComparisonCard
 import RelatedGuides from '../components/sections/RelatedGuides.astro';
 import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
 import FinancialRoutes from '../components/sections/FinancialRoutes.astro';
+import BenefitsSplit from '../components/sections/BenefitsSplit.astro';
 import TabBar from '../components/interactive/TabBar';
 import AccordionSection from '../components/interactive/AccordionSection';
 
@@ -210,20 +211,18 @@ const breadcrumbSchema = {
 
       <section data-tab-panel="benefits" hidden>
         <h2 class="panel-h2">Why the Non-Immigrant O for married couples</h2>
-        <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-8); align-items: start; margin-top: var(--space-6);">
-          <ul style="margin: 0; padding-left: var(--space-5); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.8; color: var(--text-body); max-width: 60ch;">
-            <li>Lower financial threshold than the retirement visa (400k vs 800k THB)</li>
-            <li>Renewable indefinitely — no time limit on how long you can stay</li>
-            <li>Correct visa type for obtaining a Thai work permit</li>
-            <li>Travel freely with a re-entry permit</li>
-            <li>90-day reports handled by our team as standard</li>
-          </ul>
-          <div style="background: var(--ink); color: var(--paper); border-radius: var(--radius-card); padding: var(--space-6);">
-            <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal); margin: 0 0 12px;">Annual Renewal Fee</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-display-m); font-weight: 600; line-height: 1; margin: 0;">1,900 THB</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body-on-dark); margin: 12px 0 0;">Official immigration fee. Chat with us for a full breakdown including our service fee.</p>
-          </div>
-        </div>
+        <BenefitsSplit
+          items={[
+            'Lower financial threshold than the retirement visa (400k vs 800k THB)',
+            'Renewable indefinitely — no time limit on how long you can stay',
+            'Correct visa type for obtaining a Thai work permit',
+            'Travel freely with a re-entry permit',
+            '90-day reports handled by our team as standard',
+          ]}
+          statLabel="Annual Renewal Fee"
+          statValue="1,900 THB"
+          statDesc="Official immigration fee. Chat with us for a full breakdown including our service fee."
+        />
       </section>
 
       <section data-tab-panel="restrictions" hidden>

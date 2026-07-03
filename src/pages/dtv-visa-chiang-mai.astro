@@ -8,6 +8,7 @@ import ProcessComparisonCards from '../components/sections/ProcessComparisonCard
 import RelatedGuides from '../components/sections/RelatedGuides.astro';
 import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
 import RequirementNote from '../components/sections/RequirementNote.astro';
+import BenefitsSplit from '../components/sections/BenefitsSplit.astro';
 import TabBar from '../components/interactive/TabBar';
 import AccordionSection from '../components/interactive/AccordionSection';
 
@@ -276,21 +277,19 @@ const breadcrumbSchema = {
     <!-- BENEFITS -->
     <section data-tab-panel="benefits" hidden>
       <h2 class="panel-h2">Why the DTV</h2>
-      <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-8); align-items: start; margin-top: var(--space-6);">
-        <ul style="margin: 0; padding-left: var(--space-5); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.8; color: var(--text-body); max-width: 60ch;">
-          <li>Five years of coverage from a single application</li>
-          <li>Multiple entry — travel in and out freely throughout the visa term</li>
-          <li>180-day stays, extendable once by a further 180 days at local immigration</li>
-          <li>Bring your spouse and children under 20 on dependent visas</li>
-          <li>No Thai work permit required for foreign clients or employers</li>
-          <li>No 90-day reports required during an uninterrupted stay</li>
-        </ul>
-        <div style="background: var(--ink); color: var(--paper); border-radius: var(--radius-card); padding: var(--space-6);">
-          <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal); margin: 0 0 12px;">Government Fee</p>
-          <p style="font-family: var(--font-body); font-size: var(--text-display-m); font-weight: 600; line-height: 1; margin: 0;">10,000 THB</p>
-          <p style="font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body-on-dark); margin: 12px 0 0;">Official fee per application. Chat with us on WhatsApp for a full breakdown including our agency service fee.</p>
-        </div>
-      </div>
+      <BenefitsSplit
+        items={[
+          'Five years of coverage from a single application',
+          'Multiple entry — travel in and out freely throughout the visa term',
+          '180-day stays, extendable once by a further 180 days at local immigration',
+          'Bring your spouse and children under 20 on dependent visas',
+          'No Thai work permit required for foreign clients or employers',
+          'No 90-day reports required during an uninterrupted stay',
+        ]}
+        statLabel="Government Fee"
+        statValue="10,000 THB"
+        statDesc="Official fee per application. Chat with us on WhatsApp for a full breakdown including our agency service fee."
+      />
     </section>
 
     <!-- RESTRICTIONS -->

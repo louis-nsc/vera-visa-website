@@ -1,0 +1,76 @@
+---
+interface Props {
+  items: string[];
+  statLabel: string;
+  statValue: string;
+  statDesc: string;
+}
+
+const { items, statLabel, statValue, statDesc } = Astro.props;
+---
+
+<div class="benefits-split">
+  <ul class="benefits-split-list">
+    {items.map((item) => (
+      <li>{item}</li>
+    ))}
+  </ul>
+  <div class="benefits-split-stat">
+    <p class="benefits-split-stat-label">{statLabel}</p>
+    <p class="benefits-split-stat-value">{statValue}</p>
+    <p class="benefits-split-stat-desc">{statDesc}</p>
+  </div>
+</div>
+
+<style>
+  .benefits-split {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-8);
+    align-items: start;
+    margin-top: var(--space-6);
+  }
+  @media (max-width: 640px) {
+    .benefits-split {
+      grid-template-columns: 1fr;
+    }
+  }
+  .benefits-split-list {
+    margin: 0;
+    padding-left: var(--space-5);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--text-body);
+    max-width: 60ch;
+  }
+  .benefits-split-stat {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: var(--radius-card);
+    padding: var(--space-6);
+  }
+  .benefits-split-stat-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--signal);
+    margin: 0 0 12px;
+  }
+  .benefits-split-stat-value {
+    font-family: var(--font-body);
+    font-size: var(--text-display-m);
+    font-weight: 600;
+    line-height: 1;
+    margin: 0;
+  }
+  .benefits-split-stat-desc {
+    font-family: var(--font-body);
+    font-size: var(--text-body-s);
+    line-height: var(--lh-body);
+    color: var(--text-body-on-dark);
+    margin: 12px 0 0;
+  }
+</style>

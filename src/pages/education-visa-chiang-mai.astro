@@ -8,6 +8,7 @@ import ProcessComparisonCards from '../components/sections/ProcessComparisonCard
 import RelatedGuides from '../components/sections/RelatedGuides.astro';
 import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
 import RequirementNote from '../components/sections/RequirementNote.astro';
+import BenefitsSplit from '../components/sections/BenefitsSplit.astro';
 import TabBar from '../components/interactive/TabBar';
 import AccordionSection from '../components/interactive/AccordionSection';
 
@@ -205,18 +206,16 @@ const breadcrumbSchema = {
 
       <section data-tab-panel="benefits" hidden>
         <h2 class="panel-h2">Why the ED visa for Chiang Mai</h2>
-        <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-8); align-items: start; margin-top: var(--space-6);">
-          <ul style="margin: 0; padding-left: var(--space-5); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.8; color: var(--text-body); max-width: 60ch;">
-            <li>Open to all ages and nationalities</li>
-            <li>Chiang Mai has some of the best Thai language school options in the country</li>
-            <li>Lower cost of living than Bangkok while studying</li>
-          </ul>
-          <div style="background: var(--ink); color: var(--paper); border-radius: var(--radius-card); padding: var(--space-6);">
-            <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal); margin: 0 0 12px;">Extension Fee</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-display-m); font-weight: 600; line-height: 1; margin: 0;">1,900 THB</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body-on-dark); margin: 12px 0 0;">Per 90-day extension at immigration. Chat with us for a full cost breakdown including school fees and our service fee.</p>
-          </div>
-        </div>
+        <BenefitsSplit
+          items={[
+            'Open to all ages and nationalities',
+            'Chiang Mai has some of the best Thai language school options in the country',
+            'Lower cost of living than Bangkok while studying',
+          ]}
+          statLabel="Extension Fee"
+          statValue="1,900 THB"
+          statDesc="Per 90-day extension at immigration. Chat with us for a full cost breakdown including school fees and our service fee."
+        />
       </section>
 
       <section data-tab-panel="restrictions" hidden>

@@ -7,6 +7,8 @@ import CtaCallout from '../components/sections/CtaCallout.astro';
 import ProcessComparisonCards from '../components/sections/ProcessComparisonCards.astro';
 import RelatedGuides from '../components/sections/RelatedGuides.astro';
 import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+import RequirementNote from '../components/sections/RequirementNote.astro';
+import BenefitsSplit from '../components/sections/BenefitsSplit.astro';
 import TabBar from '../components/interactive/TabBar';
 import AccordionSection from '../components/interactive/AccordionSection';
 
@@ -76,6 +78,7 @@ const breadcrumbSchema = {
     { label: 'Work Permit',     value: 'Mandatory'           },
     { label: 'Processing',      value: '7–30 working days'   },
     { label: 'Employer Req.',   value: 'Sponsorship needed'  },
+    { label: 'Employee Ratio', value: '4 Thai : 1 Foreign'  },
     { label: '90-Day Report',   value: 'Required'            },
     { label: 'Annual Renewal',  value: 'Yes'                 },
   ]} />
@@ -111,7 +114,8 @@ const breadcrumbSchema = {
         <p class="panel-intro">Any foreigner working in Thailand — in any capacity — requires a work permit. No exceptions.</p>
 
         <AccordionSection client:load title="Employed by a Thai Company" defaultOpen={true}>
-          <p>If you are employed by a registered Thai company, your employer sponsors both your Non-Immigrant B visa and your work permit application. The company must meet Thai Labour Department requirements — including a minimum ratio of Thai employees per foreign worker (currently 4:1 in most sectors).</p>
+          <p>If you are employed by a registered Thai company, your employer sponsors both your Non-Immigrant B visa and your work permit application. The company must meet Thai Labour Department requirements to sponsor a foreign worker.</p>
+          <RequirementNote label="Thai Employee Ratio" desc="The company must employ at least 4 Thai staff for every 1 foreign work permit holder in most sectors. We check this before submitting — a non-compliant company means a rejected application." />
         </AccordionSection>
 
         <AccordionSection client:load title="Running Your Own Business">
@@ -135,28 +139,26 @@ const breadcrumbSchema = {
         <p class="panel-intro">Two parallel applications — visa and work permit — each with their own document set. We manage both simultaneously.</p>
 
         <AccordionSection client:load title="Non-Immigrant B Visa Documents" defaultOpen={true}>
-          <ul>
-            <li>Passport valid for at least 18 months with blank visa pages</li>
-            <li>Recent passport-style photographs</li>
-            <li>Completed Non-Immigrant B application form</li>
-            <li>Employment contract or letter of appointment from your Thai employer</li>
-            <li>Company registration documents (DBD certificate, VAT registration)</li>
-            <li>Company shareholder list and latest annual filing</li>
+          <ul class="doc-list">
+            <li><span class="doc-owner doc-owner--you">You</span>Passport valid for at least 18 months with blank visa pages</li>
+            <li><span class="doc-owner doc-owner--you">You</span>Recent passport-style photographs</li>
+            <li><span class="doc-owner doc-owner--you">You</span>Completed Non-Immigrant B application form</li>
+            <li><span class="doc-owner doc-owner--employer">Employer</span>Employment contract or letter of appointment</li>
+            <li><span class="doc-owner doc-owner--employer">Employer</span>Company registration documents (DBD certificate, VAT registration)</li>
+            <li><span class="doc-owner doc-owner--employer">Employer</span>Company shareholder list and latest annual filing</li>
           </ul>
         </AccordionSection>
 
         <AccordionSection client:load title="Work Permit Documents">
-          <ul>
+          <ul class="doc-list">
             <li>All Non-Immigrant B documents above</li>
-            <li>Educational certificates and professional qualifications</li>
-            <li>CV / résumé detailing relevant work experience</li>
-            <li>Map and photograph of the workplace</li>
-            <li>Company affirmation letter detailing the foreigner's specific role</li>
-            <li>List of Thai employees with copies of their IDs and social security cards</li>
+            <li><span class="doc-owner doc-owner--you">You</span>Educational certificates and professional qualifications</li>
+            <li><span class="doc-owner doc-owner--you">You</span>CV / résumé detailing relevant work experience</li>
+            <li><span class="doc-owner doc-owner--employer">Employer</span>Map and photograph of the workplace</li>
+            <li><span class="doc-owner doc-owner--employer">Employer</span>Company affirmation letter detailing the foreigner's specific role</li>
+            <li><span class="doc-owner doc-owner--employer">Employer</span>List of Thai employees with copies of their IDs and social security cards</li>
           </ul>
         </AccordionSection>
-
-        <ExpertInsightCallout body="The Thai employee ratio requirement (4 Thai employees per 1 foreigner) catches many small business owners off guard. We check compliance before submitting — a non-compliant company means a rejected work permit." />
       </section>
 
       <section data-tab-panel="process" hidden>
@@ -188,25 +190,23 @@ const breadcrumbSchema = {
             { label: 'Work Permit Fee', value: '3,000 THB', note: 'per year' },
           ]}
         />
-        <ExpertInsightCallout body="The most critical window is the first 90 days on your Non-B. The work permit must be in hand before you start any work activities. We prioritise the work permit submission on day one of your arrival so there's no grey period." />
+        <RequirementNote label="90-Day Work Permit Deadline" desc="Your Non-Immigrant B visa is valid for only 90 days before you must extend it alongside your work permit. You cannot legally start work until the permit is issued, so this window is the critical path — we submit on day one of your arrival to avoid any gap in status." />
       </section>
 
       <section data-tab-panel="benefits" hidden>
         <h2 class="panel-h2">Why getting this right matters</h2>
-        <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-8); align-items: start; margin-top: var(--space-6);">
-          <ul style="margin: 0; padding-left: var(--space-5); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.8; color: var(--text-body); max-width: 60ch;">
-            <li>Full legal work authorisation — no grey-area risk</li>
-            <li>Annual renewal handled by our team with no gaps in status</li>
-            <li>Correct tax and social security compliance alongside visa</li>
-            <li>Covers your specific role — easy to update if your responsibilities change</li>
-            <li>Foundation for future long-term residence applications</li>
-          </ul>
-          <div style="background: var(--ink); color: var(--paper); border-radius: var(--radius-card); padding: var(--space-6);">
-            <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal); margin: 0 0 12px;">Work Permit Fee</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-display-m); font-weight: 600; line-height: 1; margin: 0;">3,000 THB</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-body-s); line-height: var(--lh-body); color: var(--text-body-on-dark); margin: 12px 0 0;">Official government fee per year. Chat with us for a full breakdown including our service fee.</p>
-          </div>
-        </div>
+        <BenefitsSplit
+          items={[
+            'Full legal work authorisation — no grey-area risk',
+            'Annual renewal handled by our team with no gaps in status',
+            'Correct tax and social security compliance alongside visa',
+            'Covers your specific role — easy to update if your responsibilities change',
+            'Foundation for future long-term residence applications',
+          ]}
+          statLabel="Work Permit Fee"
+          statValue="3,000 THB"
+          statDesc="Official government fee per year. Chat with us for a full breakdown including our service fee."
+        />
       </section>
 
       <section data-tab-panel="restrictions" hidden>
@@ -255,5 +255,19 @@ const breadcrumbSchema = {
   <style>
     .panel-h2 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-display-m); line-height: var(--lh-snug); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-2); }
     .panel-intro { font-family: var(--font-body); font-size: 1.0625rem; line-height: var(--lh-body); color: var(--text-body); margin: 0 0 var(--space-6); max-width: 64ch; }
+    .doc-list li { display: flex; align-items: baseline; gap: var(--space-2); }
+    .doc-owner {
+      flex: none;
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: var(--fw-medium);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-45);
+      border-radius: var(--radius-card);
+      padding: 1px 6px;
+    }
+    .doc-owner--you { background: var(--sand); }
+    .doc-owner--employer { background: transparent; border: var(--border); }
   </style>
 </ServicePageLayout>

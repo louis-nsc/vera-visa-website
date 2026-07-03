@@ -6,6 +6,7 @@ import ExpertInsightCallout from '../components/sections/ExpertInsightCallout.as
 import CtaCallout from '../components/sections/CtaCallout.astro';
 import RelatedGuides from '../components/sections/RelatedGuides.astro';
 import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+import RequirementNote from '../components/sections/RequirementNote.astro';
 import TabBar from '../components/interactive/TabBar';
 import AccordionSection from '../components/interactive/AccordionSection';
 
@@ -13,7 +14,7 @@ const TABS = [
   { id: 'eligibility',  label: 'Eligibility'  },
   { id: 'requirements', label: 'Requirements'  },
   { id: 'process',      label: 'Process'       },
-  { id: 'benefits',     label: 'Benefits'      },
+  { id: 'vs-tourist',   label: 'vs. Tourist Visa' },
   { id: 'restrictions', label: 'Restrictions'  },
 ];
 
@@ -107,7 +108,12 @@ const breadcrumbSchema = {
 
       <section data-tab-panel="eligibility">
         <h2 class="panel-h2">Who qualifies for the volunteer visa</h2>
-        <p class="panel-intro">The primary requirement is a confirmed volunteer placement with a registered Thai non-profit or NGO.</p>
+        <p class="panel-intro">The primary requirement is a confirmed volunteer placement with a registered Thai non-profit or NGO. One disqualifier up front: current Thailand Elite (Privilege) Visa holders aren't eligible to convert to this visa type — see the Restrictions tab for details.</p>
+
+        <RequirementNote
+          label="Haven't Found an Organisation Yet?"
+          desc="If you're volunteering informally, or aren't sure whether your group counts as a registered organisation, message us before you assume you don't qualify. We'll check your specific situation, or point you toward a registered organisation that fits your interests."
+        />
 
         <AccordionSection client:load title="Qualifying Organisations" defaultOpen={true}>
           <p>Your host organisation must be:</p>
@@ -142,8 +148,11 @@ const breadcrumbSchema = {
             <li>Recent passport-style photographs</li>
             <li>Completed Non-Immigrant O application form</li>
             <li>Proof of current visa status</li>
-            <li>Proof of funds: Thai immigration requires evidence of approximately 20,000 THB in accessible funds — a standard entry requirement for all visa types, not a volunteer-specific financial threshold</li>
           </ul>
+          <RequirementNote
+            label="Proof of Funds"
+            desc="Thai immigration requires evidence of approximately 20,000 THB in accessible funds. This is a standard entry requirement for all visa types, not a volunteer-specific financial threshold — but it's real money you'll need on hand, so don't skip it just because this visa has no other financial gate."
+          />
         </AccordionSection>
 
         <AccordionSection client:load title="Organisation Documents">
@@ -184,18 +193,30 @@ const breadcrumbSchema = {
         </div>
       </section>
 
-      <section data-tab-panel="benefits" hidden>
-        <h2 class="panel-h2">Why the Non-O volunteer visa</h2>
-        <div style="margin-top: var(--space-6);">
-          <ul style="margin: 0; padding-left: var(--space-5); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.8; color: var(--text-body); max-width: 60ch;">
-            <li>Legal long-term stay with no tourist visa runs</li>
-            <li>No minimum bank balance or income requirement</li>
-            <li>No work permit required for unpaid voluntary work</li>
-            <li>Chiang Mai's NGO sector is large, active, and welcoming to skilled foreign volunteers</li>
-            <li>Renewable for as long as your placement continues</li>
-            <li>Structured legal status that lets you fully commit to your work</li>
-          </ul>
+      <section data-tab-panel="vs-tourist" hidden>
+        <h2 class="panel-h2">Volunteer visa vs. staying on a tourist visa</h2>
+        <p class="panel-intro">Already volunteering on a tourist visa or border runs? Here's what actually changes if you convert to the Non-O.</p>
+        <div class="visa-compare">
+          <div class="visa-compare-card">
+            <p class="visa-compare-label">Tourist Visa / Border Runs</p>
+            <ul class="visa-compare-list">
+              <li>60–90 days per entry, then a visa run or renewal</li>
+              <li>No legal basis for the volunteer work itself</li>
+              <li>Recurring flights or land-border trips to reset your stay</li>
+              <li>No 90-day reporting, but also no long-term stability</li>
+            </ul>
+          </div>
+          <div class="visa-compare-card">
+            <p class="visa-compare-label">Non-O Volunteer Visa</p>
+            <ul class="visa-compare-list">
+              <li>90 days per extension, renewable up to a year — no border runs</li>
+              <li>Your volunteer work has an actual legal basis</li>
+              <li>One 1,900 THB extension every 90 days instead of a flight or border crossing</li>
+              <li>90-day immigration reports required, but no forced departures</li>
+            </ul>
+          </div>
         </div>
+        <p class="panel-intro" style="margin-top: var(--space-5); margin-bottom: 0;">Chiang Mai's NGO sector is large, active, and welcoming to skilled foreign volunteers — the Non-O is what lets you commit to that work without the constant visa-run cycle.</p>
       </section>
 
       <section data-tab-panel="restrictions" hidden>
@@ -205,21 +226,21 @@ const breadcrumbSchema = {
           <p>No. The volunteer visa is for unpaid work only. Receiving a salary or wage from a Thai organisation without a work permit is a visa violation. If your role transitions to paid employment, you need a Non-Immigrant B visa and a work permit.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Do you need 90-day reports?">
-          <p>Yes. If you stay in Thailand for more than 90 consecutive days without exiting, you must file a 90-day report. Most long-term volunteers need to do this regularly.</p>
-        </AccordionSection>
-
-        <AccordionSection client:load title="Can you leave Thailand?">
-          <p>Yes, with a re-entry permit obtained before departure. Without one, your visa is cancelled on exit. Single re-entry permits cost 1,000 THB; multiple re-entry permits cost 3,800 THB.</p>
+        <AccordionSection client:load title="Does the Thailand Elite (Privilege) Visa affect eligibility?">
+          <p>Yes. If you currently hold a Thailand Elite Visa (now the Thailand Privilege Card), you are not eligible to apply for or convert to the volunteer Non-Immigrant O visa. The two programmes are incompatible — Elite/Privilege card holders remain within that scheme for the duration of their membership.</p>
+          <p>If your Thailand Elite or Privilege Card membership has ended and you are considering a volunteer placement, contact us to discuss your situation. The rules around prior Elite membership and eligibility for standard non-immigrant categories can be nuanced.</p>
         </AccordionSection>
 
         <AccordionSection client:load title="What if your placement ends?">
           <p>If your volunteer placement ends, your visa basis no longer applies. You must transition to another visa category or depart Thailand. Contact us as soon as you know so we can plan your next steps.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Does the Thailand Elite (Privilege) Visa affect eligibility?">
-          <p>Yes. If you currently hold a Thailand Elite Visa (now the Thailand Privilege Card), you are not eligible to apply for or convert to the volunteer Non-Immigrant O visa. The two programmes are incompatible — Elite/Privilege card holders remain within that scheme for the duration of their membership.</p>
-          <p>If your Thailand Elite or Privilege Card membership has ended and you are considering a volunteer placement, contact us to discuss your situation. The rules around prior Elite membership and eligibility for standard non-immigrant categories can be nuanced.</p>
+        <AccordionSection client:load title="Do you need 90-day reports?">
+          <p>Yes. If you stay in Thailand for more than 90 consecutive days without exiting, you must file a 90-day report. Most long-term volunteers need to do this regularly.</p>
+        </AccordionSection>
+
+        <AccordionSection client:load title="Can you leave Thailand?">
+          <p>Yes, with a re-entry permit obtained before departure. Without one, your visa is cancelled on exit. Single re-entry permits cost 1,000 THB; multiple re-entry permits cost 3,800 THB.</p>
         </AccordionSection>
 
         <CtaCallout
@@ -248,5 +269,40 @@ const breadcrumbSchema = {
   <style>
     .panel-h2 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-display-m); line-height: var(--lh-snug); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 var(--space-2); }
     .panel-intro { font-family: var(--font-body); font-size: 1.0625rem; line-height: var(--lh-body); color: var(--text-body); margin: 0 0 var(--space-6); max-width: 64ch; }
+
+    /* Volunteer visa vs. tourist visa comparison — replaces a Benefits tab
+       that restated the BenefitGrid above it almost verbatim. */
+    .visa-compare {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--space-5);
+      margin: var(--space-4) 0;
+    }
+    .visa-compare-card {
+      background: var(--sand);
+      border: var(--border);
+      border-radius: var(--radius-card);
+      padding: var(--space-5);
+    }
+    .visa-compare-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-label-s);
+      font-weight: var(--fw-medium);
+      letter-spacing: var(--ls-label-wide);
+      text-transform: uppercase;
+      color: var(--ink-45);
+      margin: 0 0 var(--space-3);
+    }
+    .visa-compare-list {
+      margin: 0;
+      padding-left: var(--space-5);
+      font-family: var(--font-body);
+      font-size: var(--text-body-s);
+      line-height: var(--lh-body);
+      color: var(--text-body);
+    }
+    .visa-compare-list li + li {
+      margin-top: var(--space-2);
+    }
   </style>
 </ServicePageLayout>

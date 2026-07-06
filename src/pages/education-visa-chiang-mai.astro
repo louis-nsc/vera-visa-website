@@ -112,7 +112,7 @@ const breadcrumbSchema = {
         <h2 class="panel-h2">Who qualifies for the ED visa</h2>
         <p class="panel-intro">The core requirement is enrolment in an MOE-registered school or program in Thailand. There are no age restrictions and no meaningful financial threshold — enrolment is the qualifying factor.</p>
 
-        <AccordionSection client:load title="Approved Schools & Programs" defaultOpen={true}>
+        <AccordionSection client:visible title="Approved Schools & Programs" defaultOpen={true}>
           <p>Your school must be registered with the Thai Ministry of Education. The two paths below cover every program type we see — they carry different paperwork and different fraud risk, so it's worth knowing which one you're on before you enrol anywhere.</p>
           <div class="path-compare">
             <div class="path-card">
@@ -129,13 +129,13 @@ const breadcrumbSchema = {
           <p>We work with a selection of approved schools in Chiang Mai and can refer you based on your goals and schedule.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Attendance Requirements">
+        <AccordionSection client:visible title="Attendance Requirements">
           <p>Immigration takes ED visa attendance seriously. You are expected to attend classes regularly — schools track attendance and immigration can conduct spot checks.</p>
           <p>Universities and language schools track attendance through standard registrar/administrative records. Muay Thai academies, cooking schools, and wellness programs report attendance directly to immigration themselves — ask your school how they handle this before you enrol.</p>
           <p>Consistent non-attendance is grounds for visa cancellation. We advise all ED clients to treat their school schedule seriously, not as a formality.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Applying From Inside Thailand">
+        <AccordionSection client:visible title="Applying From Inside Thailand">
           <p>If you are already in Thailand on a tourist visa or visa exemption, you can apply for the ED visa at Chiang Mai immigration once you have enrolment confirmation from an approved school. This is the most common path for our clients.</p>
         </AccordionSection>
 
@@ -146,7 +146,7 @@ const breadcrumbSchema = {
         <h2 class="panel-h2">Documents you'll need</h2>
         <p class="panel-intro">Straightforward for most applicants. The school letter is the key document — everything else is standard.</p>
 
-        <AccordionSection client:load title="Core Documents" defaultOpen={true}>
+        <AccordionSection client:visible title="Core Documents" defaultOpen={true}>
           <ul>
             <li>Passport valid for at least 12 months with blank visa pages</li>
             <li>Recent passport-style photographs</li>
@@ -161,7 +161,7 @@ const breadcrumbSchema = {
           />
         </AccordionSection>
 
-        <AccordionSection client:load title="For University Enrolment">
+        <AccordionSection client:visible title="For University Enrolment">
           <ul>
             <li>Official university acceptance letter</li>
             <li>Academic transcripts from previous institutions</li>
@@ -221,20 +221,20 @@ const breadcrumbSchema = {
       <section data-tab-panel="restrictions" hidden>
         <h2 class="panel-h2">What you can &amp; can't do</h2>
 
-        <AccordionSection client:load title="Can you work on an ED visa?" defaultOpen={true}>
+        <AccordionSection client:visible title="Can you work on an ED visa?" defaultOpen={true}>
           <p>No. The Education Visa does not permit employment of any kind in Thailand. If you want to work while in Thailand, you need a Non-Immigrant B visa and a work permit.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Can you leave Thailand?">
+        <AccordionSection client:visible title="Can you leave Thailand?">
           <p>Yes, but you need a <strong>re-entry permit</strong> before leaving to preserve your visa status. Without one, your visa is cancelled when you exit and you must apply again from scratch.</p>
           <p>Single and multiple re-entry permits are available at Chiang Mai immigration before your departure.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Do you need 90-day reports?">
+        <AccordionSection client:visible title="Do you need 90-day reports?">
           <p>Yes. If you remain in Thailand for more than 90 consecutive days, you must file a 90-day report. Most ED students need to do this at least once per school term.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="What happens if you stop attending school?">
+        <AccordionSection client:visible title="What happens if you stop attending school?">
           <p>Your school is required to notify immigration if you stop attending. Immigration can then revoke your visa status. Consistent attendance is a legal requirement, not optional.</p>
           <p>If your circumstances change — course cancelled, personal issues — contact us immediately so we can advise on the right path forward.</p>
         </AccordionSection>

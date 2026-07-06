@@ -174,11 +174,11 @@ const breadcrumbSchema = {
         <h2 class="panel-h2">Who qualifies for the retirement visa</h2>
         <p class="panel-intro">The O-A has clear financial and age requirements. Most applicants qualify straightforwardly — the complexity is in presenting the evidence correctly.</p>
 
-        <AccordionSection client:load title="Age Requirement" defaultOpen={true}>
+        <AccordionSection client:visible title="Age Requirement" defaultOpen={true}>
           <p>You must be <strong>50 years of age or older</strong> at the time of application. There is no upper age limit.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Financial Requirements">
+        <AccordionSection client:visible title="Financial Requirements">
           <p>You must meet <strong>one</strong> of these three financial routes:</p>
           <FinancialRoutes routes={[
             { label: 'Bank Deposit Route', value: '800,000 THB', desc: 'Held in a Thai bank account for the required period before and after your application.' },
@@ -188,7 +188,7 @@ const breadcrumbSchema = {
           <p>The timing of the bank deposit matters — immigration requires it to be in place for a set period before you apply and to remain after. We advise on the exact schedule for your situation.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Health Insurance Requirement">
+        <AccordionSection client:visible title="Health Insurance Requirement">
           <p>Health insurance is <strong>mandatory</strong> for the O-A visa. Your policy must meet Thai immigration minimums:</p>
           <ul>
             <li>Outpatient coverage: minimum 40,000 THB</li>
@@ -198,7 +198,7 @@ const breadcrumbSchema = {
           <p>We can refer you to insurers used by our other clients if you don't already have a suitable policy.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Criminal Record">
+        <AccordionSection client:visible title="Criminal Record">
           <p>You must have no criminal record in Thailand or your home country. A criminal background check certificate from your home country is required as part of the application.</p>
         </AccordionSection>
 
@@ -210,7 +210,7 @@ const breadcrumbSchema = {
         <h2 class="panel-h2">Documents you'll need</h2>
         <p class="panel-intro">We prepare, organise, and check every document before submission. Here's what goes into a typical O-A application.</p>
 
-        <AccordionSection client:load title="Identity & Travel Documents" defaultOpen={true}>
+        <AccordionSection client:visible title="Identity & Travel Documents" defaultOpen={true}>
           <ul>
             <li>Passport valid for at least 18 months, with sufficient blank pages</li>
             <li>Recent passport-style photographs (white background, taken within 6 months)</li>
@@ -219,7 +219,7 @@ const breadcrumbSchema = {
           </ul>
         </AccordionSection>
 
-        <AccordionSection client:load title="Financial Evidence">
+        <AccordionSection client:visible title="Financial Evidence">
           <ul>
             <li>Thai bank book and bank letter confirming the 800,000 THB deposit (or equivalent income evidence)</li>
             <li>For income method: pension statements, Social Security letters, or investment income documentation translated into English</li>
@@ -227,14 +227,14 @@ const breadcrumbSchema = {
           </ul>
         </AccordionSection>
 
-        <AccordionSection client:load title="Health Insurance Certificate">
+        <AccordionSection client:visible title="Health Insurance Certificate">
           <ul>
             <li>Certificate of insurance from a Thai-approved insurer confirming coverage meets the O-A minimums</li>
             <li>Policy must cover the full period of your visa — we check this before submission</li>
           </ul>
         </AccordionSection>
 
-        <AccordionSection client:load title="Criminal Background Check">
+        <AccordionSection client:visible title="Criminal Background Check">
           <ul>
             <li>Police clearance certificate from your home country (or country of residence for the past 3 years)</li>
             <li>Must be recently issued — immigration typically requires it within 3–6 months</li>
@@ -242,7 +242,7 @@ const breadcrumbSchema = {
           </ul>
         </AccordionSection>
 
-        <AccordionSection client:load title="Medical Certificate">
+        <AccordionSection client:visible title="Medical Certificate">
           <ul>
             <li>Certificate from a licensed physician stating you are free from prohibited diseases</li>
             <li>Must be issued within 3 months of application</li>
@@ -308,25 +308,25 @@ const breadcrumbSchema = {
       <section data-tab-panel="restrictions" hidden>
         <h2 class="panel-h2">What you can &amp; can't do</h2>
 
-        <AccordionSection client:load title="Can you work in Thailand?" defaultOpen={true}>
+        <AccordionSection client:visible title="Can you work in Thailand?" defaultOpen={true}>
           <p>No. The retirement visa does not permit employment of any kind in Thailand — paid or voluntary, part-time or casual. Working requires a separate Non-Immigrant B visa and a work permit issued by the Department of Employment.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Do you need to do 90-day reports?">
+        <AccordionSection client:visible title="Do you need to do 90-day reports?">
           <p>Yes. If you stay in Thailand for more than 90 consecutive days without leaving, you must file a 90-day report with your local immigration office. This can be done online, by post, or in person.</p>
           <p>We handle 90-day reports for all of our ongoing clients as part of our annual service.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Can you leave and re-enter Thailand?">
+        <AccordionSection client:visible title="Can you leave and re-enter Thailand?">
           <p>Yes, but you need a <strong>re-entry permit</strong> before you leave — either a single or multiple re-entry permit. If you leave without one, your visa status is cancelled and you must reapply from scratch.</p>
           <p>Re-entry permits are obtained at Chiang Mai immigration before departure. We remind all clients and can accompany you if needed.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Can you drive in Thailand?">
+        <AccordionSection client:visible title="Can you drive in Thailand?">
           <p>Yes. You can obtain a Thai driving licence on a retirement visa. You'll need your home country licence, a medical certificate, and proof of address. Chiang Mai's Land Transport Office handles this straightforwardly for most nationalities.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Can you own property?">
+        <AccordionSection client:visible title="Can you own property?">
           <p>Foreigners cannot own land in Thailand freehold, but you can own a condominium unit outright (in a building where foreign ownership does not exceed 49%). Long-term land leases of up to 30 years are another common option.</p>
         </AccordionSection>
 

@@ -79,10 +79,16 @@ export default function GoogleReviews() {
         .gr-toggle {
           align-self: flex-start; background: none; border: none; cursor: pointer;
           font-family: var(--font-body); font-weight: 500; font-size: var(--text-body-s);
-          color: var(--signal-deeper); padding: 0; text-decoration: underline;
+          color: var(--ink); text-decoration: underline;
           text-underline-offset: 2px;
+          transition: color var(--dur-fast) ease;
+          /* Padding + matching negative margin: expands the tap target to 44px
+             without shifting the surrounding layout or the visible underline. */
+          padding: 14px 4px;
+          margin: -14px -4px;
         }
-        .gr-toggle:hover { color: var(--signal-deeper); }
+        .gr-toggle:hover,
+        .gr-toggle:focus-visible { color: var(--signal-deeper); }
         @media (max-width: 900px) {
           .gr-grid { grid-template-columns: 1fr 1fr; }
         }

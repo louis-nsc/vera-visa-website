@@ -115,7 +115,7 @@ const breadcrumbSchema = {
           desc="If you're volunteering informally, or aren't sure whether your group counts as a registered organisation, message us before you assume you don't qualify. We'll check your specific situation, or point you toward a registered organisation that fits your interests."
         />
 
-        <AccordionSection client:load title="Qualifying Organisations" defaultOpen={true}>
+        <AccordionSection client:visible title="Qualifying Organisations" defaultOpen={true}>
           <p>Your host organisation must be:</p>
           <ul>
             <li>Registered as a non-profit, foundation, or NGO under Thai law</li>
@@ -125,12 +125,12 @@ const breadcrumbSchema = {
           <p>Commercial companies, social enterprises, and unregistered community groups do not qualify. We verify organisation eligibility before starting any application.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Your Volunteer Role">
+        <AccordionSection client:visible title="Your Volunteer Role">
           <p>You must be performing genuine unpaid voluntary work for the organisation. The work should align with the organisation's registered charitable purpose.</p>
           <p>Roles that involve business development, revenue generation, or activities outside the NGO's stated mission may not qualify. We'll review your specific situation.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Salary & Compensation">
+        <AccordionSection client:visible title="Salary & Compensation">
           <p>You cannot receive a salary or wage from your Thai organisation on a volunteer visa. Genuine unpaid volunteerism is the requirement.</p>
           <p>Reasonable expense reimbursement (accommodation, food, transport) may be acceptable in some cases — we advise on this based on your specific arrangement.</p>
         </AccordionSection>
@@ -142,7 +142,7 @@ const breadcrumbSchema = {
         <h2 class="panel-h2">Documents you'll need</h2>
         <p class="panel-intro">The key documents come from your organisation. We prepare and check everything before submission.</p>
 
-        <AccordionSection client:load title="Your Documents" defaultOpen={true}>
+        <AccordionSection client:visible title="Your Documents" defaultOpen={true}>
           <ul>
             <li>Passport valid for at least 12 months with blank visa pages</li>
             <li>Recent passport-style photographs</li>
@@ -155,7 +155,7 @@ const breadcrumbSchema = {
           />
         </AccordionSection>
 
-        <AccordionSection client:load title="Organisation Documents">
+        <AccordionSection client:visible title="Organisation Documents">
           <ul>
             <li>Official volunteer placement letter on organisation letterhead, confirming your role, start date, and unpaid status</li>
             <li>Copy of the organisation's Thai registration certificate</li>
@@ -222,24 +222,24 @@ const breadcrumbSchema = {
       <section data-tab-panel="restrictions" hidden>
         <h2 class="panel-h2">What you can &amp; can't do</h2>
 
-        <AccordionSection client:load title="Can you receive a salary?" defaultOpen={true}>
+        <AccordionSection client:visible title="Can you receive a salary?" defaultOpen={true}>
           <p>No. The volunteer visa is for unpaid work only. Receiving a salary or wage from a Thai organisation without a work permit is a visa violation. If your role transitions to paid employment, you need a Non-Immigrant B visa and a work permit.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Does the Thailand Elite (Privilege) Visa affect eligibility?">
+        <AccordionSection client:visible title="Does the Thailand Elite (Privilege) Visa affect eligibility?">
           <p>Yes. If you currently hold a Thailand Elite Visa (now the Thailand Privilege Card), you are not eligible to apply for or convert to the volunteer Non-Immigrant O visa. The two programmes are incompatible — Elite/Privilege card holders remain within that scheme for the duration of their membership.</p>
           <p>If your Thailand Elite or Privilege Card membership has ended and you are considering a volunteer placement, contact us to discuss your situation. The rules around prior Elite membership and eligibility for standard non-immigrant categories can be nuanced.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="What if your placement ends?">
+        <AccordionSection client:visible title="What if your placement ends?">
           <p>If your volunteer placement ends, your visa basis no longer applies. You must transition to another visa category or depart Thailand. Contact us as soon as you know so we can plan your next steps.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Do you need 90-day reports?">
+        <AccordionSection client:visible title="Do you need 90-day reports?">
           <p>Yes. If you stay in Thailand for more than 90 consecutive days without exiting, you must file a 90-day report. Most long-term volunteers need to do this regularly.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Can you leave Thailand?">
+        <AccordionSection client:visible title="Can you leave Thailand?">
           <p>Yes, with a re-entry permit obtained before departure. Without one, your visa is cancelled on exit. Single re-entry permits cost 1,000 THB; multiple re-entry permits cost 3,800 THB.</p>
         </AccordionSection>
 

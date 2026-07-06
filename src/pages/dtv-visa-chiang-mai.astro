@@ -165,22 +165,22 @@ const breadcrumbSchema = {
       <h2 class="panel-h2">Who qualifies for the DTV</h2>
       <p class="panel-intro">The DTV has two tracks — remote work for a foreign employer or clients, and approved "soft power" activities. Most applicants qualify under one of the categories below.</p>
 
-      <AccordionSection client:load title="Income Requirements" defaultOpen={true}>
+      <AccordionSection client:visible title="Income Requirements" defaultOpen={true}>
         <p>The DTV targets remote workers and freelancers with stable foreign income. You need proof of active income — employment contracts, client invoices, or a portfolio of freelance work — plus bank statements showing sufficient personal savings.</p>
         <p>Most rejections come from mismatched income evidence. The name on your contracts, bank account, and application must all line up. We review everything before filing.</p>
       </AccordionSection>
 
-      <AccordionSection client:load title="Eligible Countries">
+      <AccordionSection client:visible title="Eligible Countries">
         <p>The DTV is open to most nationalities that can apply at a Thai embassy or via the official e-visa portal. A small number of nationalities face additional scrutiny or documentary requirements.</p>
         <p>Contact us before you start — we'll confirm eligibility for your specific passport in your first consultation.</p>
       </AccordionSection>
 
-      <AccordionSection client:load title="Applying From Inside Thailand">
+      <AccordionSection client:visible title="Applying From Inside Thailand">
         <p>The DTV is designed to be applied for from outside Thailand — at a Thai embassy or consulate in your home country, or a neighbouring country.</p>
         <p>In-country conversion is not a standard route. If you are already in Thailand on another visa type, we can advise on the best path forward for your situation.</p>
       </AccordionSection>
 
-      <AccordionSection client:load title="Soft Power Activities">
+      <AccordionSection client:visible title="Soft Power Activities">
         <p>The DTV's second eligibility track covers approved "soft power" activities: Muay Thai training, Thai cooking courses, medical treatment, wellness retreats, and similar recognised programs.</p>
         <p>You do not need remote-work income for this track — enrolment documentation for an approved activity is the core requirement. We'll confirm which activities qualify before you apply.</p>
       </AccordionSection>
@@ -193,7 +193,7 @@ const breadcrumbSchema = {
       <h2 class="panel-h2">Documents you'll need</h2>
       <p class="panel-intro">Grouped by category. We assemble, translate, and check every document before submission.</p>
 
-      <AccordionSection client:load title="Core Identity & Travel Documents">
+      <AccordionSection client:visible title="Core Identity & Travel Documents">
         <ul>
           <li>Passport valid for at least 6 months, with blank visa pages</li>
           <li>Recent passport-style photograph (white background, taken within 6 months)</li>
@@ -202,7 +202,7 @@ const breadcrumbSchema = {
         </ul>
       </AccordionSection>
 
-      <AccordionSection client:load title="Financial Solvency Evidence" defaultOpen={true}>
+      <AccordionSection client:visible title="Financial Solvency Evidence" defaultOpen={true}>
         <ul>
           <li>Bank statements covering the required period (typically 6 months)</li>
           <li>Proof of remote income — employment contract, client invoices, or freelance portfolio</li>
@@ -213,7 +213,7 @@ const breadcrumbSchema = {
         />
       </AccordionSection>
 
-      <AccordionSection client:load title="Purpose-of-Stay Documents">
+      <AccordionSection client:visible title="Purpose-of-Stay Documents">
         <ul>
           <li>Employment contract with a foreign company, or client contracts / invoices for freelancers</li>
           <li>Company registration documents if self-employed</li>
@@ -221,7 +221,7 @@ const breadcrumbSchema = {
         </ul>
       </AccordionSection>
 
-      <AccordionSection client:load title="Health Insurance">
+      <AccordionSection client:visible title="Health Insurance">
         <ul>
           <li>Health insurance valid for the duration of your stay in Thailand</li>
           <li>Minimum coverage: <strong>40,000 THB outpatient</strong> and <strong>400,000 THB inpatient</strong></li>
@@ -230,7 +230,7 @@ const breadcrumbSchema = {
         </ul>
       </AccordionSection>
 
-      <AccordionSection client:load title="Family Dependents">
+      <AccordionSection client:visible title="Family Dependents">
         <ul>
           <li>Marriage certificate for a spouse (may require legalisation or apostille)</li>
           <li>Birth certificates for children under 20</li>
@@ -296,25 +296,25 @@ const breadcrumbSchema = {
     <section data-tab-panel="restrictions" hidden>
       <h2 class="panel-h2">What you can &amp; can't do</h2>
 
-      <AccordionSection client:load title="Can you leave Thailand?" defaultOpen={true}>
+      <AccordionSection client:visible title="Can you leave Thailand?" defaultOpen={true}>
         <p>Yes. The DTV is multiple-entry — you can travel in and out of Thailand as many times as you like within the five-year term. Each re-entry resets your 180-day stay counter.</p>
       </AccordionSection>
 
-      <AccordionSection client:load title="Can you get a Thai bank account?">
+      <AccordionSection client:visible title="Can you get a Thai bank account?">
         <p>Often yes, though it varies significantly by bank branch and the documentation you can present. Bangkok Bank and Kasikorn Bank have been accessible for many DTV holders.</p>
         <p>We can advise on the right branch and the exact documents to bring based on what other clients have used successfully.</p>
       </AccordionSection>
 
-      <AccordionSection client:load title="Can you buy a car?">
+      <AccordionSection client:visible title="Can you buy a car?">
         <p>Yes — foreigners on a valid visa can own and register a vehicle in Thailand. You'll need proof of address (a lease agreement typically works) and your DTV documentation.</p>
       </AccordionSection>
 
-      <AccordionSection client:load title="Can you work?">
+      <AccordionSection client:visible title="Can you work?">
         <p>Remote work for foreign clients or a foreign employer is permitted under the DTV — that is explicitly what the visa is designed for.</p>
         <p>Working locally for a Thai company or employer, operating a business in Thailand, or receiving Thai-sourced income requires a separate work permit. The DTV does not cover local employment.</p>
       </AccordionSection>
 
-      <AccordionSection client:load title="Do you need to do 90-day reports?">
+      <AccordionSection client:visible title="Do you need to do 90-day reports?">
         <p>If you stay in Thailand for more than 90 consecutive days without leaving, you are required to file a 90-day report with immigration. This is straightforward and can be done online, by post, or in person.</p>
         <p>If you travel out and re-enter before 90 days, the counter resets and no report is due for that stay.</p>
       </AccordionSection>

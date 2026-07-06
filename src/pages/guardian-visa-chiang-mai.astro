@@ -113,7 +113,7 @@ const breadcrumbSchema = {
         <h2 class="panel-h2">Who qualifies for the guardian visa</h2>
         <p class="panel-intro">Two requirements: a child enrolled in an accredited Chiang Mai school, and meeting the financial threshold.</p>
 
-        <AccordionSection client:load title="Child's School Enrolment" defaultOpen={true}>
+        <AccordionSection client:visible title="Child's School Enrolment" defaultOpen={true}>
           <p>Your child must be actively enrolled in and attending an accredited school in Thailand. Qualifying schools include:</p>
           <ul>
             <li>International schools (IGCSE, IB, American curriculum)</li>
@@ -127,7 +127,7 @@ const breadcrumbSchema = {
           />
         </AccordionSection>
 
-        <AccordionSection client:load title="Financial Requirements">
+        <AccordionSection client:visible title="Financial Requirements">
           <p>You must meet <strong>one</strong> of these three financial routes:</p>
           <FinancialRoutes routes={[
             { label: 'Bank Deposit Route', value: '400,000 THB', desc: 'Held in a Thai bank account for the required period.' },
@@ -136,7 +136,7 @@ const breadcrumbSchema = {
           ]} />
         </AccordionSection>
 
-        <AccordionSection client:load title="Legal Guardianship">
+        <AccordionSection client:visible title="Legal Guardianship">
           <p>You must be the child's parent or legal guardian. Proof of the relationship — birth certificate, adoption papers, or legal guardianship documents — is required as part of the application.</p>
         </AccordionSection>
 
@@ -147,7 +147,7 @@ const breadcrumbSchema = {
         <h2 class="panel-h2">Documents you'll need</h2>
         <p class="panel-intro">Documentation from both the parent and the child's school. We prepare and check everything before submission.</p>
 
-        <AccordionSection client:load title="Your Documents" defaultOpen={true}>
+        <AccordionSection client:visible title="Your Documents" defaultOpen={true}>
           <ul>
             <li>Passport valid for at least 18 months with blank visa pages</li>
             <li>Recent passport-style photographs</li>
@@ -157,7 +157,7 @@ const breadcrumbSchema = {
           </ul>
         </AccordionSection>
 
-        <AccordionSection client:load title="Child & School Documents">
+        <AccordionSection client:visible title="Child & School Documents">
           <ul>
             <li>Child's passport and any current visa</li>
             <li>Enrolment letter from the school on official letterhead</li>
@@ -217,19 +217,19 @@ const breadcrumbSchema = {
       <section data-tab-panel="restrictions" hidden>
         <h2 class="panel-h2">What you can &amp; can't do</h2>
 
-        <AccordionSection client:load title="What if your child finishes school or leaves Thailand?" defaultOpen={true}>
+        <AccordionSection client:visible title="What if your child finishes school or leaves Thailand?" defaultOpen={true}>
           <p>If your child graduates, leaves Thailand, or changes to a non-qualifying program, your guardian visa basis no longer applies. You must transition to another visa category — contact us as soon as you know so we can plan the right move.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Can you work in Thailand?">
+        <AccordionSection client:visible title="Can you work in Thailand?">
           <p>Not without a work permit. The guardian visa gives you the right to live in Thailand, not to work. A work permit requires employer sponsorship and a separate application process.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Do you need 90-day reports?">
+        <AccordionSection client:visible title="Do you need 90-day reports?">
           <p>Yes. If you remain in Thailand for more than 90 consecutive days without leaving, you must file a 90-day report with immigration. We handle this for all ongoing clients.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Can you leave Thailand?">
+        <AccordionSection client:visible title="Can you leave Thailand?">
           <p>Yes, with a re-entry permit obtained before departure. Without one, your visa status is cancelled when you exit. Single re-entry permits cost 1,000 THB; multiple re-entry permits cost 3,800 THB.</p>
         </AccordionSection>
 

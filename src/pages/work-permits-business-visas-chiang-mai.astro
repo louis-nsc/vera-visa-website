@@ -113,21 +113,21 @@ const breadcrumbSchema = {
         <h2 class="panel-h2">Who needs the Non-Immigrant B and work permit</h2>
         <p class="panel-intro">Any foreigner working in Thailand — in any capacity — requires a work permit. No exceptions.</p>
 
-        <AccordionSection client:load title="Employed by a Thai Company" defaultOpen={true}>
+        <AccordionSection client:visible title="Employed by a Thai Company" defaultOpen={true}>
           <p>If you are employed by a registered Thai company, your employer sponsors both your Non-Immigrant B visa and your work permit application. The company must meet Thai Labour Department requirements to sponsor a foreign worker.</p>
           <RequirementNote label="Thai Employee Ratio" desc="The company must employ at least 4 Thai staff for every 1 foreign work permit holder in most sectors. We check this before submitting — a non-compliant company means a rejected application." />
         </AccordionSection>
 
-        <AccordionSection client:load title="Running Your Own Business">
+        <AccordionSection client:visible title="Running Your Own Business">
           <p>Business owners who actively manage or work in their Thai company need a work permit even if they are a shareholder. The work permit covers your specific role — director, manager, or technical specialist — as registered in the company documents.</p>
           <p>We can refer you to a qualified Thai business lawyer for company formation if you haven't set up your Thai entity yet.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Attending Business Meetings">
+        <AccordionSection client:visible title="Attending Business Meetings">
           <p>Short-term business visits — meetings, negotiations, conferences — can often be conducted on a Non-Immigrant B visa without a work permit, as long as no actual work or employment activities occur in Thailand. We advise on the distinction based on your activities.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Exemptions">
+        <AccordionSection client:visible title="Exemptions">
           <p>Some activities are exempt from the work permit requirement — government representatives, certain diplomatic staff, and specific BOI-approved positions. If you think you may qualify for an exemption, we'll review your situation and confirm.</p>
         </AccordionSection>
 
@@ -138,7 +138,7 @@ const breadcrumbSchema = {
         <h2 class="panel-h2">Documents you'll need</h2>
         <p class="panel-intro">Two parallel applications — visa and work permit — each with their own document set. We manage both simultaneously.</p>
 
-        <AccordionSection client:load title="Non-Immigrant B Visa Documents" defaultOpen={true}>
+        <AccordionSection client:visible title="Non-Immigrant B Visa Documents" defaultOpen={true}>
           <ul class="doc-list">
             <li><span class="doc-owner doc-owner--you">You</span>Passport valid for at least 18 months with blank visa pages</li>
             <li><span class="doc-owner doc-owner--you">You</span>Recent passport-style photographs</li>
@@ -149,7 +149,7 @@ const breadcrumbSchema = {
           </ul>
         </AccordionSection>
 
-        <AccordionSection client:load title="Work Permit Documents">
+        <AccordionSection client:visible title="Work Permit Documents">
           <ul class="doc-list">
             <li>All Non-Immigrant B documents above</li>
             <li><span class="doc-owner doc-owner--you">You</span>Educational certificates and professional qualifications</li>
@@ -212,20 +212,20 @@ const breadcrumbSchema = {
       <section data-tab-panel="restrictions" hidden>
         <h2 class="panel-h2">Compliance obligations</h2>
 
-        <AccordionSection client:load title="Can you change jobs?" defaultOpen={true}>
+        <AccordionSection client:visible title="Can you change jobs?" defaultOpen={true}>
           <p>Your work permit is tied to a specific employer and role. If you change employers or your role changes significantly, you must update your work permit before starting the new role. Working outside your permitted role is a violation.</p>
           <p>We handle work permit amendments — contact us as soon as a job or role change is confirmed.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Do you need to do 90-day reports?">
+        <AccordionSection client:visible title="Do you need to do 90-day reports?">
           <p>Yes. If you remain in Thailand for more than 90 consecutive days without exiting, you must file a 90-day report. We handle this for all ongoing clients.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Can you leave Thailand?">
+        <AccordionSection client:visible title="Can you leave Thailand?">
           <p>Yes, with a re-entry permit. Leaving without one cancels your visa and work permit, requiring you to reapply from scratch. Always obtain a re-entry permit before any international trip.</p>
         </AccordionSection>
 
-        <AccordionSection client:load title="Tax obligations">
+        <AccordionSection client:visible title="Tax obligations">
           <p>Work permit holders are tax residents of Thailand for years in which they are present for 180+ days. Thai-sourced income is subject to Thai personal income tax. We can refer you to a qualified Thai accountant for tax filing.</p>
         </AccordionSection>
 

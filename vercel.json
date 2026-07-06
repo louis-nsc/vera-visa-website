@@ -5,6 +5,11 @@
       "source": "/thailand-work-permit-americans/",
       "destination": "/thailand-work-permit-requirements/",
       "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }

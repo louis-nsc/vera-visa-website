@@ -139,6 +139,27 @@
 - [ ] Monitor Google Search Console for coverage errors for 2 weeks post-launch
 - [x] Commit: `chore: launch QA pass`
 
+> **2026-07-03 — Full-site 200 sweep against live Vercel deployment (bypassing SSO
+> deployment protection via the Vercel MCP share-link token):** all 68 pages currently in
+> `src/pages/` return 200 (this plan's "URL map" table below only lists the original 16 and
+> is stale — actual page count has grown substantially through the blog/nationality-hub/
+> category expansion, see `git log`). The `/thailand-work-permit-americans/` → 
+> `/thailand-work-permit-requirements/` 308 redirect resolves correctly. `robots.txt` and
+> `sitemap-index.xml` both 200. Legacy WP paths (`wp-content`, `wp-json`, `wp-admin`,
+> `xmlrpc.php`) now return 403 from Vercel's edge firewall (`x-vercel-mitigated: deny`)
+> rather than app-level 404 — still non-200/non-indexable, not a regression. Spot-checked
+> canonical/title/description on homepage + 3 other page types — all correct, canonical
+> tags correctly resolve to `vera-visa.com` even when served from the preview URL.
+>
+> Also fixed this session: the GitHub remote had a PAT embedded in cleartext in
+> `.git/config` (visible via `git remote -v`). Switched to SSH auth, rotated/revoked the
+> exposed tokens. 20 pending commits (full design-critique pass + nationality hubs +
+> category pages + blog completion) are now pushed to `origin/main` and deployed.
+>
+> Still outstanding: DNS cutover to `vera-visa.com` hasn't happened (project has no
+> custom domain attached yet, `"live": false`), so GSC sitemap submission and a real
+> PSI/Lighthouse production run are still blocked on that.
+
 > **Accessibility pass (bonus, not in original plan):** Lighthouse caught a sitewide WCAG AA contrast failure baked into the original DS color tokens — `--ink-45` (2.99:1) and white-on-`--signal` buttons (2.98:1). Fixed by: buttons now default to `--signal-deep` (4.81:1) with a new `--signal-deeper` (6.85:1) hover state; `--ink-45` opacity raised 45%→60% (4.5:1+); `--signal` itself darkened 7% (#FF630F→#ED5C0D) so large display numbers/headline-highlight text clears 3:1 on the `--sand` background; all small-text uses of raw `--signal` (link hovers, star ratings, mono labels) moved to `--signal-deeper`. Also fixed two real bugs Lighthouse surfaced: `TabBar.tsx`'s `aria-controls` referenced panel IDs that didn't exist in the DOM (now set programmatically), and `BenefitGrid.astro` skipped from `<h2>` to `<h4>` (now `<h3>`). **Result: 100/100 Lighthouse accessibility on all 16 pages.**
 >
 > **Core Web Vitals note:** Couldn't get a meaningful production baseline this session — `astro dev` numbers are not representative (no minification/bundling), `astro preview` isn't supported by the Vercel adapter, and the Vercel preview deployment is behind SSO/deployment protection so external tools (PageSpeed Insights, Lighthouse) can't reach it. Run a real PSI/Lighthouse pass once deployment protection is lifted for testing, or after the production DNS cutover.

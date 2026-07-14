@@ -32,8 +32,8 @@ const faqSchema = {
   '@type': 'FAQPage',
   mainEntity: [
     { '@type': 'Question', name: 'What is the volunteer visa in Thailand?', acceptedAnswer: { '@type': 'Answer', text: 'The volunteer visa is a Non-Immigrant O visa issued to foreigners volunteering with a registered non-profit, NGO, or charity organisation in Thailand. It provides legal long-term stay tied to your volunteer placement.' } },
-    { '@type': 'Question', name: 'What organisations qualify for the volunteer visa?', acceptedAnswer: { '@type': 'Answer', text: 'The organisation must be a registered non-profit or NGO in Thailand — registered with the Thai Ministry of Interior or equivalent authority. Commercial companies, even those with social missions, do not qualify. We can help you verify whether your organisation qualifies.' } },
-    { '@type': 'Question', name: 'Can I receive a salary on a volunteer visa?', acceptedAnswer: { '@type': 'Answer', text: 'No. The volunteer visa is for unpaid voluntary service. Receiving a salary or wage from your Thai organisation requires a work permit. A stipend or expense reimbursement may be acceptable — we advise on this case by case.' } },
+    { '@type': 'Question', name: 'What organisations qualify for the volunteer visa?', acceptedAnswer: { '@type': 'Answer', text: 'The organisation must be a registered non-profit or NGO in Thailand, registered with the Thai Ministry of Interior or equivalent authority. Commercial companies, even those with social missions, do not qualify. We can help you verify whether your organisation qualifies.' } },
+    { '@type': 'Question', name: 'Can I receive a salary on a volunteer visa?', acceptedAnswer: { '@type': 'Answer', text: 'No. The volunteer visa is for unpaid voluntary service. Receiving a salary or wage from your Thai organisation requires a work permit. A stipend or expense reimbursement may be acceptable; we advise on this case by case.' } },
     { '@type': 'Question', name: 'How long is the volunteer visa?', acceptedAnswer: { '@type': 'Answer', text: 'The volunteer visa is typically extended in 90-day increments, up to one year. Extensions require continued active volunteer placement. Annual re-application may be needed depending on your organisation and the immigration office.' } },
   ],
 };
@@ -52,11 +52,11 @@ const breadcrumbSchema = {
   title="Volunteer Visa Chiang Mai (Non-O) | Vera Visa"
   description="Volunteering long-term in Chiang Mai? The Non-Immigrant O visa gives you legal stay tied to your placement. Vera Visa handles applications and extensions."
   canonicalUrl="https://vera-visa.com/volunteer-visa-chiang-mai/"
-  ogTitle="Volunteer Visa Chiang Mai 2026 — Non-O Requirements & Guide | Vera Visa"
+  ogTitle="Volunteer Visa Chiang Mai 2026: Non-O Requirements & Guide | Vera Visa"
   ogDescription="Long-term volunteer in Chiang Mai? The Non-Immigrant O visa covers your stay. Vera Visa handles the application, 90-day extensions, and reports."
   schema={[serviceSchema, faqSchema, breadcrumbSchema]}
   eyebrow="Non-Imm O · Volunteer"
-  intro="Volunteering with a registered NGO or non-profit in Chiang Mai? The Non-Immigrant O volunteer visa gives you legal long-term stay — handled end to end by our team."
+  intro="Volunteering with a registered NGO or non-profit in Chiang Mai? The Non-Immigrant O volunteer visa gives you legal long-term stay. We handle it end to end."
   ctaText="Check your eligibility on WhatsApp →"
   statusRows={[
     { label: 'Visa Type',    value: 'Non-Imm O'   },
@@ -86,11 +86,11 @@ const breadcrumbSchema = {
     intro="Chiang Mai has a large and active NGO community. The Non-Immigrant O volunteer visa is the correct legal pathway for long-term volunteer placements."
     items={[
       { title: 'Legal long-term stay',    body: 'Volunteer in Chiang Mai for months or years without tourist visa restrictions or border runs.' },
-      { title: 'No work permit required', body: 'Unpaid volunteering under the Non-Immigrant O does not require a Thai work permit — unlike paid employment.' },
-      { title: 'No financial threshold',  body: 'No minimum bank balance or income requirement — your volunteer placement letter is the key document.' },
-      { title: 'Renewable placement',     body: 'Extensions tied to your volunteer organisation — as long as your placement continues, so does your visa eligibility.' },
-      { title: 'Active NGO community',    body: 'Chiang Mai has one of the largest concentrations of NGOs and non-profits in Southeast Asia — elephant welfare, education, hill tribe support, and more.' },
-      { title: 'Personal fulfilment',     body: 'A legal, structured way to contribute long-term — without the constant visa stress that comes with repeated tourist entries.' },
+      { title: 'No work permit required', body: 'Unpaid volunteering under the Non-Immigrant O does not require a Thai work permit, unlike paid employment.' },
+      { title: 'No financial threshold',  body: 'No minimum bank balance or income requirement: your volunteer placement letter is the key document.' },
+      { title: 'Renewable placement',     body: 'Extensions tied to your volunteer organisation: as long as your placement continues, so does your visa eligibility.' },
+      { title: 'Active NGO community',    body: 'Chiang Mai has one of the largest concentrations of NGOs and non-profits in Southeast Asia, spanning elephant welfare, education, hill tribe support, and more.' },
+      { title: 'Personal fulfilment',     body: 'A legal, structured way to contribute long-term, without the constant visa stress that comes with repeated tourist entries.' },
     ]}
   />
 
@@ -108,7 +108,7 @@ const breadcrumbSchema = {
 
       <section data-tab-panel="eligibility">
         <h2 class="panel-h2">Who qualifies for the volunteer visa</h2>
-        <p class="panel-intro">The primary requirement is a confirmed volunteer placement with a registered Thai non-profit or NGO. One disqualifier up front: current Thailand Elite (Privilege) Visa holders aren't eligible to convert to this visa type — see the Restrictions tab for details.</p>
+        <p class="panel-intro">The primary requirement is a confirmed volunteer placement with a registered Thai non-profit or NGO. One disqualifier up front: current Thailand Elite (Privilege) Visa holders aren't eligible to convert to this visa type. See the Restrictions tab for details.</p>
 
         <RequirementNote
           label="Haven't Found an Organisation Yet?"
@@ -132,10 +132,10 @@ const breadcrumbSchema = {
 
         <AccordionSection client:visible title="Salary & Compensation">
           <p>You cannot receive a salary or wage from your Thai organisation on a volunteer visa. Genuine unpaid volunteerism is the requirement.</p>
-          <p>Reasonable expense reimbursement (accommodation, food, transport) may be acceptable in some cases — we advise on this based on your specific arrangement.</p>
+          <p>Reasonable expense reimbursement (accommodation, food, transport) may be acceptable in some cases; we advise on this based on your specific arrangement.</p>
         </AccordionSection>
 
-        <ExpertInsightCallout body="The most common issue is organisations that are not properly registered with Thai authorities. Many well-meaning groups operate informally. We check registration status before starting any application — an unregistered organisation means a rejected visa." />
+        <ExpertInsightCallout body="The most common issue is organisations that are not properly registered with Thai authorities. Many well-meaning groups operate informally. We check registration status before starting any application: an unregistered organisation means a rejected visa." />
       </section>
 
       <section data-tab-panel="requirements" hidden>
@@ -151,7 +151,7 @@ const breadcrumbSchema = {
           </ul>
           <RequirementNote
             label="Proof of Funds"
-            desc="Thai immigration requires evidence of approximately 20,000 THB in accessible funds. This is a standard entry requirement for all visa types, not a volunteer-specific financial threshold — but it's real money you'll need on hand, so don't skip it just because this visa has no other financial gate."
+            desc="Thai immigration requires evidence of approximately 20,000 THB in accessible funds. This is a standard entry requirement for all visa types, not a volunteer-specific financial threshold. It's still real money you'll need on hand, so don't skip it just because this visa has no other financial gate."
           />
         </AccordionSection>
 
@@ -164,7 +164,7 @@ const breadcrumbSchema = {
           </ul>
         </AccordionSection>
 
-        <ExpertInsightCallout body="The placement letter needs to say the right things — specific language around the unpaid nature of the role and the organisation's registration status. We review every letter before it goes to immigration." />
+        <ExpertInsightCallout body="The placement letter needs to say the right things: specific language around the unpaid nature of the role and the organisation's registration status. We review every letter before it goes to immigration." />
       </section>
 
       <section data-tab-panel="process" hidden>
@@ -209,14 +209,14 @@ const breadcrumbSchema = {
           <div class="visa-compare-card">
             <p class="visa-compare-label">Non-O Volunteer Visa</p>
             <ul class="visa-compare-list">
-              <li>90 days per extension, renewable up to a year — no border runs</li>
+              <li>90 days per extension, renewable up to a year, with no border runs</li>
               <li>Your volunteer work has an actual legal basis</li>
               <li>One 1,900 THB extension every 90 days instead of a flight or border crossing</li>
               <li>90-day immigration reports required, but no forced departures</li>
             </ul>
           </div>
         </div>
-        <p class="panel-intro" style="margin-top: var(--space-5); margin-bottom: 0;">Chiang Mai's NGO sector is large, active, and welcoming to skilled foreign volunteers — the Non-O is what lets you commit to that work without the constant visa-run cycle.</p>
+        <p class="panel-intro" style="margin-top: var(--space-5); margin-bottom: 0;">Chiang Mai's NGO sector is large, active, and welcoming to skilled foreign volunteers. The Non-O is what lets you commit to that work without the constant visa-run cycle.</p>
       </section>
 
       <section data-tab-panel="restrictions" hidden>
@@ -227,7 +227,7 @@ const breadcrumbSchema = {
         </AccordionSection>
 
         <AccordionSection client:visible title="Does the Thailand Elite (Privilege) Visa affect eligibility?">
-          <p>Yes. If you currently hold a Thailand Elite Visa (now the Thailand Privilege Card), you are not eligible to apply for or convert to the volunteer Non-Immigrant O visa. The two programmes are incompatible — Elite/Privilege card holders remain within that scheme for the duration of their membership.</p>
+          <p>Yes. If you currently hold a Thailand Elite Visa (now the Thailand Privilege Card), you are not eligible to apply for or convert to the volunteer Non-Immigrant O visa. The two programmes are incompatible: Elite/Privilege card holders remain within that scheme for the duration of their membership.</p>
           <p>If your Thailand Elite or Privilege Card membership has ended and you are considering a volunteer placement, contact us to discuss your situation. The rules around prior Elite membership and eligibility for standard non-immigrant categories can be nuanced.</p>
         </AccordionSection>
 

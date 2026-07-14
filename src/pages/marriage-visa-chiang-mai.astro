@@ -24,7 +24,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Marriage Visa Chiang Mai',
-  description: 'Thai marriage visa (Non-Immigrant O) for spouses of Thai nationals. Annual extensions, financial evidence, 90-day reports — handled end to end by Vera Visa in Chiang Mai.',
+  description: 'Thai marriage visa (Non-Immigrant O) for spouses of Thai nationals. Annual extensions, financial evidence, and 90-day reports are handled end to end by Vera Visa in Chiang Mai.',
   provider: { '@type': 'LocalBusiness', name: 'Vera Visa Agency', url: 'https://vera-visa.com' },
   areaServed: { '@type': 'Country', name: 'Thailand' },
 };
@@ -34,9 +34,9 @@ const faqSchema = {
   '@type': 'FAQPage',
   mainEntity: [
     { '@type': 'Question', name: 'What are the financial requirements for the marriage visa in Thailand?', acceptedAnswer: { '@type': 'Answer', text: 'You need either 400,000 THB in a Thai bank account, a monthly income of 40,000 THB transferred from abroad, or a combination of savings and income totalling 400,000 THB. The bank deposit must be held for a set period before your application.' } },
-    { '@type': 'Question', name: 'Do you need to be legally married for the Thai marriage visa?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. You must be legally married to a Thai national — registered under Thai law. The marriage must be recorded at a district office (amphoe) in Thailand or your marriage certificate must be legalised and translated if married abroad.' } },
+    { '@type': 'Question', name: 'Do you need to be legally married for the Thai marriage visa?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. You must be legally married to a Thai national, registered under Thai law. The marriage must be recorded at a district office (amphoe) in Thailand or your marriage certificate must be legalised and translated if married abroad.' } },
     { '@type': 'Question', name: 'Can I work in Thailand on a marriage visa?', acceptedAnswer: { '@type': 'Answer', text: 'Not automatically. The marriage visa (Non-Immigrant O) does not include work authorisation. To work legally in Thailand you need a separate work permit, which requires employer sponsorship.' } },
-    { '@type': 'Question', name: 'How long is the marriage visa in Thailand?', acceptedAnswer: { '@type': 'Answer', text: 'The marriage visa is extended annually at your local immigration office. There is no fixed end date — as long as your marriage is valid and you meet the financial requirements, you can renew indefinitely.' } },
+    { '@type': 'Question', name: 'How long is the marriage visa in Thailand?', acceptedAnswer: { '@type': 'Answer', text: 'The marriage visa is extended annually at your local immigration office. There is no fixed end date: as long as your marriage is valid and you meet the financial requirements, you can renew indefinitely.' } },
   ],
 };
 
@@ -51,14 +51,14 @@ const breadcrumbSchema = {
 ---
 
 <ServicePageLayout
-  title="Marriage Visa Chiang Mai — Requirements | Vera Visa"
+  title="Marriage Visa Chiang Mai: Requirements | Vera Visa"
   description="Married to a Thai national? The marriage visa lets you live in Chiang Mai year-round. Vera Visa handles the application and annual renewals end to end."
   canonicalUrl="https://vera-visa.com/marriage-visa-chiang-mai/"
-  ogTitle="Marriage Visa Chiang Mai 2026 — Requirements & Full Guide | Vera Visa"
+  ogTitle="Marriage Visa Chiang Mai 2026: Requirements & Full Guide | Vera Visa"
   ogDescription="Spouse of a Thai national? Live in Chiang Mai year-round on the Non-Immigrant O marriage visa. Annual renewals handled by Vera Visa."
   schema={[serviceSchema, faqSchema, breadcrumbSchema]}
   eyebrow="Non-Imm O · Marriage"
-  intro="The marriage visa lets spouses of Thai nationals live in Chiang Mai year-round — renewed each year by our team, with 90-day reports handled as standard."
+  intro="The marriage visa lets spouses of Thai nationals live in Chiang Mai year-round. Our team renews it each year, with 90-day reports handled as standard."
   ctaText="Check your eligibility on WhatsApp →"
   statusRows={[
     { label: 'Visa Type',    value: 'Non-Imm O'   },
@@ -88,7 +88,7 @@ const breadcrumbSchema = {
     intro="The Non-Immigrant O marriage visa is the most straightforward long-stay option for spouses of Thai nationals."
     items={[
       { title: 'Year-round legal residence', body: 'Live with your spouse in Chiang Mai without tourist visa limitations or border runs.' },
-      { title: 'Lower financial threshold',  body: '400,000 THB in a Thai bank or 40,000 THB/month income — lower requirements than the retirement visa.' },
+      { title: 'Lower financial threshold',  body: '400,000 THB in a Thai bank or 40,000 THB/month income, lower requirements than the retirement visa.' },
       { title: 'Renewable indefinitely',     body: 'Annual renewals with no end date, as long as your marriage is intact and you meet the financial threshold.' },
       { title: 'Work permit eligible',       body: 'The O visa is the correct visa type to then obtain a Thai work permit if you find local employment.' },
       { title: 'Travel flexibility',         body: 'A re-entry permit lets you leave and return to Thailand without losing your visa status.' },
@@ -113,8 +113,8 @@ const breadcrumbSchema = {
         <p class="panel-intro">Two requirements: a legal marriage to a Thai national, and meeting the financial threshold.</p>
 
         <AccordionSection client:visible title="Legal Marriage to a Thai National" defaultOpen={true}>
-          <p>Two things qualify you for this visa: your marriage is legally registered, and you meet the financial threshold below. That's it — immigration is checking paperwork, not judging your relationship.</p>
-          <p>Your marriage must be registered at a district office (amphoe) in Thailand, or if married abroad, your marriage certificate must be legalised and translated into Thai. Common law relationships and long-term partnerships without legal registration don't qualify for this specific visa category — but a legally registered marriage of any length does.</p>
+          <p>Two things qualify you for this visa: your marriage is legally registered, and you meet the financial threshold below. That's it. Immigration is checking paperwork, not judging your relationship.</p>
+          <p>Your marriage must be registered at a district office (amphoe) in Thailand, or if married abroad, your marriage certificate must be legalised and translated into Thai. Common law relationships and long-term partnerships without legal registration don't qualify for this specific visa category, but a legally registered marriage of any length does.</p>
         </AccordionSection>
 
         <AccordionSection client:visible title="Financial Requirements">
@@ -124,7 +124,7 @@ const breadcrumbSchema = {
             { label: 'Monthly Income Route', value: '40,000 THB', unit: '/month', desc: 'Transferred to a Thai account from abroad on a regular basis.' },
             { label: 'Combination Route', value: 'Income + savings = 400,000 THB', desc: 'Example: 20,000 THB/month income (240,000 THB/year) plus 160,000 THB in savings.' },
           ]} />
-          <p>The deposit timing is strictly enforced — we advise every client on the correct schedule before they fund the account.</p>
+          <p>The deposit timing is strictly enforced, so we advise every client on the correct schedule before they fund the account.</p>
         </AccordionSection>
 
         <AccordionSection client:visible title="Applying From Inside Thailand">
@@ -132,11 +132,11 @@ const breadcrumbSchema = {
         </AccordionSection>
 
         <AccordionSection client:visible title="Same-Sex Marriage and the Thai Marriage Visa">
-          <p>As of <strong>22 January 2025</strong>, Thailand's Marriage Equality Act grants same-sex couples full marriage equality — making Thailand the first country in Southeast Asia to do so. Same-sex couples where at least one partner is a Thai national can register their marriage at a district office (amphoe) on the same basis as any other couple.</p>
-          <p>The marriage certificate issued — a Kor Ror 3 — is the same document regardless of the couple's gender, and is accepted by Thai immigration on the same terms. Same-sex married couples therefore qualify for the Non-Immigrant O marriage visa on identical grounds, with the same financial thresholds and documentation requirements.</p>
+          <p>As of <strong>22 January 2025</strong>, Thailand's Marriage Equality Act grants same-sex couples full marriage equality, making Thailand the first country in Southeast Asia to do so. Same-sex couples where at least one partner is a Thai national can register their marriage at a district office (amphoe) on the same basis as any other couple.</p>
+          <p>The marriage certificate issued (a Kor Ror 3) is the same document regardless of the couple's gender, and is accepted by Thai immigration on the same terms. Same-sex married couples therefore qualify for the Non-Immigrant O marriage visa on identical grounds, with the same financial thresholds and documentation requirements.</p>
         </AccordionSection>
 
-        <ExpertInsightCallout body="Bank deposit timing is the most common reason marriage visa applications are delayed or rejected. The 400,000 THB must be in the account for a set number of days before you apply — we advise every client on the exact schedule." />
+        <ExpertInsightCallout body="Bank deposit timing is the most common reason marriage visa applications are delayed or rejected. The 400,000 THB must be in the account for a set number of days before you apply. We advise every client on the exact schedule." />
       </section>
 
       <section data-tab-panel="requirements" hidden>
@@ -163,19 +163,19 @@ const breadcrumbSchema = {
         <AccordionSection client:visible title="Thai Spouse Documents">
           <ul>
             <li>Thai national ID card (front and back)</li>
-            <li>Thai household registration book (tabien baan) — ideally showing the shared address</li>
+            <li>Thai household registration book (tabien baan), ideally showing the shared address</li>
             <li>Spouse's house registration certificate</li>
           </ul>
         </AccordionSection>
 
         <AccordionSection client:visible title="Address Documentation">
           <ul>
-            <li>Proof of your address in Chiang Mai — lease agreement or TM30 house registration</li>
+            <li>Proof of your address in Chiang Mai: lease agreement or TM30 house registration</li>
             <li>Your landlord must file a TM30 with immigration when you move in (we handle this reminder)</li>
           </ul>
         </AccordionSection>
 
-        <ExpertInsightCallout body="Foreign marriage certificates need legalisation and certified Thai translation — a process that takes 2–4 weeks. We flag this at the start so it doesn't delay your application at the end." />
+        <ExpertInsightCallout body="Foreign marriage certificates need legalisation and certified Thai translation, a process that takes 2–4 weeks. We flag this at the start so it doesn't delay your application at the end." />
       </section>
 
       <section data-tab-panel="process" hidden>
@@ -189,7 +189,7 @@ const breadcrumbSchema = {
               'Open a Thai bank account and deposit 400,000 THB (or prepare income evidence)',
               'Gather all documents including marriage certificate and spouse ID',
               'Submit at Chiang Mai immigration for Non-Immigrant O',
-              'Renew annually — we handle the full process each year',
+              'Renew annually: we handle the full process each year',
             ],
           }}
           routeB={{
@@ -214,7 +214,7 @@ const breadcrumbSchema = {
         <BenefitsSplit
           items={[
             'Lower financial threshold than the retirement visa (400k vs 800k THB)',
-            'Renewable indefinitely — no time limit on how long you can stay',
+            'Renewable indefinitely, with no time limit on how long you can stay',
             'Correct visa type for obtaining a Thai work permit',
             'Travel freely with a re-entry permit',
             '90-day reports handled by our team as standard',
@@ -229,7 +229,7 @@ const breadcrumbSchema = {
         <h2 class="panel-h2">What you can &amp; can't do</h2>
 
         <AccordionSection client:visible title="Can you work in Thailand?" defaultOpen={true}>
-          <p>Not without a work permit. The Non-Immigrant O marriage visa gives you the right to live in Thailand, but not to work. To work legally you need a work permit issued by the Department of Employment — which typically requires employer sponsorship. We can refer you to the right contacts if you need a work permit.</p>
+          <p>Not without a work permit. The Non-Immigrant O marriage visa gives you the right to live in Thailand, but not to work. To work legally you need a work permit issued by the Department of Employment, which typically requires employer sponsorship. We can refer you to the right contacts if you need a work permit.</p>
         </AccordionSection>
 
         <AccordionSection client:visible title="Do you need 90-day reports?">
@@ -237,12 +237,12 @@ const breadcrumbSchema = {
         </AccordionSection>
 
         <AccordionSection client:visible title="Can you leave Thailand?">
-          <p>Yes, but you need a re-entry permit before you exit — either a single (1,000 THB) or multiple (3,800 THB) re-entry permit. Leaving without one cancels your visa and you must apply again from scratch.</p>
+          <p>Yes, but you need a re-entry permit before you exit: either a single (1,000 THB) or multiple (3,800 THB) re-entry permit. Leaving without one cancels your visa and you must apply again from scratch.</p>
         </AccordionSection>
 
         <AccordionSection client:visible title="What if the marriage ends?">
-          <p>This is a hard question to face, and we handle it with the same care we'd want for our own family. If your marriage to a Thai national ends — through divorce or the death of your spouse — you're no longer eligible for the marriage visa on that basis, but you do have other options.</p>
-          <p>Contact us as early as you're able to. We'll talk through what applies to your situation — often a guardian visa if you have children in school here, or another visa category — and plan the transition with you, not just at you.</p>
+          <p>This is a hard question to face, and we handle it with the same care we'd want for our own family. If your marriage to a Thai national ends (through divorce or the death of your spouse), you're no longer eligible for the marriage visa on that basis, but you do have other options.</p>
+          <p>Contact us as early as you're able to. We'll talk through what applies to your situation (often a guardian visa if you have children in school here, or another visa category) and plan the transition with you, not just at you.</p>
         </AccordionSection>
 
         <CtaCallout

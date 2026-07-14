@@ -102,8 +102,7 @@ const GA_MEASUREMENT_ID = 'G-2J9K5NZ9Q1';
       <slot />
     </main>
     <p class="info-currency">
-      Thai visa rules and figures can change. This page reflects our understanding as of
-      {CONTENT_REVIEWED_LABEL} — confirm your specific situation with our team before applying.
+      Visa rules can change. Accurate as of {CONTENT_REVIEWED_LABEL} — confirm specifics with our team first.
     </p>
     <Footer />
   </body>
@@ -120,5 +119,10 @@ const GA_MEASUREMENT_ID = 'G-2J9K5NZ9Q1';
     line-height: var(--lh-body);
     color: var(--ink-45);
     border-top: var(--border);
+    /* Always a single line, sitewide, at every viewport — a wrapped or
+       multi-line footnote reads as an afterthought, not a deliberate note. */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 </style>

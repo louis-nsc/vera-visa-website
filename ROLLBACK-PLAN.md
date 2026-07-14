@@ -14,17 +14,23 @@ the domain's DNS points, which is fully and quickly reversible on its own.
 Do this first, days before the actual cutover, and save the output somewhere durable (not
 just a browser tab):
 
-- [ ] Log into whatever DNS provider currently manages `vera-visa.com` (registrar, or
-      Cloudflare/similar if DNS is delegated there).
-- [ ] Screenshot or copy down the **exact current DNS records** for the root domain and `www`:
-      record type (A/CNAME/ALIAS), current value(s), and current TTL. This is the literal
-      rollback data — without it, "revert DNS" has nothing to revert *to*.
-- [ ] Confirm where the WordPress site is actually hosted (host name, and how to log into
-      that hosting control panel) and confirm you still have working access to it.
-- [ ] Confirm the WordPress site keeps running and reachable at its current hosting
-      IP/hostname even after DNS stops pointing at it — i.e. it's not going to be
-      auto-suspended or torn down just because traffic drops. (Usually true by default,
-      but worth a quick check with the host if unsure.)
+- [x] DNS is managed at **SiteGround** (Site Tools → Domain → DNS Zone Editor), which also
+      appears to be the WordPress host itself. Current records, captured and verified live
+      via `dig` on 2026-07-14:
+
+      | Type | Name | Value | TTL |
+      |---|---|---|---|
+      | A | `vera-visa.com` | `34.174.4.236` | *(not captured — grab from Zone Editor before cutover if you want it exact; otherwise the new low TTL set in Step 1 supersedes it anyway)* |
+      | A | `www.vera-visa.com` | `34.174.4.236` | *(same)* |
+
+      **This is the rollback target** — if the cutover needs to be reverted, restore both
+      `A` records to `34.174.4.236` at SiteGround's DNS Zone Editor.
+- [x] WordPress is hosted at SiteGround (same account as DNS) — access confirmed via
+      Site Tools login used to pull the records above.
+- [ ] Still worth confirming with SiteGround support (or checking their hosting plan terms)
+      that the WordPress site won't get auto-suspended for inactivity once DNS traffic drops
+      to zero — SiteGround shouldn't do this on a paid plan, but hasn't been explicitly
+      verified.
 
 **Do not skip this step.** Everything below assumes you have this recorded.
 
@@ -52,27 +58,53 @@ just a browser tab):
 
 ## 2. Cutover
 
-- [ ] Update the DNS records at the registrar/DNS provider to the values Vercel showed you
+- [x] Update the DNS records at the registrar/DNS provider to the values Vercel showed you
       in step 1 (typically an `A` record to Vercel's IP, or a `CNAME` for `www`).
-- [ ] Wait for propagation (should be fast given the lowered TTL — usually minutes, not hours).
-- [ ] Confirm `https://vera-visa.com/` resolves to the new Vercel deployment and loads over
-      HTTPS with a valid certificate (not a certificate warning).
+- [x] Wait for propagation (should be fast given the lowered TTL — usually minutes, not hours).
+      **Done 2026-07-14.** Propagation was near-instant at the authoritative nameservers
+      (confirmed via 8.8.8.8 / 1.1.1.1 within a minute); a locally-cached DNS resolver lagged
+      behind for a few minutes — if a check looks stale right after cutover, try `dig @8.8.8.8`
+      or `curl --resolve` pinned to the new IP before assuming something's wrong.
+- [x] Confirm `https://vera-visa.com/` resolves to the new Vercel deployment and loads over
+      HTTPS with a valid certificate (not a certificate warning). **Confirmed** — valid cert,
+      HTTP/2 200, correct title/canonical.
+
+**Two real gotchas hit during this cutover, worth knowing if this plan is ever re-run:**
+
+1. **No deployment had ever been promoted to Production on this Vercel project** — every
+   prior deploy (all session, going back to the original launch) had `target: null`
+   (preview-only). Adding the custom domain pointed it at a Production slot that didn't
+   exist, so the live domain returned `DEPLOYMENT_NOT_FOUND` for a few minutes immediately
+   after DNS went live. Fixed via Vercel dashboard → Deployments → **⋯** → **Promote to
+   Production** on the latest `READY` build. If setting this up fresh next time, promote a
+   deployment to Production *before* pointing DNS at the domain, not after.
+2. **Vercel auto-configured the apex→www redirect backwards.** When both `vera-visa.com` and
+   `www.vera-visa.com` were added, Vercel defaulted to redirecting the bare apex domain to
+   `www` — the opposite of what every canonical tag, the sitemap, and years of accumulated
+   SEO signal on this site assume (bare domain is canonical, no `www`). Fixed in Vercel
+   dashboard → Settings → Domains: `vera-visa.com` connected to the **Production**
+   environment directly (serves content), `www.vera-visa.com` set to **redirect** to
+   `vera-visa.com` (308). Double-check this explicitly if the domain is ever re-added.
 
 ---
 
 ## 3. Immediate post-cutover verification (do this within the first 30 minutes)
 
-- [ ] Re-run the full page sweep against the **real domain** this time (not a preview URL):
+- [x] Re-run the full page sweep against the **real domain** this time (not a preview URL):
       spot-check the homepage, a few service pages, a blog post, and a category page for
-      200 status and correct content.
-- [ ] Confirm the 301/308 redirects still work (`/thailand-work-permit-americans/`,
-      `/blog/`) on the real domain.
+      200 status and correct content. **All 200**, canonical/title verified correct on the
+      homepage.
+- [x] Confirm the 301/308 redirects still work (`/thailand-work-permit-americans/`,
+      `/blog/`) on the real domain. **Both confirmed** — 308 to the correct targets.
 - [ ] Confirm the contact form actually sends (submit a real test enquiry and check it
-      arrives).
-- [ ] Confirm the WhatsApp CTA buttons open the correct number.
+      arrives). **Not yet done** — sends a real email to live team inboxes, do this one
+      yourself rather than via automated check.
+- [x] Confirm the WhatsApp CTA buttons open the correct number. Verified the link on
+      `/contact/` points to `wa.me/66908917582`.
 - [ ] Submit the new sitemap (`sitemap-index.xml`) in Google Search Console — same
-      property, since the domain hasn't changed, but the filename has.
-- [ ] Spot-check `robots.txt` is serving and not accidentally blocking the whole site.
+      property, since the domain hasn't changed, but the filename has. **Still to do.**
+- [x] Spot-check `robots.txt` is serving and not accidentally blocking the whole site.
+      **Confirmed 200.**
 
 ---
 

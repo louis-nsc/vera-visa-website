@@ -1,0 +1,305 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const WA_HREF = 'https://wa.me/66908917582';
+
+const quickLinks = [
+  { href: '/dtv-visa-chiang-mai/', label: 'DTV Visa' },
+  { href: '/retirement-visa-chiang-mai/', label: 'Retirement Visa' },
+  { href: '/education-visa-chiang-mai/', label: 'Education Visa' },
+  { href: '/marriage-visa-chiang-mai/', label: 'Marriage Visa' },
+  { href: '/guardian-visa-chiang-mai/', label: 'Guardian Visa' },
+  { href: '/work-permits-business-visas-chiang-mai/', label: 'Business / Work Permit' },
+  { href: '/volunteer-visa-chiang-mai/', label: 'Volunteer Visa' },
+];
+---
+
+<BaseLayout
+  title="Page Not Found | Vera Visa"
+  description="This page doesn't exist or has moved. Find your visa type or chat with our team on WhatsApp."
+  canonicalUrl="https://vera-visa.com/404/"
+  noindex={true}
+>
+  <section class="nf-section">
+    <div class="container nf-inner">
+      <div class="nf-copy">
+        <p class="nf-eyebrow">Vera Visa · Chiang Mai</p>
+        <h1 class="nf-heading">This page <span class="nf-highlight">doesn't exist</span> — but your visa still does.</h1>
+        <p class="nf-sub">The link may be outdated, or the page may have moved. Pick a visa type below, head back to the homepage, or message us directly on WhatsApp.</p>
+
+        <div class="nf-actions">
+          <a href={WA_HREF} class="nf-cta vv-cta" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+            Chat on WhatsApp
+          </a>
+          <a href="/" class="nf-secondary">Back to homepage</a>
+        </div>
+
+        <nav class="nf-links" aria-label="Visa types">
+          <p class="nf-links-label">Or find your visa type</p>
+          <ul class="nf-links-list">
+            {quickLinks.map((link) => (
+              <li><a href={link.href} class="vv-link">{link.label} →</a></li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Voided stamp card -->
+      <div class="nf-card" aria-hidden="true">
+        <span class="nf-perf"></span>
+        <span class="nf-stamp">Void</span>
+        <div class="nf-card-body">
+          <p class="nf-card-eyebrow">Page Status</p>
+          <div class="nf-card-rows">
+            <span class="nf-card-label">Requested Page</span>
+            <span class="nf-card-value">N/A</span>
+            <span class="nf-card-label">Location</span>
+            <span class="nf-card-value">Chiang Mai</span>
+            <span class="nf-card-label">Error Code</span>
+            <span class="nf-card-value">404</span>
+          </div>
+          <div class="nf-card-footer">
+            <span class="nf-card-label">Status</span>
+            <span class="nf-card-badge">
+              <span class="nf-dot"></span>
+              <span class="nf-badge-label">Not Found</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .nf-section {
+    padding: var(--space-9) 0;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .nf-inner {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-8);
+    align-items: center;
+  }
+
+  .nf-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--signal-deeper);
+    margin: 0 0 var(--space-4);
+  }
+
+  .nf-heading {
+    font-family: var(--font-display);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-display-l);
+    line-height: var(--lh-snug);
+    letter-spacing: var(--ls-display);
+    color: var(--ink);
+    margin: 0 0 var(--space-4);
+    text-wrap: balance;
+  }
+
+  .nf-highlight { color: var(--signal-deep); }
+
+  .nf-sub {
+    font-family: var(--font-body);
+    font-size: var(--text-body-l);
+    line-height: var(--lh-body);
+    color: var(--text-body);
+    margin: 0 0 var(--space-6);
+    max-width: 52ch;
+  }
+
+  .nf-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-7);
+  }
+
+  .nf-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 14px var(--space-6);
+    border-radius: var(--radius-pill);
+    background: var(--signal-deep);
+    color: var(--paper);
+    font-family: var(--font-body);
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-body-m);
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: background var(--dur-fast) var(--ease-standard);
+  }
+
+  .nf-cta:hover { background: var(--signal-deeper); }
+
+  .nf-secondary {
+    font-family: var(--font-body);
+    font-weight: var(--fw-medium);
+    font-size: var(--text-body-m);
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color var(--dur-fast) ease;
+  }
+
+  .nf-secondary:hover { color: var(--signal-deeper); }
+
+  .nf-links-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label-wide);
+    text-transform: uppercase;
+    color: var(--ink-45);
+    margin: 0 0 var(--space-3);
+    border-top: var(--border);
+    padding-top: var(--space-5);
+  }
+
+  .nf-links-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-6);
+  }
+
+  .nf-links-list a {
+    font-family: var(--font-body);
+    font-size: var(--text-body-m);
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  /* ---- Voided status card (stamped-passport motif, same shape as the
+     homepage hero card, restyled to read as a rejected/void document) ---- */
+  .nf-card {
+    position: relative;
+    background: var(--paper);
+    border: var(--border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+  }
+
+  .nf-perf {
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 16px;
+    background-image: radial-gradient(circle, var(--line) 1.6px, transparent 2px);
+    background-repeat: repeat-y;
+    background-size: 16px 12px;
+    background-position: center;
+  }
+
+  .nf-stamp {
+    position: absolute;
+    top: 18px; right: 16px;
+    transform: rotate(-11deg);
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--signal-deeper);
+    border: 1.5px solid var(--signal-deeper);
+    border-radius: var(--radius-sm);
+    padding: 4px 8px;
+    opacity: 0.7;
+  }
+
+  .nf-stamp::before {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border: 1.5px solid var(--signal-deeper);
+    pointer-events: none;
+  }
+
+  .nf-card-body { padding: var(--space-5); padding-left: 40px; }
+
+  .nf-card-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--signal-deeper);
+    margin-bottom: var(--space-4);
+  }
+
+  .nf-card-rows {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px var(--space-6);
+    align-items: baseline;
+    border-top: var(--border);
+    padding-top: var(--space-4);
+  }
+
+  .nf-card-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-s);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label-wide);
+    text-transform: uppercase;
+    color: var(--ink-45);
+  }
+
+  .nf-card-value {
+    font-family: var(--font-body);
+    font-size: var(--text-body-m);
+    font-weight: var(--fw-medium);
+    color: var(--ink);
+    text-align: right;
+  }
+
+  .nf-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: var(--border);
+    padding-top: var(--space-4);
+    margin-top: var(--space-4);
+  }
+
+  .nf-card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .nf-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: var(--radius-pill);
+    background: var(--signal-deeper);
+  }
+
+  .nf-badge-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  @media (max-width: 900px) {
+    .nf-inner { grid-template-columns: 1fr; }
+    .nf-card { order: -1; max-width: 420px; }
+  }
+</style>

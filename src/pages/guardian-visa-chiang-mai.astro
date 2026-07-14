@@ -34,7 +34,7 @@ const faqSchema = {
   '@type': 'FAQPage',
   mainEntity: [
     { '@type': 'Question', name: 'What is the guardian visa in Thailand?', acceptedAnswer: { '@type': 'Answer', text: 'The guardian visa is a Non-Immigrant O visa issued to parents or legal guardians of a child who is enrolled at and attending an accredited school in Thailand. It allows the guardian to live in Thailand to care for and support the child during their studies.' } },
-    { '@type': 'Question', name: 'What are the financial requirements for the guardian visa?', acceptedAnswer: { '@type': 'Answer', text: 'You need 400,000 THB in a Thai bank account or 40,000 THB per month in income. The financial threshold is the same as the marriage visa.' } },
+    { '@type': 'Question', name: 'What are the financial requirements for the guardian visa?', acceptedAnswer: { '@type': 'Answer', text: 'You need 500,000 THB in a Thai bank account or 40,000 THB per month in income. This is higher than the marriage visa\'s 400,000 THB threshold — the guardian visa is a separate category with its own requirement.' } },
     { '@type': 'Question', name: 'Can I work in Thailand on a guardian visa?', acceptedAnswer: { '@type': 'Answer', text: 'No. The Non-Immigrant O guardian visa does not include work authorisation. A separate work permit is required for any employment.' } },
     { '@type': 'Question', name: 'What schools qualify for the guardian visa?', acceptedAnswer: { '@type': 'Answer', text: 'The child must be enrolled at an accredited school in Thailand — international schools, Thai government schools, and other MOE-registered schools all qualify. Chiang Mai has a number of excellent international schools popular with expat families.' } },
   ],
@@ -75,7 +75,7 @@ const breadcrumbSchema = {
   <QuickFactsStrip facts={[
     { label: 'Visa Type',      value: 'Non-Imm O'          },
     { label: 'Duration',       value: '1 year (renewable)' },
-    { label: 'Bank Deposit',   value: '400,000 THB'        },
+    { label: 'Bank Deposit',   value: '500,000 THB'        },
     { label: 'Monthly Income', value: '40,000 THB'         },
     { label: 'Child Req.',     value: 'Enrolled & attending' },
     { label: 'Work Allowed',   value: 'Permit required'    },
@@ -92,7 +92,7 @@ const breadcrumbSchema = {
       { title: 'Renewable each school year', body: 'As long as your child remains enrolled and attending, the guardian visa renews annually.' },
       { title: 'Family in one place',        body: 'Avoid the disruption of one parent living abroad — the whole family can be in Chiang Mai together.' },
       { title: 'International school access',body: 'Chiang Mai has a strong range of international schools. The guardian visa supports families choosing long-term education here.' },
-      { title: 'Lower financial threshold',  body: 'At 400,000 THB, the same threshold as the marriage visa — accessible for most families supporting a child in school.' },
+      { title: 'Clear financial requirement', body: 'A straightforward 500,000 THB bank deposit or 40,000 THB monthly income, verified once per year — no ambiguity about what qualifies.' },
       { title: 'Work permit eligible',       body: 'The Non-Immigrant O is the correct base visa for applying for a Thai work permit if local employment is needed.' },
     ]}
   />
@@ -130,9 +130,9 @@ const breadcrumbSchema = {
         <AccordionSection client:visible title="Financial Requirements">
           <p>You must meet <strong>one</strong> of these three financial routes:</p>
           <FinancialRoutes routes={[
-            { label: 'Bank Deposit Route', value: '400,000 THB', desc: 'Held in a Thai bank account for the required period.' },
+            { label: 'Bank Deposit Route', value: '500,000 THB', desc: 'Held in a Thai bank account for the required period.' },
             { label: 'Monthly Income Route', value: '40,000 THB', unit: '/month', desc: 'Transferred from abroad on a regular basis.' },
-            { label: 'Combination Route', value: 'Income + savings = 400,000 THB', desc: 'Example: 20,000 THB/month income (240,000 THB/year) plus 160,000 THB in savings.' },
+            { label: 'Combination Route', value: 'Income + savings = 500,000 THB', desc: 'Example: 20,000 THB/month income (240,000 THB/year) plus 260,000 THB in savings.' },
           ]} />
         </AccordionSection>
 
@@ -152,7 +152,7 @@ const breadcrumbSchema = {
             <li>Passport valid for at least 18 months with blank visa pages</li>
             <li>Recent passport-style photographs</li>
             <li>Completed Non-Immigrant O application form</li>
-            <li>Thai bank book and bank letter confirming the 400,000 THB deposit (or income evidence)</li>
+            <li>Thai bank book and bank letter confirming the 500,000 THB deposit (or income evidence)</li>
             <li>Proof of address in Chiang Mai (lease agreement / TM30)</li>
           </ul>
         </AccordionSection>
@@ -177,7 +177,7 @@ const breadcrumbSchema = {
           <p style="font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal-deeper); margin-bottom: 12px;">Typical Process</p>
           <ol style="margin: 0; padding-left: var(--space-5); font-family: var(--font-body); font-size: var(--text-body-m); line-height: 1.7; color: var(--text-body);">
             <li>Enrol your child in an accredited Chiang Mai school and obtain the enrolment letter</li>
-            <li>Open a Thai bank account and deposit 400,000 THB (or prepare income evidence)</li>
+            <li>Open a Thai bank account and deposit 500,000 THB (or prepare income evidence)</li>
             <li>Gather parent and child documents — we provide a full checklist</li>
             <li>Submit at Chiang Mai immigration for the Non-Immigrant O</li>
             <li>Renew annually at the start of each school year — we handle the full process</li>

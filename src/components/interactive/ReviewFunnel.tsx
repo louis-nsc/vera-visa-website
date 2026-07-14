@@ -78,7 +78,7 @@ export default function ReviewFunnel() {
       {step === 'negative' && (
         <div className="rf-step">
           <p className="rf-question">We're sorry to hear that.</p>
-          <p className="rf-sub">Tell us what went wrong — this goes directly to the team, not a public review.</p>
+          <p className="rf-sub">Tell us what went wrong. This goes directly to the team, not a public review.</p>
           <textarea
             className="rf-textarea"
             rows={4}

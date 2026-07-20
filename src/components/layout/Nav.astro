@@ -11,6 +11,16 @@ const services = [
   { label: 'Business / Work Permit',href: '/work-permits-business-visas-chiang-mai/' },
   { label: 'Retirement Visa',       href: '/retirement-visa-chiang-mai/' },
 ];
+
+const guides = [
+  { label: 'Retirement Visa Thailand', href: '/category/retirement-visa/' },
+  { label: 'DTV Visa Thailand',        href: '/category/dtv-visa/' },
+  { label: 'Marriage Visa Thailand',   href: '/category/marriage-visa/' },
+  { label: 'Education Visa Thailand',  href: '/category/education-visa/' },
+  { label: 'Guardian Visa Thailand',   href: '/category/guardian-visa/' },
+  { label: 'Work Permits Thailand',    href: '/category/work-permits/' },
+  { label: 'Volunteer Visa Thailand',  href: '/category/volunteer-visa/' },
+];
 ---
 
 <nav class="nav" aria-label="Main navigation">
@@ -32,6 +42,19 @@ const services = [
         <div class="nav__dropdown-menu">
           {services.map((s) => (
             <a href={s.href} class="nav__dropdown-item">{s.label}</a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Guides dropdown -->
+      <div class="nav__dropdown">
+        <button class="nav__dropdown-trigger" aria-expanded="false">
+          Guides
+          <span class="nav__caret" aria-hidden="true">▾</span>
+        </button>
+        <div class="nav__dropdown-menu">
+          {guides.map((g) => (
+            <a href={g.href} class="nav__dropdown-item">{g.label}</a>
           ))}
         </div>
       </div>
@@ -63,6 +86,10 @@ const services = [
     <p class="nav__mobile-heading">Visa Services</p>
     {services.map((s) => (
       <a href={s.href} class="nav__mobile-link nav__mobile-link--sub">{s.label}</a>
+    ))}
+    <p class="nav__mobile-heading">Guides</p>
+    {guides.map((g) => (
+      <a href={g.href} class="nav__mobile-link nav__mobile-link--sub">{g.label}</a>
     ))}
     <a href={WA_HREF} class="nav__mobile-cta vv-cta" target="_blank" rel="noopener noreferrer">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -390,12 +417,16 @@ const services = [
     });
   }
 
-  // Desktop dropdown: keep aria-expanded truthful for assistive tech
-  const dropdown = document.querySelector('.nav__dropdown');
-  const dropdownTrigger = document.querySelector('.nav__dropdown-trigger');
+  // Desktop dropdowns: keep aria-expanded truthful for assistive tech.
+  // There are two independent dropdowns (Visa Services, Guides), so every
+  // dropdown/trigger pair is wired up individually rather than assuming
+  // a single instance.
+  const dropdowns = document.querySelectorAll('.nav__dropdown');
 
-  if (dropdown && dropdownTrigger) {
-    const setOpen = (open) => dropdownTrigger.setAttribute('aria-expanded', String(open));
+  dropdowns.forEach((dropdown) => {
+    const trigger = dropdown.querySelector('.nav__dropdown-trigger');
+    if (!trigger) return;
+    const setOpen = (open) => trigger.setAttribute('aria-expanded', String(open));
 
     dropdown.addEventListener('mouseenter', () => setOpen(true));
     dropdown.addEventListener('mouseleave', () => setOpen(false));
@@ -403,18 +434,19 @@ const services = [
     dropdown.addEventListener('focusout', (e) => {
       if (!dropdown.contains(e.relatedTarget)) setOpen(false);
     });
-  }
+  });
 
-  // Escape closes whichever disclosure is open. For the desktop dropdown
+  // Escape closes whichever disclosure is open. For the desktop dropdowns
   // (driven purely by :hover/:focus-within, no JS open/closed state) the
-  // only way to close it is to remove focus from its descendants; this
+  // only way to close one is to remove focus from its descendants; this
   // moves focus to the document rather than back to the trigger, which is
   // an accepted tradeoff for this simple hover-disclosure pattern. For the
   // mobile drawer, focus returns to the burger button that opened it.
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
 
-    if (dropdown && dropdown.contains(document.activeElement)) {
+    const openDropdown = Array.from(dropdowns).find((d) => d.contains(document.activeElement));
+    if (openDropdown) {
       document.activeElement.blur();
     }
 

@@ -19,6 +19,16 @@ const services = [
   { label: 'Volunteer Visa',       href: '/volunteer-visa-chiang-mai/' },
 ];
 
+const guides = [
+  { label: 'Retirement Visa Thailand', href: '/category/retirement-visa/' },
+  { label: 'DTV Visa Thailand',        href: '/category/dtv-visa/' },
+  { label: 'Marriage Visa Thailand',   href: '/category/marriage-visa/' },
+  { label: 'Education Visa Thailand',  href: '/category/education-visa/' },
+  { label: 'Guardian Visa Thailand',   href: '/category/guardian-visa/' },
+  { label: 'Work Permits Thailand',    href: '/category/work-permits/' },
+  { label: 'Volunteer Visa Thailand',  href: '/category/volunteer-visa/' },
+];
+
 const nationalities = [
   { label: 'Thailand Visa for Australians', href: '/thailand-visa-for-australians/' },
   { label: 'Thailand Visa for UK Citizens', href: '/thailand-visa-for-uk-citizens/' },
@@ -48,6 +58,16 @@ const nationalities = [
         <ul class="footer__nav">
           {services.map((s) => (
             <li><a href={s.href} class="footer__nav-link">{s.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Guides links -->
+      <div class="footer__col">
+        <p class="footer__col-heading">Guides</p>
+        <ul class="footer__nav">
+          {guides.map((g) => (
+            <li><a href={g.href} class="footer__nav-link">{g.label}</a></li>
           ))}
         </ul>
       </div>
@@ -122,7 +142,7 @@ const nationalities = [
 
   .footer__grid {
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 1fr;
     gap: var(--space-7);
     align-items: start;
     padding-bottom: var(--space-7);

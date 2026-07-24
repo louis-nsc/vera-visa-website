@@ -35,6 +35,11 @@
       "source": "/education-visa/",
       "destination": "/education-visa-chiang-mai/",
       "permanent": true
+    },
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "/sitemap-index.xml",
+      "permanent": true
     }
   ]
 }

@@ -14,6 +14,14 @@ export default defineConfig({
     mdx(),
     sitemap({
       changefreq: 'monthly',
+      // These URLs render another entry's content and canonicalize to it (URL-preservation
+      // shims for consolidated/legacy content) — exclude them so the sitemap only lists
+      // canonical URLs, per sitemap best practice.
+      filter: (page) => {
+        const pathname = new URL(page).pathname;
+        return pathname !== '/thailand-e-work-permit-2025/'
+          && pathname !== '/thailand-work-permit-foreigners/';
+      },
       serialize(item) {
         const url = new URL(item.url);
         if (url.pathname === '/') {

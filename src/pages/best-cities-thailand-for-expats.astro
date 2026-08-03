@@ -1,0 +1,23 @@
+---
+import { getEntry, render } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const entry = await getEntry('blog', 'best-cities-thailand-for-expats');
+if (!entry) return Astro.redirect('/');
+const { Content } = await render(entry);
+const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
+---
+
+<BlogLayout
+  {title} {description}
+  canonicalUrl="https://vera-visa.com/best-cities-thailand-for-expats/"
+  {ogTitle} {ogDescription}
+  {publishedTime} {modifiedTime}
+  relatedGuides={[
+    { label: 'Why Chiang Mai Is the Best Place to Retire in Thailand', href: '/retire-in-chiang-mai/'            },
+    { label: 'Retirement Visa Chiang Mai: Full Guide',                 href: '/retirement-visa-chiang-mai/'       },
+    { label: 'DTV Visa Chiang Mai: Full Guide',                        href: '/dtv-visa-chiang-mai/'              },
+  ]}
+>
+  <Content />
+</BlogLayout>

@@ -1,0 +1,24 @@
+---
+import { getEntry, render } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const entry = await getEntry('blog', 'thailand-tm30-reporting-guide');
+if (!entry) return Astro.redirect('/');
+const { Content } = await render(entry);
+const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
+---
+
+<BlogLayout
+  {title} {description}
+  canonicalUrl="https://vera-visa.com/thailand-tm30-reporting-guide/"
+  {ogTitle} {ogDescription}
+  {publishedTime} {modifiedTime}
+  relatedGuides={[
+    { label: 'Marriage Visa Chiang Mai: Full Guide',      href: '/marriage-visa-chiang-mai/'       },
+    { label: 'Marriage Visa Thailand Cost',                href: '/marriage-visa-thailand-cost/'    },
+    { label: 'Retirement Visa Thailand Cost',              href: '/retirement-visa-thailand-cost/'  },
+    { label: 'More Visa Guides',                           href: '/category/uncategorized/'         },
+  ]}
+>
+  <Content />
+</BlogLayout>

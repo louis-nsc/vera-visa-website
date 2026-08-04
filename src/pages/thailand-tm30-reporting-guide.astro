@@ -5,14 +5,15 @@ import BlogLayout from '../layouts/BlogLayout.astro';
 const entry = await getEntry('blog', 'thailand-tm30-reporting-guide');
 if (!entry) return Astro.redirect('/');
 const { Content } = await render(entry);
-const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
+const { title, description, ogTitle, ogDescription, ogImage, publishedTime, modifiedTime } = entry.data;
 ---
 
 <BlogLayout
   {title} {description}
   canonicalUrl="https://vera-visa.com/thailand-tm30-reporting-guide/"
-  {ogTitle} {ogDescription}
+  {ogTitle} {ogDescription} {ogImage}
   {publishedTime} {modifiedTime}
+  headerIcon="/images/tm30-header-icon.png"
   relatedGuides={[
     { label: 'Marriage Visa Chiang Mai: Full Guide',      href: '/marriage-visa-chiang-mai/'       },
     { label: 'Marriage Visa Thailand Cost',                href: '/marriage-visa-thailand-cost/'    },

@@ -13,12 +13,14 @@ interface Props {
   publishedTime: string;
   modifiedTime?: string;
   relatedGuides?: { label: string; href: string }[];
+  headerIcon?: string;
 }
 
 const {
   title, description, canonicalUrl, ogTitle, ogDescription, ogImage,
   publishedTime, modifiedTime,
   relatedGuides = [],
+  headerIcon,
 } = Astro.props;
 
 // The <title> tag conventionally carries a "| Vera Visa" brand suffix for SEO,
@@ -80,6 +82,7 @@ const modDate = modifiedTime
   <article class="blog-article">
     <header class="blog-header">
       <div class="container blog-header__inner">
+        {headerIcon && <img src={headerIcon} alt="" class="blog-header-icon" width="40" height="40" />}
         <div class="blog-meta">
           <time datetime={publishedTime} class="blog-date">
             {pubDate}
@@ -154,6 +157,13 @@ const modDate = modifiedTime
   }
 
   .blog-header__inner { max-width: 760px; }
+
+  .blog-header-icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-bottom: var(--space-4);
+  }
 
   .blog-meta {
     display: flex;

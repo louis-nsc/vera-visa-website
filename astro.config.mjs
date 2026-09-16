@@ -20,7 +20,8 @@ export default defineConfig({
       filter: (page) => {
         const pathname = new URL(page).pathname;
         return pathname !== '/thailand-e-work-permit-2025/'
-          && pathname !== '/thailand-work-permit-foreigners/';
+          && pathname !== '/thailand-work-permit-foreigners/'
+          && pathname !== '/guardian-visa-thailand/';
       },
       serialize(item) {
         const url = new URL(item.url);

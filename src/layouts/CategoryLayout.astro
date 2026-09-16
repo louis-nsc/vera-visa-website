@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+import CtaCallout from '../components/sections/CtaCallout.astro';
 
 interface Article {
   title: string;
@@ -13,6 +14,13 @@ interface RelatedLink {
   href: string;
 }
 
+interface HubLink {
+  kicker: string;
+  body: string;
+  linkText: string;
+  linkHref: string;
+}
+
 interface Props {
   title: string;
   description: string;
@@ -22,6 +30,7 @@ interface Props {
   breadcrumbLabel: string;
   h1: string;
   intro: string;
+  hubLink?: HubLink;
   articles: Article[];
   relatedLinks: RelatedLink[];
   ctaHeading: string;
@@ -30,7 +39,7 @@ interface Props {
 
 const {
   title, description, canonicalUrl, ogTitle, ogDescription,
-  breadcrumbLabel, h1, intro, articles, relatedLinks, ctaHeading, ctaSubtext,
+  breadcrumbLabel, h1, intro, hubLink, articles, relatedLinks, ctaHeading, ctaSubtext,
 } = Astro.props;
 
 const schema = {
@@ -66,6 +75,7 @@ const breadcrumbSchema = {
       <p class="eyebrow">Category</p>
       <h1 class="cat-h1">{h1}</h1>
       <p class="cat-intro">{intro}</p>
+      {hubLink && <CtaCallout {...hubLink} />}
     </div>
   </section>
 

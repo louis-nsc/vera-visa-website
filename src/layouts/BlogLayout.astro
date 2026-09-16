@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import RelatedGuides from '../components/sections/RelatedGuides.astro';
 import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
+import { extractFaqSchema } from '../lib/faqSchema';
 
 interface Props {
   title: string;
@@ -14,6 +15,7 @@ interface Props {
   modifiedTime?: string;
   relatedGuides?: { label: string; href: string }[];
   headerIcon?: string;
+  rawBody?: string;
 }
 
 const {
@@ -21,6 +23,7 @@ const {
   publishedTime, modifiedTime,
   relatedGuides = [],
   headerIcon,
+  rawBody,
 } = Astro.props;
 
 // The <title> tag conventionally carries a "| Vera Visa" brand suffix for SEO,
@@ -63,13 +66,16 @@ const pubDate = new Date(publishedTime).toLocaleDateString('en-US', {
 const modDate = modifiedTime
   ? new Date(modifiedTime).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
   : null;
+
+const faqSchema = extractFaqSchema(rawBody, canonicalUrl);
+const pageSchema = faqSchema ? [articleSchema, breadcrumbSchema, faqSchema] : [articleSchema, breadcrumbSchema];
 ---
 
 <BaseLayout
   {title} {description} {canonicalUrl}
   {ogTitle} {ogDescription} {ogImage}
   ogType="article"
-  schema={[articleSchema, breadcrumbSchema]}
+  schema={pageSchema}
 >
   <!-- Breadcrumb -->
   <nav class="blog-breadcrumb container" aria-label="Breadcrumb">

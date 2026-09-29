@@ -135,7 +135,7 @@ const breadcrumbSchema = {
     { title: 'Longer stays',             body: 'Each entry gives you 180 consecutive days, enough for a full year in Thailand on a single round trip.' },
     { title: 'Remote work-friendly',     body: 'Work for foreign clients or employers without needing a Thai work permit. Designed for the location-independent professional.' },
     { title: 'Multiple-entry flexibility', body: 'Come and go as often as you like over five years. Each return resets your 180-day stay period.' },
-    { title: 'Easier compliance',        body: 'No 90-day TM30 reports required mid-stay. One extension at your local immigration office extends a further 180 days.' },
+    { title: 'Simple entry and exit',        body: 'Multiple-entry for the full five years. Each re-entry gives you a fresh 180-day stay and resets your 90-day reporting clock.' },
     { title: 'Lifestyle flexibility',    body: 'Bring your spouse and children under 20 on dependent DTV visas. The whole family is covered under one application process.' },
     { title: 'Less immigration friction', body: 'Fewer visa runs than the tourist visa track. Five years of coverage means you plan around your life, not a visa deadline.' },
   ]}
@@ -221,12 +221,11 @@ const breadcrumbSchema = {
         </ul>
       </AccordionSection>
 
-      <AccordionSection client:visible title="Health Insurance">
+      <AccordionSection client:visible title="Health Insurance (Not Required, But Recommended)">
         <ul>
-          <li>Health insurance valid for the duration of your stay in Thailand</li>
-          <li>Minimum coverage: <strong>40,000 THB outpatient</strong> and <strong>400,000 THB inpatient</strong></li>
-          <li>The policy must be from an insurer recognised by Thai authorities</li>
-          <li>We can recommend providers that meet the DTV requirements during your consultation</li>
+          <li>Health insurance is not a requirement for the DTV, unlike Thailand's O-A and O-X retirement visas</li>
+          <li>We still strongly recommend it: private healthcare in Thailand is excellent but not free, and hospital bills without coverage can be significant</li>
+          <li>If you'd like a recommendation, we can point you toward providers commonly used by DTV holders during your consultation</li>
         </ul>
       </AccordionSection>
 
@@ -239,6 +238,7 @@ const breadcrumbSchema = {
       </AccordionSection>
 
       <ExpertInsightCallout body="Document preparation is where most delays happen. We check every file for formatting, naming consistency, and translation before anything reaches the embassy, so your application goes in right the first time." />
+      <p class="panel-intro" style="margin-top: var(--space-4); font-size: 0.9375rem;">Requirements reviewed September 2026 against current Thai Immigration Bureau guidance and official embassy checklists. Visa rules can change: confirm specifics with our team before applying.</p>
     </section>
 
     <!-- PROCESS -->
@@ -284,7 +284,7 @@ const breadcrumbSchema = {
           '180-day stays, extendable once by a further 180 days at local immigration',
           'Bring your spouse and children under 20 on dependent visas',
           'No Thai work permit required for foreign clients or employers',
-          'No 90-day reports required during an uninterrupted stay',
+          'A 90-day address report is required if you stay continuously without leaving Thailand',
         ]}
         statLabel="Government Fee"
         statValue="10,000 THB"
@@ -315,9 +315,11 @@ const breadcrumbSchema = {
       </AccordionSection>
 
       <AccordionSection client:visible title="Do you need to do 90-day reports?">
-        <p>If you stay in Thailand for more than 90 consecutive days without leaving, you are required to file a 90-day report with immigration. This is straightforward and can be done online, by post, or in person.</p>
+        <p>If you stay in Thailand for more than 90 consecutive days without leaving, you are required to file a 90-day report (form TM47) with immigration. This is a different obligation from TM30, which is your landlord's duty to register your address within 24 hours of you moving in (see our <a href="/thailand-tm30-reporting-guide/" class="vv-link">TM30 guide</a> for that distinction in full). Filing the 90-day report is straightforward and can be done online, by post, or in person.</p>
         <p>If you travel out and re-enter before 90 days, the counter resets and no report is due for that stay.</p>
       </AccordionSection>
+
+      <p class="panel-intro" style="margin-top: var(--space-4); font-size: 0.9375rem;">Reviewed September 2026 against current Thai Immigration Bureau guidance. Visa rules can change: confirm specifics with our team before applying.</p>
 
       <CtaCallout
         kicker="Ready to get started?"

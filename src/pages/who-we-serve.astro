@@ -3,13 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
 
 const segments = [
-  { name: 'Digital nomads & remote workers', body: 'Working remotely for a foreign employer or clients? The DTV visa gives you five years of legal stay in Chiang Mai without needing a Thai work permit.', href: '/dtv-visa-chiang-mai/', cta: 'DTV Visa →' },
-  { name: 'Students on ED visas', body: 'Studying Thai language, training in Muay Thai, or enrolled at a Chiang Mai university? The Education Visa keeps you legal for the duration of your course.', href: '/education-visa-chiang-mai/', cta: 'Education Visa →' },
-  { name: 'Retirees over 50', body: 'The Non-Immigrant O-A retirement visa gives you year-round legal residence in Chiang Mai, renewed annually by our team.', href: '/retirement-visa-chiang-mai/', cta: 'Retirement Visa →' },
-  { name: 'Spouses of Thai nationals', body: 'Married to a Thai national? The Non-Immigrant O marriage visa gives you annual-extension residency in Chiang Mai, renewed by our team each year.', href: '/marriage-visa-chiang-mai/', cta: 'Marriage Visa →' },
-  { name: 'Parents & guardians', body: 'Supporting a child enrolled in a Chiang Mai school? The Non-Immigrant O guardian visa keeps you legally resident for as long as the child is enrolled.', href: '/guardian-visa-chiang-mai/', cta: 'Guardian Visa →' },
-  { name: 'Business owners & professionals', body: 'Working for or running a Thai company requires a Non-Immigrant B visa and work permit. We handle both, plus the compliance that keeps them valid.', href: '/work-permits-business-visas-chiang-mai/', cta: 'Business Visa & Work Permits →' },
-  { name: 'Volunteers & NGO workers', body: 'Volunteering long-term with a registered Thai non-profit? The Non-Immigrant O volunteer visa is the correct legal pathway for unpaid work.', href: '/volunteer-visa-chiang-mai/', cta: 'Volunteer Visa →' },
+  { name: 'Digital nomads & remote workers', body: 'Working remotely for a foreign employer or clients? The DTV visa gives you five years of legal stay in Chiang Mai without needing a Thai work permit.', href: '/dtv-visa-chiang-mai/', image: '/images/cards/dtv', cta: 'DTV Visa →' },
+  { name: 'Students on ED visas', body: 'Studying Thai language, training in Muay Thai, or enrolled at a Chiang Mai university? The Education Visa keeps you legal for the duration of your course.', href: '/education-visa-chiang-mai/', image: '/images/cards/ed', cta: 'Education Visa →' },
+  { name: 'Retirees over 50', body: 'The Non-Immigrant O-A retirement visa gives you year-round legal residence in Chiang Mai, renewed annually by our team.', href: '/retirement-visa-chiang-mai/', image: '/images/cards/retirement', cta: 'Retirement Visa →' },
+  { name: 'Spouses of Thai nationals', body: 'Married to a Thai national? The Non-Immigrant O marriage visa gives you annual-extension residency in Chiang Mai, renewed by our team each year.', href: '/marriage-visa-chiang-mai/', image: '/images/cards/marriage', cta: 'Marriage Visa →' },
+  { name: 'Parents & guardians', body: 'Supporting a child enrolled in a Chiang Mai school? The Non-Immigrant O guardian visa keeps you legally resident for as long as the child is enrolled.', href: '/guardian-visa-chiang-mai/', image: '/images/cards/guardian', cta: 'Guardian Visa →' },
+  { name: 'Business owners & professionals', body: 'Working for or running a Thai company requires a Non-Immigrant B visa and work permit. We handle both, plus the compliance that keeps them valid.', href: '/work-permits-business-visas-chiang-mai/', image: '/images/cards/business', cta: 'Business Visa & Work Permits →' },
+  { name: 'Volunteers & NGO workers', body: 'Volunteering long-term with a registered Thai non-profit? The Non-Immigrant O volunteer visa is the correct legal pathway for unpaid work.', href: '/volunteer-visa-chiang-mai/', image: '/images/cards/volunteer', cta: 'Volunteer Visa →' },
 ];
 
 const schema = [
@@ -32,6 +32,7 @@ const schema = [
 ---
 
 <BaseLayout
+  ogImage="/og/who-we-serve.jpg"
   title="Who We Serve: Vera Visa Agency Chiang Mai"
   description="Vera Visa Agency helps digital nomads, students, retirees, families, business professionals, and volunteers get legal visa status in Chiang Mai."
   canonicalUrl="https://vera-visa.com/who-we-serve/"
@@ -53,6 +54,13 @@ const schema = [
       <div class="segments-grid">
         {segments.map((s) => (
           <a href={s.href} class="segment-card">
+            <img
+              class="segment-img"
+              src={`${s.image}-960.webp`}
+              srcset={`${s.image}-480.webp 480w, ${s.image}-960.webp 960w`}
+              sizes="(max-width: 700px) 100vw, 560px"
+              alt="" width="960" height="640" loading="lazy" decoding="async"
+            />
             <span class="segment-dot" aria-hidden="true"></span>
             <h2 class="segment-name">{s.name}</h2>
             <p class="segment-body">{s.body}</p>
@@ -117,7 +125,18 @@ const schema = [
     padding: var(--space-6);
     text-decoration: none;
     color: inherit;
+    overflow: hidden;
     transition: border-color var(--dur-fast) var(--ease-standard);
+  }
+
+  .segment-img {
+    display: block;
+    width: calc(100% + var(--space-6) * 2);
+    max-width: none;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    margin: calc(var(--space-6) * -1) calc(var(--space-6) * -1) var(--space-5);
   }
 
   .segment-card:hover { border-color: var(--ink); }

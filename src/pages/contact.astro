@@ -31,6 +31,7 @@ const schema = [
 ---
 
 <BaseLayout
+  ogImage="/og/contact.jpg"
   title="Contact Vera Visa Agency Chiang Mai"
   description="Get in touch with Vera Visa Agency Chiang Mai. Free visa consultation by WhatsApp, email, or phone. Icon Park Hotel, Chiang Mai."
   canonicalUrl="https://vera-visa.com/contact/"
@@ -56,6 +57,12 @@ const schema = [
       </div>
 
       <div class="reach-card">
+        <img
+          class="reach-photo"
+          src="/images/office-icon-park.webp"
+          alt="Icon Park Hotel building in Chiang Mai, home of the Vera Visa office"
+          width="1280" height="342" loading="lazy" decoding="async"
+        />
         <p class="eyebrow" style="color: var(--signal-deeper);">Reach us</p>
         <dl class="reach-list">
           <dt>Email</dt>
@@ -130,6 +137,18 @@ const schema = [
     border: var(--border);
     border-radius: var(--radius-card);
     padding: var(--space-6);
+    overflow: hidden;
+  }
+
+  .reach-photo {
+    display: block;
+    width: calc(100% + var(--space-6) * 2);
+    max-width: none;
+    height: auto;
+    aspect-ratio: 1280 / 342;
+    object-fit: cover;
+    margin: calc(var(--space-6) * -1) calc(var(--space-6) * -1) var(--space-5);
+    border-radius: var(--radius-card) var(--radius-card) 0 0;
   }
 
   .reach-list {

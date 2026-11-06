@@ -8,12 +8,12 @@ import ContactForm from '../components/interactive/ContactForm';
 const WA_HREF = 'https://wa.me/66908917582';
 
 const services = [
-  { code: 'DTV',  name: 'Destination Thailand Visa',    description: 'Five-year, multiple-entry visa for remote workers and freelancers.',           href: '/dtv-visa-chiang-mai/', image: '/images/cards/dtv.webp', imageAlt: 'Laptop and iced coffee on a café table overlooking tropical greenery in Chiang Mai'        },
-  { code: 'ED',   name: 'Education Visa',                description: 'For students enrolled in Thai language schools, universities, or training programs.',             href: '/education-visa-chiang-mai/', image: '/images/cards/ed.webp', imageAlt: 'Study desk with an open notebook, flashcards and a cup of tea by a window'         },
-  { code: 'O · Spouse',    name: 'Marriage Visa Chiang Mai', description: 'For spouses of Thai nationals, with straightforward annual extensions.', href: '/marriage-visa-chiang-mai/', image: '/images/cards/marriage.webp', imageAlt: 'Two hands wearing matching rings beside a fresh jasmine garland'   },
-  { code: 'O-A',  name: 'Retirement Visa',               description: 'For applicants aged 50 and over, with a clear path to annual renewal.',             href: '/retirement-visa-chiang-mai/', image: '/images/cards/retirement.webp', imageAlt: 'Veranda chair with tea and a newspaper overlooking misty Chiang Mai hills' },
-  { code: 'O · Guardian',  name: 'Guardian Visa',        description: 'For parents and guardians supporting a child enrolled in school in Thailand.',                    href: '/guardian-visa-chiang-mai/', image: '/images/cards/guardian.webp', imageAlt: 'School backpack on a chair with a lunchbox and pencils on a table by a window'   },
-  { code: 'B',    name: 'Business Visa & Work Permits',  description: 'Non-B visas and work permits for professionals and business owners working in Thailand.',          href: '/work-permits-business-visas-chiang-mai/', image: '/images/cards/business.webp', imageAlt: 'Meeting table with a closed folder, tablet and pen in a bright office'   },
+  { code: 'DTV',  name: 'Destination Thailand Visa',    description: 'Five-year, multiple-entry visa for remote workers and freelancers.',           href: '/dtv-visa-chiang-mai/', image: '/images/cards/dtv', imageAlt: 'Laptop and iced coffee on a café table overlooking tropical greenery in Chiang Mai'        },
+  { code: 'ED',   name: 'Education Visa',                description: 'For students enrolled in Thai language schools, universities, or training programs.',             href: '/education-visa-chiang-mai/', image: '/images/cards/ed', imageAlt: 'Study desk with an open notebook, flashcards and a cup of tea by a window'         },
+  { code: 'O · Spouse',    name: 'Marriage Visa Chiang Mai', description: 'For spouses of Thai nationals, with straightforward annual extensions.', href: '/marriage-visa-chiang-mai/', image: '/images/cards/marriage', imageAlt: 'Two hands wearing matching rings beside a fresh jasmine garland'   },
+  { code: 'O-A',  name: 'Retirement Visa',               description: 'For applicants aged 50 and over, with a clear path to annual renewal.',             href: '/retirement-visa-chiang-mai/', image: '/images/cards/retirement', imageAlt: 'Veranda chair with tea and a newspaper overlooking misty Chiang Mai hills' },
+  { code: 'O · Guardian',  name: 'Guardian Visa',        description: 'For parents and guardians supporting a child enrolled in school in Thailand.',                    href: '/guardian-visa-chiang-mai/', image: '/images/cards/guardian', imageAlt: 'School backpack on a chair with a lunchbox and pencils on a table by a window'   },
+  { code: 'B',    name: 'Business Visa & Work Permits',  description: 'Non-B visas and work permits for professionals and business owners working in Thailand.',          href: '/work-permits-business-visas-chiang-mai/', image: '/images/cards/business', imageAlt: 'Meeting table with a closed folder, tablet and pen in a bright office'   },
 ];
 
 const steps = [
@@ -75,6 +75,13 @@ const websiteSchema = {
 
   <!-- ===== HERO ===== -->
   <section class="hero">
+    <img
+      class="hero__bg"
+      src="/images/hero-passport-bg.webp"
+      srcset="/images/hero-passport-bg-800.webp 800w, /images/hero-passport-bg.webp 1672w"
+      sizes="100vw"
+      alt="" width="1672" height="941" fetchpriority="high" decoding="async"
+    />
     <div class="container hero__inner">
 
       <div class="hero__text">
@@ -207,13 +214,30 @@ const websiteSchema = {
 <style>
   /* ---- Hero ---- */
   .hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     background-color: var(--paper);
-    background-image:
-      linear-gradient(color-mix(in srgb, var(--paper) 55%, transparent), color-mix(in srgb, var(--paper) 55%, transparent)),
-      url('/images/hero-passport-bg.webp');
-    background-size: cover;
-    background-position: center;
     padding: var(--space-9) 0;
+  }
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -2;
+  }
+
+  /* Paper wash keeps text and the status card readable over the photo */
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: color-mix(in srgb, var(--paper) 55%, transparent);
+    z-index: -1;
   }
 
   .hero__inner {

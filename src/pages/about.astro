@@ -32,6 +32,7 @@ const schema = [
 ---
 
 <BaseLayout
+  ogImage="/og/about.jpg"
   title="About Vera Visa Agency Chiang Mai"
   description="Learn more about Vera Visa Agency Chiang Mai. Stress-free visa solutions for long stays in The Land of Smiles with a team that cares."
   canonicalUrl="https://vera-visa.com/about/"
@@ -105,11 +106,19 @@ const schema = [
       </p>
 
       <div class="team-grid">
-        {['Pupae', 'Tofu', 'Big'].map((name) => (
+        {[
+          { name: 'Pupae', photo: '' },
+          { name: 'Tofu',  photo: '' },
+          { name: 'Big',   photo: '' },
+        ].map(({ name, photo }) => (
           <div class="team-card">
-            <div class="team-avatar" aria-hidden="true">
-              <span class="team-initial">{name[0]}</span>
-            </div>
+            {photo ? (
+              <img class="team-photo" src={photo} alt={`${name}, co-founder of Vera Visa`} width="160" height="160" loading="lazy" decoding="async" />
+            ) : (
+              <div class="team-avatar" aria-hidden="true">
+                <span class="team-initial">{name[0]}</span>
+              </div>
+            )}
             <p class="team-name">{name}</p>
             <p class="team-role">Co-Founder, Vera Visa</p>
           </div>
@@ -336,6 +345,15 @@ const schema = [
     border-radius: var(--radius-card);
     padding: var(--space-6);
     text-align: center;
+  }
+
+  .team-photo {
+    display: block;
+    width: 112px;
+    height: 112px;
+    border-radius: var(--radius-pill);
+    object-fit: cover;
+    margin: 0 auto var(--space-4);
   }
 
   .team-avatar {

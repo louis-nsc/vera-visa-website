@@ -16,6 +16,10 @@ interface Props {
   ogImage?: string;
   schema?: object | object[];
 
+  // Optional banner under the header
+  bannerImage?: string;      // path to a 1280×548 webp
+  bannerAlt?: string;
+
   // Hero text
   eyebrow: string;           // e.g. "DTV · 5-Year Multiple Entry"
   intro: string;             // paragraph below h1
@@ -29,6 +33,7 @@ interface Props {
 
 const {
   title, description, canonicalUrl, ogTitle, ogDescription, ogImage, schema,
+  bannerImage, bannerAlt = '',
   eyebrow, intro,
   ctaText = 'Check your eligibility on WhatsApp →',
   statusRows,
@@ -89,11 +94,36 @@ const dotColor = statusState === 'approved' ? 'var(--approved)' : 'var(--signal)
     </div>
   </header>
 
+  {bannerImage && (
+    <div class="container svc-banner">
+      <img
+        src={bannerImage}
+        alt={bannerAlt}
+        width="1280" height="548"
+        loading="lazy" decoding="async"
+      />
+    </div>
+  )}
+
   <!-- Remaining page sections injected here -->
   <slot />
 </BaseLayout>
 
 <style>
+  /* ---- Banner ---- */
+  .svc-banner {
+    padding-bottom: var(--space-7);
+  }
+
+  .svc-banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1280 / 548;
+    object-fit: cover;
+    border-radius: var(--radius-card);
+  }
+
   /* ---- Header ---- */
   .svc-header {
     background: var(--paper);

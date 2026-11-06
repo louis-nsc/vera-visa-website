@@ -207,7 +207,12 @@ const websiteSchema = {
 <style>
   /* ---- Hero ---- */
   .hero {
-    background: var(--paper);
+    background-color: var(--paper);
+    background-image:
+      linear-gradient(color-mix(in srgb, var(--paper) 55%, transparent), color-mix(in srgb, var(--paper) 55%, transparent)),
+      url('/images/hero-passport-bg.webp');
+    background-size: cover;
+    background-position: center;
     padding: var(--space-9) 0;
   }
 

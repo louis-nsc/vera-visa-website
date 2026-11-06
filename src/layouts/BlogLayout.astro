@@ -16,6 +16,8 @@ interface Props {
   relatedGuides?: { label: string; href: string }[];
   headerIcon?: string;
   rawBody?: string;
+  heroImage?: string;   // base path, e.g. /images/guides/guide-cost-breakdown (expects -640.webp and -1280.webp)
+  heroAlt?: string;
 }
 
 const {
@@ -24,6 +26,8 @@ const {
   relatedGuides = [],
   headerIcon,
   rawBody,
+  heroImage,
+  heroAlt = '',
 } = Astro.props;
 
 // The <title> tag conventionally carries a "| Vera Visa" brand suffix for SEO,
@@ -104,6 +108,18 @@ const pageSchema = faqSchema ? [articleSchema, breadcrumbSchema, faqSchema] : [a
           <span class="blog-byline-dot" aria-hidden="true"></span>
           <span>By <strong>Vera Visa Agency</strong> · Chiang Mai</span>
         </div>
+        {heroImage && (
+          <figure class="blog-hero">
+            <img
+              src={`${heroImage}-1280.webp`}
+              srcset={`${heroImage}-640.webp 640w, ${heroImage}-1280.webp 1280w`}
+              sizes="(max-width: 800px) 100vw, 760px"
+              alt={heroAlt}
+              width="1280" height="548"
+              fetchpriority="high" decoding="async"
+            />
+          </figure>
+        )}
       </div>
     </header>
 
@@ -164,6 +180,17 @@ const pageSchema = faqSchema ? [articleSchema, breadcrumbSchema, faqSchema] : [a
   }
 
   .blog-header__inner { max-width: 760px; }
+
+  .blog-hero { margin: var(--space-6) 0 0; }
+
+  .blog-hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1280 / 548;
+    object-fit: cover;
+    border-radius: var(--radius-card);
+  }
 
   .blog-header-icon {
     display: block;

@@ -115,7 +115,7 @@
 - [x] `ContactForm.tsx` (React island, `client:idle`)
   - Primary: WhatsApp CTA button with pre-filled message
   - Secondary: name + email + message form → Vercel serverless function (`src/pages/api/contact.ts`) → email
-- [x] `GoogleReviews.tsx` (React island, `client:visible`)
+- [x] `TestimonialCarousel.tsx` (React island, `client:visible`)
   - Static seed data from current site reviews (Yi Mon Thant + others)
   - Overall rating: 5 stars on Google, display as star row + review cards in Testimonial style
   - Upgrade path: Google Places API (add later, no component interface change needed)

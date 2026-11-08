@@ -1,6 +1,6 @@
 // Selected client testimonials shown on the homepage.
 // Quotes come from reviews on the Vera Visa Agency Google Business Profile (supplied 2026-06-30).
-// This is a hand-picked set, NOT the profile's total rating or review count, so the site must not
+// Reviews are verbatim (4–5 stars only). This is a hand-picked set, NOT the profile's total rating or review count, so the site must not
 // present it as one. Only show a Google aggregate if it is fetched live (e.g. Places API).
 export interface Testimonial {
   name: string;
@@ -57,5 +57,29 @@ export const testimonials: Testimonial[] = [
     visaType: 'Visa Services',
     rating: 5,
     quote: 'I was very impressed with the efficient visa processing assistance at Vera Visa Agency Chiang Mai. The staff handled my documents quickly and explained everything clearly, making the whole process stress free. I’m excited to return for my next visa service.',
+  },
+  {
+    name: 'Ivan Lindsey',
+    visaType: 'Visa Extension',
+    rating: 5,
+    quote: 'I had an excellent experience with Vera Visa Agency. They provided outstanding service, handled my extension quickly and made the whole process smooth and successful.',
+  },
+  {
+    name: 'William Tribe',
+    visaType: 'Visa Services',
+    rating: 5,
+    quote: 'Vera Visa Agency Chiang Mai exceeded all my expectations. The team was efficient, professional, helpful and incredibly informative. The visa process was smooth from start to finish.',
+  },
+  {
+    name: 'Tim Lambs',
+    visaType: 'Visa Services',
+    rating: 5,
+    quote: 'I had a great experience with Vera Visa Agency. They handled everything professionally and were fast to answer all my questions. They managed my documents and my visa application smoothly from start to finish, keeping me updated about every step of the process, saving me time and stress. Highly recommend.',
+  },
+  {
+    name: 'Lee James',
+    visaType: 'Visa Services',
+    rating: 5,
+    quote: 'The Vera Visa team did an amazing job helping me obtain my visa. They were quick, responsive and supported me throughout the process, that could otherwise be quite stressful. A fantastic quality service that I definitely recommend.',
   },
 ];

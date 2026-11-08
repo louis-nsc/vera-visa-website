@@ -18,7 +18,7 @@ See `PLAN.md` — each phase has a checkbox. Check them off as phases complete.
 
 ## Tech stack
 - **Astro 5** with `@astrojs/react` and `@astrojs/sitemap`
-- **React 18** — islands only (interactive components: TabBar, AccordionSection, ContactForm, GoogleReviews)
+- **React 18** — islands only (interactive components: TabBar, AccordionSection, ContactForm, TestimonialCarousel)
 - **TypeScript** throughout
 - **Vercel** — `@astrojs/vercel` adapter, serverless function for contact form
 - **Styling** — Vera Visa Design System CSS (no Tailwind, no CSS-in-JS)
@@ -51,7 +51,7 @@ src/
     core/         Button.astro, Eyebrow.astro, StatusDot.astro
     patterns/     StatusCard.astro, ServiceCard.astro, BenefitGrid.astro, ...
     sections/     QuickFactsStrip.astro, RelatedGuides.astro, FinalCtaBand.astro
-    interactive/  TabBar.tsx, AccordionSection.tsx, ContactForm.tsx, GoogleReviews.tsx
+    interactive/  TabBar.tsx, AccordionSection.tsx, ContactForm.tsx, TestimonialCarousel.tsx
     layout/       Nav.astro, Footer.astro
   content/
     config.ts

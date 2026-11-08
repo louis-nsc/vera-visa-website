@@ -1,5 +1,7 @@
-// Seed data for the homepage Google Reviews widget.
-// Real reviews from the Vera Visa Agency Google Business Profile, supplied 2026-06-30.
+// Selected client testimonials shown on the homepage.
+// Quotes come from reviews on the Vera Visa Agency Google Business Profile (supplied 2026-06-30).
+// This is a hand-picked set, NOT the profile's total rating or review count, so the site must not
+// present it as one. Only show a Google aggregate if it is fetched live (e.g. Places API).
 export interface Testimonial {
   name: string;
   visaType: string;
@@ -57,9 +59,3 @@ export const testimonials: Testimonial[] = [
     quote: 'I was very impressed with the efficient visa processing assistance at Vera Visa Agency Chiang Mai. The staff handled my documents quickly and explained everything clearly, making the whole process stress free. I’m excited to return for my next visa service.',
   },
 ];
-
-export const overallRating = 5.0;
-// [Draft] This is the count of reviews seeded above, not necessarily the total
-// shown on the Google Business Profile — update to the real total before launch,
-// or wire up the Google Places API (see PLAN.md upgrade path).
-export const reviewCount = 8;

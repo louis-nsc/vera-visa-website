@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { testimonials, overallRating, reviewCount } from '../../data/testimonials';
+import { testimonials } from '../../data/testimonials';
 
 // 6 divides evenly into both the 3-col desktop grid and the 2-col tablet
 // grid, so the default view never leaves an orphaned card in the last row.
@@ -21,12 +21,7 @@ export default function GoogleReviews() {
 
   return (
     <div className="gr-wrap">
-      <div className="gr-summary">
-        <Stars rating={Math.round(overallRating)} />
-        <span className="gr-summary-text">
-          <strong>{overallRating.toFixed(1)}</strong> on Google · {reviewCount} reviews
-        </span>
-      </div>
+      <p className="gr-summary-text">Selected client testimonials</p>
 
       <div className={`gr-grid${expanded ? '' : ' gr-grid--default'}`}>
         {visible.map((t) => (
@@ -41,19 +36,18 @@ export default function GoogleReviews() {
 
       {testimonials.length > INITIAL_COUNT && (
         <button className="gr-toggle" onClick={() => setExpanded((e) => !e)}>
-          {expanded ? 'Show fewer reviews' : `Show all ${testimonials.length} reviews`}
+          {expanded ? 'Show fewer testimonials' : 'Show more testimonials'}
         </button>
       )}
 
       <style>{`
         .gr-wrap { display: flex; flex-direction: column; gap: var(--space-6); }
-        .gr-summary { display: flex; align-items: center; gap: var(--space-3); }
         .gr-stars { display: inline-flex; }
         .gr-star { color: var(--signal-deeper); font-size: 1.125rem; line-height: 1; }
         .gr-summary-text {
-          font-family: var(--font-body); font-size: var(--text-body-m); color: var(--text-body);
+          margin: 0; font-family: var(--font-mono); font-size: var(--text-eyebrow, 0.75rem);
+          letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted, var(--text-body));
         }
-        .gr-summary-text strong { color: var(--ink); }
         .gr-grid {
           display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5);
         }

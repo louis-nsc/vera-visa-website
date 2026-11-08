@@ -47,12 +47,6 @@ export const testimonials: Testimonial[] = [
     quote: 'I had a great experience with Vera Visa Agency Chiang Mai. The staff were incredibly responsive and helpful, answering all my questions quickly. Their process was very organized and the team showed deep knowledge about the visa requirements. I felt confident and reassured throughout, and the service was prompt from start to finish. I would definitely recommend them to anyone looking for reliable visa services.',
   },
   {
-    name: 'Tim Lambs',
-    visaType: 'Visa Services',
-    rating: 5,
-    quote: 'I had a great experience with Vera Visa Agency. They handled everything professionally and were fast to answer all my questions. They managed my documents and my visa application smoothly from start to finish, keeping me updated about every step of the process, saving me time and stress. Highly recommend.',
-  },
-  {
     name: 'Leo Aung',
     visaType: 'Visa Services',
     rating: 5,

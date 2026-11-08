@@ -45,6 +45,11 @@ export default function ContactForm() {
 
       setStatus('success');
       form.reset();
+      // GA4 recommended lead event; marked as a key event in GA4
+      (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag?.('event', 'generate_lead', {
+        form_id: 'contact_form',
+        page_path: window.location.pathname,
+      });
     } catch (err) {
       setStatus('error');
       setErrorMsg(err instanceof Error ? err.message : 'Something went wrong.');

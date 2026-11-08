@@ -92,11 +92,16 @@ const GA_MEASUREMENT_ID = 'G-2J9K5NZ9Q1';
       <>
         <script define:vars={{ GA_MEASUREMENT_ID }}>
           window.dataLayer = window.dataLayer || [];
-          function gtag() { dataLayer.push(arguments); }
+          window.gtag = function () { dataLayer.push(arguments); };
           gtag('js', new Date());
           gtag('config', GA_MEASUREMENT_ID);
-          // Load gtag.js after the page has painted so it never competes with the hero image
+
+          // gtag.js loads after the page has painted, or on the first interaction if that comes sooner.
+          // Events fired before it loads are queued in dataLayer, so nothing is lost.
+          var gtagRequested = false;
           function loadGtag() {
+            if (gtagRequested) return;
+            gtagRequested = true;
             var s = document.createElement('script');
             s.async = true;
             s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
@@ -106,6 +111,31 @@ const GA_MEASUREMENT_ID = 'G-2J9K5NZ9Q1';
             if ('requestIdleCallback' in window) requestIdleCallback(loadGtag, { timeout: 3000 });
             else setTimeout(loadGtag, 1500);
           });
+          ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (t) {
+            window.addEventListener(t, loadGtag, { once: true, passive: true });
+          });
+
+          // Conversion events: WhatsApp and phone clicks (one delegated listener for every link on the site)
+          document.addEventListener('click', function (e) {
+            var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+            if (!a) return;
+            var href = a.getAttribute('href') || '';
+            var name = null;
+            if (/^https?:\/\/(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)\//i.test(href)) name = 'whatsapp_click';
+            else if (/^tel:/i.test(href)) name = 'phone_click';
+            if (!name) return;
+            var where = a.closest('nav, header') ? 'header'
+              : a.closest('footer') ? 'footer'
+              : a.closest('.cf-wrap') ? 'contact_form'
+              : a.closest('article') ? 'article_body'
+              : 'page_cta';
+            gtag('event', name, {
+              link_url: href,
+              link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60),
+              link_location: where,
+              page_path: location.pathname,
+            });
+          }, true);
         </script>
       </>
     )}

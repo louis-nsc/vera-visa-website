@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import RelatedGuides from '../components/sections/RelatedGuides.astro';
 import FinalCtaBand from '../components/sections/FinalCtaBand.astro';
 import { extractFaqSchema } from '../lib/faqSchema';
+import { existsSync } from 'node:fs';
 
 interface Props {
   title: string;
@@ -34,6 +35,9 @@ const {
 // but that suffix shouldn't appear in the visible H1, breadcrumb, or structured data name.
 const displayTitle = title.replace(/\s*\|\s*Vera Visa\s*$/i, '');
 
+// Per-guide share image: /og/guides/<slug>.jpg when it exists, otherwise the site default
+const guideSlug = new URL(canonicalUrl).pathname.replace(/^\/|\/$/g, '');
+const resolvedOgImage = ogImage ?? (existsSync(`public/og/guides/${guideSlug}.jpg`) ? `/og/guides/${guideSlug}.jpg` : '/og-default.jpg');
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -52,7 +56,7 @@ const articleSchema = {
     url: 'https://vera-visa.com',
     logo: { '@type': 'ImageObject', url: 'https://vera-visa.com/vera-logo-badge.png' },
   },
-  image: new URL(ogImage ?? '/og-default.jpg', 'https://vera-visa.com').toString(),
+  image: new URL(resolvedOgImage, 'https://vera-visa.com').toString(),
   mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
 };
 
@@ -78,7 +82,7 @@ const pageSchema = faqSchema ? [articleSchema, breadcrumbSchema, faqSchema] : [a
 
 <BaseLayout
   {title} {description} {canonicalUrl}
-  {ogTitle} {ogDescription} {ogImage}
+  {ogTitle} {ogDescription} ogImage={resolvedOgImage}
   ogType="article"
   schema={pageSchema}
 >

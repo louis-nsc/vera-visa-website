@@ -14,6 +14,15 @@ function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+const methodNotAllowed = () =>
+  new Response(JSON.stringify({ error: 'Method not allowed. Use POST.' }), {
+    status: 405,
+    headers: { Allow: 'POST', 'Content-Type': 'application/json' },
+  });
+
+export const GET: APIRoute = methodNotAllowed;
+export const ALL: APIRoute = methodNotAllowed;
+
 export const POST: APIRoute = async ({ request }) => {
   let payload: ContactPayload;
   try {

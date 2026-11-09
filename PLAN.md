@@ -265,3 +265,9 @@ by renaming the field to an obscure name (`vv_hp_field`) that autofill heuristic
 - Google Reviews: static seed data at launch, Places API upgrade later
 - Contact form: Vercel serverless function, no third-party service
 - No CMS — content in `.astro` + `.mdx` + TypeScript data files
+
+## Parked: live Google reviews (waiting on owner)
+- Built on branch `live-reviews` (src/lib/googleReviews.ts, src/pages/api/reviews.ts, carousel fetch). Tested with mocks only; NOT merged or live.
+- Needs from owner: Google Places API (New) key, restricted to that API. Then: set `GOOGLE_PLACES_API_KEY` in Vercel, verify the feed in a browser, merge, redeploy.
+- Open decision: show live + saved reviews merged (recommended) or live only (max 5 cards).
+- Owner asked to be reminded after the next few tasks are done.

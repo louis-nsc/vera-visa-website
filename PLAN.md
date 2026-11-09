@@ -271,3 +271,30 @@ by renaming the field to an obscure name (`vv_hp_field`) that autofill heuristic
 - Needs from owner: Google Places API (New) key, restricted to that API. Then: set `GOOGLE_PLACES_API_KEY` in Vercel, verify the feed in a browser, merge, redeploy.
 - Open decision: show live + saved reviews merged (recommended) or live only (max 5 cards).
 - Owner asked to be reminded after the next few tasks are done.
+
+
+## Held back: DTV statements awaiting specialist approval
+
+The Nov 2026 rewrite of `/dtv-visa-chiang-mai/` removed every statement on the topics below. Do not restore or
+copy any of them until the visa specialist approves exact wording, per nationality where the rule differs.
+
+Removed from the DTV service page (previous wording is in git history, commit before the rewrite):
+- 90-day reporting: "resets your 90-day reporting clock" (benefit card), "A 90-day address report is required..." (benefit list), the "Do you need to do 90-day reports?" accordion (TM47 wording)
+- TM30: the landlord-duty explanation and the link to /thailand-tm30-reporting-guide/
+- Health insurance: the "Not Required, But Recommended" accordion
+- Remote work permission: "Remote work-friendly: work for foreign clients or employers without a Thai work permit", "No Thai work permit required for foreign clients or employers", the "Can you work?" accordion, the "Can DTV holders work in Thailand?" FAQ and its FAQPage schema entry
+- Thai employment: "Working locally for a Thai company... requires a separate work permit"
+- Also dropped as unrelated to the commercial brief: the "Can DTV holders buy a car?" FAQ
+
+Still on the page, flagged for the specialist to confirm (these describe eligibility, not permissions):
+- "The DTV has two eligibility tracks: remote work for a foreign employer or clients, and approved soft power activities"
+- Evidence lists mention employment contracts and client invoices
+
+Same topics still live elsewhere (outside the scope of the DTV service-page task):
+- Guides (src/content/blog): can-you-work-on-dtv-visa-thailand, dtv-visa-australians, dtv-visa-americans, dtv-visa-uk-citizens, dtv-visa-thailand-cost, dtv-visa-vs-tourist-visa-thailand, dtv-visa-vs-retirement-visa-thailand, dtv-visa-thailand-requirements
+- /who-we-serve/ says the DTV gives five years of stay "without needing a Thai work permit"
+
+## Reminders for the owner (asked on 2026-11-09, access to follow)
+- GA4: mark generate_lead, whatsapp_click, phone_click as key events; DebugView check; Developer traffic filter; booking/thank-you events (no booking tool or thank-you page exists yet)
+- Live Google reviews: needs a Places API key and a decision (live only, or merged with saved reviews). Branch `live-reviews` is ready
+- GBP: DTV service added, pending Google review. Optional: Products entry with a link to the DTV page

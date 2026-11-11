@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { FormEvent } from 'react';
 import './ContactForm.css';
 
-const WA_HREF = 'https://wa.me/66908917582';
+const WA_HREF = 'https://wa.me/66919192823';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 

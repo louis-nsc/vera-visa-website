@@ -1,8 +1,13 @@
 ---
+// Consolidated into marriage-visa-thailand-guide: this page was a shorter
+// overview competing with the guide for the same queries. The guide (published
+// March 2026) has stronger internal link equity and more depth. This URL is
+// preserved with the guide's content canonicalised to the guide, so no equity
+// or backlinks are lost while ranking signal consolidates onto the stronger page.
 import { getEntry, render } from 'astro:content';
 import BlogLayout from '../layouts/BlogLayout.astro';
 
-const entry = await getEntry('blog', 'marriage-visa-thailand');
+const entry = await getEntry('blog', 'marriage-visa-thailand-guide');
 if (!entry) return Astro.redirect('/');
 const { Content } = await render(entry);
 const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime } = entry.data;
@@ -13,14 +18,13 @@ const { title, description, ogTitle, ogDescription, publishedTime, modifiedTime 
   heroImage="/images/banners/marriage"
   heroAlt="Couple's hands with matching rings beside jasmine flowers, Thailand marriage visa requirements and cost"
   {title} {description}
-  canonicalUrl="https://vera-visa.com/marriage-visa-thailand/"
+  canonicalUrl="https://vera-visa.com/marriage-visa-thailand-guide/"
   {ogTitle} {ogDescription}
   {publishedTime} {modifiedTime}
   relatedGuides={[
-    { label: 'Marriage Visa Thailand', href: '/category/marriage-visa/' },
     { label: 'Marriage Visa Chiang Mai: Full Guide', href: '/marriage-visa-chiang-mai/'    },
-    { label: 'Marriage Visa Thailand Guide',          href: '/marriage-visa-thailand-guide/' },
     { label: 'Marriage Visa Thailand Cost',           href: '/marriage-visa-thailand-cost/'  },
+    { label: 'More Marriage Visa Guides',             href: '/category/marriage-visa/'       },
   ]}
 >
   <Content />
